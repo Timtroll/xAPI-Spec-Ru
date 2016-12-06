@@ -6,44 +6,43 @@
 и полученного пользователями опыта Спецификация разделена на 3 документа
 
 *   Часть первая:   [Описание опытного API](./xAPI-About.md#partone)
-*   Часть вторая:   [Experience API Data](./xAPI-Data.md#parttwo)
-*   Часть тертья:   [Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)
+*   Часть вторая:   [Данные опытного API](./xAPI-Data.md#parttwo)
+*   Часть тертья:   [Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)
 
-## Specification versions
+## Версия спецификации
 
-The current version of the specification is
+Текущая версия спецификации (русский перевод)
 [1.0.3](https://github.com/adlnet/xAPI-Spec-Ru/).
 
-The next version of the specification has not been planned. 
+Мы не планируем выпускать следующая версию.
 
-## What to do if the spec is unclear
+## Что делать, если спецификация не ясна
 
-If when implementing the specification you find something is unclear or
-unhelpful, you can help to improve the specification by
-[raising an issue here](https://github.com/adlnet/xAPI-Spec-Ru/issues). When
-raising an issue, please give as much detail as you can in regards to:
+Если при реализации данной спецификации вы найдете что-то непонятное или
+бесполезное, вы можете помочь улучшить спецификацию [тут](https://github.com/adlnet/xAPI-Spec/issues).
+Поднимая вопрос, пожалуйста, опишите все как можно более детально:
 
-* Which part/parts of the specification you are reading.
-* Your understanding of what these parts mean.
-* The product and feature you are implementing xAPI in; what's the use case you
-  are trying to achieve?
-* How you would like the specification to be improved. Suggest some specific new
-  wording if you like!
+* Какой части спецификации касается ваш вопрос.
+* Опишите Ваше понимание того, что означает описание в указанной части.
+* Опишите продукт и функцию, которую вы пытаетесь осуществить в XAPI; чего вы
+   пытаетесь достичь?
+* Как вы хотели улучшить спецификацию. Предложите некоторые конкретные новые
+   формулировки, если Вам нравится )
 
-You'll need to [sign up for a GitHub account](https://github.com/signup/free) if
-you do not already have one in order to raise and comment on issues.
+Вом нужно [зайти в аккаунт GitHub](https://github.com/signup/free) или зарегистрироваться, 
+чтобы вносить свои замечания.
 
-You can discuss any issues before or after raising them on the
-[specification Google Group](https://groups.google.com/a/adlnet.gov/forum/#!forum/xapi-spec)
-and at our
+Вы можете обсудить любые вопросы до или после поднятия их на
+[в Google Group](https://groups.google.com/a/adlnet.gov/forum/#!forum/xapi-spec)
+или тут
 [weekly specification calls](https://attendee.gotowebinar.com/register/7730918418468686596).
 
-## How you can contribute
+## Как вы можете внести свой вклад
 
-You'll need to [sign up for a GitHub account](https://github.com/signup/free) if
-you do not already have one in order to contribute to the specification.
+Вам нужно [зайти в аккаунт GitHub](https://github.com/signup/free) или зарегистрироваться, 
+чтобы вносить свои предложения.
 
-The xAPI Spec Working Group meets
-the first, second, and third Wednesdays of each month on GoToWebinar. You can register at [https://attendee.gotowebinar.com/register/7730918418468686596](https://attendee.gotowebinar.com/register/7730918418468686596)
+Митапы рабочей группы xAPI Spec
+первая, вторая и третья среды каждого месяца тут - GoToWebinar. Регистрация тут - [https://attendee.gotowebinar.com/register/7730918418468686596](https://attendee.gotowebinar.com/register/7730918418468686596)
 
-Please refer to the [Contribution guidelines](CONTRIBUTING.md) for further direction and a list of contributors.
+Пожалуйста, обратитесь к [Руковотство](CONTRIBUTING.md) для внесения в список участников.

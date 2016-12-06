@@ -3,21 +3,22 @@
 
 <a name="contributors"/>
 
-## Contributors
+## Авторы
 
-### Message To Contributors
+Данный документ представлен в вольном переводе от Timtroll
 
-> "My thanks to everyone who contributed to the Experience API project. Many of
-> you have called into the weekly meetings and helped to shape the specification
-> into something that is useful for the entire distributed learning community.
-> Many of you assisted in releasing code samples, products, and documentation to
-> aid those who are creating and adopting the specification.  I'd also like to
-> thank all of those who were involved in supplying useful, honest information
-> about your organization's use of SCORM and other learning best practices.
-> Through the use-cases, shared experiences, and knowledge you have shared, ADL
-> and the community clearly identified the first step in creating the Training
-> and Learning Architecture--the Experience API.  You are truly the community
-> leaders on which we depend to make our training and education the very best."
+### Авторам
+
+
+> Выражаем благодарность всем, кто внес свой вклад в проект Опытный API. Многие из
+> Вас в еженедельных встречах помогли сформировать спецификацию
+> во что-то, что полезно для всего сообщества онлайн обучения.
+> Многие из вас оказали помощь в создании образцов кода, продуктов и документации,
+> чем помогли в создании и принятии спецификации. Хотелось бы также
+> Поблагодарить всех тех, кто принимал участие в предоставлении полезной и честной информации
+> об опыте использования SCORM в вашей организации, а также изучения другого передового опыта.
+> Вы делились опытом и знаниями. Вы действительно сообщество
+> лидеров, на которых мы ориентируемся, чтобы сделать наше обучение и образование лучшим.
 >
 > _Kristy S. Murray, Ed.D._
 >
@@ -26,8 +27,8 @@
 
 <a name="wg"/>
 
-### Working Group Contributors
-|Name                |   Organization             |
+### Рабочая группа авторов
+|Имя                 |   Организация              |
 |--------------------|----------------------------|
 | Aaron Silvers      | ADL                        |
 | Al Bejcek          | NetDimensions              |
@@ -138,13 +139,13 @@ anywhere. ADL views the Experience API as an evolved version of Sharable Content
 that can support similar use cases, but can also support many of the use cases gathered by ADL and submitted by
 those involved in distributed learning that SCORM could not enable.
 
-##How to Contribute
+##Как внести свой вклад
 
-This document outlines various ways of contributing to the specification:
+Тут описываюся различные пути содействия в развитии данной спецификации:
 
-* [Reviewing open Pull Requests](#review-pr)
-* [Suggesting solutions to issues](#suggest-solution)
-* [Making a Pull Request to address an issue](#make-pr)
+* [Обзор открытых запросов задач](#review-pr)
+* [Предложения по решению проблем](#suggest-solution)
+* [Создание запроса, для решения проблемы](#make-pr)
 
 <a name='review-pr'/>
 ### Review a Pull Request (PR)
