@@ -301,45 +301,46 @@ __Note:__ Смотри ["Сыылки Директивы"](#stmtref) в [Ког�
 	<td>С каким <a href="#agent">агентом</a> или <a href=#group>группой</a> Object связана Директива.</td>
 	<td>требуется</td></tr>
 	<tr id="2.4.s1.table1.row3"><td><a href="#verb">verb</a></td><td>Object</td>
-	<td>Action taken by the Actor.</td>
-	<td>Required</td></tr>
+	<td>Активность, соднаная юзером.</td>
+	<td>требуется</td></tr>
 	<tr id="2.4.s1.table1.row4"><td><a href="#object">object</a></td><td>Object</td>
-	<td>Activity, Agent, or another Statement that is the Object of the Statement. 
+	<td>Активность, агент или другая Директива, которая является объектом Директивы.
 	</td>
-	<td>Required</td></tr>
+	<td>требуется</td></tr>
 	<tr id="2.4.s1.table1.row5"><td><a href="#result">result</a></td><td>Object</td>
-	<td>Result Object, further details representing a measured outcome.</td>
-	<td>Optional</td></tr>
+	<td>Результат работы объекта, детализация, представляющая измеренный результат.</td>
+	<td>по-желанию</td></tr>
 	<tr id="2.4.s1.table1.row6"><td><a href="#context">context</a></td><td>Object</td>
-	<td>Context that gives the Statement more meaning. Examples: a team the Actor is 
-	working with, altitude at which a scenario was attempted in a flight simulator.</td>
-	<td>Optional</td></tr>
+	<td>Контекст, который делает Директиву, более осмыслнной. Примеры: команда Актер
+	работает с высотой, на которой была предпринята попытка в летном тренажере.</td>
+	<td>по-желанию</td></tr>
 	<tr id="2.4.s1.table1.row7"><td><a href="#timestamp">timestamp</a></td><td><a href="#timestamps">Timestamp</a></td>
-	<td>Timestamp of when the events described within this Statement occurred. Set by the LRS if not provided.</td>
-	<td>Optional</td></tr>
+	<td>Отметка о времени, когда события, описанное в Директиве произошло. Устанавливается LRS, если не назначено.
+	</td>
+	<td>по-желанию</td></tr>
 	<tr id="2.4.s1.table1.row8"><td><a href="#stored">stored</a></td><td><a href="#timestamps">Timestamp</a></td>
-	<td>Timestamp of when this Statement was recorded. Set by LRS.</td>
+	<td>Отметка о времени, когда это Директивеа было записана. Устанавливается LRS.</td>
 	<td>Set by LRS</td></tr>
 	<tr id="2.4.s1.table1.row9"><td><a href="#authority">authority</a></td><td>Object</td>
-	<td>Agent or Group who is asserting this Statement is true. Verified by the LRS based on 
-	authentication. Set by LRS if not provided or if a strong trust relationship between the Learning Record Provider 
-	and LRS has not been established.</td>
-	<td>Optional</td></tr>
+	<td>Агент или Группа считают, что эта Директива верна. Проверяется на LRS на основе аутентификации. Устанавливается LRS, если не предусмотрено иначе или если есь доверительные отношения между Поставщиком Learning Record и LRS не была установлена.
+	</td>
+	<td>по-желанию</td></tr>
 	<tr id="2.4.s1.table1.row10"><td><a href="#version">version</a></td><td>Version</td>
-	<td>The Statement’s associated xAPI version, formatted according to <a href="http://semver.org/spec/v1.0.0.html">Semantic Versioning 1.0.0</a>.</td>
-	<td>Not Recommended</td></tr>
+	<td>Директивы по версии xAPI, форматированные в соответствии с <a href="http://semver.org/spec/v1.0.0.html">Semantic Versioning 1.0.0</a>.</td>
+	<td>не рекомендуется</td></tr>
 	<tr id="2.4.s1.table1.row11">
 		<td><a href="#attachments">attachments</a></td>
 		<td>Ordered array of Attachment Objects</td>
-	<td>Headers for Attachments to the Statement</td>
-	<td>Optional</td></tr>
+	<td>Headers для вложений в Директиву</td>
+	<td>по-желанию</td></tr>
 </table>
 
-###### <a name="2.4.s2"></a>Example
+###### <a name="2.4.s2"></a>Примеры
 
-An example of the simplest possible Statement using all properties that MUST or SHOULD be used.
-It is recommended to also populate optional properties where relevant. 
-When this Statement is returned from the LRS it will include some additional properties added by the LRS.
+Пример простейшей возможной Директивы, где используются все свойства, которые должны или должны быть использованы.
+Рекомендуется также заполнить дополнительные свойства, в соответствующих случаях.
+Когда эта Директива возвращается из LRS она будет включать в себя некоторые дополнительные свойства, добавленные LRS.
+
 ```
 {
 "id": "12345678-1234-5678-1234-567812345678",
@@ -363,7 +364,7 @@ See [Appendix A: Example Statements](#Appendix2A) for more examples.
 
 #### <a name="2.4.1">2.4.1</a> ID 
 
-###### <a name="2.4.1.s1"></a>Description
+###### <a name="2.4.1.s1"></a>Описание
 
 A UUID (all versions of variant 2 in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) are valid, and the UUID MUST 
 be in standard string form).
