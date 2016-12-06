@@ -1,4 +1,4 @@
-# xAPI-Spec-Ru
+# xAPI-SpecRu
 ## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
 
 Данный репозитарий содержит xAPI спецификации. xAPI - это технология онлайн обучения  
@@ -12,7 +12,7 @@
 ## Версия спецификации
 
 Текущая версия спецификации (русский перевод)
-[1.0.3](https://github.com/adlnet/xAPI-Spec-Ru/).
+[1.0.3](https://github.com/adlnet/xAPI-SpecRu/).
 
 Мы не планируем выпускать следующая версию.
 

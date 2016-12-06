@@ -147,41 +147,33 @@
 
 Следующие требования подтвердить особенно важные потребности, которые уже включены в других местах, чтобы обеспечить правильность применения. Определенные виды проверки, такие как валидация IRI и проверка, что свойства используются только один раз.
 
-The following requirements reiterate especially important requirements already included elsewhere, to emphasize,
-clarify, and provide implementation guidance.  Some types of validation, such as complete IRI validation and validation 
-that properties appear only once, are extremely difficult, so much of the burden 
-for ensuring data portability is on the Learning Record Provider.
 
-* <a name="2.2.s3.b1"></a>Values requiring IRIs MUST be sent with valid IRIs. 
-* <a name="2.2.s3.b2"></a>Keys of language maps MUST be sent with valid [RFC 5646](http://tools.ietf.org/html/rfc5646) 
-language tags, for similar reasons.
-* <a name="2.2.s3.b3"></a>A library SHOULD be used to construct IRIs, as opposed to string concatenation. 
-* <a name="2.2.s3.b4"></a>Values SHOULD be considered to be case sensitive unless specified otherwise. 
-* <a name="2.2.s3.b5"></a>Lowercase SHOULD be used to send case insensitive data.
-* <a name="2.2.s3.b6"></a>Additional properties SHOULD* NOT be added to Statements unless explicitly allowed by this specification. 
-* <a name="2.2.s3.b7"></a>A property SHOULD not occur multiple times in an object. If properties are used multiple times 
-within an object, the behavior of the LRS is undefined; it is expected that most LRSs will use existing JSON parsing 
-functionality of whichever code languages they use. 
+* <a name="2.2.s3.b1"></a>Значения, где требуестя IRIs должны передаваться с действительным IRIs. 
+* <a name="2.2.s3.b2"></a>Ключи языковых карт должны соответствовать [RFC 5646](http://tools.ietf.org/html/rfc5646). Это касается и языковых тегов.
+* <a name="2.2.s3.b3"></a>Библиотека ДОЛЖНА использовать конструктор IRIs, в противовес конкатенации. 
+* <a name="2.2.s3.b4"></a>Значения ДОЛЖНЫ быть чувствительны к регистру, если не указано иное.
+* <a name="2.2.s3.b5"></a>Данные в нижнем регистре ДОЛЖНЫ передаваться без учета регистра.
+* <a name="2.2.s3.b6"></a>Дополнительные свойства НЕ ДОЛЖНЫ добавляться к Директивам, если это явно не разрешено данной спецификацией. 
+* <a name="2.2.s3.b7"></a>Свойство не должно дублироваться в объекте. Если свойства используются несколько раз
+в пределах объекта, поведение LRS не определен; ожидается, что большинство LRS будет использовать существующий формат JSON. 
 
-__Note:__ The LRS is recommended to reject Statements containing additional properties. Additional properties in 
-Statements would mean that the Statement would not be interoperable with all LRSs. 
+__Note:__ В реализации LRS рекомендуется отклонять директивы, содержащие дубликаты. 
 
-###### <a name="2.2.s4"></a>LRS Requirements
+###### <a name="2.2.s4"></a>Требования к LRS
 
-* <a name="2.2.s4.b1"></a>The LRS MUST reject Statements
-    * <a name="2.2.s4.b1.b1"></a>with any null values (except inside extensions).
-    * <a name="2.2.s4.b1.b2"></a><a name="2.2.s4.b1.b3"></a>where the wrong data type is used, for example: 
-        * with strings where numbers are required, even if those strings contain numbers, or 
-        * with strings where booleans are required, even if those strings contain booleans.
-    * <a name="2.2.s4.b1.b4"></a>with any non-format-following key or value, including the empty string, where a
-      string with a particular format (such as mailto IRI, UUID, or IRI) is required.
-    * <a name="2.2.s4.b1.b5"></a>where the case of a key does not match the case specified in this specification.
-    * <a name="2.2.s4.b1.b6"></a>where the case of a value restricted to enumerated values does not match
-      an enumerated value given in this specification exactly.
-    * <a name="2.2.s4.b1.b7"></a>where a key or value is not allowed by this specification.
-    * <a name="2.2.s4.b1.b8"></a>containing IRL or IRI values without a scheme.
-* <a name="2.2.s4.b2"></a>The LRS MUST at least validate that the sequence of token lengths for language map keys
-matches the [RFC 5646](http://tools.ietf.org/html/rfc5646) standard.
+* <a name="2.2.s4.b1"></a>LRS ДОЛЖНЫ отклонять директивы
+    * <a name="2.2.s4.b1.b1"></a>с нулевым (null) значением (за исключением внутренних расширений).
+    * <a name="2.2.s4.b1.b2"></a><a name="2.2.s4.b1.b3"></a>Где используется неправильный тип данных, например: 
+        * Со строками, где числа необходимы, даже если эти строки содержат числа, или
+        * Со строками, где необходимы булевы значения, даже если эти строки содержат булевое значение.
+    * <a name="2.2.s4.b1.b4"></a>с любым неформатом (ключ или значение), в том числе пустая строка, где
+       требуется строка с определенным форматом (например,mailto IRI, UUID или IRI).
+    * <a name="2.2.s4.b1.b5"></a>где назначение ключа не соответствует случаям указанным в данном описании.
+    * <a name="2.2.s4.b1.b6"></a>если значение не соответствует значениям, ограниченным или явно указанным в данном документе.
+    * <a name="2.2.s4.b1.b7"></a>где ключ или значение недопустипы данной спецификацией.
+    * <a name="2.2.s4.b1.b8"></a>содержащие IRL или значения IRI без схемы.
+* <a name="2.2.s4.b2"></a>LRS ДОЛЖЕН по крайней мере проверить, что длины для ключей карты языка
+соответствует стандарту [RFC 5646](http://tools.ietf.org/html/rfc5646).
 * <a name="2.2.s4.b3"></a>The LRS MUST process and store numbers with at least the precision of IEEE 754 32-bit
 floating point numbers.
 * <a name="2.2.s4.b4"></a>The LRS MUST validate parameter values to the same standards required for values of the

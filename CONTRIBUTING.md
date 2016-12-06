@@ -1,4 +1,4 @@
-# xAPI-Spec-Ru
+# xAPI-SpecRu
 
 
 <a name="contributors"/>
