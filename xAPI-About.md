@@ -1,7 +1,9 @@
-# Experience API
+# Опытный API
+## Расширенное распределенное обучение (ADL) Co-Laboratories
 ## Advanced Distributed Learning (ADL) Co-Laboratories
+## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
 
->#### License
+>#### Timtroll (вольный перевод спецификации)
 
 >"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
 
@@ -9,15 +11,13 @@
 >in compliance with the License. You may obtain a copy of the License at
 >http://www.apache.org/licenses/LICENSE-2.0
 
->Unless required by applicable law or agreed to in writing, software distributed under the License 
->is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express 
->or implied. See the License for the specific language governing permissions and limitations under 
->the License."
+> Если не предусмотрено действующим законодательством или согласования в письменной форме, программное обеспечение распространяется 
+> "как есть" БЕЗ КАКИХ ЛИБО ГАРАНТИЙ И УСЛОВИЙ явных или подразумеваемых. Смотри Лицензию на родном языке которая регулирует права и
+> ограничения по данной Лицензии.
 
->This document was authored by members of the Experience API Working Group (see 
->list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of 
->Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please 
->send all feedback and inquiries to helpdesk@adlnet.gov  
+> Данный документ составлен членами Experience API Working Group (смотри список в [CONTRIBUTING.md](CONTRIBUTING.md#contributors))
+> при поддержке Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Все замечания 
+> и отклики посылайте сюда helpdesk@adlnet.gov
 
 ## Table of Contents
 *	Part One:	[About the Experience API](./xAPI-About.md#partone)  

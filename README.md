@@ -43,6 +43,6 @@
 чтобы вносить свои предложения.
 
 Митапы рабочей группы xAPI Spec
-первая, вторая и третья среды каждого месяца тут - GoToWebinar. Регистрация тут - [https://attendee.gotowebinar.com/register/7730918418468686596](https://attendee.gotowebinar.com/register/7730918418468686596)
+первая, вторая и третья среда каждого месяца тут - GoToWebinar. Регистрация тут - [https://attendee.gotowebinar.com/register/7730918418468686596](https://attendee.gotowebinar.com/register/7730918418468686596)
 
-Пожалуйста, обратитесь к [Руковотство](CONTRIBUTING.md) для внесения в список участников.
+Пожалуйста, обратитесь к [этому Руководству](CONTRIBUTING.md) для внесения в список участников.

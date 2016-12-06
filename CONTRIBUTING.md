@@ -1,4 +1,4 @@
-# xAPI-Spec
+# xAPI-Spec-Ru
 
 
 <a name="contributors"/>
@@ -120,7 +120,7 @@
 ><a name="reqparticipants"/>
 
 
-### Historical Contributors
+### Historical Contributors (без перевода)
 In collection of requirements for the Experience API, many people and
 organizations provided invaluable feedback to the SCORM, distributed learning efforts, and learning technology
 efforts in general. While not an exhaustive listing, the [white papers](http://scorm.com/tincanoverview/the-letsi-scorm-2-0-white-papers) gathered
@@ -131,7 +131,7 @@ Experience API specification.
 
 <a name="adlrole"/>
 
-#### ADL's Role in the Experience API
+#### ADL's Role in the Experience API (без перевода)
 The Advanced Distributed Learning (ADL) Initiative has taken on the roles of steward and facilitator in the
 development of the Experience API. The Experience API is seen as one piece of the ADL Total Learning
 Architecture (previously the Training and Learning Architecture), which facilitates learning anytime and
@@ -148,32 +148,30 @@ those involved in distributed learning that SCORM could not enable.
 * [Создание запроса, для решения проблемы](#make-pr)
 
 <a name='review-pr'/>
-### Review a Pull Request (PR)
+### Проверка запроса на изменение (Pull Request)
+
+
+Самый полезный **и** самый простой способ внести свой вклад в спецификацию пересмотреть существующие PR. Их вы найдете [тут]
 The most helpful **and** easiest way to contribute to the specification is to review an existing PR. You can find a
-[list of open PRs here](https://github.com/adlnet/xAPI-Spec/pulls). To review a PR you should:
+(https://github.com/adlnet/xAPI-Spec/pulls). Чтобы просмотреть PR Вам необходимо:
 
-* Read any issues linked to from the PR description and make sure you understand the issue the PR is designed to address.
-* Read any comments on both the issues and the PR to understand if the goals of the original issue have changed and if
-any solutions have been agreed.
-* Read the relevant sections in the [development version](https://github.com/adlnet/xAPI-Spec/blob/1.0.3/xAPI.md) of the specification.
-* Check the 'Files changed' tab of the PR and look at what has changed. Use the 'rich diff' option if that helps you to see
-the changes better. Check to see if what's been changed matches the solution you expected from reading the issue and comments.
-* Look for problems such as typos, unintended changes to behaviour and any text that's unclear.
-* Check that anything that's been removed has either been replaced or the removal was intentional (based on reading the issue and comments).
-* Check that the [Style Guide](#style-guide) has been followed.
-* If you spot any issues with the PR, add a comment describing these problems as best you can and suggesting how they can
-be resolved.
-* If the PR looks good to you, add a comment saying "+1".
-* If you are unsure about the PR or have questions, ask questions in the PR comments.
-* If you feel that the PR should never be merged, even with changes, add a comment starting with "-1" and explaining your
-reasons. If your comments run contrary to what's already been agreed in the issues, there might be some resistance, but that's ok if you have a strong argument!
+* Прочитайте все связанные с PR задачи и описания, и убедитесь, что вы понимаете.
+* Прочитайте все замечания по вопросам и связям PR, чтобы понять, не поменялись ли первоначальные цели, а предлагаемые решения были согласованы.
+* Прочитайте соответствующие разделы в [рабочей версии] (https://github.com/adlnet/xAPI-Spec/blob/1.0.3/xAPI.md) спецификации.
+* Проверьте "измененные файлы" вкладку PR и посмотрите на то, что поменялось. Проверьте соответствуют ли изменения решению, которого вы ожидали от чтения этого вопроса и комментариев по нему.
+* Обратите внимание на опечатки, непреднамеренные изменения в любой текст, которые вносят смысловые изменения.
+* Убедитесь, что все, что удаления не были преднамеренными (на основе прочтения задачи и комментариев).
+* Убедитесь, что [стили](#style-guide) правильные.
+* Если вы заметили какие-либо проблемы с PR, добавьте комментарий, описывающий эти проблемы как можно сделать лучше и предложите решение.
+* Если PR выглядит хорошо, добавьте комментарий с надписью "+1".
+* Если вы не уверены в PR или есть вопросы, задавайте вопросы в комментариях PR.
+* Если вы чувствуете, что PR никогда не должны быть объединены, даже с изменениями, добавьте комментарий "-1" и объяснение причины. Если ваши комментарии противоречат тому, что уже было согласовано в вопросах, может быть некоторое сопротивление, но это нормально, если у вас есть сильные аргументы!
 
-When reviewing a PR please don't:
+При просмотре PR пожалуйста, не делайте:
 
-* Review and leave no comment; always let us know you've had a look!
-* Suggest additional changes outside of what the PR was intended to achieve.
-[Raise a separate issue](https://github.com/adlnet/xAPI-Spec/issues/new) for additional changes.
-* Make vague criticisms without suggesting the changes to the PR that would meet those criticisms.
+* Обзор без комментария; всегда дайте нам знать, что вы думаете по тому или иному вопросу!
+* Предложения дополнительных изменения которые выходят за рамки текущего PR. Сделайте лучше отдельный запрос [Raise a separate issue](https://github.com/adlnet/xAPI-Spec/issues/new).
+* Неопределенных критических замечаний, не предполагая изменений в PR, которые решают ваши вопросы.
 
 <a name='suggest-solution'/>
 ### Suggest a solution
