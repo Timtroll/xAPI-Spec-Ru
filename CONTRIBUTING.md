@@ -174,22 +174,23 @@ The most helpful **and** easiest way to contribute to the specification is to re
 * Неопределенных критических замечаний, не предполагая изменений в PR, которые решают ваши вопросы.
 
 <a name='suggest-solution'/>
-### Suggest a solution
-The second most helpful and second easiest way to contribute to the specification is to suggest a solution to an issue that has been raised.
-Ideally the person who raises the issue will propose a solution, but this does not always happen and you may be able to improve a suggestion.
+### Предложить решение
 
-To suggest a solution to an issue you should:
+Второй самый полезный и самый простой способ внести свой вклад в разработку спецификации - предложить решение вопроса, который был поднят.
+В идеале человек, который поднимает вопрос должен предложит решение, но это не всегда происходит. Вы можете улучшить существующее предложение.
 
-* Read the issue and ensure you understand the problem being described. Ask questions if you need to.
-* Read the relevant sections in the [development version](https://github.com/adlnet/xAPI-Spec/blob/1.0.3/xAPI.md) of the specification.
-* Add a comment stating:
-    * Which sections of the specification you propose to change.
-    * A description of the proposed change.
-    * Any reasons for and against the change you're proposing.
+Для того, чтобы предложить решение вопроса вы должны:
 
-Once your suggestion has been discussed and agreed, add another comment summarising your understanding of the outcome of the discussion and including proposed wording for the changes you've suggested.
+* Прочитайть вопрос и убедиться, что понимаете описываемую проблему. Задавайте вопросы, если нужно.
+* Прочитайте соответствующие разделы в [рабочей версии] (https://github.com/adlnet/xAPI-Spec/blob/1.0.3/xAPI.md) спецификации.
+* Добавьте комментарий о том:
+    * Какие разделы спецификации вы предлагаете изменить.
+    * Описание предлагаемого изменения.
+    * Любые причины за и против изменения, которое вы предлагаете.
 
-Good and detailed suggested solutions for issues make it much easier to write PRa and helps to ensure those PRs are merged faster.
+После того, как ваше предложение было обсуждено и согласовано, добавьте еще один комментарий для подведения ваше итога.
+
+Хорошие и подробные предлагаемые решения в PR помогут обеспечить объединить все улечшения.
 
 <a name='make-pr'/>
 ### Make a Pull Request (PR)
@@ -378,7 +379,7 @@ And
 ### Headings
 Hashes (#) should be used for all headings following the following format:
 
-# Experience API (1 hash)
+# Опытный API (1 hash)
 ## 1 Statement (2 hashes)
 ### 1.1 Top level property (3 hashes)
 #### 1.1.1 next level (4 hashes)

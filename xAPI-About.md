@@ -19,29 +19,32 @@
 > при поддержке Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Все замечания 
 > и отклики посылайте сюда helpdesk@adlnet.gov
 
-## Table of Contents
-*	Part One:	[About the Experience API](./xAPI-About.md#partone)  
-	*	1.0.	[Introduction](./xAPI-About.md#introduction-partone) 
-	*	2.0.	[How To Use This Document](./xAPI-About.md#readingguidelines)  
-		*	2.1.	[MUST / SHOULD / MAY](./xAPI-About.md#def-must-should-may)  
-	 	*	2.2.	[Guidelines for Interpreting Descriptive Text and Tables](./xAPI-About.md#interpret-text-table)  
-	*	3.0.	[Serialization and JavaScript Object Notation](./xAPI-About.md#json)
-	*	4.0.	[Definitions](./xAPI-About.md#definitions) 
-	*	5.0.	[xAPI Components](./xAPI-About.md#xapi-components) 
-	*	6.0.	[Extending xAPI](./xAPI-About.md#extending-xapi) 
-	*	7.0.	[Profiles and Communities of Practice](./xAPI-About.md#COPs)  
-	*	[Appendices](./xAPI-About.md#append1)  
-		*	[Appendix A: Revision History](./xAPI-About.md#Appendix1A)  
-		*	[Appendix B: cmi5 Example](./xAPI-About.md#Appendix1B)  
-*	Part Two:	[Experience API Data](./xAPI-Data.md#parttwo)  
-	*	1.0.	[Documents](./xAPI-Data.md#documents) 
-	*	2.0.	[Statements](./xAPI-Data.md#statements)  
-		*	2.1.	[Purpose](./xAPI-Data.md#statement-purpose)  
-	 	*	2.2.	[Formatting Requirements](./xAPI-Data.md#dataconstraints) 
-	 	*	2.3.	[Statement Lifecycle](./xAPI-Data.md#lifecycle) 
-		 	*	2.3.1.	[Statement Immutability](./xAPI-Data.md#statement-immutability-and-exceptions) 
-		 	*	2.3.2.	[Voiding](./xAPI-Data.md#voided) 
-   		*	2.4.	[Statement Properties](./xAPI-Data.md#statement-properties)  
+## Содержание
+*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)  
+	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
+	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)  
+		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)  
+	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)  
+	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
+	*	4.0.	[Определения](./xAPI-About.md#definitions) 
+	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
+	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
+	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)  
+	*	[Приложения](./xAPI-About.md#append1)  
+		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)  
+		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)  
+*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)  
+	*	1.0.	[Документация](./xAPI-Data.md#documents) 
+	*	2.0.	[Формулировки](./xAPI-Data.md#statements)  
+		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)  
+	 	*	2.2.	[Требования к форматированию](./xAPI-Data.md#dataconstraints) 
+	 		*	2.2.s1 [Подробности](./xAPI-Data.md#datadetail) 
+	 		*	2.2.s2 [Требования](./xAPI-Data.md#datarequirements) 
+		 	*	2.3.s3	[Требования к Learning Record Provider](./xAPI-Data.md#lrsarequirements)
+	 	*	2.3.	[Директивы о жизненном цикле](./xAPI-Data.md#lifecycle) 
+		 	*	2.3.1.	[Директивы неизменяемости](./xAPI-Data.md#statement-immutability-and-exceptions) 
+		 	*	2.3.2.	[Аннулирование](./xAPI-Data.md#voided)
+   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)  
 	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)  
 	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)  
 	        *	2.4.3.	[Verb](./xAPI-Data.md#verb)  
@@ -53,89 +56,89 @@
 	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)  
 	        *	2.4.10.	[Version](./xAPI-Data.md#version)  
 	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)  
-    	*	2.5.	[Retrieval of Statements](./xAPI-Data.md#retrieval)   
-    	*	2.6.	[Signed Statements](./xAPI-Data.md#signature)  
+    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval)   
+    	*	2.6.	[Подписи](./xAPI-Data.md#signature)  
 	*	3.0.	[Metadata](./xAPI-Data.md#metadata)
 		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)  
 		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)  
-    *	4.0.	[Special Data Types and Rules](./xAPI-Data.md#special-data)  
-		*	4.1.	[Extensions](./xAPI-Data.md#miscext) 
-		*	4.2.	[Language Maps](./xAPI-Data.md#lang-maps)
+    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)  
+		*	4.1.	[Расширения](./xAPI-Data.md#miscext) 
+		*	4.2.	[Карта языков (Language Maps)](./xAPI-Data.md#lang-maps)
 		*	4.3.	[IRIs](./xAPI-Data.md#iris)
 		*	4.4.	[UUIDs](./xAPI-Data.md#uuids)
 		*	4.5.	[ISO 8601 Timestamps](./xAPI-Data.md#timestamps)
 		*	4.6.	[ISO 8601 Durations](./xAPI-Data.md#durations)
-	*	[Appendices](./xAPI-Data.md#append2)  
-		*	[Appendix A: Example Statements](./xAPI-Data.md#Appendix2A)  
-		*	[Appendix B: Example statement objects of different types](./xAPI-Data.md#Appendix2B)  
-		*	[Appendix C: Example definitions for Activities of type "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
-		*	[Appendix D: Example Signed Statement](./xAPI-Data.md#Appendix2D)  
-*	Part Three:	[Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)  
-	*	1.0.	[Requests](./xAPI-Communication.md#requests)
-		*	1.1.	[HEAD Request Implementation](./xAPI-Communication.md#httphead)  
+	*	[Приложения](./xAPI-Data.md#append2)  
+		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)  
+		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)  
+		*	[Приложение C: Примеры определений активностей для типа "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
+		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)  
+*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)  
+	*	1.0.	[Запросы](./xAPI-Communication.md#requests)
+		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)  
 	 	*	1.2.	[Headers](./xAPI-Communication.md#headers) 
-	 	*	1.3.	[Alternate Request Syntax](./xAPI-Communication.md#alt-request-syntax) 
+	 	*	1.3.	[Альтернативный синтаксис запроса](./xAPI-Communication.md#alt-request-syntax) 
 	 	*	1.4.	[Encoding](./xAPI-Communication.md#encoding) 
 	 	*	1.5.	[Content Types](./xAPI-Communication.md#content-types) 
 	        *	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
-	        *	1.5.2.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
-	*	2.0.	[Resources](./xAPI-Communication.md#datatransfer)   
-	 	*	2.1.	[Statement Resource](./xAPI-Communication.md#stmtres) 
-	 	*	2.2.	[Documents Resources](./xAPI-Communication.md#doctransfer) 
-	 	*	2.3.	[State Resource](./xAPI-Communication.md#stateres) 
-	 	*	2.4.	[Agents Resource](./xAPI-Communication.md#agentsres) 
-	 	*	2.5.	[Activities Resource](./xAPI-Communication.md#activitiesres) 
-	 	*	2.6.	[Agent Profile Resource](./xAPI-Communication.md#agentprofres) 
-	 	*	2.7.	[Activity Profile Resource](./xAPI-Communication.md#actprofres) 
-	 	*	2.8.	[About Resource](./xAPI-Communication.md#aboutresource) 
-   	*	3.0.	[Data Validation](./xAPI-Communication.md#validation)     
-    	*	3.1.	[Concurrency](./xAPI-Communication.md#concurrency)  
-    	*	3.2.	[Error Codes](./xAPI-Communication.md#errorcodes)
-    	*	3.3     [Versioning](./xAPI-Communication.md#versioning)  
-    *	4.0.	[Authentication](./xAPI-Communication.md#authentication)  
-		*	4.1.	[OAuth 1.0 Authentication Scenarios and Methods](./xAPI-Communication.md#authdefs) 
-		*	4.2.	[OAuth 1.0 Authorization Scope](./xAPI-Communication.md#oauthscope)
-    *	5.0	[Security](./xAPI-Communication.md#security)
-	*	[Appendices](./xAPI-Communication.md#append3)  
-		*	[Appendix A: Converting Statements to 1.0.0](./xAPI-Communication.md#Appendix3A)  
-		*	[Appendix B: Table of All Resources](./xAPI-Communication.md#Appendix3B)  
-		*	[Appendix C: Cross Domain Request Example](./xAPI-Communication.md#Appendix3C)  
+	        *	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
+	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer)   
+	 	*	2.1.	[Объявление Resource](./xAPI-Communication.md#stmtres) 
+	 	*	2.2.	[Документы Resources](./xAPI-Communication.md#doctransfer) 
+	 	*	2.3.	[Государственный Resource](./xAPI-Communication.md#stateres) 
+	 	*	2.4.	[Агентский Resource](./xAPI-Communication.md#agentsres) 
+	 	*	2.5.	[Активности Resource](./xAPI-Communication.md#activitiesres) 
+	 	*	2.6.	[Профиль агента Resource](./xAPI-Communication.md#agentprofres) 
+	 	*	2.7.	[Активности профиля Resource](./xAPI-Communication.md#actprofres) 
+	 	*	2.8.	[Описание Resource](./xAPI-Communication.md#aboutresource) 
+   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)     
+    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)  
+    	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
+    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)  
+    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)  
+		*	4.1.	[OAuth 1.0 сценарии и методы](./xAPI-Communication.md#authdefs) 
+		*	4.2.	[OAuth 1.0 объемы авторизации](./xAPI-Communication.md#oauthscope)
+    *	5.0	[Безопасность](./xAPI-Communication.md#security)
+	*	[Приложения](./xAPI-Communication.md#append3)  
+		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)  
+		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)  
+		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)  
 
 <a name="partone" />
-#Part One: About the Experience API
+#Часть первая: Про опытный API
 
 <a name="introduction-partone"></a>
-## 1.0 Introduction
+## 1.0 Введение
 
-The Experience API (xAPI) is a technical specification that aims to facilitate the documentation and communication of 
-learning experiences. It specifies a structure to describe learning experiences and defines how these descriptions can 
-be exchanged electronically.  
+Опытный API (XAPI) - техническая спецификация, которая направлена ​​на описание связей обучающих документов и опыта обучения.
+Она определяет структуры для описания учебного процесса и получения опыта и определяет, каким образом эти описания будут 
+храниться обменены в электронном виде.
 
-The xAPI is an effort of the Advanced Distributed Learning (ADL) Initiative.  ADL was established in 1997 to 
-standardize and modernize training and education management and delivery in the US. Since that time, there has been a 
-growing realization of the need to track learning experiences of individuals beyond formal, structured computer-based training. 
-In assessing candidates' suitability for positions or their capability for performing various tasks, there is a need 
-to consider a wide range of formal and informal learning experiences, both on and offline.  That information, 
-more often than not is scattered across a wide variety of sources.
+XAPI это результат инициативы Advanced Distributed Learning (ADL). ADL был создан в 1997 году для
+стандартизации и модернизации обучения и управления образованием и доставки в США. С тех пор наблюдается
+растущее осознание необходимости отслеживать опыта обучения лиц за пределами формального, структурированного компьютерного обучения.
+При оценке пригодности кандидатов на должности или их возможности для выполнения различных задач, возникает необходимость
+рассмотреть широкий спектр формального и неформального опыта обучения, в том числе в автономном режиме. Данная информация,
+собрана из широкого круга источников.
 
-Out of this perceived need, the xAPI community and specification were born. xAPI assumes that:
-  * There is a need to be able to analyze information about learning experiences and their outcomes distributed across 
-  a wide variety of sources, platforms and technologies.
-  * Developing a commonly-accepted framework for gathering, storing and exchanging this information represents the 
-  best way of achieving this.
+Именно поэтому родилось сообщество и спецификация XAPI. XAPI предполагает, что:
+  * Существует необходимость, анализа информации о получениия опыта в процессе обучения и его результатов, распределенных по
+  разным источникам.
+  * Разработка широко признается как ориентир для сбора, хранения и обмена этой информацией и представляет лучший способ
+  достижения этой цели.
 
-The goals of the xAPI are:
+XAPI разработан для того:
 
-* To make it easier to understand and compare learning experiences and their outcomes recorded across a wide 
-variety of contexts, platforms and technologies.
-* To maximize interoperability of services which create, gather, store and process information about learning experiences.
-* To provide a guide to those who want to build applications that conform to and implement this specification.
-* To provide criteria against which conformance to this specification can be tested.
+* Чтобы было легче понять и сравнить опыт обучения и его результаты которые регистрируются с помощью разных платформ и технологий.
+* Чтобы обеспечить максимальную совместимость услуг по сбору, хранению и обработке информации о получении опыта при обучении.
+* Чтобы обеспечить связное руководство для тех, кто хочет создавать приложения, которые будут соответствуют и реализовать эту спецификацию.
+* Чтобы обеспечить критерии для проверки соответствия данной спецификации.
 
-The document that follows sets out the xAPI specification which is designed to achieve these goals. 
+В документе изложены спецификации XAPI, которая предназначена для достижения перечисленных целей.
+
 <a name="readingguidelines"></a>
 
-## 2.0 How to Use This Document
+## 2.0 Как использовать данный документ
 
 This is a definitive document which describes how the Experience API is to be implemented.
 It is a technical document authored specifically for individuals and organizations implementing this 
@@ -166,7 +169,7 @@ data is transferred via HTTP requests and responses. Part three also defines sec
 exchange of information between the LRS and trusted "Clients".
 
 <a name="def-must-should-may"></a>
-### 2.1 MUST / SHOULD / MAY 
+### 2.1 Обязано быть / Как есть / Возможно будет
 There are three levels of obligation with regards to conformance to the xAPI specification identified by the terms 
 MUST, SHOULD and MAY. A service or system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. 
 Failing to meet a SHOULD requirement is not a violation of conformity, but goes against the recommendations of the specification. 
@@ -182,7 +185,7 @@ The xAPI Working Group strongly encourages adopters to implement these requireme
 requirements, while continuing to support other adopters that might not do so.
 
 <a name="interpret-text-table"></a>
-### 2.2 Guidelines for Interpreting Descriptive Text and Tables
+### 2.2 Руководство для Interpreting Descriptive Text и Tables
 As a rule of thumb, if the guideline appears technical or seems to be a requirement, interpret it 
 as such. This is especially true of longer, more, detailed explanations and of tables, each of which would 
 be unintuitive and/or lengthy to dissect into a list of requirements.
@@ -207,7 +210,7 @@ to determine a sensible approach. This specification tries to avoid vagueness an
 even if there no requirement in a given area.
 
 <a name="json"></a>
-## 3.0 Serialization and JavaScript Object Notation (JSON)
+## 3.0 Сериализация и JavaScript Object запись
 
 Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the 
 original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece 
@@ -230,39 +233,39 @@ All required properties are required to contain values.
 
 
 <a name="definitions"></a>
-## 4.0 Definitions  
+## 4.0 Определения  
 
-* [Activity](#def-activity)
-* [Activity Provider (AP)](#def-activity-provider)
-* [Actor](#def-actor)
-* [Application Programming Interface (API)](#def-api)
-* [Authentication](#def-authentication)
-* [Authorization](#def-authorization)
-* [Community of Practice](#def-community-of-practice)
-* [Document Profile Resource](#def-document-profile)
+* [Активности](#def-activity)
+* [Провайдер активностей (AP)](#def-activity-provider)
+* [Роль](#def-actor)
+* [API](#def-api)
+* [Аутентификация](#def-authentication)
+* [Авторизация](#def-authorization)
+* [Сообщество практиков](#def-community-of-practice)
+* [Описание профиля Resource](#def-document-profile)
 * [Endpoint](#def-endpoint)
-* [Experience API (xAPI)](#def-experience-api)
-* [Immutable](#def-immutable)
-* [Internationalized Resource Identifier (IRI)](#def-iri)
-* [Internationalized Resource Locator (IRL)](#def-irl)
-* [Inverse Functional Identifier](#def-inverse-functional-identifier)
-* [Learning Experience](#def-learning-experience)
-* [Learning Management System (LMS)](#def-learning-management-system)
-* [Learning Record](#def-learning-record)
-* [Learning Record Consumer (LRC)](#def-learning-record-consumer)
-* [Learning Record Provider (LRP)](#def-learning-record-provider)
-* [Learning Record Store (LRS)](#def-learning-record-store)
-* [Metadata Consumer](#def-metadata-consumer)
-* [Metadata Provider](#def-metadata-provider)
-* [Persona](#def-persona)
-* [Profile](#def-profile)
-* [Registration](#def-registration)
-* [Representational State Transfer (REST)](#def-rest)
-* [Service](#def-service)
-* [Statement](#def-statement)
+* [Опытный API (xAPI)](#def-experience-api)
+* [Неизменяемость](#def-immutable)
+* [Интернационализированный идентификатор ресурсов (IRI)](#def-iri)
+* [Интернационализированный указатель ресурса (IRL)](#def-irl)
+* [Обратный функциональный идентификатор](#def-inverse-functional-identifier)
+* [Опыт обучения](#def-learning-experience)
+* [Система управления обучением (LMS)](#def-learning-management-system)
+* [Обучающая запись](#def-learning-record)
+* [Обучающая запись юзера (LRC)](#def-learning-record-consumer)
+* [Обучающая запись провайдера (LRP)](#def-learning-record-provider)
+* [Хранилище обучающих записей (LRS)](#def-learning-record-store)
+* [Метаданный юзера](#def-metadata-consumer)
+* [Метаданные провайдера](#def-metadata-provider)
+* [Персона/Persona](#def-persona)
+* [Профиль/Profile](#def-profile)
+* [Регистрация](#def-registration)
+* [REST](#def-rest)
+* [Сервис/Service](#def-service)
+* [Директива/Statement](#def-statement)
 * [Tin Can API (TCAPI)](#def-tcapi)
-* [Verb](#def-verb)
-* [Vocabulary](#def-vocabulary)
+* [Термины](#def-verb)
+* [Словарь](#def-vocabulary)
 
 <a name="def-activity" ></a>
 
@@ -444,13 +447,13 @@ information on vocabularies, see the [xAPI Vocabulary Companion Specification](h
 
 <a name="xapi-components" ></a>
 
-## 5.0 xAPI Components
+## 5.0 xAPI компоненты
 
 This section explains and shows graphically how different pieces of xAPI can fit together.  
 
-##### Tracking Experiences
+##### Отслеживание опыта
 
-###### Figure 1: Data Flow in xAPI
+###### Figure 1: Потоки данных в xAPI
 ![Data Flow in xAPI](./xAPIDataFlow.jpg)
 
 Figure 1 shows the tracking of learning experiences. A learner has a learning experience. This experience could take place in an 
@@ -463,9 +466,9 @@ The Learning Record Provider creates Learning Records and sends them to one or m
 the Learning Records and makes them available to any authorized Client. A Learning Record Consumer (LRC) is a type of Client that accesses 
 Learning Records and makes use of them.
 
-##### Activity Data and Metadata
+##### Активности и метаданные
 
-###### Figure 2: xAPI Activity Data and Metadata
+###### Figure 2: xAPI активности и метаданные
 ![xAPI Activity Data and Metadata](./xAPIMetadata.jpg)
 
 Understanding how a single Activity (as uniquely identified by its IRI) is defined and described is a key concept in xAPI. 
@@ -479,9 +482,9 @@ canonical version of the Activity's metadata (LRS's Activity Definition) as a pr
 A Metadata Consumer can access metadata via the IRI for the authoritative version or can query the Activities Resource for the 
 canonical version.
 
-##### Agent and Persona Management
+##### Управление агентами и юзерами
 
-###### Figure 3: xAPI Agent and Persona Management
+###### Figure 3: xAPI Управление агентами и юзерами
 ![xAPI Activity Data and Metadata](./xAPIPersonas.jpg)
 
 xAPI grants the framework for allowing selective access to one's personal data. This is done through the management of what are 
@@ -501,7 +504,7 @@ that an LRS can take. It's also possible that some LRSs will have no mechanism f
 
 <a name="extending-xapi" ></a>
 
-## 6.0 Extending xAPI
+## 6.0 Опытный xAPI
 
 xAPI can be extended in a few ways. The most notable are Statement extensions, which allow great flexibility within Statements. 
 It is recommended that Communities of Practice agree on how to use extensions for their particular use cases and utilize 
@@ -515,7 +518,7 @@ those listed in this specification can be implemented and co-exist with the reso
 
 <a name="COPs" ></a>
 
-## 7.0 Profiles, Vocabularies, and Communities of Practice
+## 7.0 Профили и Комьюнити на практике
 
 xAPI strictly defines the structure of Statements, but is very flexible as to the contents of that structure. For example, the 
 specification requires that all Statements have a "verb" property, but does not restrict the values of that property; any Verb 
@@ -540,54 +543,10 @@ field is the [MedBiquitous Learning Experience Working Group](http://groups.medb
 
 
 <a name="append1"></a>
-## Appendices
+## Приложения
 
 <a name="Appendix1A"></a>
-### Appendix A: Revision History
-###### 0.8 (Project Tin Can API Deliverable) to 0.9 (March 31, 2012)  
-  
-Rustici Software, who delivered the Project Tin Can API, made modifications to the 
-API prior to the April 2012 Kickoff Meeting. It was voted in this meeting to 
-move those changes into the current specification and revision to 0.9.
-
-###### 0.90 to 0.95 (August 31, 2012)  
-
-"Core" Verbs and Activity types were removed from the specification. References 
-to these verbs in results, context, interactions, and Activity Definitions were 
-also removed. It was recommended that implementers prefer community defined 
-verbs to creating their own verbs.
-- Verbs, Activity types, and extension keys are now URIs
-- Restructured and added language around some of the other implementation details and scope.
-- Changed from using a person-centric view of Agents to a persona-centric view.
-- Friend of a Friend (FOAF) Agent merging requirement was removed.
-- Agent Objects now have exactly 1 uniquely identifying property, instead of at least one.
-
-###### 0.95 to 1.0.0 (April 26, 2013) 
-Various refinements and clarifications including:
-- Adding Attachments
-- Activity metadata is now stored as JSON rather than XML
-- Changes to voiding Statements
-- Clarification and naming of the Document APIs (later renamed to Document Resources)
-- Changes to querying the Statement API
-- Signed Statements
-
-[0.95...1.0.0](https://github.com/adlnet/xAPI-Spec/compare/0.95-spec...1.0.0)
-
-###### 1.0.0 to 1.0.1 (October 1, 2013)
-Clarifications and additional examples including:
-- Fixed various typos
-- Added additional examples in the appendices
-
-[1.0.0...1.0.1](https://github.com/adlnet/xAPI-Spec/compare/1.0.0...1.0.1)
-
-###### 1.0.1 to 1.0.2 (October 1, 2014)
-- Added optional/required to tables
-- Added missing table heading on Interaction components
-- Change yes/no to required/optional in attachments
-- Clarified intent of 'moreInfo' property
-
-[1.0.1...1.0.2](https://github.com/adlnet/xAPI-Spec/compare/1.0.1...1.0.2)
-
+### Приложениу A: Revision History
 ###### 1.0.2 to 1.0.3 (September 21, 2016)
 - Complete reorganization of the document into three parts
 - Many, many clarifications
@@ -599,10 +558,10 @@ Clarifications and additional examples including:
 [1.0.2...1.0.3](https://github.com/adlnet/xAPI-Spec/compare/1.0.2...1.0.3)
 
 <a name="Appendix1B"></a>
-### Appendix B: cmi5 Example 
+### Приложения B: cmi5 Примеры 
 
-The following example illustrates a statement following the cmi5 Community of Practice. It demonstrates use of extensions 
-and "category" contextActivities.
+Следующий пример иллюстрирует заявление следующего за cmi5 Сообщество практики. Он демонстрирует использование расширений
+и "category" contextActivities.
 
 ```
 {  
