@@ -546,7 +546,7 @@ field is the [MedBiquitous Learning Experience Working Group](http://groups.medb
 ## Приложения
 
 <a name="Appendix1A"></a>
-### Приложениу A: Revision History
+### Приложение A: История
 ###### 1.0.2 to 1.0.3 (September 21, 2016)
 - Complete reorganization of the document into three parts
 - Many, many clarifications

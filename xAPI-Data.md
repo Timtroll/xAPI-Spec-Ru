@@ -20,23 +20,23 @@
 > и отклики посылайте сюда helpdesk@adlnet.gov
 
 ## Содержание
-*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)  
+*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)
 	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
-	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)  
-		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)  
-	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)  
+	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)
+		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)
+	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)
 	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
 	*	4.0.	[Определения](./xAPI-About.md#definitions) 
 	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
 	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
-	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)  
-	*	[Приложения](./xAPI-About.md#append1)  
-		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)  
-		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)  
-*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)  
+	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)
+	*	[Приложения](./xAPI-About.md#append1)
+		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)
+		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)
+*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)
 	*	1.0.	[Документация](./xAPI-Data.md#documents) 
-	*	2.0.	[Формулировки](./xAPI-Data.md#statements)  
-		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)  
+	*	2.0.	[Формулировки](./xAPI-Data.md#statements)
+		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)
 	 	*	2.2.	[Требования к форматированию](./xAPI-Data.md#dataconstraints) 
 	 		*	2.2.s1 [Подробности](./xAPI-Data.md#datadetail) 
 	 		*	2.2.s2 [Требования](./xAPI-Data.md#datarequirements) 
@@ -44,45 +44,45 @@
 	 	*	2.3.	[Директивы о жизненном цикле](./xAPI-Data.md#lifecycle) 
 		 	*	2.3.1.	[Директивы неизменяемости](./xAPI-Data.md#statement-immutability-and-exceptions) 
 		 	*	2.3.2.	[Аннулирование](./xAPI-Data.md#voided)
-   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)  
-	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)  
-	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)  
-	        *	2.4.3.	[Verb](./xAPI-Data.md#verb)  
-	        *	2.4.4.	[Object](./xAPI-Data.md#object)  
-	        *	2.4.5.	[Result](./xAPI-Data.md#result)  
-	        *	2.4.6.	[Context](./xAPI-Data.md#context)  
-	        *	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)  
-	        *	2.4.8.	[Stored](./xAPI-Data.md#stored)  
-	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)  
-	        *	2.4.10.	[Version](./xAPI-Data.md#version)  
-	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)  
-    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval)   
-    	*	2.6.	[Подписи](./xAPI-Data.md#signature)  
+   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)
+	*	2.4.1.	[ID](./xAPI-Data.md#stmtid)
+	*	2.4.2.	[Actor](./xAPI-Data.md#actor)
+	*	2.4.3.	[Verb](./xAPI-Data.md#verb)
+	*	2.4.4.	[Object](./xAPI-Data.md#object)
+	*	2.4.5.	[Result](./xAPI-Data.md#result)
+	*	2.4.6.	[Context](./xAPI-Data.md#context)
+	*	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)
+	*	2.4.8.	[Stored](./xAPI-Data.md#stored)
+	*	2.4.9.	[Authority](./xAPI-Data.md#authority)
+	*	2.4.10.	[Version](./xAPI-Data.md#version)
+	*	2.4.11.	[Attachments](./xAPI-Data.md#attachments)
+	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval) 
+	*	2.6.	[Подписи](./xAPI-Data.md#signature)
 	*	3.0.	[Metadata](./xAPI-Data.md#metadata)
-		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)  
-		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)  
-    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)  
+		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)
+		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)
+*	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)
 		*	4.1.	[Расширения](./xAPI-Data.md#miscext) 
 		*	4.2.	[Карта языков (Language Maps)](./xAPI-Data.md#lang-maps)
 		*	4.3.	[IRIs](./xAPI-Data.md#iris)
 		*	4.4.	[UUIDs](./xAPI-Data.md#uuids)
 		*	4.5.	[ISO 8601 Timestamps](./xAPI-Data.md#timestamps)
 		*	4.6.	[ISO 8601 Durations](./xAPI-Data.md#durations)
-	*	[Приложения](./xAPI-Data.md#append2)  
-		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)  
-		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)  
+	*	[Приложения](./xAPI-Data.md#append2)
+		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)
+		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)
 		*	[Приложение C: Примеры определений активностей для типа "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
-		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)  
-*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)  
+		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)
+*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)
 	*	1.0.	[Запросы](./xAPI-Communication.md#requests)
-		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)  
+		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)
 	 	*	1.2.	[Headers](./xAPI-Communication.md#headers) 
 	 	*	1.3.	[Альтернативный синтаксис запроса](./xAPI-Communication.md#alt-request-syntax) 
 	 	*	1.4.	[Encoding](./xAPI-Communication.md#encoding) 
 	 	*	1.5.	[Content Types](./xAPI-Communication.md#content-types) 
-	        *	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
-	        *	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
-	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer)   
+	*	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
+	*	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
+	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer) 
 	 	*	2.1.	[Объявление Resource](./xAPI-Communication.md#stmtres) 
 	 	*	2.2.	[Документы Resources](./xAPI-Communication.md#doctransfer) 
 	 	*	2.3.	[Выделенные Resource](./xAPI-Communication.md#stateres) 
@@ -91,18 +91,18 @@
 	 	*	2.6.	[Профиль агента Resource](./xAPI-Communication.md#agentprofres) 
 	 	*	2.7.	[Активности профиля Resource](./xAPI-Communication.md#actprofres) 
 	 	*	2.8.	[Описание Resource](./xAPI-Communication.md#aboutresource) 
-   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)     
-    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)  
-    	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
-    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)  
-    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)  
+   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation) 
+	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)
+	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
+	*	3.3 [Версионность](./xAPI-Communication.md#versioning)
+*	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)
 		*	4.1.	[OAuth 1.0 сценарии и методы](./xAPI-Communication.md#authdefs) 
 		*	4.2.	[OAuth 1.0 объемы авторизации](./xAPI-Communication.md#oauthscope)
-    *	5.0	[Безопасность](./xAPI-Communication.md#security)
-	*	[Приложения](./xAPI-Communication.md#append3)  
-		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)  
-		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)  
-		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)  
+*	5.0	[Безопасность](./xAPI-Communication.md#security)
+	*	[Приложения](./xAPI-Communication.md#append3)
+		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)
+		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)
+		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)
 
 
 
@@ -117,7 +117,7 @@
 
 <a name="statements" /> 
 
-## <a name="2.0">2.0</a> Формулировки  
+## <a name="2.0">2.0</a> Формулировки
 
 <a name="statement-purpose"/> 
 ### <a name="2.1">2.1</a> Общая цель
@@ -162,129 +162,109 @@ __Note:__ В реализации LRS рекомендуется отклоня�
 ###### <a name="2.2.s4"></a>Требования к LRS
 
 * <a name="2.2.s4.b1"></a>LRS ДОЛЖНЫ отклонять директивы
-    * <a name="2.2.s4.b1.b1"></a>с нулевым (null) значением (за исключением внутренних расширений).
-    * <a name="2.2.s4.b1.b2"></a><a name="2.2.s4.b1.b3"></a>Где используется неправильный тип данных, например: 
-        * Со строками, где числа необходимы, даже если эти строки содержат числа, или
-        * Со строками, где необходимы булевы значения, даже если эти строки содержат булевое значение.
-    * <a name="2.2.s4.b1.b4"></a>с любым неформатом (ключ или значение), в том числе пустая строка, где
-       требуется строка с определенным форматом (например,mailto IRI, UUID или IRI).
-    * <a name="2.2.s4.b1.b5"></a>где назначение ключа не соответствует случаям указанным в данном описании.
-    * <a name="2.2.s4.b1.b6"></a>если значение не соответствует значениям, ограниченным или явно указанным в данном документе.
-    * <a name="2.2.s4.b1.b7"></a>где ключ или значение недопустипы данной спецификацией.
-    * <a name="2.2.s4.b1.b8"></a>содержащие IRL или значения IRI без схемы.
+* <a name="2.2.s4.b1.b1"></a>с нулевым (null) значением (за исключением внутренних расширений).
+* <a name="2.2.s4.b1.b2"></a><a name="2.2.s4.b1.b3"></a>Где используется неправильный тип данных, например: 
+* Со строками, где числа необходимы, даже если эти строки содержат числа, или
+* Со строками, где необходимы булевы значения, даже если эти строки содержат булевое значение.
+* <a name="2.2.s4.b1.b4"></a>с любым неформатом (ключ или значение), в том числе пустая строка, где
+   требуется строка с определенным форматом (например,mailto IRI, UUID или IRI).
+* <a name="2.2.s4.b1.b5"></a>где назначение ключа не соответствует случаям указанным в данном описании.
+* <a name="2.2.s4.b1.b6"></a>если значение не соответствует значениям, ограниченным или явно указанным в данном документе.
+* <a name="2.2.s4.b1.b7"></a>где ключ или значение недопустипы данной спецификацией.
+* <a name="2.2.s4.b1.b8"></a>содержащие IRL или значения IRI без схемы.
 * <a name="2.2.s4.b2"></a>LRS ДОЛЖЕН по крайней мере проверить, что длины для ключей карты языка
 соответствует стандарту [RFC 5646](http://tools.ietf.org/html/rfc5646).
-* <a name="2.2.s4.b3"></a>The LRS MUST process and store numbers with at least the precision of IEEE 754 32-bit
-floating point numbers.
-* <a name="2.2.s4.b4"></a>The LRS MUST validate parameter values to the same standards required for values of the
-same types in Statements. __Note:__ string parameter values are not quoted as they are in JSON.
-* <a name="2.2.s4.b5"></a>The LRS SHOULD treat all values as case sensitive unless specified otherwise.
-* <a name="2.2.s4.b6"></a>The LRS MAY use best-effort validation for IRL and IRI formats to satisfy the
-non-format-following rejection requirement.
-* <a name="2.2.s4.b7"></a>The LRS MAY use best-effort validation for language map keys to satisfy the
-non-format-following rejection requirement.
-* <a name="2.2.s4.b8"></a>Additional properties SHOULD* NOT be added to Statements and other objects unless explicitly 
-allowed by this specification and the LRS SHOULD* reject Statements containing such additional properties.
+* <a name="2.2.s4.b3"></a>LRS ДОЛЖЕН обрабатывать и хранить цифровые значения, по крайней мере по точности в соответствии IEEE 754 32-bit с плавающей точкой.
+* <a name="2.2.s4.b4"></a>LRS ДОЛЖЕН проверить в директиве значения параметров для полей и их тип. __Note:__ Значения параметров строк не указаны, поскольку они находятся в формате JSON.
+* <a name="2.2.s4.b5"></a>LRS ДОЛЖЕН обрабатывать все значения как регистрозависимы кроме конкретно указанных случаев.
+* <a name="2.2.s4.b6"></a>LRS МОЖЕТ использовать проверку IRL и его формат и может выдавать отказ в данном случае как несоответствие формату данных.
+* <a name="2.2.s4.b7"></a>LRS МОЖЕТ использовать проверку карты языков и его формат и может выдавать отказ в данном случае как несоответствие формату данных.
+* <a name="2.2.s4.b8"></a>Дополнительные свойства НЕ ДОЛЖНЫ добавляться к Директиве и другим объектов, если в явном виде
+это не допускается данной спецификацией и LRS ЖЕЛАТЕЛЬНО отклонять директивы, содержащие такие дополнительные свойства.
 
 <a name="lifecycle" />
 
-### <a name="2.3">2.3</a> Statement Lifecycle
+### <a name="2.3">2.3</a> Жизненный цикл директивы
 
-Statements are information about a tracked learning experience. Typically, the information represented in the 
-Statement has already happened. Thus, the natural language used in "display" or in the human-readable portion of 
-the Verb id will usually use the past tense.
+Директивы несут информацию о записанном ходе обучения. Как правило, информация/событие, представленные в
+Директиве уже произошли. Таким образом,  идентификатор "display" обычно используют в прошедшем времени.
 
-Statements are expected to be permanent. The only way to undo a Statement within this specification is to 
-[void it](#voided). Voiding does not destroy a Statement, rather indicates the evidence in the Statement is to be disregarded.
+Ожидается, что Директива, постоянна. Единственный способ отменить Директиву по данной спецификации является команда
+аннулировать [void it](#voided). Аннулирование не разрушает директиву, а указывает на то, что дынные в директиве не принимаются во внимание.
 
 <a name="statement-immutability-and-exceptions" />
 
-#### <a name="2.3.1">2.3.1</a> Statement Immutability
+#### <a name="2.3.1">2.3.1</a> Неизменяемость директивы
 
-Statements are immutable (they cannot be changed). The following are exceptions or areas not covered by this rule:
+Директивы неизменны (они не могут быть изменены). Ниже приведены области, не охваченные этим правилом:
 
-* <a name="2.3.1.b1"></a>Potential or required assignments of properties during LRS processing 
-("id", "authority", "stored", "timestamp", "version"). 
+* <a name="2.3.1.b1"></a>Необходимые задания свойств в процессе обработки LRS ("id", "authority", "stored", "timestamp", "version"). 
 
-* <a name="2.3.1.b2"></a>Activity Definitions referenced by a Statement. The content of Activity Definitions that are 
-referenced in Statements is not considered part of the Statement itself. This means a deep serialization of a Statement 
-into JSON will change if the referenced Activity Definition changes (see the [Statement Resource's](./xAPI-Communication.md#stmtres) "format" 
-parameter for details).  
+* <a name="2.3.1.b2"></a>Определения активностей связываются с директивой. Содержание определений активностей не рассматриваются как часть директивы, а только как ссылка. Это означает, что глубина директивы в JSON изменится только на количество ссылок на определения активностей  (смотри [Выделенные Resource's](./xAPI-Communication.md#stmtres) параметр "format" детализирует это).
 
-* <a name="2.3.1.b3"></a>Verbs referenced by a Statement. The "display" property of the Verb is not considered 
-part of the Statement itself (see the [Statement Resource's](./xAPI-Communication.md#stmtres) "format" parameter for details). 
+* <a name="2.3.1.b3"></a>Определения, на которые ссылается директива. Параметр "display" в определении не рассматривается как часть директивы, а только как ссылка (смотри [Выделенные Resource's](./xAPI-Communication.md#stmtres) параметр "format" детализирует это).
 
-* <a name="2.3.1.b4"></a>Serialization of Timestamp data. This is not considered part of the immutable Statement itself. 
-For example, the "timestamp" and "stored" properties of a Statement can be returned in a different timezone to the one with 
-which they were stored so long as the point in time referenced is not affected. 
-See [2.4.7 Timestamp](#timestamp) and [2.4.8 Stored](#stored) for details. 
+* <a name="2.3.1.b4"></a>Сериализация данных Timestamp. Это не считается частью неизменяемой директивы.
+Например, параметры Директивы "timestamp" и "stored" может быть возвращаться для другого часового пояса в отличие от того, в котором они хранились, и используемся как ссылка времени и ни на что не влияет.
+За подробностями обращайся к [2.4.7 Timestamp](#timestamp) и [2.4.8 Stored](#stored). 
 
-* <a name="2.3.1.b5"></a>Serialization of un-ordered lists. The list of Agents in a Group is not considered to be an ordered 
-list.  Thus, the LRS can return this list of Agents in any order. See [Groups](#group).
+* <a name="2.3.1.b5"></a>Сериализация неупорядоченных списков. Список агентов в группе не считается упорядоченным. IRS может возвратить этот список агентов в любом порядке. Смотри [Groups](#group).
 
-* <a name="2.3.1.b6"></a>Attachments. These are not part of Statements and an LRS will return Statements without 
-Attachments when a Client requests them (see the [Statement Resource's](./xAPI-Communication.md#stmtres) "attachments" parameter for details).
+* <a name="2.3.1.b6"></a>Вложения. Они не являются частью Директивы и LRS при запросе будет возвращать директивы без
+Вложений (смотри [Statement Resource's](./xAPI-Communication.md#stmtres) свойство "attachments").
 
-* <a name="2.3.1.b7"></a>Case sensitivity. Some properties are case insensitive and changes in case therefore do not affect 
-immutability. For example, the domain portion an e-mail address is case insensitive. It is recommended to use lowercase 
-for any case insensitive text. 
+* <a name="2.3.1.b7"></a>Чувствительность к регистру. Некоторые свойства нечувствительны к регистру и изменения регистра в таком случае не влияют на сущность. Например, часть домена электронной почты не чувствителена к регистру. Рекомендуется использовать нижний регистр
+для любого случая текста нечувствительного к регистру.
 
+Ниже перечислены случая НЕ ЯВЛЯЮЩИЕСЯ исключением:
 The following explicitly are **not** exceptions and **are** covered by this rule:
 
-* <a name="2.3.1.b8"></a>Result Duration. Due to variable lengths of months, years and even minutes and the flexible nature of the 
-"timestamp" property as representing either the start, middle or end of the experience, it is not possible for 
-an LRS to accurately deserialize the Result Duration and convert between units of time. For this reason, the 
-Result Duration is considered a string for purposes of Statement comparison. 
+* <a name="2.3.1.b8"></a>Результат Продолжительность. Из-за различной продолжительности месяцев, лет и даже минут, а гибкого характера 
+свойства "timestamp", ставящиеся в начале, середине или в конце факта обучения, не представляется возможным для
+LRS точно десериализовать Результат Продолжительность и преобразовать точно единицы измерения времени. По этой причине,
+Результат Продолжительность считается строка для целей составления отчета.
 
 <a name="statement-comparison-requirements" />
-###### <a name="2.3.1.s9"></a>Statement Comparision Requirements
-There are a number of scenarios outlined in this specification which require Statements to be
-compared to see if they match. In these scenarios, the following rules apply:
+###### <a name="2.3.1.s9"></a>Директива требование сравнения
+Есть целый ряд сценариев, изложенных в данном документе, которые требуют сравнения Директив. В этих случаях применяются следующие правила:
 
-* <a name="2.3.1.s9.b1"></a>Differences which could have been caused by 
-[exceptions to Statement immutability](#statement-immutability-and-exceptions) MUST be ignored.
-* <a name="2.3.1.s9.b2"></a>Differences relating to a different serialization of any properties not
-[listed as exceptions](#statement-immutability-and-exceptions) MUST not be ignored. 
+
+* <a name="2.3.1.s9.b1"></a>Различия вызванные [неизменностью Директивы](#statement-immutability-and-exceptions) ДОЛЖНЫ игнорироваться.
+* <a name="2.3.1.s9.b2"></a>Различия, относящиеся к отличию в сериализации любых свойств и не [описанные как исключения](#statement-immutability-and-exceptions) ДОЛЖНЫ игнорироваться.
 
 <a name="voided"/>
 
-#### <a name="2.3.2">2.3.2</a> Voiding
+#### <a name="2.3.2">2.3.2</a> Аннулирование
 
-###### <a name="2.3.2.s1"></a>Rationale
+###### <a name="2.3.2.s1"></a>Обоснование
 
-The certainty that an LRS has an accurate and complete collection of data is guaranteed by the fact that Statements 
-cannot be logically changed or deleted. This immutability of Statements is a key factor in enabling the distributed 
-nature of Experience API.
+Уверенность в том, что LRS имеет точную и полную коллекцию данных гарантируется тем, что Директивы
+не могут быть логически изменены или удалены. Эта неизменность Директив является ключевым фактором в обеспечении распределенной
+природы опытного API.
 
-However, not all Statements are perpetually valid once they have been issued. Mistakes or other factors could dictate 
-that a previously made Statement is marked as invalid. This is called "voiding a Statement" and the reserved 
-Verb `http://adlnet.gov/expapi/verbs/voided` is used for this purpose. Any Statement that voids another
-cannot itself be voided.
+Поскольку не все Директивы действуют постоянно, как только были созданы. Ошибки или другие факторы могут привести к тому,
+что ранее созданая Директива должна быть отменена как недействительная. Эта процедура называется "аннулировать Директиву" и для этой цели используется защищеные операторы `http://adlnet.gov/expapi/verbs/voided`. Любая Директива, которая аннулирует другую Директиву
+не может быть аннулирована.
 
-###### <a name="2.3.2.s2"></a>Requirements
+###### <a name="2.3.2.s2"></a>Требования
 
-* <a name="2.3.2.s2.b1"></a>When issuing a Statement that voids another, the Object of that voiding Statement MUST have 
-the "objectType" property set to `StatementRef`.
-* <a name="2.3.2.s2.b2"></a>When issuing a Statement that voids another, the Object of that voiding Statement MUST specify 
-the id of the Statement-to-be-voided by its "id" property.
-* <a name="2.3.2.s2.b3"></a>An LRS MUST consider a Statement it contains voided if and only if the Statement is not itself 
-a voiding Statement and the LRS also contains a voiding Statement referring to the first Statement.
-* <a name="2.3.2.s2.b4"></a>Upon receiving a Statement that voids another, the LRS SHOULD reject the entire request which 
-includes the voiding Statement with `403 Forbidden` if the request is not from a source authorized to void Statements.
-* <a name="2.3.2.s2.b5"></a>Upon receiving a Statement that voids another, the LRS SHOULD NOT* reject the request on the 
-grounds of the Object of that voiding Statement not being present. 
-* <a name="2.3.2.s2.b6"></a>Upon receiving a Statement that voids another, the LRS MAY roll back any changes to Activity or 
-Agent definitions which were introduced by the Statement that was just voided.
-* <a name="2.3.2.s2.b7"></a>A Learning Record Provider that wants to "unvoid" a previously voided Statement SHOULD issue 
-that Statement again under a new id.
+* <a name="2.3.2.s2.b1"></a>При создании Директивы, об аннулировании другой Директивы, объект такого оператора ДОЛЖЕН иметь свойство "objectType", а также ссылку установленую как `StatementRef`. 
+* <a name="2.3.2.s2.b2"></a>При создании Директивы, об аннулировании другой Директивы, объект такого оператора ДОЛЖЕН обозначить "id"
+аннулируемой Директивы по id.
+* <a name="2.3.2.s2.b3"></a>LRS ДОЛЖЕН убедится, что не анулирует сам себя и что данная Директива содержит ссылку установленую как `StatementRef`.
+* <a name="2.3.2.s2.b4"></a>При получении аннулирующей Директивы LRS МОЖЕТ отвергать ее как `403 Forbidden` в случае если она получена из неавторизованого для аннулирования источника.
+* <a name="2.3.2.s2.b5"></a>При повторном получении аннулирующей Директивы LRS НЕ ДОЛЖЕН * отклонять запрос на основании того, что аннулируемая Директива уже не существует. 
+* <a name="2.3.2.s2.b6"></a>При получении аннулирующей Директивы LRS МОЖЕТ откатить любые изменения в Активностях или
+Определениях Агентов, которые были введены в Директиве которая была аннулирована.
+* <a name="2.3.2.s2.b7"></a>Провайдер записей обучения, который хочет сделать "unvoid" присланой ранее Директивы аннулирования должен выдавать
+Такую Директиву каждый раз под новым номером.
 
-__Note:__ See ["Statement References"](#stmtref) in [When the "Object" is a Statement](#stmtasobj) 
-for details about making references to other Statements.  To see how voided statements behave when queried, 
-See [StatementRef](./xAPI-Communication.md#queryStatementRef) in Part 3).
+__Note:__ Смотри ["Сыылки Директивы"](#stmtref) в [Когда "Object" - Директива](#stmtasobj), подробная информация о ссылках на другие Директивы. Чтобы увидеть, как аннулированный Директивы ведут себя при запросе,
+Смотри [StatementRef](./xAPI-Communication.md#queryStatementRef) Части третьей).
 
-###### <a name="2.3.2.s3"></a>Example
+###### <a name="2.3.2.s3"></a>Примеры
 
-This example Statement voids a previous Statement which it identifies with the Statement id "e05aa883-acaf-40ad-bf54-02c8ce485fb0".
+Это пример Директивы, которая аннулирует предыдущую Директиву с id "e05aa883-acaf-40ad-bf54-02c8ce485fb0".
 
 ```
 {
@@ -304,22 +284,22 @@ This example Statement voids a previous Statement which it identifies with the S
 		"id" : "e05aa883-acaf-40ad-bf54-02c8ce485fb0"
 	}
 }
-```  
+```
 <a name="statement-properties"/> 
-### <a name="2.4">2.4</a> Statement Properties  
+### <a name="2.4">2.4</a> Свойства Директивы
 
-###### <a name="2.4.s1"></a>Details
-The details of each property of a Statement are described in the table below.  
+###### <a name="2.4.s1"></a>Подробнее
+
+Описание свойств Директивы описаны в таблице:
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойство</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.s1.table1.row1"><td>id</td><td>UUID</td>
-	<td>UUID assigned by LRS if not set by the Learning Record Provider.</td>
-	<td>Recommended</td></tr>
+	<td>UUID присвоенный LRS, если не устанавливается провайдером записей обучения.</td>
+	<td>рекомендуется</td></tr>
 	<tr id="2.4.s1.table1.row2"><td><a href="#actor">actor</a></td><td>Object</td>
-	<td>Whom the Statement is about, as an <a href="#agent">Agent</a> or 
-		<a href=#group>Group</a> Object.</td>
-	<td>Required</td></tr>
+	<td>С каким <a href="#agent">агентом</a> или <a href=#group>группой</a> Object связана Директива.</td>
+	<td>требуется</td></tr>
 	<tr id="2.4.s1.table1.row3"><td><a href="#verb">verb</a></td><td>Object</td>
 	<td>Action taken by the Actor.</td>
 	<td>Required</td></tr>
@@ -351,7 +331,7 @@ The details of each property of a Statement are described in the table below.
 	<tr id="2.4.s1.table1.row11">
 		<td><a href="#attachments">attachments</a></td>
 		<td>Ordered array of Attachment Objects</td>
-	    <td>Headers for Attachments to the Statement</td>
+	<td>Headers for Attachments to the Statement</td>
 	<td>Optional</td></tr>
 </table>
 
@@ -359,24 +339,24 @@ The details of each property of a Statement are described in the table below.
 
 An example of the simplest possible Statement using all properties that MUST or SHOULD be used.
 It is recommended to also populate optional properties where relevant. 
-When this Statement is returned from the LRS it will include some additional properties added by the LRS.  
+When this Statement is returned from the LRS it will include some additional properties added by the LRS.
 ```
 {
-    "id": "12345678-1234-5678-1234-567812345678",
-    "actor":{
-        "mbox":"mailto:xapi@adlnet.gov"
-    },
-    "verb":{
-        "id":"http://adlnet.gov/expapi/verbs/created",
-        "display":{
-            "en-US":"created"
-        }
-    },
-    "object":{
-        "id":"http://example.adlnet.gov/xapi/example/activity"
-    }
+"id": "12345678-1234-5678-1234-567812345678",
+"actor":{
+"mbox":"mailto:xapi@adlnet.gov"
+},
+"verb":{
+"id":"http://adlnet.gov/expapi/verbs/created",
+"display":{
+"en-US":"created"
 }
-```  
+},
+"object":{
+"id":"http://example.adlnet.gov/xapi/example/activity"
+}
+}
+```
 See [Appendix A: Example Statements](#Appendix2A) for more examples. 
 
 <a name="stmtid"/> 
@@ -395,7 +375,7 @@ be in standard string form).
 
 <a name="actor"/>
 
-#### <a name="2.4.2">2.4.2</a> Actor  
+#### <a name="2.4.2">2.4.2</a> Actor
 
 ###### <a name="2.4.2.s1"></a>Description
 The Actor defines who performed the action. The Actor of a Statement can be an Agent or a Group. 
@@ -422,8 +402,8 @@ The table below lists the properties of Agent Objects.
 	<tr id="2.4.2.1.s2.table1.row2"><td>name</td><td>String</td><td>Full name of the Agent.</td>
 	<td>Optional</td></tr>
 	<tr id="2.4.2.1.s2.table1.row3"><td colspan="2">see <a href="#inversefunctional"> 4.1.2.3 Inverse Functional Identifier</a></td>
-	    <td>An Inverse Functional Identifier unique to the Agent.</td>
-	    <td>Required</td></tr>
+	<td>An Inverse Functional Identifier unique to the Agent.</td>
+	<td>Required</td></tr>
 </table>
 
 
@@ -463,7 +443,7 @@ The table below lists all properties of an Identified Group.
 	<td>The members of this Group. This is an unordered list.</td>
 	<td>Optional</td></tr>
 	<tr id="2.4.2.2.s2.table2.row4"><td colspan="2">see <a href="#inversefunctional"> 4.1.2.3 Inverse Functional Identifier</a></td>
-	    <td>An Inverse Functional Identifier unique to the Group.</td><td>Required</td></tr>	
+	<td>An Inverse Functional Identifier unique to the Group.</td><td>Required</td></tr>	
 </table>
 
 ###### <a name="2.4.2.2.s3"></a>Requirements
@@ -619,7 +599,7 @@ by the Verb IRI.
 
 ###### <a name="2.4.3.s6"></a>Verb Display LRS Requirements
 
-The requirements below relate to the "display" property as returned by the LRS via the API.  
+The requirements below relate to the "display" property as returned by the LRS via the API.
 
 * <a name="2.4.3.s6.b1"></a>When queried for Statements with a Format of `exact`, the LRS MUST return the "display" property 
 exactly as included (or omitted) within the Statement.
@@ -649,11 +629,11 @@ from the meaning of the Verb but MAY alter the wording and tense displayed for t
 This example shows a Verb with the recommended properties set and using US English and Spanish languages. 
 ```
 {
-    "id":"http://example.com/xapi/verbs#defenestrated", 
-    "display":{
-        "en-US":"defenestrated",
-        "es" : "defenestrado" 
-    } 
+"id":"http://example.com/xapi/verbs#defenestrated", 
+"display":{
+"en-US":"defenestrated",
+"es" : "defenestrado" 
+} 
 }
 ``` 
 
@@ -989,8 +969,8 @@ Correct Responses Pattern with a value of:
 
 ```
 "correctResponsesPattern": [
-    "foo[,]bar",
-    "foo"
+"foo[,]bar",
+"foo"
 ]
 ``` 
 
@@ -1065,7 +1045,7 @@ Interaction Activity.
 
 ###### <a name="2.4.4.1.s15"></a>Details
 
-Interaction components are defined as follows:  
+Interaction components are defined as follows:
 
 <table>
 	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -1073,7 +1053,7 @@ Interaction components are defined as follows:
 		<td>id</td>
 		<td>String</td>
 		<td>Identifies the interaction component within the list.</td>
-        <td>Required</td>
+<td>Required</td>
 	<tr>
 		<td>description</td>
 		<td><a href="#lang-maps">Language Map</a></td>
@@ -1120,7 +1100,7 @@ See [Appendix C](#Appendix2C) for examples of Activity Definitions for each of t
 
 * <a name="2.4.4.2.s1.b1"></a>Statements that specify an Agent or Group as an Object MUST specify an "objectType" property. 
 
-See [Actor](#actor) for details regarding Agents.  
+See [Actor](#actor) for details regarding Agents.
 
 <a name="stmtasobj"/>
 
@@ -1159,7 +1139,7 @@ The table below lists all properties of a Statement Reference Object:
 ###### <a name="2.4.4.3.s5"></a>Example
 
 Assuming that some Statement has already been stored with the id `8f87ccde-bb56-4c2e-ab83-44982ef22df0`, the following example 
-shows how a comment could be issued on the original Statement, using a new Statement:  
+shows how a comment could be issued on the original Statement, using a new Statement:
 
 ```
 {
@@ -1519,16 +1499,16 @@ useful when the Object of the Statement is an Agent, not an Activity.
 
 ```
 {
-    "parent" : [
-        {
-            "id" : "http://example.adlnet.gov/xapi/example/test1"
-        }
-    ],
-    "grouping" : [
-        {
-            "id" : "http://example.adlnet.gov/xapi/example/Algebra1"
-        }
-    ]
+"parent" : [
+{
+"id" : "http://example.adlnet.gov/xapi/example/test1"
+}
+],
+"grouping" : [
+{
+"id" : "http://example.adlnet.gov/xapi/example/Algebra1"
+}
+]
 }
 ```
 
@@ -1768,7 +1748,7 @@ The table below lists all properties of the Attachment Object.
 		<td>IRL</td>
 		<td>An IRL at which the Attachment data can be retrieved, or from which it used 
 		to be retrievable. </td>
-        <td>Optional</td>
+<td>Optional</td>
 		<td></td>
 	</tr>
 </table>
@@ -1865,13 +1845,13 @@ the associated certificate chain.
 * <a name="2.6.s5.b1"></a>The LRS MUST reject requests to store Statements that contain malformed signatures, with `400 Bad Request`.
 * <a name="2.6.s5.b2"></a>The LRS SHOULD include a message in the response of a rejected statement. 
 * <a name="2.6.s5.b3"></a>In order to verify signatures are well formed, the LRS MUST do the following:
-    * <a name="2.6.s5.b3.b1"></a>Decode the JWS signature, and load the signed serialization of the Statement from the
-      JWS signature payload.
-    * <a name="2.6.s5.b3.b2"></a>Validate that the original Statement is logically equivalent to the received Statement. 
-    See [Statement comparision requirements](#statement-comparison-requirements).
-    * <a name="2.6.s5.b3.b3"></a>If the JWS header includes an X.509 certificate, validate the signature against that
-    certificate as defined in JWS.
-    * <a name="2.6.s5.b3.b4"></a>Validate that the signature requirements outlined above have been met. 
+* <a name="2.6.s5.b3.b1"></a>Decode the JWS signature, and load the signed serialization of the Statement from the
+  JWS signature payload.
+* <a name="2.6.s5.b3.b2"></a>Validate that the original Statement is logically equivalent to the received Statement. 
+See [Statement comparision requirements](#statement-comparison-requirements).
+* <a name="2.6.s5.b3.b3"></a>If the JWS header includes an X.509 certificate, validate the signature against that
+certificate as defined in JWS.
+* <a name="2.6.s5.b3.b4"></a>Validate that the signature requirements outlined above have been met. 
 
 __Note:__ The step of validating against the included X.509 certificate is intended as a
 way to catch mistakes in the signature, not as a security measure. The steps to authenticate
@@ -2101,7 +2081,7 @@ Statements sent to an LRS can be expected to keep precision to at least millisec
 ###### <a name="4.5.s1"></a>Requirements
 * <a name="4.5.s1.b1"></a>A Timestamp MUST be formatted according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations).
 * <a name="4.5.s1.b2"></a>A Timestamp SHOULD* be expressed using the format described in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt), which is a profile of ISO 8601. 
-* <a name="4.5.s1.b3"></a>A Timestamp MUST preserve precision to at least milliseconds (3 decimal points beyond seconds).  
+* <a name="4.5.s1.b3"></a>A Timestamp MUST preserve precision to at least milliseconds (3 decimal points beyond seconds).
 * <a name="4.5.s1.b4"></a>A Timestamp SHOULD* include the time zone.
 * <a name="4.5.s1.b5"></a>If the Timestamp includes a time zone, the LRS MAY be return the Timestamp using a different 
 timezone to the one originally used in the Statement so long as the point in time referenced is not affected. 
@@ -2161,11 +2141,11 @@ in seconds (or fractions of a second) there is no need to convert this to hours,
 
 <a name="append2"/>
 ## <a name="4.6.s3"></a>Appendices
-<a name="Appendix2A"/>  
+<a name="Appendix2A"/>
  
 ### <a name="A">Appendix A</a>: Example Statements
 
-Example of a simple Statement (line breaks are for display purposes only):  
+Example of a simple Statement (line breaks are for display purposes only):
 ```
 {
 	"id":"fd41c918-b88b-4b20-a0a5-a4c32391aaa0",
@@ -2195,14 +2175,14 @@ Example of a simple Statement (line breaks are for display purposes only):
 		}
 	}
 }
-```   
-Completion with Verb named "attempted" and Duration expressed in seconds (not converted to minutes and seconds):  
+``` 
+Completion with Verb named "attempted" and Duration expressed in seconds (not converted to minutes and seconds):
 ```
 {
 	"id":"7ccd3322-e1a5-411a-a67d-6a735c76f119",
 	"timestamp": "2015-12-18T12:17:00+00:00",
 	"actor":{
-        "objectType": "Agent",
+"objectType": "Agent",
 		"name":"Example Learner",
 		"mbox":"mailto:example.learner@adlnet.gov"
 	},
@@ -2232,143 +2212,143 @@ Completion with Verb named "attempted" and Duration expressed in seconds (not co
 		"duration": "PT1234S"
 	}
 }
-```  
+```
 A long example Statement showcasing most of the properties available. This example shows
-a Statement returned by an LRS including the "authority" and "stored" properties set by the LRS:  
+a Statement returned by an LRS including the "authority" and "stored" properties set by the LRS:
 ```
 {
-    "id": "6690e6c9-3ef0-4ed3-8b37-7f3964730bee",
-    "actor": {
-        "name": "Team PB",
-        "mbox": "mailto:teampb@example.com",
-        "member": [
-            {
-                "name": "Andrew Downes",
-                "account": {
-                    "homePage": "http://www.example.com",
-                    "name": "13936749"
-                },
-                "objectType": "Agent"
-            },
-            {
-                "name": "Toby Nichols",
-                "openid": "http://toby.openid.example.org/",
-                "objectType": "Agent"
-            },
-            {
-                "name": "Ena Hills",
-                "mbox_sha1sum": "ebd31e95054c018b10727ccffd2ef2ec3a016ee9",
-                "objectType": "Agent"
-            }
-        ],
-        "objectType": "Group"
-    },
-    "verb": {
-        "id": "http://adlnet.gov/expapi/verbs/attended",
-        "display": {
-            "en-GB": "attended",
-            "en-US": "attended"
-        }
-    },
-    "result": {
-        "extensions": {
-            "http://example.com/profiles/meetings/resultextensions/minuteslocation": "X:\\meetings\\minutes\\examplemeeting.one"
-        },
-        "success": true,
-        "completion": true,
-        "response": "We agreed on some example actions.",
-        "duration": "PT1H0M0S"
-    },
-    "context": {
-        "registration": "ec531277-b57b-4c15-8d91-d292c5b2b8f7",
-        "contextActivities": {
-            "parent": [
-                {
-                    "id": "http://www.example.com/meetings/series/267",
-                    "objectType": "Activity"
-                }
-            ],
-            "category": [
-                {
-                    "id": "http://www.example.com/meetings/categories/teammeeting",
-                    "objectType": "Activity",
-                    "definition": {
-			            "name": {
-			                "en": "team meeting"
-			            },
-			            "description": {
-			                "en": "A category of meeting used for regular team meetings."
-			            },
-			            "type": "http://example.com/expapi/activities/meetingcategory"
-			        }
-                }
-            ],
-            "other": [
-                {
-                    "id": "http://www.example.com/meetings/occurances/34257",
-                    "objectType": "Activity"
-                },
-                {
-                    "id": "http://www.example.com/meetings/occurances/3425567",
-                    "objectType": "Activity"
-                }
-            ]
-        },
-        "instructor" :
-        {
-        	"name": "Andrew Downes",
-            "account": {
-                "homePage": "http://www.example.com",
-                "name": "13936749"
-            },
-            "objectType": "Agent"
-        },
-        "team":
-        {
-        	"name": "Team PB",
-        	"mbox": "mailto:teampb@example.com",
-        	"objectType": "Group"
-        }, 
-        "platform" : "Example virtual meeting software",
-        "language" : "tlh",
-        "statement" : {
-        	"objectType":"StatementRef",
-        	"id" :"6690e6c9-3ef0-4ed3-8b37-7f3964730bee"
-        }
-        
-    },
-    "timestamp": "2013-05-18T05:32:34.804+00:00",
-    "stored": "2013-05-18T05:32:34.804+00:00",
-    "authority": {
-        "account": {
-            "homePage": "http://cloud.scorm.com/",
-            "name": "anonymous"
-        },
-        "objectType": "Agent"
-    },
-    "version": "1.0.0",
-    "object": {
-        "id": "http://www.example.com/meetings/occurances/34534",
-        "definition": {
-            "extensions": {
-                "http://example.com/profiles/meetings/activitydefinitionextensions/room": {"name": "Kilby", "id" : "http://example.com/rooms/342"}
-            },
-            "name": {
-                "en-GB": "example meeting",
-                "en-US": "example meeting"
-            },
-            "description": {
-                "en-GB": "An example meeting that happened on a specific occasion with certain people present.",
-                "en-US": "An example meeting that happened on a specific occasion with certain people present."
-            },
-            "type": "http://adlnet.gov/expapi/activities/meeting",
-            "moreInfo": "http://virtualmeeting.example.com/345256"
-        },
-        "objectType": "Activity"
-    }
+"id": "6690e6c9-3ef0-4ed3-8b37-7f3964730bee",
+"actor": {
+"name": "Team PB",
+"mbox": "mailto:teampb@example.com",
+"member": [
+{
+"name": "Andrew Downes",
+"account": {
+"homePage": "http://www.example.com",
+"name": "13936749"
+},
+"objectType": "Agent"
+},
+{
+"name": "Toby Nichols",
+"openid": "http://toby.openid.example.org/",
+"objectType": "Agent"
+},
+{
+"name": "Ena Hills",
+"mbox_sha1sum": "ebd31e95054c018b10727ccffd2ef2ec3a016ee9",
+"objectType": "Agent"
 }
-```  
-<a name="Appendix2B"/>  
+],
+"objectType": "Group"
+},
+"verb": {
+"id": "http://adlnet.gov/expapi/verbs/attended",
+"display": {
+"en-GB": "attended",
+"en-US": "attended"
+}
+},
+"result": {
+"extensions": {
+"http://example.com/profiles/meetings/resultextensions/minuteslocation": "X:\\meetings\\minutes\\examplemeeting.one"
+},
+"success": true,
+"completion": true,
+"response": "We agreed on some example actions.",
+"duration": "PT1H0M0S"
+},
+"context": {
+"registration": "ec531277-b57b-4c15-8d91-d292c5b2b8f7",
+"contextActivities": {
+"parent": [
+{
+"id": "http://www.example.com/meetings/series/267",
+"objectType": "Activity"
+}
+],
+"category": [
+{
+"id": "http://www.example.com/meetings/categories/teammeeting",
+"objectType": "Activity",
+"definition": {
+			"name": {
+			"en": "team meeting"
+			},
+			"description": {
+			"en": "A category of meeting used for regular team meetings."
+			},
+			"type": "http://example.com/expapi/activities/meetingcategory"
+			}
+}
+],
+"other": [
+{
+"id": "http://www.example.com/meetings/occurances/34257",
+"objectType": "Activity"
+},
+{
+"id": "http://www.example.com/meetings/occurances/3425567",
+"objectType": "Activity"
+}
+]
+},
+"instructor" :
+{
+	"name": "Andrew Downes",
+"account": {
+"homePage": "http://www.example.com",
+"name": "13936749"
+},
+"objectType": "Agent"
+},
+"team":
+{
+	"name": "Team PB",
+	"mbox": "mailto:teampb@example.com",
+	"objectType": "Group"
+}, 
+"platform" : "Example virtual meeting software",
+"language" : "tlh",
+"statement" : {
+	"objectType":"StatementRef",
+	"id" :"6690e6c9-3ef0-4ed3-8b37-7f3964730bee"
+}
+
+},
+"timestamp": "2013-05-18T05:32:34.804+00:00",
+"stored": "2013-05-18T05:32:34.804+00:00",
+"authority": {
+"account": {
+"homePage": "http://cloud.scorm.com/",
+"name": "anonymous"
+},
+"objectType": "Agent"
+},
+"version": "1.0.0",
+"object": {
+"id": "http://www.example.com/meetings/occurances/34534",
+"definition": {
+"extensions": {
+"http://example.com/profiles/meetings/activitydefinitionextensions/room": {"name": "Kilby", "id" : "http://example.com/rooms/342"}
+},
+"name": {
+"en-GB": "example meeting",
+"en-US": "example meeting"
+},
+"description": {
+"en-GB": "An example meeting that happened on a specific occasion with certain people present.",
+"en-US": "An example meeting that happened on a specific occasion with certain people present."
+},
+"type": "http://adlnet.gov/expapi/activities/meeting",
+"moreInfo": "http://virtualmeeting.example.com/345256"
+},
+"objectType": "Activity"
+}
+}
+```
+<a name="Appendix2B"/>
 
 ### <a name="B">Appendix B</a>: Examples of Statement's Objects of different types
 
@@ -2378,28 +2358,28 @@ This appendix provides one example of each.
 ###### <a name="B.s1"></a>Object is Activity
 ```
 {
-    "id": "http://www.example.co.uk/exampleactivity",
-    "definition": {
-        "name": {
-            "en-GB": "example activity",
-            "en-US": "example activity"
-        },
-        "description": {
-            "en-GB": "An example of an activity",
-            "en-US": "An example of an activity"
-        },
-        "type": "http://www.example.co.uk/types/exampleactivitytype"
-    },
-    "objectType": "Activity"
+"id": "http://www.example.co.uk/exampleactivity",
+"definition": {
+"name": {
+"en-GB": "example activity",
+"en-US": "example activity"
+},
+"description": {
+"en-GB": "An example of an activity",
+"en-US": "An example of an activity"
+},
+"type": "http://www.example.co.uk/types/exampleactivitytype"
+},
+"objectType": "Activity"
 }
 ```
 
 ###### <a name="B.s2"></a>Object is Agent
 ```
 {
-    "name": "Andrew Downes",
-    "mbox": "mailto:andrew@example.co.uk",
-    "objectType": "Agent"
+"name": "Andrew Downes",
+"mbox": "mailto:andrew@example.co.uk",
+"objectType": "Agent"
 }
 ```
 
@@ -2408,24 +2388,24 @@ This appendix provides one example of each.
 This example shows an Identified Group with members. 
 ```
 {
-    "name": "Example Group",
-    "account" : {
-    	"homePage" : "http://example.com/homePage",
-    	"name" : "GroupAccount"
-    },
-    "objectType": "Group",
-    "member": [
-        {
-            "name": "Andrew Downes",
-            "mbox": "mailto:andrew@example.com",
-            "objectType": "Agent"
-        },
-        {
-            "name": "Aaron Silvers",
-            "openid": "http://aaron.openid.example.org",
-            "objectType": "Agent"
-        }
-    ]
+"name": "Example Group",
+"account" : {
+	"homePage" : "http://example.com/homePage",
+	"name" : "GroupAccount"
+},
+"objectType": "Group",
+"member": [
+{
+"name": "Andrew Downes",
+"mbox": "mailto:andrew@example.com",
+"objectType": "Agent"
+},
+{
+"name": "Aaron Silvers",
+"openid": "http://aaron.openid.example.org",
+"objectType": "Agent"
+}
+]
 }
 ```
 
@@ -2436,25 +2416,25 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 
 ```
 {
-    "objectType": "SubStatement",
-    "actor" : {
-        "objectType": "Agent", 
-        "mbox":"mailto:agent@example.com" 
-    },
-    "verb" : { 
-        "id":"http://example.com/confirmed", 
-        "display":{
-            "en":"confirmed"
-        } 
-    },
-    "object": {
-        "objectType":"StatementRef",
+"objectType": "SubStatement",
+"actor" : {
+"objectType": "Agent", 
+"mbox":"mailto:agent@example.com" 
+},
+"verb" : { 
+"id":"http://example.com/confirmed", 
+"display":{
+"en":"confirmed"
+} 
+},
+"object": {
+"objectType":"StatementRef",
 		"id" :"9e13cefd-53d3-4eac-b5ed-2cf6693903bb"
-    }
+}
 }
 ```
 
-<a name="Appendix2C"/>  
+<a name="Appendix2C"/>
 
 ### <a name="C">Appendix C</a>: Example definitions for Activities of type `cmi.interaction`
 
@@ -2761,32 +2741,32 @@ via CR+LF (0x0D + 0x0A).
 
 ```
 {
-    "version": "1.0.0",
-    "id": "33cff416-e331-4c9d-969e-5373a1756120",
-    "actor": {
-        "mbox": "mailto:example@example.com",
-        "name": "Example Learner",
-        "objectType": "Agent"
-    },
-    "verb": {
-        "id": "http://adlnet.gov/expapi/verbs/experienced",
-        "display": {
-            "en-US": "experienced"
-        }
-    },
-    "object": {
-        "id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
-        "objectType": "Activity",
-        "definition": {
-            "name": {
-                "en-US": "Tax Tips & Information : How to File a Tax Return "
-            },
-            "description": {
-                "en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
-            }
-        }
-    },
-    "timestamp": "2013-04-01T12:00:00Z"
+"version": "1.0.0",
+"id": "33cff416-e331-4c9d-969e-5373a1756120",
+"actor": {
+"mbox": "mailto:example@example.com",
+"name": "Example Learner",
+"objectType": "Agent"
+},
+"verb": {
+"id": "http://adlnet.gov/expapi/verbs/experienced",
+"display": {
+"en-US": "experienced"
+}
+},
+"object": {
+"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
+"objectType": "Activity",
+"definition": {
+"name": {
+"en-US": "Tax Tips & Information : How to File a Tax Return "
+},
+"description": {
+"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
+}
+}
+},
+"timestamp": "2013-04-01T12:00:00Z"
 }
 ```
 
@@ -2860,11 +2840,11 @@ JWS Header. Note that along with specifying the algorithm, the certificate chain
 the signing certificate has been included.
 ```
 {
-    "alg": "RS256",
-    "x5c": [
-        "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"
-    ]
+"alg": "RS256",
+"x5c": [
+"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"
+]
 }
 ```
 
@@ -2876,42 +2856,42 @@ ew0KICAgICJhbGciOiAiUlMyNTYiLA0KICAgICJ4NWMiOiBbDQogICAgICAgICJNSUlEQVRDQ0FtcWdB
 Signed Statement
 ```
 {
-    "version": "1.0.0",
-    "id": "33cff416-e331-4c9d-969e-5373a1756120",
-    "actor": {
-        "mbox": "mailto:example@example.com",
-        "name": "Example Learner",
-        "objectType": "Agent"
-    },
-    "verb": {
-        "id": "http://adlnet.gov/expapi/verbs/experienced",
-        "display": {
-            "en-US": "experienced"
-        }
-    },
-    "object": {
-        "id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
-        "objectType": "Activity",
-        "definition": {
-            "name": {
-                "en-US": "Tax Tips & Information : How to File a Tax Return "
-            },
-            "description": {
-                "en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
-            }
-        }
-    },
-    "timestamp": "2013-04-01T12:00:00Z",
-    "attachments": [
-        {
-            "usageType": "http://adlnet.gov/expapi/attachments/signature",
-            "display": { "en-US": "Signature" },
-            "description": { "en-US": "A test signature" },
-            "contentType": "application/octet-stream",
-            "length": 4235,
-            "sha2": "672fa5fa658017f1b72d65036f13379c6ab05d4ab3b6664908d8acf0b6a0c634"
-        }
-    ]
+"version": "1.0.0",
+"id": "33cff416-e331-4c9d-969e-5373a1756120",
+"actor": {
+"mbox": "mailto:example@example.com",
+"name": "Example Learner",
+"objectType": "Agent"
+},
+"verb": {
+"id": "http://adlnet.gov/expapi/verbs/experienced",
+"display": {
+"en-US": "experienced"
+}
+},
+"object": {
+"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
+"objectType": "Activity",
+"definition": {
+"name": {
+"en-US": "Tax Tips & Information : How to File a Tax Return "
+},
+"description": {
+"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
+}
+}
+},
+"timestamp": "2013-04-01T12:00:00Z",
+"attachments": [
+{
+"usageType": "http://adlnet.gov/expapi/attachments/signature",
+"display": { "en-US": "Signature" },
+"description": { "en-US": "A test signature" },
+"contentType": "application/octet-stream",
+"length": 4235,
+"sha2": "672fa5fa658017f1b72d65036f13379c6ab05d4ab3b6664908d8acf0b6a0c634"
+}
+]
 }
 ```
 
