@@ -1,18 +1,18 @@
-# xAPI-Spec
+# xAPI-Spec-Ru
+## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
 
-This Github repository contains the xAPI Specification. xAPI is a learning
-technologies interoperability specification that describes communication
-about learner activity and experiences between technologies. The specification is
-divided into three documents:
+Данный репозитарий содержит xAPI спецификации. xAPI - это технология онлайн обучения  
+для совместимости коммуникации между серверной и веб частями для сохранения материалов 
+и полученного пользователями опыта Спецификация разделена на 3 документа
 
-*   Part One:   [About the Experience API](./xAPI-About.md#partone)
-*   Part Two:   [Experience API Data](./xAPI-Data.md#parttwo)
-*   Part Three: [Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)
+*   Часть первая:   [Описание опытного API](./xAPI-About.md#partone)
+*   Часть вторая:   [Experience API Data](./xAPI-Data.md#parttwo)
+*   Часть тертья:   [Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)
 
 ## Specification versions
 
 The current version of the specification is
-[1.0.3](https://github.com/adlnet/xAPI-Spec/).
+[1.0.3](https://github.com/adlnet/xAPI-Spec-Ru/).
 
 The next version of the specification has not been planned. 
 
@@ -20,7 +20,7 @@ The next version of the specification has not been planned.
 
 If when implementing the specification you find something is unclear or
 unhelpful, you can help to improve the specification by
-[raising an issue here](https://github.com/adlnet/xAPI-Spec/issues). When
+[raising an issue here](https://github.com/adlnet/xAPI-Spec-Ru/issues). When
 raising an issue, please give as much detail as you can in regards to:
 
 * Which part/parts of the specification you are reading.

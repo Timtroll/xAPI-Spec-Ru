@@ -1,7 +1,9 @@
 ## Please update your links to this document!
+## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
 
-This specification is divided now into three documents. Please update your links:
+Спецификация разделена на 3 документа:
 
-*   Part One:   [About the Experience API](./xAPI-About.md#partone)
-*   Part Two:   [Experience API Data](./xAPI-Data.md#parttwo)
-*   Part Three: [Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)
+*   Часть первая:   [Описание опытного API](./xAPI-About.md#partone)
+*   Часть вторая:   [Experience API Data](./xAPI-Data.md#parttwo)
+*   Часть тертья:   [Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)
+

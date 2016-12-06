@@ -1,7 +1,9 @@
-# Experience API
+# Опытный API
+## Расширенное распределенное обучение (ADL) Co-Laboratories
 ## Advanced Distributed Learning (ADL) Co-Laboratories
+## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
 
->#### License
+>#### Timtroll (вольный перевод спецификации)
 
 >"Copyright 2013 Advanced Distributed Learning (ADL) Initiative, U.S. Department of Defense
 
@@ -9,39 +11,40 @@
 >in compliance with the License. You may obtain a copy of the License at
 >http://www.apache.org/licenses/LICENSE-2.0
 
->Unless required by applicable law or agreed to in writing, software distributed under the License 
->is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express 
->or implied. See the License for the specific language governing permissions and limitations under 
->the License."
+> Если не предусмотрено действующим законодательством или согласования в письменной форме, программное обеспечение распространяется 
+> "как есть" БЕЗ КАКИХ ЛИБО ГАРАНТИЙ И УСЛОВИЙ явных или подразумеваемых. Смотри Лицензию на родном языке которая регулирует права и
+> ограничения по данной Лицензии.
 
->This document was authored by members of the Experience API Working Group (see 
->list in [CONTRIBUTING.md](CONTRIBUTING.md#contributors)) in support of the Office of the Deputy Assistant Secretary of 
->Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Please 
->send all feedback and inquiries to helpdesk@adlnet.gov  
+> Данный документ составлен членами Experience API Working Group (смотри список в [CONTRIBUTING.md](CONTRIBUTING.md#contributors))
+> при поддержке Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Все замечания 
+> и отклики посылайте сюда helpdesk@adlnet.gov
 
-## Table of Contents
-*	Part One:	[About the Experience API](./xAPI-About.md#partone)  
-	*	1.0.	[Introduction](./xAPI-About.md#introduction-partone) 
-	*	2.0.	[How To Use This Document](./xAPI-About.md#readingguidelines)  
-		*	2.1.	[MUST / SHOULD / MAY](./xAPI-About.md#def-must-should-may)  
-	 	*	2.2.	[Guidelines for Interpreting Descriptive Text and Tables](./xAPI-About.md#interpret-text-table)  
-	*	3.0.	[Serialization and JavaScript Object Notation](./xAPI-About.md#json)
-	*	4.0.	[Definitions](./xAPI-About.md#definitions) 
-	*	5.0.	[xAPI Components](./xAPI-About.md#xapi-components) 
-	*	6.0.	[Extending xAPI](./xAPI-About.md#extending-xapi) 
-	*	7.0.	[Profiles and Communities of Practice](./xAPI-About.md#COPs)  
-	*	[Appendices](./xAPI-About.md#append1)  
-		*	[Appendix A: Revision History](./xAPI-About.md#Appendix1A)  
-		*	[Appendix B: cmi5 Example](./xAPI-About.md#Appendix1B)  
-*	Part Two:	[Experience API Data](./xAPI-Data.md#parttwo)  
-	*	1.0.	[Documents](./xAPI-Data.md#documents) 
-	*	2.0.	[Statements](./xAPI-Data.md#statements)  
-		*	2.1.	[Purpose](./xAPI-Data.md#statement-purpose)  
-	 	*	2.2.	[Formatting Requirements](./xAPI-Data.md#dataconstraints) 
-	 	*	2.3.	[Statement Lifecycle](./xAPI-Data.md#lifecycle) 
-		 	*	2.3.1.	[Statement Immutability](./xAPI-Data.md#statement-immutability-and-exceptions) 
-		 	*	2.3.2.	[Voiding](./xAPI-Data.md#voided) 
-   		*	2.4.	[Statement Properties](./xAPI-Data.md#statement-properties)  
+## Содержание
+*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)  
+	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
+	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)  
+		*	2.1.	[Обязано быть / Как есть / Возможно будет ](./xAPI-About.md#def-must-should-may)  
+	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)  
+	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
+	*	4.0.	[Определения](./xAPI-About.md#definitions) 
+	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
+	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
+	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)  
+	*	[Приложения](./xAPI-About.md#append1)  
+		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)  
+		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)  
+*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)  
+	*	1.0.	[Документация](./xAPI-Data.md#documents) 
+	*	2.0.	[Формулировки](./xAPI-Data.md#statements)  
+		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)  
+	 	*	2.2.	[Требования к форматированию](./xAPI-Data.md#dataconstraints) 
+	 		*	2.2.s1 [Подробности](./xAPI-Data.md#datadetail) 
+	 		*	2.2.s2 [Требования](./xAPI-Data.md#datarequirements) 
+		 	*	2.3.s3	[Требования к Learning Record Provider](./xAPI-Data.md#lrsarequirements)
+	 	*	2.3.	[Директивы о жизненном цикле](./xAPI-Data.md#lifecycle) 
+		 	*	2.3.1.	[Директивы неизменяемости](./xAPI-Data.md#statement-immutability-and-exceptions) 
+		 	*	2.3.2.	[Аннулирование](./xAPI-Data.md#voided)
+   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)  
 	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)  
 	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)  
 	        *	2.4.3.	[Verb](./xAPI-Data.md#verb)  
@@ -53,96 +56,96 @@
 	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)  
 	        *	2.4.10.	[Version](./xAPI-Data.md#version)  
 	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)  
-    	*	2.5.	[Retrieval of Statements](./xAPI-Data.md#retrieval)   
-    	*	2.6.	[Signed Statements](./xAPI-Data.md#signature)  
+    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval)   
+    	*	2.6.	[Подписи](./xAPI-Data.md#signature)  
 	*	3.0.	[Metadata](./xAPI-Data.md#metadata)
 		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)  
 		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)  
-    *	4.0.	[Special Data Types and Rules](./xAPI-Data.md#special-data)  
-		*	4.1.	[Extensions](./xAPI-Data.md#miscext) 
-		*	4.2.	[Language Maps](./xAPI-Data.md#lang-maps)
+    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)  
+		*	4.1.	[Расширения](./xAPI-Data.md#miscext) 
+		*	4.2.	[Карта языков (Language Maps)](./xAPI-Data.md#lang-maps)
 		*	4.3.	[IRIs](./xAPI-Data.md#iris)
 		*	4.4.	[UUIDs](./xAPI-Data.md#uuids)
 		*	4.5.	[ISO 8601 Timestamps](./xAPI-Data.md#timestamps)
 		*	4.6.	[ISO 8601 Durations](./xAPI-Data.md#durations)
-	*	[Appendices](./xAPI-Data.md#append2)  
-		*	[Appendix A: Example Statements](./xAPI-Data.md#Appendix2A)  
-		*	[Appendix B: Example statement objects of different types](./xAPI-Data.md#Appendix2B)  
-		*	[Appendix C: Example definitions for Activities of type "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
-		*	[Appendix D: Example Signed Statement](./xAPI-Data.md#Appendix2D)  
-*	Part Three:	[Data Processing, Validation, and Security](./xAPI-Communication.md#partthree)  
-	*	1.0.	[Requests](./xAPI-Communication.md#requests)
-		*	1.1.	[HEAD Request Implementation](./xAPI-Communication.md#httphead)  
+	*	[Приложения](./xAPI-Data.md#append2)  
+		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)  
+		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)  
+		*	[Приложение C: Примеры определений активностей для типа "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
+		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)  
+*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)  
+	*	1.0.	[Запросы](./xAPI-Communication.md#requests)
+		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)  
 	 	*	1.2.	[Headers](./xAPI-Communication.md#headers) 
-	 	*	1.3.	[Alternate Request Syntax](./xAPI-Communication.md#alt-request-syntax) 
+	 	*	1.3.	[Альтернативный синтаксис запроса](./xAPI-Communication.md#alt-request-syntax) 
 	 	*	1.4.	[Encoding](./xAPI-Communication.md#encoding) 
 	 	*	1.5.	[Content Types](./xAPI-Communication.md#content-types) 
 	        *	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
 	        *	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
-	*	2.0.	[Resources](./xAPI-Communication.md#datatransfer)   
-	 	*	2.1.	[Statement Resource](./xAPI-Communication.md#stmtres) 
-	 	*	2.2.	[Documents Resources](./xAPI-Communication.md#doctransfer) 
-	 	*	2.3.	[State Resource](./xAPI-Communication.md#stateres) 
-	 	*	2.4.	[Agents Resource](./xAPI-Communication.md#agentsres) 
-	 	*	2.5.	[Activities Resource](./xAPI-Communication.md#activitiesres) 
-	 	*	2.6.	[Agent Profile Resource](./xAPI-Communication.md#agentprofres) 
-	 	*	2.7.	[Activity Profile Resource](./xAPI-Communication.md#actprofres) 
-	 	*	2.8.	[About Resource](./xAPI-Communication.md#aboutresource) 
-   	*	3.0.	[Data Validation](./xAPI-Communication.md#validation)     
-    	*	3.1.	[Concurrency](./xAPI-Communication.md#concurrency)  
-    	*	3.2.	[Error Codes](./xAPI-Communication.md#errorcodes)
-    	*	3.3     [Versioning](./xAPI-Communication.md#versioning)  
-    *	4.0.	[Authentication](./xAPI-Communication.md#authentication)  
-		*	4.1.	[OAuth 1.0 Authentication Scenarios and Methods](./xAPI-Communication.md#authdefs) 
-		*	4.2.	[OAuth 1.0 Authorization Scope](./xAPI-Communication.md#oauthscope)
-    *	5.0	[Security](./xAPI-Communication.md#security)
-	*	[Appendices](./xAPI-Communication.md#append3)  
-		*	[Appendix A: Converting Statements to 1.0.0](./xAPI-Communication.md#Appendix3A)  
-		*	[Appendix B: Table of All Resources](./xAPI-Communication.md#Appendix3B)  
-		*	[Appendix C: Cross Domain Request Example](./xAPI-Communication.md#Appendix3C)  
+	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer)   
+	 	*	2.1.	[Объявление Resource](./xAPI-Communication.md#stmtres) 
+	 	*	2.2.	[Документы Resources](./xAPI-Communication.md#doctransfer) 
+	 	*	2.3.	[Государственный Resource](./xAPI-Communication.md#stateres) 
+	 	*	2.4.	[Агентский Resource](./xAPI-Communication.md#agentsres) 
+	 	*	2.5.	[Активности Resource](./xAPI-Communication.md#activitiesres) 
+	 	*	2.6.	[Профиль агента Resource](./xAPI-Communication.md#agentprofres) 
+	 	*	2.7.	[Активности профиля Resource](./xAPI-Communication.md#actprofres) 
+	 	*	2.8.	[Описание Resource](./xAPI-Communication.md#aboutresource) 
+   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)     
+    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)  
+    	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
+    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)  
+    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)  
+		*	4.1.	[OAuth 1.0 сценарии и методы](./xAPI-Communication.md#authdefs) 
+		*	4.2.	[OAuth 1.0 объемы авторизации](./xAPI-Communication.md#oauthscope)
+    *	5.0	[Безопасность](./xAPI-Communication.md#security)
+	*	[Приложения](./xAPI-Communication.md#append3)  
+		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)  
+		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)  
+		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)  
+
 
 
 <a name="parttwo" />
-#Part Two: Experience API Data
+#Часть вторая: Данные опытного API
 
 <a name="documents" />
-## <a name="1.0">1.0</a> Documents
+## <a name="1.0">1.0</a> Документация
 
-The Experience API provides a facility for Learning Record Providers to save arbitrary data in the form of documents.  This data 
-is largely unstructured, which allows for flexibility.  Specifics on document behaviors can be found in [Part 3](./xAPI-Communication.md#doctransfer) 
+Опыт API предоставляет средство для обучения провайдеров записи для сохранения произвольных данных в виде документов. Эти данные
+в основном не структурированы, что обеспечивает гибкость. Специфические особенности поведения документов можно найти в [Part 3](./xAPI-Communication.md#doctransfer) 
 
 <a name="statements" /> 
 
-## <a name="2.0">2.0</a> Statements  
+## <a name="2.0">2.0</a> Формулировки  
 
 <a name="statement-purpose"/> 
-### <a name="2.1">2.1</a> Purpose
+### <a name="2.1">2.1</a> Общая цель
 
-Statements are the evidence for any sort of experience or event which is to be tracked in xAPI. 
-While Statements follow a machine readable JSON format, they can also easily be described
-using natural language. This can be extremely useful for the design process. Statements are 
-meant to be aggregated and analyzed to provide larger meaning for the overall experience than 
-just the sum of its parts.
+Директивы предназначены для любых событий, который будут отслеживаться в XAPI.
+Директивы описываются в формате JSON, они также могут быть легко описаны с использованием человеческого языка.
+Это может быть чрезвычайно полезным в процессе проектирования. Директивы могут быть обобщены и проанализированы,
+чтобы обеспечить больший эффект для получения опыта, чем просто сумма его частей.
 
 <a name="dataconstraints"/>
-### <a name="2.2">2.2</a> Formatting Requirements
+### <a name="2.2">2.2</a> Требования к форматированию
 
-###### <a name="2.2.s1"></a>Details
+###### <a name="datadetail"></a>Подробности
 
-All of the properties used in Statements are restricted to certain data types. For clarity, key requirements are 
-documented here, emphasizing where xAPI components have a responsibility to act in certain ways to be considered 
-conformant to this specification.
+Все свойства, используемые в Директивы должны быть определенных типов. Для совместимости с данный спецификацией компоненты XAPI обязаны действовать соответствюющим образом.
 
-###### <a name="2.2.s2"></a>Requirements
+###### <a name="datarequirements"></a>Требования
 
-* <a name="2.2.s2.b1"></a>Statements and other objects SHOULD NOT include properties with a value of an empty object. 
-* <a name="2.2.s2.b2"></a>A Statement MUST use each property no more than one time.
-* <a name="2.2.s2.b3"></a>A Statement MUST use "actor", "verb", and "object".
-* <a name="2.2.s2.b4"></a>A Statement MAY use its properties in any order.
-* <a name="2.2.s2.b5"></a>The LRS MUST NOT return a different serialization of any properties except those 
+* <a name="2.2.s2.b1"></a>Директивы и другие объекта НЕ ДОЛЖНЫ содержать пустой объект как свойство. 
+* <a name="2.2.s2.b2"></a>Директива ДОЛЖНА содержать только УНИКАЛЬНЫЕ названия свойств.
+* <a name="2.2.s2.b3"></a>Директива ДОЛЖНА содержать свойства "actor", "verb" и "object".
+* <a name="2.2.s2.b4"></a>Директива МОЖЕТ сожержать свойства в любом порядке.
+* <a name="2.2.s2.b5"></a>LRS НЕ ДОЛЖЕН возвращать отличные от перечисленных свойства - 
 [listed as exceptions](#statement-immutability-and-exceptions).
 
-###### <a name="2.2.s3"></a>Learning Record Provider Requirements
+###### <a name="lrsarequirements"></a>Требования к Learning Record Provider
+
+Следующие требования подтвердить особенно важные потребности, которые уже включены в других местах, чтобы обеспечить правильность применения. Определенные виды проверки, такие как валидация IRI и проверка, что свойства используются только один раз.
 
 The following requirements reiterate especially important requirements already included elsewhere, to emphasize,
 clarify, and provide implementation guidance.  Some types of validation, such as complete IRI validation and validation 
