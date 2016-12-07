@@ -432,104 +432,101 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 	<td>требуется</td></tr>
 </table>
 
-An Identified Group is used to uniquely identify a cluster of Agents.
+Идентифицированная группа используется для однозначной идентификации кластера агентов.
 
-The table below lists all properties of an Identified Group.
+В таблице перечислены все свойства идентифицированной группы.
 
 <table border ="1">
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.2.2.s2.table2.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>Required</td></tr>
 	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>Optional</td></tr>
 	<tr id="2.4.2.2.s2.table2.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
-	<td>The members of this Group. This is an unordered list.</td>
-	<td>Optional</td></tr>
-	<tr id="2.4.2.2.s2.table2.row4"><td colspan="2">see <a href="#inversefunctional"> 4.1.2.3 Inverse Functional Identifier</a></td>
-	<td>An Inverse Functional Identifier unique to the Group.</td><td>Required</td></tr>	
+	<td>Члены жтой Группы. Выводится несортированным списком.</td>
+	<td>по-желанию</td></tr>
+	<tr id="2.4.2.2.s2.table2.row4"><td colspan="2">see <a href="#inversefunctional"> 4.1.2.3 Обратный функциональный идентификатор</a></td>
+	<td>Обратный функциональный идентификатор уникален для Группы.</td><td>обязателен</td></tr>	
 </table>
 
-###### <a name="2.4.2.2.s3"></a>Requirements
+###### <a name="2.4.2.2.s3"></a>Требования
 
-* <a name="2.4.2.2.s3.b1"></a>A Learning Record Consumer MUST consider each Anonymous Group distinct even if it has an 
-identical set of members.
-* <a name="2.4.2.2.s3.b2"></a>Learning Record Providers SHOULD use an Identified Group when they wish to issue multiple 
-Statements, aggregate data or store and retrieve documents relating to a group.
-* <a name="2.4.2.2.s3.b3"></a>A Learning Record Provider MAY include a complete or partial list of Agents in the "member" 
-property of a given Anonymous or Identified Group.
-* <a name="2.4.2.2.s3.b4"></a>An LRS returning a Statement MAY return the list of Group members in any order.
+* <a name="2.4.2.2.s3.b1"></a>Обучающую запись Юзера ДОЛЖНА рассматриваться отдельно как Анонимная Группа, даже если она имеет
+идентичный набор членов Группы.
+* <a name="2.4.2.2.s3.b2"></a>Провайдеры Обучающей записи ЖЕЛАТЕЛЬНО использовать Идентифицированную Группу, когда хотят выпустить мульти-Директивы, сводные данные или хранить и извлекать документы, относящиеся к группе.
+* <a name="2.4.2.2.s3.b3"></a>Провайдер Обучающей записи МОЖЕТ включать полный или частичный список агентов в свойстве "member"
+как для Анонимной, так и для Идентифицированной группы.
+* <a name="2.4.2.2.s3.b4"></a>LRS возвращая Директиву МОЖЕТ вернуть список членов Группы в любом порядке.
 
-###### <a name="2.4.2.2.s4"></a>Requirements for Anonymous Groups
+###### <a name="2.4.2.2.s4"></a>Требования для Анонимной Группы
 
-* <a name="2.4.2.2.s4.b1"></a>An Anonymous Group MUST include a "member" property listing constituent Agents.
-* <a name="2.4.2.2.s4.b2"></a>An Anonymous Group MUST NOT contain Group Objects in the "member" identifiers.
+* <a name="2.4.2.2.s4.b1"></a>Анонимная Группа ДОЛЖНА содержать свойство "member" со списком Агентов.
+* <a name="2.4.2.2.s4.b2"></a>Анонимная Группа НЕ ДОЛЖНА содержать группу объектов в свойстве "member"
+.
+###### <a name="2.4.2.2.s5"></a>ребования для Идентифицированной Группы
 
-###### <a name="2.4.2.2.s5"></a>Requirements for Identified Groups
-
-* <a name="2.4.2.2.s5.b1"></a>An Identified Group MUST include exactly one (1) Inverse Functional Identifier.
-* <a name="2.4.2.2.s5.b2"></a>An Identified Group MUST NOT contain Group Objects in the "member" property.
-* <a name="2.4.2.2.s5.b3"></a>An Identified Group SHOULD NOT use Inverse Functional Identifiers that are also used 
-as Agent identifiers.
-* <a name="2.4.2.2.s5.b4"></a>An Identified Group MAY include a "member" property listing constituent Agents.
+* <a name="2.4.2.2.s5.b1"></a>Идентифицированная Группа ДОЛЖНА содержать только один (1) Обратный функциональный идентификатор.
+* <a name="2.4.2.2.s5.b2"></a>Идентифицированная Группа НЕ ДОЛЖНА содержать группу объектов в свойстве "member"
+* <a name="2.4.2.2.s5.b3"></a>Идентифицированная Группа НЕ МОЖЕТ использовать Обратные функциональные идентификаторы которые уже используются
+в качестве идентификаторов Агента.
+* <a name="2.4.2.2.s5.b4"></a>Идентифицированная Группа МОЖЕТ содержать свойство "member" со списком Агентов.
 
 <a name="inversefunctional">
 
-##### <a name="2.4.2.3">2.4.2.3</a> Inverse Functional Identifier
-###### <a name="2.4.2.3.s1"></a>Description
-An Inverse Functional Identifier (IFI) is a value of an Agent or Identified
-Group that is guaranteed to only ever refer to that Agent or Identified Group.
+##### <a name="2.4.2.3">2.4.2.3</a> Обратный функциональный идентификатор
+###### <a name="2.4.2.3.s1"></a>Описание
 
-###### <a name="2.4.2.3.s2"></a>Rationale
-Agents and Groups need to be uniquely identifiable in order for data to be stored and retrieved against them. 
-In an xAPI Statement this is accomplished using Inverse Functional Identifiers which are loosely inspired 
-by the widely accepted FOAF principle (see: [Friend Of A Friend](http://xmlns.com/foaf/spec/#term_Agent)).
+Обратный функциональный идентификатор (IFI) - значение, полученной из Агента и Идентифицированной группы, 
+что гарантирует что указанный Агент член Идентифицированной группы.
 
-###### <a name="2.4.2.3.s3"></a>Details
+###### <a name="2.4.2.3.s2"></a>Обоснование
 
-The table below lists all possible Inverse Functional Identifier properties.
+Агенты и Группы должны быть однозначно идентифицировать данные, которые будут сохранены и восстановлены.
+В Директиве XAPI это достигается с помощью Обратных функциональных идентификаторов, которые являются широко принятым принципом FOAF (смотри: [Friend Of A Friend](http://xmlns.com/foaf/spec/#term_Agent)).
+
+###### <a name="2.4.2.3.s3"></a>Подробности
+
+Таблица содержит список возможных свойств Обратного функционального идентификатора
 
 <table border ="1">
-	<tr><th>Property</th><th>Type</th><th>Description</th></tr>
-	<tr id="2.4.2.3.s3.table1.row1"><td><a href="http://xmlns.com/foaf/spec/#term_mbox">mbox</a></td><td>mailto IRI</td><td>The required format is "mailto:email address". <br>
-	Only email addresses that have only ever been and will ever be assigned to this Agent, 
-but no others, SHOULD be used for this property and mbox_sha1sum.</td></tr>
-	<tr id="2.4.2.3.s3.table1.row2"><td><a href="http://xmlns.com/foaf/spec/#term_mbox_sha1sum">mbox_sha1sum</a></td><td>String</td><td>The hex-encoded SHA1 hash of a mailto IRI (i.e. the value of an mbox property). An LRS MAY include Agents with a matching hash when a request is based on an mbox.</td></tr>
-	<tr id="2.4.2.3.s3.table1.row3"><td>openid</td><td>URI</td><td>An openID that uniquely identifies the Agent.</td></tr>
-	<tr id="2.4.2.3.s3.table1.row4"><td>account</td><td><a href="#agentaccount">Object</a></td><td>A user account on an existing system e.g. an LMS or intranet.</td></tr>	
+	<tr><th>Свойство</th><th>Тип</th><th>Описание</th></tr>
+	<tr id="2.4.2.3.s3.table1.row1"><td><a href="http://xmlns.com/foaf/spec/#term_mbox">mbox</a></td><td>mailto IRI</td><td>Требуемый формат "mailto:email address". <br>
+	Только email адреса когда-либо присвоенные Агенту, и не какие другие МОГУТ использоваться как своства и "mbox_sha1sum".
+</td></tr>
+	<tr id="2.4.2.3.s3.table1.row2"><td><a href="http://xmlns.com/foaf/spec/#term_mbox_sha1sum">mbox_sha1sum</a></td><td>String</td><td>
+	Нex-encoded SHA1 по mailto IRI (то есть значение свойства "mbox"). LRS МОЖЕТ включать Агентов с соответствующим хэшем, когда запрос основан на свойстве "mbox".</td></tr>
+	<tr id="2.4.2.3.s3.table1.row3"><t d>openid</td><td>URI</td><td>openID - уникальный идентификатор Агента.</td></tr>
+	<tr id="2.4.2.3.s3.table1.row4"><td>account</td><td><a href="#agentaccount">Object</a></td><td>Аккаунт Агента в текущей системе, например LMS или Интранет.</td></tr>	
 </table>
 
-###### <a name="2.4.2.3.s4"></a>Client Requirements
-* <a name="2.4.2.3.s4.b1"></a>The domain portions of email addresses are case insensitive. Clients SHOULD use lowercase 
-for the domain portion of the email address when calculating the SHA1 hash for the "mbox_sha1sum" property. 
+###### <a name="2.4.2.3.s4"></a>Требования к Client
+* <a name="2.4.2.3.s4.b1"></a>При написании адресов электронной почты часто используют разный регистр регистру. Клиентам ЖЕЛАТЕЛЬНО использовать нижний регистр при вычислении хэша SHA1 для свойства "mbox_sha1sum".
 
 <a name="agentaccount"/>
 
-##### <a name="2.4.2.4">2.4.2.4</a> Account Object
+##### <a name="2.4.2.4">2.4.2.4</a> Объекс аккаунта
 
-###### <a name="2.4.2.4.s1"></a>Description
+###### <a name="2.4.2.4.s1"></a>Описание
 
-A user account on an existing system, such as a private system (LMS or intranet) or a public
-system (social networking site).
+Юзерский аккаунт в существующей системе (например LMS или intranet ) или публичная система (как социальная сеть).
 
-###### <a name="2.4.2.4.s2"></a>Details
+###### <a name="2.4.2.4.s2"></a>Подробности
 
-* <a name="2.4.2.4.s2.b1"></a>If the system that provides the account Object uses OpenID, the Learning Record Provider
-SHOULD use the openid property instead of an account Object.
-* <a name="2.4.2.4.s2.b2"></a>If the Learning Record Provider is concerned about revealing personally identifiable
-information about an Agent or Group, it SHOULD use an opaque account name (for example an
-account number) to identify all Statements about a person while maintaining anonymity.
+* <a name="2.4.2.4.s2.b1"></a>Если система, которая предоставляет объект учетной записи использует OpenID, Провайдеру Обучающей Записи 
+следует использовать OpenId свойство вместо объекта.
+* <a name="2.4.2.4.s2.b2"></a>Если Провайдер Обучающей Записи обеспокоен явным указанием личной информации об Агенте или Группе, он должен использовать непрозрачное имя учетной записи (например id аккаунта), чтобы идентифицировать все Директивы о Агента, сохраняя при этом анонимность.
 
-The table below lists all properties of Account Objects.
+В таблице ниже перечислены все свойства объектов Account.
 
 <table border ="1">
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
-	<tr id="2.4.2.4.s2.table1.row1"><td>homePage</td><td>IRL</td><td>The canonical home page for the system the account is on. This is based on FOAF's accountServiceHomePage.</td>
-	<td>Required</td></tr>
-	<tr id="2.4.2.4.s2.table1.row2"><td>name</td><td>String</td><td>The unique id or name used to log in to this account. This is based on FOAF's accountName.</td><td>Required</td></tr>
+	<tr><th>Свойство</th><th>Тип</th><th>Описнаие</th><th>Обязательность</th></tr>
+	<tr id="2.4.2.4.s2.table1.row1"><td>homePage</td><td>IRL</td><td>Канонический домашняя страница для системы учетная запись включена. Свойство основано на описании FOAF accountServiceHomePage.</td>
+	<td>требуется</td></tr>
+	<tr id="2.4.2.4.s2.table1.row2"><td>name</td><td>String</td><td>Уникальный id или имя используемое для логгирования для этого аккаунта. Свойство основано на описании FOAF accountName.</td><td>Required</td></tr>
 </table>
 
 
-###### <a name="2.4.2.4.s3"></a>Example
+###### <a name="2.4.2.4.s3"></a>Привет
 
-This example shows an Agent identified by an opaque account:
+Этот пример показывает идентификатор агента для сокрытия личной информации:
 
 ```
 {
@@ -543,91 +540,84 @@ This example shows an Agent identified by an opaque account:
 
 <a name="verb"/>
 
-#### <a name="2.4.3">2.4.3</a> Verb
+#### <a name="2.4.3">2.4.3</a>Действия
 
-###### <a name="2.4.3.s1"></a>Description
+###### <a name="2.4.3.s1"></a>Описания
 
-The Verb defines the action between an Actor and an Activity. 
+Глагол определяют действия между Актером и Активностью.
 
-###### <a name="2.4.3.s2"></a>Rationale
+###### <a name="2.4.3.s2"></a>Обоснование
 
-The Verb in an xAPI Statement describes the action performed during the learning experience. The 
-xAPI does not specify any particular Verbs. (With one exception, namely the reserved 
-Verb [http://adlnet.gov/expapi/verbs/voided](#voided)). Instead, it defines how to create Verbs so that 
-communities of practice can establish Verbs meaningful to their members and make them available 
-for use by anyone. A predefined list of Verbs would be limited by definition and might not be able to 
-effectively capture all possible future learning experiences. 
+Действия в XAPI описывает активность, выполняемую в процессе обучения.
+XAPI не определяет каких-либо конкретных Действий. (За одним исключением, а именно зарезервированного Действия Аннулирование [http://adlnet.gov/expapi/verbs/voided](#voided)). Вместо этого он определяет, как создать Действия таким образом, чтобы
+сообщества практики могут установить Действия значимые для своих членов и сделать их доступными
+для использования кем-либо. Предварительно определенный список Действий будет ограничен по определению и не может быть в состоянии
+эффективно охватить все возможные вариации учебного процесса.
 
-###### <a name="2.4.3.s3"></a>Details
+###### <a name="2.4.3.s3"></a>Подробности
 
-Verbs appear in Statements as Objects consisting of an IRI and a set of display names 
-corresponding to multiple languages or dialects which provide human-readable meanings of the Verb. 
-The table below lists all properties of the Verb Object.
+Действия появляются в отчетах в качестве объектов, состоящих из IRI и набор отображаемых имен
+что соответствует нескольким языкам, которые обеспечивают удобочитаемость значений Действия.
+
+В таблице перечислены все свойства Действия.
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.3.s3.table1.row1">
 		<td>id</td>
 		<td>IRI</td>
-		<td>Corresponds to a Verb definition. Each Verb definition 
-			corresponds to the meaning of a Verb, not the word. 
+		<td>Соответствует определению Действия. Каждое определение Действия соответствует значению Действия, а не слову.
 		</td>
-		<td>Required</td>
+		<td>требуется</td>
 	</tr>
 	<tr id="2.4.3.s3.table1.row2">
 		<td>display</td>
-		<td><a href="#lang-map">Language Map</a></td>
-		<td>The human readable representation of the 
-			Verb in one or more languages. This does not have any impact on the 
-			meaning of the Statement, but serves to give a human-readable 
-			display of the meaning already determined by the chosen Verb.</td>
-		<td>Recommended</td>
+		<td><a href="#lang-map">Языковая карта</a></td>
+		<td>Представление Действия на одном или нескольких языках. Это не оказывает никакого влияния на
+			смысл Директивы.</td>
+		<td>рекомендуется</td>
 	</tr>
 </table>
 
-###### <a name="2.4.3.s4"></a>Verb Id Requirements
+###### <a name="2.4.3.s4"></a>Id Действия. Требования
 
-* <a name="2.4.3.s4.b1"></a>A system reading a Statement MUST use the Verb IRI to infer meaning.
-* <a name="2.4.3.s4.b2"></a>The IRI contained in an id SHOULD contain a human-readable portion which SHOULD provide meaning enough 
-for a person reviewing the raw statement to disambiguate the Verb from other similar (in syntax) Verbs.
-* <a name="2.4.3.s4.b3"></a>A single Verb IRI MUST NOT be used to refer to multiple meanings.
+* <a name="2.4.3.s4.b1"></a>Чтобы вывести значение Директива ДОЛЖНА использовать Действие IRI.
+* <a name="2.4.3.s4.b2"></a>РЕКОМЕНДУЕТСЯ, чтобы IRI содержал в идентификаторе читаемую часть, которая ОБЕСПЕВИТ понимание значения Действия
+для человека, и существенно отличаться от других Действий.
+* <a name="2.4.3.s4.b3"></a>Название одного Действия IRI НЕ ДОЛЖНО использоваться для обозначения нескольких Действий.
 
-###### <a name="2.4.3.s5"></a>Verb Display Learning Record Provider Requirements
+###### <a name="2.4.3.s5"></a>Действие Display Learning Record Provider Требования
 
-* <a name="2.4.3.s5.b1"></a>The "display" property SHOULD be used by all Statements.
-* <a name="2.4.3.s5.b2"></a>The "display" property MUST be used to illustrate the meaning which is already determined 
-by the Verb IRI.
+* <a name="2.4.3.s5.b1"></a>Свойство "display" РЕКОМЕНДУЕТСЯ использовать во всех Директивах.
+* <a name="2.4.3.s5.b2"></a>Свойство "display" ДОЛЖНО использоваться для отображения смысла, определяемого Действием IRI.
 
-###### <a name="2.4.3.s6"></a>Verb Display LRS Requirements
+###### <a name="2.4.3.s6"></a>Действие Display LRS Требования
 
-The requirements below relate to the "display" property as returned by the LRS via the API.
+Требования ниже, относятся к свойству "display", которое возвращается LRS через API.
 
-* <a name="2.4.3.s6.b1"></a>When queried for Statements with a Format of `exact`, the LRS MUST return the "display" property 
-exactly as included (or omitted) within the Statement.
-* <a name="2.4.3.s6.b2"></a>When queried for Statements with a Format of `ids`, the LRS SHOULD* NOT include the "display" property.
-* <a name="2.4.3.s6.b3"></a>When queried for Statements with a Format of `canonical`, the LRS SHOULD* return a 
-canonical Display for that Verb. 
-* <a name="2.4.3.s6.b4"></a>The LRS may determine its canonical Display based on the Verb's "display" property included within 
-Statements it receives, the "name" property included in the metadata as described in 
-[3.2 Hosted Metadata](#miscmeta), or the Verb's Display as defined in some other location.
+* <a name="2.4.3.s6.b1"></a>При запросе для Директивы с форматом `exact`, LRS ДОЛЖЕН возвращать свойство "display"
+точно так, каким, каким оно было в Директиве.
+* <a name="2.4.3.s6.b2"></a>При запросе для Директивы с форматом `ids`, LRS НЕ РЕКОМЕНДУЕТСЯ вставлять свойство "display".
+* <a name="2.4.3.s6.b3"></a>При запросе для Директивы с форматом `canonical`, LRS РЕКОМЕНДУЕТСЯ возвращать каноническое свойство "display" для этого Действия.
+* <a name="2.4.3.s6.b4"></a>LRS может определять его свойство "display" как каноническое на основе свойства "display" Действия которое в составе Директивы. А именно свойство "name", включенное в метаданныt, как описано в [3.2 Хостингt метаданных](#miscmeta), или Действие уже было определено в каком-то другом месте.
 
-###### <a name="2.4.3.s7"></a>Verb Display Learning Record Consumer Requirements
+###### <a name="2.4.3.s7"></a>Действие Display Learning Record Consumer Требования
 
-The requirements below relate to the display property as displayed to a user by a Learning Record Consumer. 
+Требования относятся к свойству "display", как показано для пользователя с помощью Learning Record Consumer. 
 
-* <a name="2.4.3.s7.b1"></a>The "display" property MUST NOT be used to alter the meaning of a Verb.
-* <a name="2.4.3.s7.b2"></a>A Learning Record Consumer MUST NOT use the "display" property to infer any meaning from the Statement.
-* <a name="2.4.3.s7.b3"></a>A Learning Record Consumer MUST NOT use the "display" property for any purpose other than 
-to display to a human. Using the "display" property for aggregation or categorization of Statements is an example of 
-violating this requirement. 
-* <a name="2.4.3.s7.b4"></a>A Learning Record Consumer displaying a Statement's Verb in a user interface MAY choose to render 
-the Verb's "display" property included within the Statement, the "name" property included in the metadata as described in 
-[3.2 Hosted Metadata](#miscmeta), or the Verb's Display as defined in some other location.
-* <a name="2.4.3.s7.b5"></a>Learning Record Consumers displaying a Statement's Verb MUST NOT display a word that differs 
-from the meaning of the Verb but MAY alter the wording and tense displayed for the purposes of human-readability. 
+* <a name="2.4.3.s7.b1"></a>Свойство "display" НЕ ДОЛЖЕН использоваться для изменения значения Действия.
+* <a name="2.4.3.s7.b2"></a>Learning Record Consumer НЕ ДОЛЖЕН использовать свойство "display" для вывода любого значения Директивы.
+* <a name="2.4.3.s7.b3"></a>Learning Record Consumer НЕ ДОЛЖЕН использовать свойство "display" для любых целей, кроме
+для отображения человеку. Использование свойства "display" для агрегации или категоризации Директив является примером
+нарушение этого требования.
+* <a name="2.4.3.s7.b4"></a>Отображение Learning Record Consumer Директивы по Действию в пользовательском интерфейсе может выбрать для отображения свойство Действия "display", которое включене в Директиру, свойство "name" включено в метаданныt, как описано в
+[3.2 Хостингt метаданных](#miscmeta), "display" Действия, как определено в каком-то другом месте.
+* <a name="2.4.3.s7.b5"></a>Learning Record Consumers которые показываются Действем Директивы НЕ ДОЛЖНЫ отображать слово, отличающееся от  значения глагола, но может изменять формулировку и ньюансы.
 
-###### <a name="2.4.3.s8"></a>Example
-This example shows a Verb with the recommended properties set and using US English and Spanish languages. 
+###### <a name="2.4.3.s8"></a>Пример
+
+Этот пример показывает Действие с рекомендованными свойствами с использованием US и Spanish яыков. 
+
 ```
 {
 "id":"http://example.com/xapi/verbs#defenestrated", 
@@ -638,43 +628,42 @@ This example shows a Verb with the recommended properties set and using US Engli
 }
 ``` 
 
-The Verb in the example above is included for illustrative purposes only. This is not intended to imply that
-a Verb with this meaning has been defined with this id. This applies to all example verbs given in this 
-specification document, with the exception of the reserved Verb [http://adlnet.gov/expapi/verbs/voided](#voided)).
+Действие в приведенном выше примере размещено только в иллюстративных целях. Это не подразумевает, что
+Действе с этим значением было определенж с этим идентификатором. Это относится ко всем примерам Действий, приведенных в этой
+спецификации документа, за исключением зарезервированного Действия Аннулирование [http://adlnet.gov/expapi/verbs/voided](#voided)). 
 			
-##### <a name="2.4.3.1">2.4.3.1</a> Use in Language and Semantics of Verbs
+##### <a name="2.4.3.1">2.4.3.1</a> Использование и семантика Действий
 
-###### <a name="2.4.3.1.s1"></a>Details
+###### <a name="2.4.3.1.s1"></a>Подробности
 
 _Semantics_
 
-The IRI represented by the Verb id identifies the particular semantics of a word, not the word itself. 
+IRI представленое Действием id identifies идентифицирует конкретную семантику слова, а не само слово.
 
-For example, the English word "fired" could mean different things depending on context, such as 
-"fired(a weapon)", "fired(a kiln)", or "fired(an employee)". In this case, an IRI identifies one of 
-these specific meanings. 
+Например, английское слово "fired" может означать разные вещи в зависимости от контекста, например,
+"fired(a weapon)"/"стрельба(об оружии)" или "fired(an employee)"/"уволен(сотрудникам)". В этом случае IRI идентифицирует одно из
+этих значений.
 
-The "display" property has some flexibility in tense. While the human-readable portion of the Verb id will 
-usually use the past tense, if conjugating verbs to another tense within the "display" property makes the most
-sense for the Statement as a whole, it is allowed.
+Свойство "display" имеет некоторые ньюансы. Например человек воспринимает эту часть Действия как событие в  прошедшем времени. В целом допускается использовать свойство "display" для общих описаний.
+
 
 _Language_
 
-A Verb in the Experience API is an IRI, and denotes a specific meaning not tied to any particular language. 
+Действие в Опытном API является IRI, и обозначает конкретное значение без привязки к конкретному языку.
 
-For example, a particular Verb IRI such as http://example.org/firearms#fire might denote the action of firing a gun, 
-or the Verb IRI http://example.com/فعل/خواندن might denote the action of reading a book. 
+Например, Действиe IRI http://example.org/firearms#fire может обозначать действие стрельбы из пистолета,
+А Действие IRI http://example.com/فعل/خواندن может обозначать действие, чтения книги.
 
 <a name="object"/>
 
-#### <a name="2.4.4">2.4.4</a> Object
+#### <a name="2.4.4">2.4.4</a> Объект/Object
 
-###### <a name="2.4.4.s1"></a>Description
+###### <a name="2.4.4.s1"></a>Описание
 
-The Object defines the thing that was acted on. The Object of a Statement can be an Activity, Agent/Group, 
-SubStatement, or Statement Reference.
+Объект/Object определяет предмет, с которым производили Действие. Объект Директивы может быть Активность, Агент/Группа,
+ПодДирективы или Директива Reference.
 
-Some examples:
+Несколько примеров:
 
 * <a name="2.4.4.s1.b1"></a>The Object is an Activity: "Jeff wrote an essay about hiking."
 

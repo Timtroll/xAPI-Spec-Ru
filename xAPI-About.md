@@ -20,23 +20,23 @@
 > и отклики посылайте сюда helpdesk@adlnet.gov
 
 ## Содержание
-*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)  
+*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)
 	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
-	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)  
-		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)  
-	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)  
+	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)
+		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)
+	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)
 	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
 	*	4.0.	[Определения](./xAPI-About.md#definitions) 
 	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
 	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
-	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)  
-	*	[Приложения](./xAPI-About.md#append1)  
-		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)  
-		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)  
-*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)  
+	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)
+	*	[Приложения](./xAPI-About.md#append1)
+		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)
+		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)
+*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)
 	*	1.0.	[Документация](./xAPI-Data.md#documents) 
-	*	2.0.	[Формулировки](./xAPI-Data.md#statements)  
-		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)  
+	*	2.0.	[Формулировки](./xAPI-Data.md#statements)
+		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)
 	 	*	2.2.	[Требования к форматированию](./xAPI-Data.md#dataconstraints) 
 	 		*	2.2.s1 [Подробности](./xAPI-Data.md#datadetail) 
 	 		*	2.2.s2 [Требования](./xAPI-Data.md#datarequirements) 
@@ -44,45 +44,45 @@
 	 	*	2.3.	[Директивы о жизненном цикле](./xAPI-Data.md#lifecycle) 
 		 	*	2.3.1.	[Директивы неизменяемости](./xAPI-Data.md#statement-immutability-and-exceptions) 
 		 	*	2.3.2.	[Аннулирование](./xAPI-Data.md#voided)
-   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)  
-	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)  
-	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)  
-	        *	2.4.3.	[Verb](./xAPI-Data.md#verb)  
-	        *	2.4.4.	[Object](./xAPI-Data.md#object)  
-	        *	2.4.5.	[Result](./xAPI-Data.md#result)  
-	        *	2.4.6.	[Context](./xAPI-Data.md#context)  
-	        *	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)  
-	        *	2.4.8.	[Stored](./xAPI-Data.md#stored)  
-	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)  
-	        *	2.4.10.	[Version](./xAPI-Data.md#version)  
-	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)  
-    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval)   
-    	*	2.6.	[Подписи](./xAPI-Data.md#signature)  
+   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)
+	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)
+	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)
+	        *	2.4.3.	[Действия](./xAPI-Data.md#verb)
+	        *	2.4.4.	[Object](./xAPI-Data.md#object)
+	        *	2.4.5.	[Result](./xAPI-Data.md#result)
+	        *	2.4.6.	[Context](./xAPI-Data.md#context)
+	        *	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)
+	        *	2.4.8.	[Stored](./xAPI-Data.md#stored)
+	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)
+	        *	2.4.10.	[Version](./xAPI-Data.md#version)
+	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)
+    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval) 
+    	*	2.6.	[Подписи](./xAPI-Data.md#signature)
 	*	3.0.	[Metadata](./xAPI-Data.md#metadata)
-		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)  
-		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)  
-    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)  
+		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)
+		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)
+    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)
 		*	4.1.	[Расширения](./xAPI-Data.md#miscext) 
 		*	4.2.	[Карта языков (Language Maps)](./xAPI-Data.md#lang-maps)
 		*	4.3.	[IRIs](./xAPI-Data.md#iris)
 		*	4.4.	[UUIDs](./xAPI-Data.md#uuids)
 		*	4.5.	[ISO 8601 Timestamps](./xAPI-Data.md#timestamps)
 		*	4.6.	[ISO 8601 Durations](./xAPI-Data.md#durations)
-	*	[Приложения](./xAPI-Data.md#append2)  
-		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)  
-		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)  
+	*	[Приложения](./xAPI-Data.md#append2)
+		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)
+		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)
 		*	[Приложение C: Примеры определений активностей для типа "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
-		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)  
-*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)  
+		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)
+*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)
 	*	1.0.	[Запросы](./xAPI-Communication.md#requests)
-		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)  
+		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)
 	 	*	1.2.	[Headers](./xAPI-Communication.md#headers) 
 	 	*	1.3.	[Альтернативный синтаксис запроса](./xAPI-Communication.md#alt-request-syntax) 
 	 	*	1.4.	[Encoding](./xAPI-Communication.md#encoding) 
 	 	*	1.5.	[Content Types](./xAPI-Communication.md#content-types) 
 	        *	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
 	        *	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
-	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer)   
+	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer) 
 	 	*	2.1.	[Объявление Resource](./xAPI-Communication.md#stmtres) 
 	 	*	2.2.	[Документы Resources](./xAPI-Communication.md#doctransfer) 
 	 	*	2.3.	[Государственный Resource](./xAPI-Communication.md#stateres) 
@@ -91,18 +91,18 @@
 	 	*	2.6.	[Профиль агента Resource](./xAPI-Communication.md#agentprofres) 
 	 	*	2.7.	[Активности профиля Resource](./xAPI-Communication.md#actprofres) 
 	 	*	2.8.	[Описание Resource](./xAPI-Communication.md#aboutresource) 
-   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)     
-    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)  
+   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)
+    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)
     	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
-    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)  
-    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)  
+    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)
+    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)
 		*	4.1.	[OAuth 1.0 сценарии и методы](./xAPI-Communication.md#authdefs) 
 		*	4.2.	[OAuth 1.0 объемы авторизации](./xAPI-Communication.md#oauthscope)
     *	5.0	[Безопасность](./xAPI-Communication.md#security)
-	*	[Приложения](./xAPI-Communication.md#append3)  
-		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)  
-		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)  
-		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)  
+	*	[Приложения](./xAPI-Communication.md#append3)
+		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)
+		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)
+		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)
 
 <a name="partone" />
 #Часть первая: Про опытный API
@@ -233,7 +233,7 @@ All required properties are required to contain values.
 
 
 <a name="definitions"></a>
-## 4.0 Определения  
+## 4.0 Определения
 
 * [Активности](#def-activity)
 * [Провайдер активностей (AP)](#def-activity-provider)
@@ -289,7 +289,7 @@ an Activity.  Is the "I" in "I did this".
 <a name="def-api" ></a>
 
 __Application Programming Interface (API)__: A set of rules and standards created to allow access into 
-a software application or tool.  
+a software application or tool.
 
 <a name="def-authentication" ></a>
 
@@ -356,7 +356,7 @@ __Inverse Functional Identifier__: An identifier which is unique to a particular
 
 <a name="def-learning-experience" ></a>
 
-__Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.  
+__Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.
 Examples include reading a book, taking an online course, going on a field trip, engaging in self-directed 
 research, or receiving a certificate for a completed course.
 
@@ -427,12 +427,12 @@ An LMS typically combines many services to design a complete learning experience
 
 __Statement__: A data sctructure showing evidence for any sort of experience or event which is to be tracked 
 in xAPI as a Learning Record.  A set of several Statements, each representing an event in time, might be used 
-to track complete details about a learning experience.  
+to track complete details about a learning experience.
 
 <a name="def-tcapi"></a>
 
 __Tin Can API (TCAPI)__: The previous name of the API defined in this document, often used in 
-informal references to the Experience API.  
+informal references to the Experience API.
 
 <a name="def-verb" ></a>
 
@@ -449,7 +449,7 @@ information on vocabularies, see the [xAPI Vocabulary Companion Specification](h
 
 ## 5.0 xAPI компоненты
 
-This section explains and shows graphically how different pieces of xAPI can fit together.  
+This section explains and shows graphically how different pieces of xAPI can fit together.
 
 ##### Отслеживание опыта
 
@@ -460,7 +460,7 @@ Figure 1 shows the tracking of learning experiences. A learner has a learning ex
 online course, it could be on the job or it could be part of recreation. It really could be anything. This experience is tracked, 
 on the learner’s behalf, by a trusted Learning Record Provider (LRP). The Learning Record Provider can also be responsible for the 
 trusted relationship between the experience and the learner. This might even include launching content for the learner and 
-managing digital rights associated with the content.  
+managing digital rights associated with the content.
 
 The Learning Record Provider creates Learning Records and sends them to one or more Learning Record Stores (LRSs). The LRS stores
 the Learning Records and makes them available to any authorized Client. A Learning Record Consumer (LRC) is a type of Client that accesses 
@@ -532,7 +532,7 @@ their metadata in a [Vocabulary](#def-vocabulary). A profile is a set of rules a
 xAPI for the particular use case being addressed. It is very important that such communities exist and share best practices. 
 For more information on publishing vocabularies, see the [Vocabulary Companion Specification](https://adl.gitbooks.io/companion-specification-for-xapi-vocabularies/content) and [Vocabulary Primer](https://adl.gitbooks.io/experience-xapi-vocabulary-primer/content/) documents.
 
-It is recommended that a profile use a unique "category" within a Statement's context to refer to any Statement  
+It is recommended that a profile use a unique "category" within a Statement's context to refer to any Statement
 which implements the profile.  An example profile is [cmi5](https://github.com/AICC/CMI-5_Spec_Current), 
 which is designed for the traditional single learner, single online learning use case.  An example cmi5 Statement can 
 be found in [Appendix B: cmi5 Example](#Appendix1B).
@@ -564,28 +564,28 @@ field is the [MedBiquitous Learning Experience Working Group](http://groups.medb
 и "category" contextActivities.
 
 ```
-{  
+{
   "id":"2a41c918-b88b-4220-20a5-a4c32391a240",
-  "actor":{  
+  "actor":{
     "objectType":"Agent",
     "name":"Gert Frobe",
-    "account":{  
+    "account":{
       "homePage":"http://example.adlnet.gov",
       "name":"1625378"
     }
   },
-  "verb":{  
+  "verb":{
     "id":"http://adlnet.gov/expapi/verbs/failed",
-    "display":{  
+    "display":{
       "en-US":"failed"
     }
   },
-  "object":{  
+  "object":{
     "id":"https://example.adlnet.gov/AUidentifier",
     "objectType":"Activity"
   },
-  "result":{  
-    "score":{  
+  "result":{
+    "score":{
       "scaled":0.65,
       "raw":65,
       "min":0,
@@ -593,23 +593,23 @@ field is the [MedBiquitous Learning Experience Working Group](http://groups.medb
     },
     "success":false,
     "duration":"PT30M",
-    "extensions":{  
+    "extensions":{
       "https://w3id.org/xapi/cmi5/result/extensions/progress":100
     }
   },
-  "context":{  
+  "context":{
     "registration":"ec231277-b27b-4c15-8291-d29225b2b8f7",
-    "contextActivities":{  
-      "category":[  
-        {  
+    "contextActivities":{
+      "category":[
+        {
        	  "id":"https://w3id.org/xapi/cmi5/context/categories/moveon"
         },
-        {  
+        {
           "id":"https://w3id.org/xapi/cmi5/context/categories/cmi5"
         }
       ]
     },
-    "extensions":{  
+    "extensions":{
       "https://w3id.org/xapi/cmi5/context/extensions/sessionid":"458240298378231"
     }
   },

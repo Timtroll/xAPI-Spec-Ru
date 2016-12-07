@@ -20,23 +20,23 @@
 > и отклики посылайте сюда helpdesk@adlnet.gov
 
 ## Содержание
-*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)  
+*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)
 	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
-	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)  
-		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)  
-	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)  
+	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)
+		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)
+	 	*	2.2.	[Руководство для Interpreting Descriptive Text и Tables](./xAPI-About.md#interpret-text-table)
 	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
 	*	4.0.	[Определения](./xAPI-About.md#definitions) 
 	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
 	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
-	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)  
-	*	[Приложения](./xAPI-About.md#append1)  
-		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)  
-		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)  
-*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)  
+	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)
+	*	[Приложения](./xAPI-About.md#append1)
+		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)
+		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)
+*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)
 	*	1.0.	[Документация](./xAPI-Data.md#documents) 
-	*	2.0.	[Формулировки](./xAPI-Data.md#statements)  
-		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)  
+	*	2.0.	[Формулировки](./xAPI-Data.md#statements)
+		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)
 	 	*	2.2.	[Требования к форматированию](./xAPI-Data.md#dataconstraints) 
 	 		*	2.2.s1 [Подробности](./xAPI-Data.md#datadetail) 
 	 		*	2.2.s2 [Требования](./xAPI-Data.md#datarequirements) 
@@ -44,45 +44,45 @@
 	 	*	2.3.	[Директивы о жизненном цикле](./xAPI-Data.md#lifecycle) 
 		 	*	2.3.1.	[Директивы неизменяемости](./xAPI-Data.md#statement-immutability-and-exceptions) 
 		 	*	2.3.2.	[Аннулирование](./xAPI-Data.md#voided)
-   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)  
-	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)  
-	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)  
-	        *	2.4.3.	[Verb](./xAPI-Data.md#verb)  
-	        *	2.4.4.	[Object](./xAPI-Data.md#object)  
-	        *	2.4.5.	[Result](./xAPI-Data.md#result)  
-	        *	2.4.6.	[Context](./xAPI-Data.md#context)  
-	        *	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)  
-	        *	2.4.8.	[Stored](./xAPI-Data.md#stored)  
-	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)  
-	        *	2.4.10.	[Version](./xAPI-Data.md#version)  
-	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)  
-    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval)   
-    	*	2.6.	[Подписи](./xAPI-Data.md#signature)  
+   		*	2.4.	[Директива свойствах](./xAPI-Data.md#statement-properties)
+	        *	2.4.1.	[ID](./xAPI-Data.md#stmtid)
+	        *	2.4.2.	[Actor](./xAPI-Data.md#actor)
+	        *	2.4.3.	[Действия](./xAPI-Data.md#verb)
+	        *	2.4.4.	[Object](./xAPI-Data.md#object)
+	        *	2.4.5.	[Result](./xAPI-Data.md#result)
+	        *	2.4.6.	[Context](./xAPI-Data.md#context)
+	        *	2.4.7.	[Timestamp](./xAPI-Data.md#timestamp)
+	        *	2.4.8.	[Stored](./xAPI-Data.md#stored)
+	        *	2.4.9.	[Authority](./xAPI-Data.md#authority)
+	        *	2.4.10.	[Version](./xAPI-Data.md#version)
+	        *	2.4.11.	[Attachments](./xAPI-Data.md#attachments)
+    	*	2.5.	[Исправления(Восстановления)](./xAPI-Data.md#retrieval) 
+    	*	2.6.	[Подписи](./xAPI-Data.md#signature)
 	*	3.0.	[Metadata](./xAPI-Data.md#metadata)
-		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)  
-		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)  
-    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)  
+		*	3.1.	[IRI Requirements](./xAPI-Data.md#iri-requirements)
+		*	3.2.	[Hosted Metadata](./xAPI-Data.md#miscmeta)
+    *	4.0.	[Спациальные типы данных и правила](./xAPI-Data.md#special-data)
 		*	4.1.	[Расширения](./xAPI-Data.md#miscext) 
 		*	4.2.	[Карта языков (Language Maps)](./xAPI-Data.md#lang-maps)
 		*	4.3.	[IRIs](./xAPI-Data.md#iris)
 		*	4.4.	[UUIDs](./xAPI-Data.md#uuids)
 		*	4.5.	[ISO 8601 Timestamps](./xAPI-Data.md#timestamps)
 		*	4.6.	[ISO 8601 Durations](./xAPI-Data.md#durations)
-	*	[Приложения](./xAPI-Data.md#append2)  
-		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)  
-		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)  
+	*	[Приложения](./xAPI-Data.md#append2)
+		*	[Приложение A: Примеры директив](./xAPI-Data.md#Appendix2A)
+		*	[Приложение B: Примеры директив различных типов](./xAPI-Data.md#Appendix2B)
 		*	[Приложение C: Примеры определений активностей для типа "cmi.interaction"](./xAPI-Data.md#Appendix2C)  	
-		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)  
-*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)  
+		*	[Приложение D: Примеры подписанных директив](./xAPI-Data.md#Appendix2D)
+*	Часть третья:	[Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)
 	*	1.0.	[Запросы](./xAPI-Communication.md#requests)
-		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)  
+		*	1.1.	[Реализация HEAD Request](./xAPI-Communication.md#httphead)
 	 	*	1.2.	[Headers](./xAPI-Communication.md#headers) 
 	 	*	1.3.	[Альтернативный синтаксис запроса](./xAPI-Communication.md#alt-request-syntax) 
 	 	*	1.4.	[Encoding](./xAPI-Communication.md#encoding) 
 	 	*	1.5.	[Content Types](./xAPI-Communication.md#content-types) 
 	        *	1.5.1.	[Application/JSON](./xAPI-Communication.md#applicationjson) 
 	        *	1.5.1.	[Multipart/Mixed](./xAPI-Communication.md#multipartmixed)
-	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer)   
+	*	2.0.	[Ресурсы](./xAPI-Communication.md#datatransfer) 
 	 	*	2.1.	[Объявление Resource](./xAPI-Communication.md#stmtres) 
 	 	*	2.2.	[Документы Resources](./xAPI-Communication.md#doctransfer) 
 	 	*	2.3.	[Государственный Resource](./xAPI-Communication.md#stateres) 
@@ -91,18 +91,18 @@
 	 	*	2.6.	[Профиль агента Resource](./xAPI-Communication.md#agentprofres) 
 	 	*	2.7.	[Активности профиля Resource](./xAPI-Communication.md#actprofres) 
 	 	*	2.8.	[Описание Resource](./xAPI-Communication.md#aboutresource) 
-   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)     
-    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)  
+   	*	3.0.	[Валидация данных](./xAPI-Communication.md#validation)
+    	*	3.1.	[Совпадения](./xAPI-Communication.md#concurrency)
     	*	3.2.	[Коды ошибок](./xAPI-Communication.md#errorcodes)
-    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)  
-    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)  
+    	*	3.3     [Версионность](./xAPI-Communication.md#versioning)
+    *	4.0.	[Аутентификация](./xAPI-Communication.md#authentication)
 		*	4.1.	[OAuth 1.0 сценарии и методы](./xAPI-Communication.md#authdefs) 
 		*	4.2.	[OAuth 1.0 объемы авторизации](./xAPI-Communication.md#oauthscope)
     *	5.0	[Безопасность](./xAPI-Communication.md#security)
-	*	[Приложения](./xAPI-Communication.md#append3)  
-		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)  
-		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)  
-		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)  
+	*	[Приложения](./xAPI-Communication.md#append3)
+		*	[Приложение A: Преобразование отчетности в 1.0.0](./xAPI-Communication.md#Appendix3A)
+		*	[Приложение B: Таблица всех ресурсов](./xAPI-Communication.md#Appendix3B)
+		*	[Приложение C: Примеры кроссдоменныъ запросов](./xAPI-Communication.md#Appendix3C)
 
 
 <a name="partthree" />
@@ -129,7 +129,7 @@ recommended that those implementing xAPI use current industry best practices.
 The behavior of the LRS in response to PUT, POST, GET and DELETE requests is outlined in [Resources](#resources) below. 
 All resources that support GET requests also support HEAD.
 The LRS will respond to HEAD requests by returning the meta information only, using the HTTP headers, and 
-not the actual document.  
+not the actual document.
 
 ###### <a name="1.1.s2"></a>Rationale
 
@@ -187,31 +187,31 @@ The lists above are not intended to be exhaustive. See requirements throughout t
 One of the goals of the xAPI is to allow cross-domain tracking, and even though xAPI seeks to enable tracking from 
 applications other than browsers, browsers still need to be supported. For example, Internet Explorer 8 and 9 do not 
 implement Cross Origin Resource Sharing, but rather use their own Cross Domain Request API, which cannot use all of 
-the xAPI as described above due to only supporting "GET" and "POST", and not allowing HTTP headers to be set.  
+the xAPI as described above due to only supporting "GET" and "POST", and not allowing HTTP headers to be set.
 
 ###### <a name="1.3.s2"></a>Details/Requirements
 
 The following describes alternate syntax to use only when unable to use the usual syntax for specific calls due to the 
-restrictions mentioned above. This alternate syntax can also be used to GET Statements due to limits on query string length.  
+restrictions mentioned above. This alternate syntax can also be used to GET Statements due to limits on query string length.
 
 See [Appendix C: Cross Domain Request Example](#Appendix3C) for an example. 
 
 ###### <a name="1.3.s3"></a>Requirements
 
-__Method__:  
+__Method__:
 * <a name="1.3.s3.b1"></a>All xAPI requests issued MUST be POST. 
 * <a name="1.3.s3.b2"></a>The intended xAPI method MUST be included as the value of the "method" query 
 string parameter. 
 * <a name="1.3.s3.b3"></a>The Learning Record Provider MUST NOT include any other query string parameters on the request.
 
-Example: http://example.com/xAPI/statements?method=PUT  
+Example: http://example.com/xAPI/statements?method=PUT
 
-__Content__:  
+__Content__:
 * <a name="1.3.s3.b4"></a>If the xAPI call involved sending content, the Learning Record Provider MUST URL encode that content and 
 include it as a form parameter called "content". 
-* <a name="1.3.s3.b5"></a>The LRS MUST interpret this content as a UTF-8 string. Storing binary data is not supported with this syntax.  
+* <a name="1.3.s3.b5"></a>The LRS MUST interpret this content as a UTF-8 string. Storing binary data is not supported with this syntax.
 
-__Headers__:  
+__Headers__:
 * <a name="1.3.s3.b6"></a>The Learning Record Provider MAY include any header parameters required by this specification which are 
 expected to appear in the HTTP header as form parameters with the same names. This applies 
 to the following parameters: Authorization, X-Experience-API-Version, Content-Type, Content-Length,
@@ -226,7 +226,7 @@ request indicating the overall length of the request's content.
 * <a name="1.3.s3.b12"></a>The Content-Length form parameter SHOULD* specify the length of the content within the 
 content form parameter and will therefore be a lower figure than the length listed in the Content-Length header. 
 
-__Query string parameters__:  
+__Query string parameters__:
 * <a name="1.3.s3.b13"></a>Any query string parameters other than "method" MUST instead be included as a form parameter 
 with the same name. 
 * <a name="1.3.s3.b14"></a>The LRS MUST treat any form parameters other than "content" or the header parameters 
@@ -235,7 +235,7 @@ listed above as query string parameters.
 __Attachments__: Note that due to issues relating to encoding, it is not possible to send 
 binary data attachments using this syntax. See [Attachments](./xAPI-Data.md#attachments) 
 
-* <a name="1.3.s3.b15"></a>The LRS MUST support the syntax above.  
+* <a name="1.3.s3.b15"></a>The LRS MUST support the syntax above.
 
 There might be cases where there is a requirement for the Learning Record Provider to support applications or browsers where the 
 Client code is hosted on a different scheme (HTTP or HTTPS) from the LRS. A proxy is only needed IF you want to support HTTP to 
@@ -458,7 +458,7 @@ define their endpoints with path segments starting with `extensions/`.
 
 ###### <a name="2.1.s1"></a>Description
 
-The basic communication mechanism of the Experience API.  
+The basic communication mechanism of the Experience API.
 
 <a name="stmtresput"/>
 
@@ -472,7 +472,7 @@ Stores a single Statement with the given id. POST can also be used to store sing
 
 **Content:** The Statement object to be stored. 
 
-**Returns:** `204 No Content`  
+**Returns:** `204 No Content`
 
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th><th>Required</th></tr>
@@ -516,7 +516,7 @@ Stores a Statement, or a set of Statements.
 
 **Content:** An array of Statements or a single Statement to be stored. 
 
-**Returns:** `200 OK`, Array of Statement id(s) (UUID) in the same order as the corresponding stored Statements.  
+**Returns:** `200 OK`, Array of Statement id(s) (UUID) in the same order as the corresponding stored Statements.
 
 ###### <a name="2.1.2.s2"></a>Requirements
 
@@ -683,12 +683,12 @@ retrieve them will be included in the StatementResult Object.
 			If <code>exact</code>, return Agent, Activity, Verb and Group Objects populated exactly as they 
 			were when the Statement was received. An LRS requesting Statements for the purpose 
 			of importing them would use a format of "exact" in order to maintain 
-			<a href="./xAPI-Data.md#statement-immutability-and-exceptions">Statement Immutability</a>.  
+			<a href="./xAPI-Data.md#statement-immutability-and-exceptions">Statement Immutability</a>.
 			<br/><br/>
 			If <code>canonical</code>, return Activity Objects and Verbs populated with the canonical
 			definition of the Activity Objects and Display of the Verbs as determined by the LRS, after
 			applying the <a href="#queryLangFiltering">language filtering process defined below</a>,
-			and return the original Agent and Group Objects as in "exact" mode.  
+			and return the original Agent and Group Objects as in "exact" mode.
 		</td>
 		<td>Optional</td>
 	</tr>
@@ -884,7 +884,7 @@ the most recently modified document was last modified.
 If a Learning Record Provider stores variables as JSON Objects in a document with content type `application/json`, 
 they can manipulate them as sets of variables using POST.
 
-The following process walks through that process and the process requirements.  
+The following process walks through that process and the process requirements.
 For example, a document contains: 
 
 ```
@@ -892,13 +892,13 @@ For example, a document contains:
 	"x" : "foo",
 	"y" : "bar"
 }
-```  
+```
 When an LRS receives a POST request with content type `application/json` for an existing document also of
 content type `application/json`, it MUST merge the posted document with the existing document. 
 In this context, merge is defined as:
 * <a name="2.2.s7.b1"></a>de-serialize the Objects represented by each document.
 * <a name="2.2.s7.b2"></a>for each property directly defined on the Object being posted, set the corresponding
-property on the existing Object equal to the value from the posted Object.    
+property on the existing Object equal to the value from the posted Object.  
 * <a name="2.2.s7.b3"></a>store any valid json serialization of the existing Object as the document referenced in the request.
 
 Note that only top-level properties are merged, even if a top-level property is an Object. The entire contents of each 
@@ -911,7 +911,7 @@ For example, this document is POSTed with the same id as the existing document a
 	"x" : "bash",
 	"z" : "faz"
 }
-```  
+```
 the resulting document stored in the LRS is:
 ```
 {
@@ -954,12 +954,12 @@ and DELETE will delete all state in the context given through the other paramete
 Example endpoint: http://example.com/xAPI/activities/state
 
 Stores, changes, fetches, or deletes the document specified by the given "stateId" that 
-exists in the context of the specified Activity, Agent, and registration (if specified).  
+exists in the context of the specified Activity, Agent, and registration (if specified).
 
-**Content (PUT | POST):** The document to be stored or updated.  
-**Content (GET | DELETE):** None.  
+**Content (PUT | POST):** The document to be stored or updated.
+**Content (GET | DELETE):** None.
 
-**Returns (PUT | POST | DELETE):** `204 No Content`  
+**Returns (PUT | POST | DELETE):** `204 No Content`
 **Returns (GET):** `200 OK`, the State document 
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -999,7 +999,7 @@ timestamp (exclusive).
 
 **Content:** None.
 
-**Returns:** `200 OK`, Array of State id(s)  
+**Returns:** `200 OK`, Array of State id(s)
 
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -1033,11 +1033,11 @@ timestamp (exclusive).
 
 Example endpoint: http://example.com/xAPI/activities/state
 
-Deletes all state data for this context (Activity + Agent \[+ registration if specified\]).  
+Deletes all state data for this context (Activity + Agent \[+ registration if specified\]).
 
 **Content:** None.
 
-**Returns**: `204 No Content`  
+**Returns**: `204 No Content`
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
 	<tr id="2.3.s5.table1.row1">
@@ -1077,7 +1077,7 @@ Return a special, Person Object for a specified Agent. The Person Object is very
 but instead of each attribute having a single value, each attribute has an array value, and it is legal to 
 include multiple identifying properties. This is different from the FOAF concept of person, person is being 
 used here to indicate a person-centric view of the LRS Agent data, but Agents just refer to one 
-persona (a person in one context).  
+persona (a person in one context).
 
 The "agent" parameter is a normal Agent Object with a single identifier and no arrays. 
 It is not a Person Object, nor is it a Group. 
@@ -1159,7 +1159,7 @@ See also: [Agent](./xAPI-Data.md#agent).
 ###### <a name="2.4.s6"></a>Requirements
 
 * <a name="2.4.s6.b1"></a>All array properties MUST be populated with members with the same definition as the 
-similarly named property from Agent Objects.  
+similarly named property from Agent Objects.
 
 * <a name="2.4.s6.b2"></a>Additional properties not listed here SHOULD* NOT be added to this object and each 
 property MUST occur only once. 
@@ -1175,7 +1175,7 @@ This resource has [Concurrency](#concurrency) controls associated with it.
 
 Example endpoint: http://example.com/xAPI/activities
 
-Loads the complete Activity Object specified.  
+Loads the complete Activity Object specified.
 
 **Content:** None.
 
@@ -1207,19 +1207,19 @@ which are related to an Agent.
 ###### <a name="2.6.s2"></a>Details
 
 The semantics of the request are driven by the "profileId" parameter. If it is included, the GET method will act upon 
-a single defined document identified by "profileId". Otherwise, GET will return the available ids.  
+a single defined document identified by "profileId". Otherwise, GET will return the available ids.
 
 ###### <a name="2.6.s3"></a>Single Agent or Profile Document (PUT | POST | GET | DELETE)
 
 Example endpoint: http://example.com/xAPI/agents/profile
 
-Stores, changes, fetches, or deletes the specified Profile document in the context of the specified Agent.  
+Stores, changes, fetches, or deletes the specified Profile document in the context of the specified Agent.
 
-**Content (PUT | POST):** The document to be stored or updated.  
-**Content (GET | DELETE):** None.  
+**Content (PUT | POST):** The document to be stored or updated.
+**Content (GET | DELETE):** None.
 
-**Returns (PUT | POST | DELETE):** `204 No Content`  
-**Returns (GET):** `200 OK`, the Profile document  
+**Returns (PUT | POST | DELETE):** `204 No Content`
+**Returns (GET):** `200 OK`, the Profile document
 
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -1245,11 +1245,11 @@ against an Identified Group can use the Identified Group's identifier within an 
 Example endpoint: http://example.com/xAPI/agents/profile
 
 Fetches Profile ids of all Profile documents for an Agent. If "since" parameter is specified, this is limited to entries 
-that have been stored or updated since the specified Timestamp (exclusive).  
+that have been stored or updated since the specified Timestamp (exclusive).
 
 **Content:** None.
 
-**Returns:** `200 OK`, Array of Profile id(s)  
+**Returns:** `200 OK`, Array of Profile id(s)
 
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
@@ -1287,13 +1287,13 @@ Otherwise, GET will return the available ids.
 
 Example endpoint: http://example.com/xAPI/activities/profile
 
-Stores, changes, fetches, or deletes the specified Profile document in the context of the specified Activity.  
+Stores, changes, fetches, or deletes the specified Profile document in the context of the specified Activity.
 
-**Content (PUT | POST):** The document to be stored or updated.  
-**Content (GET | DELETE):** None.  
+**Content (PUT | POST):** The document to be stored or updated.
+**Content (GET | DELETE):** None.
 
-**Returns (PUT | POST | DELETE)** `204 No Content`  
-**Returns (GET):** `200 OK`, the Profile document  
+**Returns (PUT | POST | DELETE)** `204 No Content`
+**Returns (GET):** `200 OK`, the Profile document
 <table>
 	<tr><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th></tr>
 	<tr id="2.7.s3.table1.row1">
@@ -1315,11 +1315,11 @@ Stores, changes, fetches, or deletes the specified Profile document in the conte
 Example endpoint: http://example.com/xAPI/activities/profile
 
 Fetches Profile ids of all Profile documents for an Activity. If "since" parameter is specified, this is limited to 
-entries that have been stored or updated since the specified Timestamp (exclusive).  
+entries that have been stored or updated since the specified Timestamp (exclusive).
 
 **Content:** None.
 
-**Returns:** `200 OK`, Array of Profile id(s)  
+**Returns:** `200 OK`, Array of Profile id(s)
 
 <table>
 	<tr id="2.7.s4.table1.row1"><th>Parameter</th><th>Type</th><th>Description</th><th>Required</th><tr>
@@ -1386,7 +1386,7 @@ the latest minor and patch version the LRS conforms to, for each major version.
     `0.9` and `0.95` MAY be included. (For the purposes of this requirement, `0.9` and `0.95`
     are considered major versions.)
 * <a name="2.8.s5.b2"></a>Additional properties MUST NOT be added to this object outside of extensions and each 
-property MUST occur only once.  
+property MUST occur only once.
 * <a name="2.8.s5.b3"></a>An LRS SHOULD allow unauthenticated access to this resource.
 * <a name="2.8.s5.b4"></a>An LRS MUST NOT reject requests based on their version header as would otherwise be 
 required by [Versioning](#versioning).
@@ -1405,7 +1405,7 @@ and extensions is the responsibility of the Learning Record Provider sending the
 ###### <a name="3.0.s2"></a>Requirements
 
 * <a name="3.0.s2.b1"></a>The LRS SHOULD enforce rules regarding structure. 
-* <a name="3.0.s2.b2"></a>The LRS SHOULD NOT enforce rules regarding meaning.  
+* <a name="3.0.s2.b2"></a>The LRS SHOULD NOT enforce rules regarding meaning.
 
 <a name="concurrency"/>
 
@@ -1451,7 +1451,7 @@ The requirement to calculate the ETag this way will be removed in a future versi
 * <a name="3.1.s4.b3"></a>An LRS responding to a GET request using any non-identity transfer encoding MUST NOT calculate 
 the included ETag as above, due to the interpretation of ETags by existing web infrastructure.
 * <a name="3.1.s4.b4"></a>As defined in [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19), 
-an LRS responding to a GET request MUST enclose the header in quotes.  
+an LRS responding to a GET request MUST enclose the header in quotes.
 * <a name="3.1.s4.b5"></a>An LRS responding to a PUT request MUST handle the "[If-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24)" header as described in RFC2616, HTTP 1.1 if 
 it contains an ETag, in order to detect modifications made after the Client last fetched the document.
 * <a name="3.1.s4.b6"></a>An LRS responding to a PUT request MUST handle the "[If-None-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.26)" header as described in 
@@ -1625,7 +1625,7 @@ Versioning will allow Clients and LRSs to remain interoperable as the specificat
 
 ###### <a name="3.3.s2"></a>Details
 
-Starting with version 1.0.0, xAPI will be versioned according to [Semantic Versioning 1.0.0](http://semver.org/spec/v1.0.0.html).  
+Starting with version 1.0.0, xAPI will be versioned according to [Semantic Versioning 1.0.0](http://semver.org/spec/v1.0.0.html).
 Every request from a Client and every response from the LRS includes an HTTP header with the name `X-Experience-API-Version` 
 and the version as the value. For example, ``X-Experience-API-Version : 1.0.3`` for version 1.0.3; 
 see the [Revision History](./xAPI-About.md#Appendix1A) for the current version of this specification. 
@@ -1826,7 +1826,7 @@ The requirements in this section only apply if the LRS supports OAuth 1.0.
 
 ##### <a name="4.2.s2"></a>Details
 
-The following table lists xAPI scope values:  
+The following table lists xAPI scope values:
 <table>
 	<tr><th>Scope</th><th>Permission</th></tr>
 	<tr id="4.2.s2.table1.row1"><td>statements/write</td><td>write any Statement</td></tr>
@@ -1904,7 +1904,7 @@ scope is specified.
 * <a name="4.2.s5.b5"></a>The Client SHOULD request only the minimal needed scopes, to increase the chances that the 
 request will be granted.
 * <a name="4.2.s5.b6"></a>The parameters "consumer_name" and "scope" are not part of OAuth 1.0, and therefore if used MUST be passed 
-as query string or form parameters, not in the OAuth header.  
+as query string or form parameters, not in the OAuth header.
 
 <a name="security"/>
 
