@@ -665,86 +665,80 @@ _Language_
 
 Несколько примеров:
 
-* <a name="2.4.4.s1.b1"></a>The Object is an Activity: "Jeff wrote an essay about hiking."
+* <a name="2.4.4.s1.b1"></a>Объект как Активность: "Jeff wrote an essay about hiking."
 
-* <a name="2.4.4.s1.b2"></a>The Object is an Agent: "Nellie interviewed Jeff."
+* <a name="2.4.4.s1.b2"></a>Объект как Агент: "Nellie interviewed Jeff."
 
-* <a name="2.4.4.s1.b3"></a>The Object is a SubStatement or Statement Reference (different implementations, but similar 
-when human-read): "Nellie commented on 'Jeff wrote an essay about hiking.'"
+* <a name="2.4.4.s1.b3"></a>Объект является ПодДирективой или Директивой Reference (различные реализации, но подобны
+человеческим описанием): "Nellie commented on 'Jeff wrote an essay about hiking.'".
 
-###### <a name="2.4.4.s2"></a>Details
+###### <a name="2.4.4.s2"></a>Подробности
 
-Objects which are provided as a value for this property SHOULD include an "objectType" property. If not specified, the 
-objectType is assumed to be `Activity`. Other valid values are: `Agent`, `Group`, `SubStatement` or `StatementRef`.
-The properties of an Object change according to the objectType.
-
+Для объектов, в которых предусмотрены значения для свойств для этого свойства ЖЕЛАТЕЛЬНО включить свойство "objectType". Если это не указано,
+"objectType" по умолчанию считается "Activity". Другие допустимые значения: "Agent", "Group", "SubStatement" или "StatementRef".
+Свойства объекта изменяются в соответствии с "objectType".
 <a name="activity"/>
 
-##### <a name="2.4.4.1">2.4.4.1</a> When the ObjectType is Activity
+##### <a name="2.4.4.1">2.4.4.1</a> Когда ObjectType указан как Activity
 
-###### <a name="2.4.4.1.s1"></a>Details
+###### <a name="2.4.4.1.s1"></a>Подробности
 
-A Statement can represent an Activity as the Object of the Statement. The following table lists the Object 
-properties in this case.
+Директива может быть предствалять Активность как Объект Директивы. В таблице представлены свойства Объекта в таком случае.
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s1.table1.row1">
 		<td>objectType</td>
 		<td>String</td>
-		<td>MUST be <code>Activity</code> when present</td>
-		<td>Optional</td>
+		<td>Должно быть<code>Activity</code> если представлено</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.4.1.s1.table1.row2">
 		<td><a href="#acturi">id</a></td><td>IRI</td>
-		<td>An identifier for a single unique Activity</td>
-		<td>Required</td>
+		<td>Идентификатор одиночной уникальной Активности</td>
+		<td>обязательно</td>
 	</tr>
 	<tr id="2.4.4.1.s1.table1.row3">
 		<td><a href="#actdef">definition</a></td>
 		<td>Object</td>
-		<td>Metadata, <a href="#actdef">See below</a></td>
-		<td>Optional</td>
+		<td>Метаданные, <a href="#actdef">смотри тут</a></td>
+		<td>по-желанию</td>
 	</tr>
 </table>
 
-If it were possible to use the same id for two different Activities, the validity of Statements about 
-these Activities could be questioned. This means an LRS can't ever treat (references to) the same 
-Activity id as belonging to two different Activities, even if it thinks this was intended. Namely, 
-when a conflict with another system occurs, it’s not possible to determine which Activity is intended. 
+При использовании одного и того же id для различных Активностей и валидации Директивы этих Активностей, их валидность можут быть поставлена под сомнение. Это означает, что LRS никогда не может относиться к ним как к одной и той же активности. Это вызываем конфликт с другой системой, и не представляется возможным определить, куда какая активность предназначена.
 
+###### <a name="2.4.4.1.s2"></a><a name="actdef" />Определение Активности
 
-###### <a name="2.4.4.1.s2"></a><a name="actdef" />Activity Definition
-The table below lists the properties of the Activity Definition Object:
+В таблице список свойств Определения Активностей Объекта:
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s2.table1.row1">
 		<td>name</td>
-		<td><a href="#lang-maps">Language Map</a></td>
-		<td>The human readable/visual name of the Activity</td>
-		<td>Recommended</td>
+		<td><a href="#lang-maps">Языковая карта</a></td>
+		<td>Человеческое название Активности</td>
+		<td>рекомендуется</td>
 	</tr>
 	<tr id="2.4.4.1.s2.table1.row2">
 		<td>description</td>
-		<td><a href="#lang-maps">Language Map</a></td>
-		<td>A description of the Activity</td>
-		<td>Recommended</td>
+		<td><a href="#lang-maps">Языковая карта</a></td>
+		<td>Описание Активности</td>
+		<td>рекомендуется</td>
 	</tr>
 	<tr id="2.4.4.1.s2.table1.row3">
 		<a name="acttype"/>
 		<td>type</td>
 		<td>IRI</td>
-		<td>The type of Activity.</td>
-		<td>Recommended</td>
+		<td>Tип Активности</td>
+		<td>рекомендуется</td>
 	</tr>
 	<tr id="2.4.4.1.s2.table1.row4">
 		<td>moreInfo</td>
 		<td>IRL</td>
-		<td>Resolves to a document with human-readable information about the Activity, 
-		which could include a way to launch the activity.
+		<td>Вкладывает в документ с читабельную информацию об Активности, которая может включать в себя способ запуска Активности.
 		</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr>
 		<td colspan="4">Interaction properties, See: <a href="#interactionacts">Interaction Activities</a></td>
@@ -752,20 +746,19 @@ The table below lists the properties of the Activity Definition Object:
 	<tr id="2.4.4.1.s2.table1.row5">
 		<td>extensions</td>
 		<td>Object</td>
-		<td>A map of other properties as needed (see: <a href="#miscext">Extensions</a>)</td>
-		<td>Optional</td>
+		<td>Карта свйств, если требуется (смотри: <a href="#miscext">Расширения</a>)</td>
+		<td>о-желанию</td>
 	</tr>
 </table>
 
-__Note:__ IRI fragments (sometimes called relative IRLs) are not valid IRIs. As with Verbs, it is recommended that
-those implementing xAPI look for and use established, widely adopted, Activity types.
+__Note:__ IRI фрагменты (иногда называются относительными IRLs) не являются допустимыми IRLs. Как и с Дествиями, рекомендуется
+реализовывать типы Активностей в XAPI как установлено рекомендациями.
 
+###### <a name="2.4.4.1.s3"></a><a name="acturi" />Требования в id Активностей
 
-###### <a name="2.4.4.1.s3"></a><a name="acturi" />Activity id Requirements
-
-* <a name="2.4.4.1.s3.b1"></a>An Activity id MUST be unique.
-* <a name="2.4.4.1.s3.b2"></a>An Activity id MUST always reference the same Activity.
-* <a name="2.4.4.1.s3.b3"></a>An Activity id SHOULD use a domain that the creator is authorized to use for this purpose.
+* <a name="2.4.4.1.s3.b1"></a>Id Активности ДОЛЖЕН быть уникальным.
+* <a name="2.4.4.1.s3.b2"></a>Id Активности ДОЛЖЕН ссылаться на тот же вид деятельности.
+* <a name="2.4.4.1.s3.b3"></a>ЖЕЛАТЕЛЬНО, чтобы id Активности использовал тот же домен, что и создатель Активности, авторизованый для таких целей.
 * <a name="2.4.4.1.s3.b4"></a>An Activity id SHOULD be created according to a scheme that makes sure all Activity ids within 
 that domain remain unique.
 * <a name="2.4.4.1.s3.b5"></a>An Activity id MAY point to metadata or the IRL for the Activity.
@@ -811,7 +804,7 @@ requiring richer interactions definitions will do so through the use of Activity
 The table below lists the properties for Interaction Activities.
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s8.table1.row1">
 		<td>interactionType</td>
 		<td>String</td>
@@ -841,7 +834,7 @@ were originally based on the types of interactions allowed for "cmi.interactions
 Edition Run-Time Environment. See [Appendix C](#Appendix2C) for examples definitions for each interaction type. 
 
 <table>
-	<tr><th>interactionType</th><th>Description</th></tr>
+	<tr><th>interactionType</th><th>Описание</th></tr>
 	<tr id="2.4.4.1.s9.table1.row1">
 		<td>true-false</td>
 		<td>An interaction with two possible responses: <code>true</code> or <code>false</code>.</td>
@@ -990,7 +983,7 @@ in interpreting (or ignoring) invalid characterstring parameters and values.
 
 The following parameters are valid at the start of the string representing the list of items for the listed interaction types:
 <table>
-	<tr><th>Parameter</th><th>Default</th><th>Description</th><th>Value</th><th>Interaction types</th></tr>
+	<tr><th>Parameter</th><th>Default</th><th>Описание</th><th>Value</th><th>Interaction types</th></tr>
 	<tr id="2.4.4.1.s12.table1.row1">
 		<td>case_matters</td>
 		<td>false</td>
@@ -1009,7 +1002,7 @@ The following parameters are valid at the start of the string representing the l
 
 The following parameters are valid at the start of each item in the list for the listed interaction types:
 <table>
-	<tr><th>Parameter</th><th>Description</th><th>Value</th><th>Interaction types</th></tr>
+	<tr><th>Parameter</th><th>Описание</th><th>Value</th><th>Interaction types</th></tr>
 	<tr id="2.4.4.1.s12.table2.row1">
 		<td>lang</td>
 		<td>The language used within the item.</td>
@@ -1038,7 +1031,7 @@ Interaction Activity.
 Interaction components are defined as follows:
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s15.table1.row1">
 		<td>id</td>
 		<td>String</td>
@@ -1060,7 +1053,7 @@ list of interaction components. These additional properties are called "interact
 shows the supported interaction component list(s) for an Interaction Activity with the given interactionType.
 
 <table>
-	<tr id="2.4.4.1.s15.table2.row1"><th>interactionType</th><th>supported interaction component list(s)</th><th>Description</th><tr>
+	<tr id="2.4.4.1.s15.table2.row1"><th>interactionType</th><th>supported interaction component list(s)</th><th>Описание</th><tr>
 	<tr><td>choice, sequencing</td><td>choices</td>
 	<td>A list of the options available in the interaction for selection or ordering.</td></tr>
 	<tr id="2.4.4.1.s15.table2.row2"><td>likert</td><td>scale</td>
@@ -1120,7 +1113,7 @@ requirement for the LRS to validate that the UUID matches a Statement that exist
 The table below lists all properties of a Statement Reference Object:
 
 <table border ="1">
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.3.s4.table1.row1"><td>objectType</td><td>String</td><td>In this case, MUST be <code>StatementRef</code>.</td><td>Required</td></tr>
 	<tr id="2.4.4.3.s4.table1.row2"><td>id</td><td>UUID</td><td>The UUID of a Statement. 
 	</td><td>Required</td></tr>
@@ -1228,7 +1221,7 @@ An optional property that represents a measured outcome related to the Statement
 The following table contains the properties of the Result Object.
 
 <table border="1">
-<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 <tr id="2.4.5.s2.table1.row1">
 	<td>score</td>
 	<td>Object</td>
@@ -1281,7 +1274,7 @@ An optional property that represents the outcome of a graded Activity achieved b
 The table below defines the Score Object. 
 
 <table border ="1">
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.5.1.s2.table1.row1">
 		<td>scaled</td>
 		<td>Decimal number between -1 and 1, inclusive</td>
@@ -1338,7 +1331,7 @@ into some broader activity.
 The following table contains the properties of the Context Object.
 
 <table border="1">
-<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 <tr id="2.4.6.s3.table1.row1">
 	<td>registration</td>
 	<td>UUID</td>
@@ -1684,7 +1677,7 @@ It is useful to have a way to store these Attachments in and retrieve them from 
 The table below lists all properties of the Attachment Object.
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th><th>Corresponding request parameter</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th><th>Corresponding request parameter</th></tr>
 	<tr id="2.4.11.s2.table1.row1">
 		<a name="attachmentUsage" />
 
@@ -1758,7 +1751,7 @@ Resource, see [Statement Resource](./xAPI-Communication.md#stmtres) for details.
 
 The following table shows the data structure for the results of queries on the Statement Resource.
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.5.s2.table1.row1"><td>statements</td><td>Array of Statements</td>
 		<td>List of Statements. If the list returned has been limited (due to pagination), 
 			and there are more results, they will be located at the "statements" property 
@@ -1925,7 +1918,7 @@ For the structure of hosted metadata about Activity ids, see [Activity Definitio
 For the structure of hosted metadata about all other identifiers, see the format below:
 
 <table>
-	<tr><th>Property</th><th>Type</th><th>Description</th><th>Required</th></tr>
+	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="3.2.s2.table1.row1">
 		<td>name</td>
 		<td><a href="#lang-maps">Language Map</a></td>
