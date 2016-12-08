@@ -439,7 +439,7 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.2.2.s2.table2.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>обязателен</td></tr>
-	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>Optional</td></tr>
+	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>по-желанию</td></tr>
 	<tr id="2.4.2.2.s2.table2.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
 	<td>Члены жтой Группы. Выводится несортированным списком.</td>
 	<td>по-желанию</td></tr>
@@ -948,172 +948,169 @@ __Note:__ IRI фрагменты (иногда называются относи
 ]
 ``` 
 
-In this example, either "foo" and "bar", *or* just "foo" are correct learner responses; "bar" on it's own is not.
+В этом примере, либо "foo" и "bar", *или* просто "Foo" являются правильными ответы обучаемого;
 
-The Correct Responses Pattern, if used, is intended to be an exhaustive list of possible correct responses. Where the criteria 
-for a question are complex and correct responses cannot be exhaustively listed, Learning Record Providers are discouraged from 
-using the "correctResponsesPattern" property.
+Шаблон правильных ответов, если он используется, представляется исчерпывающим списком возможных правильных ответов. Где сложные предложения  как правильные ответы не могут быть перечислены, Провайдеру Записи Обучения не рекомендуется использовать свойство "correctResponsesPattern".
 
-Learning Record Consumers cannot infer success based on comparison of the response with the Correct Responses Pattern, 
-nor can they rely on the Correct Responses Pattern always being exhaustive. The Learning Record Provider is allowed to mark 
-questions as correct where the response does not match the correct responses pattern, though this is discouraged except in 
-exceptional circumstances.
+Learning Record Consumers не должны выводить успешность выполнения задания на основе сравнения ответа с шаблоном правильных ответов.
+Шаблон правильных ответов всегда должен быть исчерпывающим. Learning Record Provider допускается отмечать
+ответы на вопросы, как правильные, когда ответ не соответствует правильныму образецу, хотя это и не рекомендуется, за исключением
+исключительные обстоятельства.
 
-Where the Correct Responses Pattern contains an empty array, the meaning of this is that there is no correct
-answer; all answers are incorrect. Where any answer is correct (e.g. in a survey), the Correct Responses Pattern property
-is omitted. 
+Если шаблон правильных ответов содержит пустой массив, это значит, что нет никакого правильного
+ответа, все ответы неверны. В этом случае Шаблон Правильных Ответы Pattern пропускается.
 
-###### <a name="2.4.4.1.s12"></a>Characterstring parameters
+###### <a name="2.4.4.1.s12"></a>Параметры символьной строки
 
-Some of the values within the responses described above can be prepended with certain additional parameters. These were 
-originally based on the characterstring delimiters defined in the SCORM 2004 4th Edition Run-Time Environment. These 
-parameters are represented by the format `{parameter=value}`. See [the long-fill-in example within Appendix C](#long-fill-in). 
+Некоторые из значений в ответах, описанных выше, могут быть предваряется некоторыми дополнительными параметрами. Поскольку рекомендации были
+основанный на разделительных символах, определенных в SCORM 2004 (4-е издание). Эти параметры представлены в формате `{parameter=value}`. Смотри [пример long-fill-in в Приложении C](#long-fill-in).
 
-Characterstring parameters are not validated by the LRS. Systems interpreting Statement data can use their best judgement 
-in interpreting (or ignoring) invalid characterstring parameters and values.
+Символьная строка параметров не может быть подтверждено LRS. Системы интерпретации данных Директивы могут при интерпретации игнорировать недействительные параметры Символьной строки.
 
-The following parameters are valid at the start of the string representing the list of items for the listed interaction types:
+В таблице перечислены параметры действительные в начале строки, которая представляет список элементов для перечисленных типов взаимодействия:
+
 <table>
 	<tr><th>Parameter</th><th>Default</th><th>Описание</th><th>Value</th><th>Interaction types</th></tr>
 	<tr id="2.4.4.1.s12.table1.row1">
 		<td>case_matters</td>
 		<td>false</td>
-		<td>Whether or not the case of items in the list matters.</td>
+		<td>Является ли элемент пунктом в вопросах списка.</td>
 		<td><code>true</code> or <code>false</code></td>
 		<td>fill-in, long-fill-in</td>
 	</tr>
 	<tr id="2.4.4.1.s12.table1.row2">
 		<td>order_matters</td>
 		<td>true</td>
-		<td>Whether or not the order of items in the list matters.</td>
-		<td><code>true</code> or <code>false</code></td>
+		<td>Является ли правильным порядок следования элементов в списке вопросов.</td>
+		<td><code>true</code> или <code>false</code></td>
 		<td>fill-in, long-fill-in, performance</td>
 	</tr>
 </table>
 
-The following parameters are valid at the start of each item in the list for the listed interaction types:
+Следующие параметры действительны в начале каждого элемента в списке для перечисленных типов взаимодействия:
+
 <table>
 	<tr><th>Parameter</th><th>Описание</th><th>Value</th><th>Interaction types</th></tr>
 	<tr id="2.4.4.1.s12.table2.row1">
 		<td>lang</td>
-		<td>The language used within the item.</td>
+		<td>Язык, используемый в элементе.</td>
 		<td><a href="http://tools.ietf.org/html/rfc5646">RFC 5646 Language Tag</a></td>
-		<td>fill-in, long-fill-in, performance (String responses only)</td>
+		<td>fill-in, long-fill-in, performance (только для строковых ответов)</td>
 	</tr>
 </table>
 
 
-###### <a name="2.4.4.1.s13"></a>Requirements
+###### <a name="2.4.4.1.s13"></a>Требования
 
-* <a name="2.4.4.1.s13.b1"></a>Interaction Activities MUST have a valid interactionType.
-* <a name="2.4.4.1.s13.b2"></a>Interaction Activities SHOULD have the Activity type 
-`http://adlnet.gov/expapi/activities/cmi.interaction`.
-* <a name="2.4.4.1.s13.b3"></a>An LRS, upon consuming a valid interactionType, MAY validate the remaining properties as 
-specified for Interaction Activities and MAY return `400 Bad Request` if the remaining properties are not valid for the 
-Interaction Activity.
-* <a name="2.4.4.1.s13.b4"></a>The LRS SHOULD* NOT enforce character limits relating to response patterns. 
-* <a name="2.4.4.1.s13.b5"></a>The LRS SHOULD* NOT limit the length of the correctResponsesPattern array for any interactionType. 
+* <a name="2.4.4.1.s13.b1"></a>Взаимодействие Активностей ДОЛЖНЫ иметь валидное свойство "interactionType".
+* <a name="2.4.4.1.s13.b2"></a>заимодействие Активностей МОЖЕТ иметь тип Активность, например `http://adlnet.gov/expapi/activities/cmi.interaction`.
+* <a name="2.4.4.1.s13.b3"></a>LRS, получая валидный interactionType, МОЖЕТ проверять достоверность остальных свойств как
+определения для Взаимодействия Активностей и может вернуть `400 Bad Request` если остальные свойства не являются валидными для
+Взаимодействия Активность.
+* <a name="2.4.4.1.s13.b4"></a>LRS НЕ ОБЯЗАН применять ограничения на число символов, относящихся к шаблонам реагирования.
+* <a name="2.4.4.1.s13.b5"></a>LRS НЕ ОБЯЗАН ограничивать длину 'correctResponsesPattern' массива для любого 'interactionType'.
 
 
-##### <a name="2.4.4.1.s14"></a>Interaction Components
+##### <a name="2.4.4.1.s14"></a>Взаимодействие Компонентов
 
-###### <a name="2.4.4.1.s15"></a>Details
+###### <a name="2.4.4.1.s15"></a>Подробности
 
-Interaction components are defined as follows:
+Взаимодействие Компонентов определяются следующим образом:
 
 <table>
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s15.table1.row1">
 		<td>id</td>
 		<td>String</td>
-		<td>Identifies the interaction component within the list.</td>
-<td>обязателен</td>
+		<td>bдентифицирует компонент взаимодействия в списке.</td>
+		<td>обязателен</td>
 	<tr>
 		<td>description</td>
-		<td><a href="#lang-maps">Language Map</a></td>
-		<td>A description of the interaction component 
-			(for example, the text for a given choice in a multiple-choice interaction)</td>
-		<td>Optional</td>
+		<td><a href="#lang-maps">Языковая карта</a></td>
+		<td>Описание компонента взаимодействия
+			(Например, текст для множественного выбора взаимодействия)
+		<td>по-желанию</td>
 	</tr>
 </table>
 
 <a name="#interactionComponentLists"/>
 
-Depending on interactionType, Interaction Activities can take additional properties, each containing a 
-list of interaction components. These additional properties are called "interaction component lists". The following table
-shows the supported interaction component list(s) for an Interaction Activity with the given interactionType.
+В зависимости от interactionType, Взаимодействия Активностей могут принимать дополнительные свойства, каждое из которых содержит
+список компонентов Взаимодействия. Эти дополнительные свойства называются "списки компонентов Взаимодействия". В приведенной таблице
+показывает список компонентов которые поддерживают взаимодействие для Взаимодействия Активности с данной interactionType.
 
 <table>
-	<tr id="2.4.4.1.s15.table2.row1"><th>interactionType</th><th>supported interaction component list(s)</th><th>Описание</th><tr>
+	<tr id="2.4.4.1.s15.table2.row1"><th>interactionType</th><th>Список компонентов поддерживающих взаимодействие</th><th>Описание</th><tr>
 	<tr><td>choice, sequencing</td><td>choices</td>
-	<td>A list of the options available in the interaction for selection or ordering.</td></tr>
+	<td>Список доступных опций во взаимодействии для выбора или упорядочения.</td></tr>
 	<tr id="2.4.4.1.s15.table2.row2"><td>likert</td><td>scale</td>
-	<td>A list of the options on the likert scale.</td></tr>
+	<td>Список опций по шкале Лайкерта.</td></tr>
 	<tr id="2.4.4.1.s15.table2.row3"><td>matching</td><td>source, target</td>
-	<td>Lists of sources and targets to be matched.</td></tr>
+	<td>Списки, которые должны быть согласованы.</td></tr>
 	<tr id="2.4.4.1.s15.table2.row4"><td>performance</td><td>steps</td>
-	<td>A list of the elements making up the performance interaction.</td></tr>
-	<tr id="2.4.4.1.s15.table2.row5"><td>true-false, fill-in, long-fill-in, numeric, other</td><td>[No component lists supported]</td><td></td></tr>
+	<td>Перечень элементов, составляющих взаимодействие производительности.</td></tr>
+	<tr id="2.4.4.1.s15.table2.row5"><td>true-false, fill-in, long-fill-in, numeric, other</td><td>[Списки не поддерживаюся]</td><td></td></tr>
 </table>
 
 
-###### <a name="2.4.4.1.s16"></a>Requirements
+###### <a name="2.4.4.1.s16"></a>Требования
 
-* <a name="2.4.4.1.s16.b1"></a>Within an array of interaction components, all id values MUST be distinct.
-* <a name="2.4.4.1.s16.b2"></a>An interaction component's id value SHOULD NOT have whitespace.
+* <a name="2.4.4.1.s16.b1"></a>В массиве компонентов взаимодействия, все id ДОЛЖНЫ быть различными.
+* <a name="2.4.4.1.s16.b2"></a>Идентификатор значения компонента взаимодействия НЕ МОЖЕТ содержать пробелы.
 
-###### <a name="2.4.4.1.s17"></a>Examples
+###### <a name="2.4.4.1.s17"></a>Приветы
 
-See [Appendix C](#Appendix2C) for examples of Activity Definitions for each of the cmi.interaction types.
+Смотри [Приложение C](#Appendix2C) - примеры Активностей Определений для каждого из типов cmi.interaction.
 
 <a name="agentasobj"/>
 
-##### <a name="2.4.4.2">2.4.4.2</a> When the "Object" is an Agent or a Group
+##### <a name="2.4.4.2">2.4.4.2</a> Когда "Object" является Агентом или Группой
 
-###### <a name="2.4.4.2.s1"></a>Requirements
+###### <a name="2.4.4.2.s1"></a>Требования
 
-* <a name="2.4.4.2.s1.b1"></a>Statements that specify an Agent or Group as an Object MUST specify an "objectType" property. 
+* <a name="2.4.4.2.s1.b1"></a>Директивы, которые определяют Агента или Группу как объект должны указать свойство "objectType".
 
-See [Actor](#actor) for details regarding Agents.
+Смотри [Actor](#actor) Для получения дополнительной информации об Агентах.
 
 <a name="stmtasobj"/>
 
-##### <a name="2.4.4.3">2.4.4.3</a> When the "Object" is a Statement
+##### <a name="2.4.4.3">2.4.4.3</a> Когда "Object" является Директивой
 
-###### <a name="2.4.4.3.s1"></a>Rationale
+###### <a name="2.4.4.3.s1"></a>Обоснование
 
-There are two possibilities for using a Statement as an Object. First, an Object can take on the form 
-of a Statement that already exists by using a Statement Reference. A common use case for 
-Statement References is grading or commenting on an experience that could be tracked as an 
-independent event. The special case of voiding a Statement would also use a Statement Reference.
-Second, an Object can be a brand new Statement by using a SubStatement. Each type is defined below.
+Есть две возможности использования Директивы в качестве объекта. Во-первых, объект может принимать форму
+Директивы о том, что уже существует с помощью Директивы-ссылки (Statement Reference). Общий случай использования для
+Директивы-ссылки (Statement Reference) классифицирует или комментирует опыт, который может быть прослежен как
+независимое событие. Особый случай Аннулирование Директивы будет также использовать Директивы-ссылку (Statement Reference).
+Во-вторых, объект может быть совершенно новая Директива, использующая ПодДирективы. Каждый тип определен ниже.
 
 <a name="stmtref"/>
 
-##### <a name="2.4.4.3.s2"></a>Statement References
+##### <a name="2.4.4.3.s2"></a>Директива-ссылка (Statement References)
 
-###### <a name="2.4.4.3.s3"></a>Description
-A Statement Reference is a pointer to another pre-existing Statement.
+###### <a name="2.4.4.3.s3"></a>Описание
 
-###### <a name="2.4.4.3.s4"></a>Requirements
+Директивы-ссылк - указатель на другую уже существующую директиву
 
-* <a name="2.4.4.3.s4.b1"></a>A Statement Reference MUST specify an "objectType" property with the value `StatementRef`.
-* <a name="2.4.4.3.s4.b2"></a>A Statement Reference MUST set the "id" property to the UUID of a Statement. There is no 
-requirement for the LRS to validate that the UUID matches a Statement that exists.
+###### <a name="2.4.4.3.s4"></a>Требования
 
-The table below lists all properties of a Statement Reference Object:
+* <a name="2.4.4.3.s4.b1"></a>Директива-ссылка ДОЛЖНА быть обозначена свойством "objectType" со значением 'StatementRef'.
+* <a name="2.4.4.3.s4.b2"></a>Директива-ссылка ДОЛЖНА установить id в UUID Директивы. Здесь нет
+Требование LRS, чтобы проверить, что UUID совпадает с существующей Директивы.
+
+В таблице перечислены все свойства Директива-ссылки:
 
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
-	<tr id="2.4.4.3.s4.table1.row1"><td>objectType</td><td>String</td><td>In this case, MUST be <code>StatementRef</code>.</td><td>обязателен</td></tr>
-	<tr id="2.4.4.3.s4.table1.row2"><td>id</td><td>UUID</td><td>The UUID of a Statement. 
+	<tr id="2.4.4.3.s4.table1.row1"><td>objectType</td><td>String</td><td>В этом случае ДОЛЖНО быть свойство <code>StatementRef</code>.</td><td>обязателен</td></tr>
+	<tr id="2.4.4.3.s4.table1.row2"><td>id</td><td>UUID</td><td>UUID Директивы. 
 	</td><td>обязателен</td></tr>
 </table>
 
-###### <a name="2.4.4.3.s5"></a>Example
+###### <a name="2.4.4.3.s5"></a>Пример
 
-Assuming that some Statement has already been stored with the id `8f87ccde-bb56-4c2e-ab83-44982ef22df0`, the following example 
-shows how a comment could be issued on the original Statement, using a new Statement:
+Если предположить, что некоторые Директивы уже занесены с идентификатором `8f87ccde-bb56-4c2e-ab83-44982ef22df0`, следующий пример
+показывает, как комментарий может быть выдан на первоначальной Директиве, используя новую:
 
 ```
 {
@@ -1139,28 +1136,25 @@ shows how a comment could be issued on the original Statement, using a new State
 
 <a name="substmt"/>
 
-##### <a name="2.4.4.3.s6"></a>SubStatements
+##### <a name="2.4.4.3.s6"></a>ПодДирективы
 
-###### <a name="2.4.4.3.s7"></a>Description
-A SubStatement is like a StatementRef in that it is included as part of a containing Statement, but unlike a StatementRef, it 
-does not represent an event that has occurred. It can be used to describe, for example, a predication of a potential future 
-Statement or the behavior a teacher looked for when evaluating a student (without representing the student actually doing that 
-behavior). 
+###### <a name="2.4.4.3.s7"></a>Описание
 
-###### <a name="2.4.4.3.s8"></a>Requirements
+ПодДиректива подобна StatementRef в том, что она включена в качестве части, содержащей Директиву, но в отличие от StatementRef, она
+не представляет собой событие, которое произошло. Она может быть использована для описания, например, обоснование будущей
+Директивы или поведение учителя при оценке студента (без представления студента, а только поведения).
 
-* <a name="2.4.4.3.s8.b1"></a>A SubStatement MUST specify an "objectType" property with the value `SubStatement`.
-* <a name="2.4.4.3.s8.b2"></a>A SubStatement MUST be validated as a Statement in addition to other SubStatement requirements.
-* <a name="2.4.4.3.s8.b3"></a>A SubStatement MUST NOT have the "id", "stored", "version" or "authority" properties.
-* <a name="2.4.4.3.s8.b4"></a>A SubStatement MUST NOT contain a SubStatement of its own, i.e., cannot be nested.
+###### <a name="2.4.4.3.s8"></a>Требования
 
-###### <a name="2.4.4.3.s9"></a>Example
+* <a name="2.4.4.3.s8.b1"></a>ПодДирективы ДОЛЖНЫ указать свойство "objectType" со значением `SubStatement`.
+* <a name="2.4.4.3.s8.b2"></a>ПодДирективы ДОЛЖНЫ быть валидорованы как Директива в дополнение к другим требованиям ПодДирективы.
+* <a name="2.4.4.3.s8.b3"></a>ПодДирективы НЕ ДОЛЖНЫ NOT иметь свойства "id", "stored", "version" или "authority".
+* <a name="2.4.4.3.s8.b4"></a>ПодДирективы НЕ ДОЛЖНЫ NOT содержать ПодДирективы.
 
-One interesting use of SubStatements is in creating Statements of intention. For example, using SubStatements we can create 
-Statements of the form `"<I> <planned> (<I> <did> <this>)"` to indicate that we've planned to take some action. The concrete 
-example that follows logically states that "I planned to visit 'Some Awesome Website'". 
- 
+###### <a name="2.4.4.3.s9"></a>Пример
 
+Одно интересное использование ПодДиректив в создании Директив о намерениях. Например, с помощью ПодДирективы мы можем создать
+Директиву вида `"<I> <planned> (<I> <did> <this>)"`, чтобы указать, что мы планировали предпринять какие-то Активности. Пример, который логически вытекает гласит, что "I planned to visit 'Some Awesome Website'".
 
 ```
 {
@@ -1201,68 +1195,69 @@ example that follows logically states that "I planned to visit 'Some Awesome Web
 
 <a name="result"/>
 
-#### <a name="2.4.5">2.4.5</a> Result
+#### <a name="2.4.5">2.4.5</a> Результат (Result)
 
-###### <a name="2.4.5.s1"></a>Description
+###### <a name="2.4.5.s1"></a>Описание
 
-An optional property that represents a measured outcome related to the Statement in which it is included.
+Дополнительное свойство, которое представляет собой измеренный результат, связанный с Директивой куда включен.
 
 ###### <a name="2.4.5.s2"></a>Details
 
-The following table contains the properties of the Result Object.
+В таблице содержаться свойства Result Object.
 
 <table border="1">
 <tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 <tr id="2.4.5.s2.table1.row1">
 	<td>score</td>
 	<td>Object</td>
-	<td>The score of the Agent in relation to the success or quality of the experience. 
-	<a href ="#Score">See: Score</a></td>
-	<td>Optional</td>
+	<td>Очки Агента по отношению к успеху или качеству полученного опыта.
+	<a href ="#Score">Смотри: Score</a></td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.5.s2.table1.row2">
 	<td>success</td>
 	<td>Boolean</td>
-	<td>Indicates whether or not the attempt on the Activity was successful.</td>
-	<td>Optional</td>
+	<td>Указывает, была ли попытка успешной.</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.5.s2.table1.row3">
 	<td>completion</td>
 	<td>Boolean</td>
-	<td>Indicates whether or not the Activity was completed.</td>
-	<td>Optional</td>
+	<td>Указывает, была ли завершена Активность.</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.5.s2.table1.row4">
 	<td>response</td>
 	<td>String</td>
-	<td>A response appropriately formatted for the given Activity.</td>
-	<td>Optional</td>
+	<td>Надлежащим ли образом отформатированы свойства для данного вида Активности.</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.5.s2.table1.row5">
 	<td>duration</td>
 	<td><a href="#durations">Duration</a></td>
-	<td>Period of time over which the Statement occurred.</td>
-	<td>Optional</td>
+	<td>Период времени, в течение которого проходила Директива.</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.5.s2.table1.row6">
 	<td>extensions</td>
 	<td>Object</td>
-	<td>A map of other properties as needed.
-	<a href="#miscext">See: Extensions</a></td>
-	<td>Optional</td>
+	<td>Карта других свойств, как это необходимо.
+	<a href="#miscext">Смотри: Extensions</a></td>
+	<td>по-желанию</td>
 </tr>
 </table>
 
 <a name="Score"/>
 
-##### <a name="2.4.5.1">2.4.5.1</a> Score
+##### <a name="2.4.5.1">2.4.5.1</a> Очки (Score)
 
-###### <a name="2.4.5.1.s1"></a>Description
-An optional property that represents the outcome of a graded Activity achieved by an Agent.
+###### <a name="2.4.5.1.s1"></a>Описание
 
-###### <a name="2.4.5.1.s2"></a>Details
+Необязательное свойство, которое представляет собой результат Активностей в отношении Агента.
 
-The table below defines the Score Object. 
+###### <a name="2.4.5.1.s2"></a>Подробности
+
+Таблица определений Score объекта. 
 
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
@@ -1278,19 +1273,19 @@ The table below defines the Score Object.
 		<td>Decimal number between min and max (if present, otherwise unrestricted), inclusive</td>
 		<td>The score achieved by the Actor in the experience described by the Statement. This is not modified by
 		any scaling or normalization.</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.5.1.s2.table1.row3">
 		<td>min</td>
 		<td>Decimal number less than max (if present)</td>
 		<td>The lowest possible score for the experience described by the Statement.</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.5.1.s2.table1.row4">
 		<td>max</td>
 		<td>Decimal number greater than min (if present)</td>
 		<td>The highest possible score for the experience described by the Statement.</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 </table>
 
@@ -1327,38 +1322,38 @@ The following table contains the properties of the Context Object.
 	<td>registration</td>
 	<td>UUID</td>
 	<td>The registration that the Statement is associated with.</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row2">
 	<td>instructor</td>
 	<td>Agent (MAY be a Group)</td>
 	<td>Instructor that the Statement relates to, if not included as the Actor of the Statement.</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row3">
 	<td>team</td>
 	<td>Group</td>
 	<td>Team that this Statement relates to, if not included as the Actor of the Statement.</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row4">
 	<td>contextActivities</td>
 	<td>contextActivities Object</td>
 	<td>A map of the types of learning activity context that this Statement is related to.
 	Valid context types are: <code>parent</code>, <code>"grouping"</code>, <code>"category"</code> and <code>"other"</code>.</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row5">
 	<td>revision</td>
 	<td>String</td>
 	<td>Revision of the learning activity associated with this Statement. Format is free.
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row6">
 	<td>platform</td>
 	<td>String</td>
 	<td>Platform used in the experience of this learning activity. </td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row7">
 	<td>language</td>
@@ -1366,13 +1361,13 @@ The following table contains the properties of the Context Object.
 	<td>Code representing the language in which the experience being recorded in this 
 	Statement (mainly) occurred in, if applicable and known.
 	</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row8">
 	<td>statement</td>
 	<td><a href="#stmtref">Statement Reference</a></td>
 	<td>Another Statement to be considered as context for this Statement. </td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row9">
 	<td>extensions</td>
@@ -1380,7 +1375,7 @@ The following table contains the properties of the Context Object.
 	<td>A map of any other domain-specific context relevant to this Statement. For example, 
 	in a flight simulator altitude, airspeed, wind, attitude, GPS coordinates might all be 
 	relevant (<a href="#miscext">See Extensions</a>)</td>
-	<td>Optional</td>
+	<td>по-желанию</td>
 </tr>
 
 </table>
@@ -1691,7 +1686,7 @@ The table below lists all properties of the Attachment Object.
 		<td>description</td>
 		<td><a href="#lang-maps">Language Map</a></td>
 		<td>A description of the Attachment</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row4">
@@ -1722,7 +1717,7 @@ The table below lists all properties of the Attachment Object.
 		<td>IRL</td>
 		<td>An IRL at which the Attachment data can be retrieved, or from which it used 
 		to be retrievable. </td>
-<td>Optional</td>
+<td>по-желанию</td>
 		<td></td>
 	</tr>
 </table>
@@ -1914,13 +1909,13 @@ For the structure of hosted metadata about all other identifiers, see the format
 		<td>name</td>
 		<td><a href="#lang-maps">Language Map</a></td>
 		<td>The human readable/visual name. For Verbs, this is equivalent to the "display" property in a Statement.</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr id="3.2.s2.table1.row2">
 		<td>description</td>
 		<td><a href="#lang-maps">Language Map</a></td>
 		<td>description</td>
-		<td>Optional</td>
+		<td>по-желанию</td>
 	</tr>
 </table>
 
