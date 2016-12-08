@@ -299,14 +299,14 @@ __Note:__ Смотри ["Сыылки Директивы"](#stmtref) в [Ког�
 	<td>рекомендуется</td></tr>
 	<tr id="2.4.s1.table1.row2"><td><a href="#actor">actor</a></td><td>Object</td>
 	<td>С каким <a href="#agent">агентом</a> или <a href=#group>группой</a> Object связана Директива.</td>
-	<td>требуется</td></tr>
+	<td>обязателен</td></tr>
 	<tr id="2.4.s1.table1.row3"><td><a href="#verb">verb</a></td><td>Object</td>
 	<td>Активность, соднаная юзером.</td>
-	<td>требуется</td></tr>
+	<td>обязателен</td></tr>
 	<tr id="2.4.s1.table1.row4"><td><a href="#object">object</a></td><td>Object</td>
 	<td>Активность, агент или другая Директива, которая является объектом Директивы.
 	</td>
-	<td>требуется</td></tr>
+	<td>обязателен</td></tr>
 	<tr id="2.4.s1.table1.row5"><td><a href="#result">result</a></td><td>Object</td>
 	<td>Результат работы объекта, детализация, представляющая измеренный результат.</td>
 	<td>по-желанию</td></tr>
@@ -406,7 +406,7 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 	<td>по-желанию</td></tr>
 	<tr id="2.4.2.1.s2.table1.row3"><td colspan="2">смотри <a href="#inversefunctional"> 4.1.2.3 Обратный функциональный идентификатор</a></td>
 	<td>Обратный функциональный идентификатор уникален для Агента.</td>
-	<td>требуется</td></tr>
+	<td>обязателен</td></tr>
 </table>
 
 
@@ -425,11 +425,11 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 
 <table border ="1">
 	<tr><th>Свойство</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
-	<tr id="2.4.2.2.s2.table1.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>требуется</td></tr>
+	<tr id="2.4.2.2.s2.table1.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>обязателен</td></tr>
 	<tr id="2.4.2.2.s2.table1.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>по-желанию</td></tr>
 	<tr id="2.4.2.2.s2.table1.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
 	<td>Члены этой группы. Это неупорядоченный список.</td>
-	<td>требуется</td></tr>
+	<td>обязателен</td></tr>
 </table>
 
 Идентифицированная группа используется для однозначной идентификации кластера агентов.
@@ -438,7 +438,7 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
-	<tr id="2.4.2.2.s2.table2.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>Required</td></tr>
+	<tr id="2.4.2.2.s2.table2.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>обязателен</td></tr>
 	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>Optional</td></tr>
 	<tr id="2.4.2.2.s2.table2.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
 	<td>Члены жтой Группы. Выводится несортированным списком.</td>
@@ -519,8 +519,8 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 <table border ="1">
 	<tr><th>Свойство</th><th>Тип</th><th>Описнаие</th><th>Обязательность</th></tr>
 	<tr id="2.4.2.4.s2.table1.row1"><td>homePage</td><td>IRL</td><td>Канонический домашняя страница для системы учетная запись включена. Свойство основано на описании FOAF accountServiceHomePage.</td>
-	<td>требуется</td></tr>
-	<tr id="2.4.2.4.s2.table1.row2"><td>name</td><td>String</td><td>Уникальный id или имя используемое для логгирования для этого аккаунта. Свойство основано на описании FOAF accountName.</td><td>Required</td></tr>
+	<td>обязателен</td></tr>
+	<tr id="2.4.2.4.s2.table1.row2"><td>name</td><td>String</td><td>Уникальный id или имя используемое для логгирования для этого аккаунта. Свойство основано на описании FOAF accountName.</td><td>обязателен</td></tr>
 </table>
 
 
@@ -568,7 +568,7 @@ XAPI не определяет каких-либо конкретных Дейс
 		<td>IRI</td>
 		<td>Соответствует определению Действия. Каждое определение Действия соответствует значению Действия, а не слову.
 		</td>
-		<td>требуется</td>
+		<td>обязателен</td>
 	</tr>
 	<tr id="2.4.3.s3.table1.row2">
 		<td>display</td>
@@ -759,196 +759,187 @@ __Note:__ IRI фрагменты (иногда называются относи
 * <a name="2.4.4.1.s3.b1"></a>Id Активности ДОЛЖЕН быть уникальным.
 * <a name="2.4.4.1.s3.b2"></a>Id Активности ДОЛЖЕН ссылаться на тот же вид деятельности.
 * <a name="2.4.4.1.s3.b3"></a>ЖЕЛАТЕЛЬНО, чтобы id Активности использовал тот же домен, что и создатель Активности, авторизованый для таких целей.
-* <a name="2.4.4.1.s3.b4"></a>An Activity id SHOULD be created according to a scheme that makes sure all Activity ids within 
-that domain remain unique.
-* <a name="2.4.4.1.s3.b5"></a>An Activity id MAY point to metadata or the IRL for the Activity.
+* <a name="2.4.4.1.s3.b4"></a>ЖЕЛАТЕЛЬНО, чтобы id Активности
+ЖЕЛАТЕЛЬНО, чтобы id Активности был создан в соответствии со схемой, которая гарантирует, что все Активности в рамках ids и домена оставались уникальными.
 
-###### <a name="2.4.4.1.s4"></a>LRS Requirements
+* <a name="2.4.4.1.s3.b5"></a>Идентификатор активности может указывать на метаданные или IRL для Активности.
 
-* <a name="2.4.4.1.s4.b1"></a>An LRS MUST NOT take action in the event it perceives an Activity id is being used by multiple 
-authors and/or organizations.
-* <a name="2.4.4.1.s4.b2"></a>An LRS MUST NOT treat references to the same Activity id as references to different Activities.
-* <a name="2.4.4.1.s4.b3"></a>Upon receiving a Statement with an Activity Definition that differs from the one stored, an LRS
-SHOULD decide whether it considers the Learning Record Provider to have the authority to change the definition and
-SHOULD update the stored Activity Definition accordingly if that decision is positive.
-* <a name="2.4.4.1.s4.b4"></a>An LRS MAY make small corrections to its canonical definition for the Activity when receiving 
-a new definition e.g. to fix a spelling.
-* <a name="2.4.4.1.s4.b5"></a>An LRS SHOULD NOT make significant changes to its canonical definition for the Activity 
-based on an updated definition e.g. changes to correct responses.
+###### <a name="2.4.4.1.s4"></a>LRS Требования
 
-###### <a name="2.4.4.1.s5"></a>Learning Record Provider Requirements
+* <a name="2.4.4.1.s4.b1"></a>LRS НЕ ДОЛЖНЫ принимать Активности для событий c мультиавторством.
+* <a name="2.4.4.1.s4.b2"></a>LRS НЕ ДОЛЖЕН обрабатывать ссылки на Активности с отличным видом Активности.
+* <a name="2.4.4.1.s4.b3"></a>Получив Директиву с определением Активности, которая отличается от сохраненного, LRS
+МОЖЕТ решать, считает ли LRS поставщика обучения записи авторизованым, чтобы иметь право изменить определение и
+СЛЕДУЕТ обновить сохраненное Определение Активности, если решение будет положительным.
 
-* <a name="2.4.4.1.s5.b1"></a>A Learning Record Provider MUST ensure that Activity ids are not used across multiple Activities.
-* <a name="2.4.4.1.s5.b2"></a>A Learning Record Provider MUST only generate states or Statements against a certain Activity id 
-that are compatible and consistent with states or Statements previously stored against the same Activity id.
-* <a name="2.4.4.1.s5.b3"></a>A Learning Record Provider MUST NOT allow new versions (i.e. revisions or other platforms) 
-of the Activity to break compatibility.	
+* <a name="2.4.4.1.s4.b4"></a>LRS МОЖЕТ сделать небольшие поправки к каноническому определению для деятельности при получении
+новое определение, например, чтобы исправить орфографию.
+* <a name="2.4.4.1.s4.b5"></a>LRS НЕ ЖЕЛАТЕЛЬНО вносить существенные изменения в канонические определения для деятельности
+снованных на скорректированных определениях, например изменения ответов.
+
+###### <a name="2.4.4.1.s5"></a>Провайдер Обучающей Записи. Требования
+
+* <a name="2.4.4.1.s5.b1"></a>Провайдер Обучающей Записи ДОЛЖЕН гарантировать, что идентификаторы Активности не используются для нескольких видов.
+* <a name="2.4.4.1.s5.b2"></a>Провайдер Обучающей Записи ДОЛЖЕН генерировать только Директивы в отношении определенного идентификатора, операции которого совместимы и согласуются, предварительно сохранив идентификатор Активности.
+* <a name="2.4.4.1.s5.b3"></a>Провайдер Обучающей Записи НЕ ДОЛЖЕН допускать добавления новых версиq Активностей (типа ревизий или поддержку других платформ), чтобы не ломать совместимость.
 
 <a name="interactionacts"/>
 
-##### <a name="2.4.4.1.s6"></a>Interaction Activities
+##### <a name="2.4.4.1.s6"></a>Взаимодействие активностей
 
-###### <a name="2.4.4.1.s7"></a>Rationale
+###### <a name="2.4.4.1.s7"></a>Обоснование
 
-Traditional e-learning has included structures for interactions or assessments. As a way to allow these practices and
-structures to extend Experience API's utility, this specification includes built-in definitions for interactions, which
-borrows from the SCORM 2004 4th Edition Data Model. These definitions are intended to provide a simple and familiar utility
-for recording interaction data. Since 1.0.3, direct references to the SCORM data model have started to be removed, and any
-associated requirements included directly in this document.
+Традиционное электронное обучение включало отдельные структуры для взаимодействия или оценок. В качестве способа разрешить эту практику и
+структуры, чтобы расширить полезность Опытного API, данная спецификация включает в себя определения для взаимодействий, которые
+заимствованы от SCORM 2004 (4-е издание модели данных). Эти определения предназначены для обеспечения совместимости
+для записи данных взаимодействия. Так как с версии 1.0.3, прямые ссылки на модели данных SCORM начали удаляться, и любые
+связанные с этим требования включены непосредственно в текущем документе.
 
-These interaction definitions are simple to use, and consequently limited. It is expected that Communities of Practice
-requiring richer interactions definitions will do so through the use of Activity types and Activity Definition Extensions. 
+Эти определения взаимодействия просты в использовании, и, следовательно, ограничены. Ожидается, что при потребности в более богатых определенияч взаимодействий будут делать это за счет использования Расширений видов деятельности и Определений деятельности.
 
-###### <a name="2.4.4.1.s8"></a>Details
+###### <a name="2.4.4.1.s8"></a>Подробности
 
-The table below lists the properties for Interaction Activities.
+Таблица содержит список свойств для Определений Активностей.
 
 <table>
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.4.1.s8.table1.row1">
 		<td>interactionType</td>
 		<td>String</td>
-		<td>The type of interaction. Possible values are: <code>true-false</code>, <code>choice</code>, <code>fill-in</code>, <code>long-fill-in</code>,
+		<td>Тип Определения. Возможные значения: <code>true-false</code>, <code>choice</code>, <code>fill-in</code>, <code>long-fill-in</code>,
 		<code>matching</code>, <code>performance</code>, <code>sequencing</code>, <code>likert</code>, <code>numeric</code> or <code>other</code>. </td>
-		<td>Required</td>
+		<td>обязательно</td>
 	</tr>
 	<tr id="2.4.4.1.s8.table1.row2">
 		<td>correctResponsesPattern</td>
 		<td>Array of Strings</td>
-		<td>A pattern representing the correct response to the interaction. The structure of this pattern varies
-		depending on the interactionType. This is detailed below. </td>
-		<td>Optional</td>
+		<td>Шаблон, представляющий правильный ответ на взаимодействие. Структура может изменяеться
+в зависимости от interactionType. Это подробно описано ниже.</td>
+		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.4.1.s8.table1.row3">
 		<td>choices | scale | source | target | steps</td>
 		<td>Array of interaction components</td>
-		<td>Specific to the given interactionType (see below).</td>
-		<td>Optional</td>
+		<td>Specific to the given interactionType (смотри ниже).</td>
+		<td>по-желанию</td>
 	</tr>
 </table>
 
 ###### <a name="2.4.4.1.s9"></a>Interaction Types
 
-The table below describes the kinds of interactions represented by each of the interactionTypes. These types of interactions 
-were originally based on the types of interactions allowed for "cmi.interactions.n.type" in the SCORM 2004 4th 
-Edition Run-Time Environment. See [Appendix C](#Appendix2C) for examples definitions for each interaction type. 
+В таблице описываются типы взаимодействий interactionTypes. Эти типы Взаимодействия
+первоначально были основаны на типах взаимодействий, разрешенных к "cmi.interactions.n.type" в SCORM 2004 (4-у
+издание Run-Time Environment). Смотри [Приложение C](#Appendix2C) для примеров определений для каждого типа взаимодействия.
 
 <table>
 	<tr><th>interactionType</th><th>Описание</th></tr>
 	<tr id="2.4.4.1.s9.table1.row1">
 		<td>true-false</td>
-		<td>An interaction with two possible responses: <code>true</code> or <code>false</code>.</td>
+		<td>Выбор одного из 2-х вариантов: <code>true</code> or <code>false</code>.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row2">
 		<td>choice</td>
-		<td>An interaction with a number of possible choices from which the learner can select. 
-			This includes interactions in which the learner can select only one answer from the list and
-			those where the learner can select multiple items.</td>
+		<td>Выбор одного варианта ответа, так и нескольких из представленных.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row3">
 		<td>fill-in</td>
-		<td>An interaction which requires the learner to supply a short response in the form of one or more 
-			strings of characters. Typically, the correct response consists of part of a word, one word or a few words. 
-			"Short" means that the correct responses pattern and learner response strings will normally be 250 characters or less.
+		<td>Взаимодействие, которое требует от обучаемого поставить короткий ответ в виде одного или нескольких символов строки. Как правило, правильный ответ состоит из части слова, одно слово или несколько слов. "Short" означает, что шаблон правильные ответы и строки ответа обучаемый обычно составляет 250 символов или менее.
 		</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row4">
 		<td>long-fill-in</td>
-		<td>An interaction which requires the learner to supply a response in the form of a long string of characters.
-			"Long" means that the correct responses pattern and learner response strings will normally be more than 250 characters.
+		<td>Взаимодействие, которое требует от обучаемого поставить ответ в виде длинной строки символов. "Long" означает, что шаблон правильные ответы и строки ответа обучаемый обычно будет более 250 символов.
 		</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row5">
 		<td>matching</td>
-		<td>An interaction where the learner is asked to match items in one set (the source set) to items in another set (the target set).
-			Items do not have to pair off exactly and it is possible for multiple or zero source items to be matched to a given target and vice versa.</td>
+		<td>Взаимодействие, где обучаемого просят, чтобы выбрать соответствующие элементы из одного набора (множества) к элементам в другом наборе (множестве).
+		</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row6">
 		<td>performance</td>
-		<td>An interaction that requires the learner to perform a task that requires multiple steps.</td>
+		<td>Взаимодействие, которое требует от обучаемого выполнить задачу, которая требует нескольких шагов.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row7">
 		<td>sequencing</td>
-		<td>An interaction where the learner is asked to order items in a set.</td>
+		<td>Взаимодействие, где обучающийся просят отсортировать набор/множество по какому-либо признаку.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row8">
 		<td>likert</td>
-		<td>An interaction which asks the learner to select from a discrete set of choices on a scale</td>
+		<td>Взаимодействие, которое требует от обучающегося, чтобы он выбрал несколько вариантов из дискретного набора вариантов согласно какой-либо шкале.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row9">
 		<td>numeric</td>
-		<td>Any interaction which requires a numeric response from the learner.</td>
+		<td>Любое взаимодействие, которое требует от обучаемого числового ответа.</td>
 	</tr>
 	<tr id="2.4.4.1.s9.table1.row10">
 		<td>other</td>
-		<td>Another type of interaction that does not fit into those defined above.</td>
+		<td>Другой тип взаимодействия, которое не перечислено выше.</td>
 	</tr>
 </table>
 
-###### <a name="2.4.4.1.s10"></a>Response Patterns
-The table below outlines the format of the strings within "correctResponsesPattern" property for each interaction type. 
-This format is also used to represent the learner's response within the Result Object. These formats were originally based on the 
-requirements relating to "cmi.interactions.n.correct_responses.n.pattern" as defined in the SCORM 2004 4th Edition 
-Run-Time Environment. See [Appendix C](#Appendix2C) for examples of each format. 
+###### <a name="2.4.4.1.s10"></a>Шаблоны ответов
+
+В таблице приведены формат строк в свойстве "correctResponsesPattern" для каждого типа Взаимодействия.
+Этот формат также используется для представления ответа обучаемого в пределах объекта результата. Эти форматы были изначально основаны на
+требованияч "cmi.interactions.n.correct_responses.n.pattern" по SCORM 2004 (4-е издание). Смотри [Приложение C](#Appendix2C) примеры каждого формата.
 
 <table>
 	<tr><th>interactionType</th><th>Format</th></tr>
 	<tr id="2.4.4.1.s10.table1.row1">
 		<td>true-false</td>
-		<td>Either <code>true</code> or <code>false</code></td>
+		<td><code>true</code> или <code>false</code></td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row2">
 		<td>choice</td>
-		<td>A list of item ids delimited by <code>[,]</code>. If the response contains only one item, the delimiter MUST not be used.</td>
+		<td>Перечень элементов идентификаторов, разделенный <code>[,]</code>. Если ответ содержит только один элемент, ограничитель НЕ ДОЛЖЕН использоваться.</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row3">
 		<td>fill-in and long-fill-in</td>
-		<td>A list of responses delimited by <code>[,]</code>. If the response contains only one item, the delimiter MUST not be used.</td>
+		<td>Список ответов, разделенный <code> [,] </code>. Если ответ содержит только один элемент, разделитель НЕ ИСПОЛЬЗУЕТСЯ.</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row4">
 		<td>matching</td>
-		<td>A list of matching pairs, where each  pair consists of a source item id followed by a target item id. 
-			Items can appear in multiple (or zero) pairs.
-			Items within a pair are delimited by <code>[.]</code>. Pairs are delimited by <code>[,]</code>.
+		<td>Перечень пар, где каждая пара состоит из идентификатора элемента источника, за которым следует целевой идентификатор элемента.
+			Элементы могут появляться в нескольких (или ноль) пар.
+			Элементы внутри пары разделяются <code>[.]</code>. Пары разделяются <code>[,]</code>.
 		</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row5">
 		<td>performance</td>
 		<td>
-			A list of steps containing a step ids and the response to that step.
-			Step ids are separated from responses by <code>[.]</code>. Steps are delimited by <code>[,]</code>.
-			The response can be a String as in a fill-in interaction or a number range as in a numeric interaction. 
+			Перечень шагов, содержащих идентификаторы шагов и ответ на этот шаг.
+			Шаги отделяются от ответов <code>[.]</code> (точкой). Шаги между собой разделяются <code>[,]</code>(запятой).
+			Ответ может быть строкой, как во взаимодействии "fill-i" или "number".
 		</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row6">
 		<td>sequencing</td>
-		<td>An ordered list of item ids delimited by <code>[,]</code>.</td>
+		<td>Упорядоченный список элементов идентификаторов, разделённые <code>[,]</code>.</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row7">
 		<td>likert</td>
-		<td>A single item id</td>
+		<td>Id выбранного элемента</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row8">
 		<td>numeric</td>
-		<td>A range of numbers represented by a minimum and a maximum delimited by <code>[:]</code>. 
-			Where the range does not have a maximum or does not have a minimum, that number is omitted but the delimiter is
-			still used. E.g. <code>[:]4</code> indicates a maximum for 4 and no minimum. 
-			Where the correct response or learner's response is a single number rather than a range, the single number
-			with no delimiter MAY be used. 
+		<td>Диапазон чисел, представленных как минимум и максимум разделенные <code>[:]</code>.
+			Если диапазон не имеет максимум или минимум, то число опускается, но разделитель остается. Например. <code>[:]4</code> указывает, максимум 4-х без минимума.
+			Принятым правильным ответом считается  ТОЛЬКО одно число, а не диапазон. 
 		</td>
 	</tr>
 	<tr id="2.4.4.1.s10.table1.row9">
 		<td>other</td>
-		<td>Any format is valid within this string as appropriate for the type of interaction.</td>
+		<td>Любой формат в соответствии с типом взаимодействия.</td>
 	</tr>
 </table>
 
-###### <a name="2.4.4.1.s11"></a>Correct Responses Pattern
+###### <a name="2.4.4.1.s11"></a>Шаблон правильного ответа
 
-The Correct Responses Pattern contains an array of response patterns. A learner's response will be considered correct if it 
-matches **any** of the response patterns in that array. Where a response pattern is a delimited list, the learner's response 
-is only considered correct if **all** of the items in that list match the learner's response. For example, consider the 
-Correct Responses Pattern with a value of:
+Шаблон правильных ответов содержит массив шаблонов ответов. Ответ обучаемого будет считаться правильным, если он
+соответствуют **любому** из шаблонов ответа в этом массиве. Если шаблоном ответа является список с разделителями, ответ обучаемого
+считается правильным, только если **все** из пунктов в этом списке соответствуют ответам обучаемого. Например, рассмотрим шаблон 
+правильных ответов:
 
 ```
 "correctResponsesPattern": [
@@ -1036,7 +1027,7 @@ Interaction components are defined as follows:
 		<td>id</td>
 		<td>String</td>
 		<td>Identifies the interaction component within the list.</td>
-<td>Required</td>
+<td>обязателен</td>
 	<tr>
 		<td>description</td>
 		<td><a href="#lang-maps">Language Map</a></td>
@@ -1114,9 +1105,9 @@ The table below lists all properties of a Statement Reference Object:
 
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
-	<tr id="2.4.4.3.s4.table1.row1"><td>objectType</td><td>String</td><td>In this case, MUST be <code>StatementRef</code>.</td><td>Required</td></tr>
+	<tr id="2.4.4.3.s4.table1.row1"><td>objectType</td><td>String</td><td>In this case, MUST be <code>StatementRef</code>.</td><td>обязателен</td></tr>
 	<tr id="2.4.4.3.s4.table1.row2"><td>id</td><td>UUID</td><td>The UUID of a Statement. 
-	</td><td>Required</td></tr>
+	</td><td>обязателен</td></tr>
 </table>
 
 ###### <a name="2.4.4.3.s5"></a>Example
@@ -1686,14 +1677,14 @@ The table below lists all properties of the Attachment Object.
 		<td>Identifies the usage of this Attachment. For example: one expected use case
 		for Attachments is to include a "completion certificate". An IRI corresponding
 		to this usage MUST be coined, and used with completion certificate attachments.</td>
-		<td>Required</td>
+		<td>обязателен</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row2">
 		<td>display</td>
 		<td><a href="#lang-maps">Language Map</a></td>
 		<td>Display name (title) of this Attachment.</td>
-		<td>Required</td>
+		<td>обязателен</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row3">
@@ -1707,23 +1698,23 @@ The table below lists all properties of the Attachment Object.
 		<td>contentType</td>
 		<td><a href="https://www.ietf.org/rfc/rfc2046.txt?number=2046">Internet Media Type</a></td>
 		<td>The content type of the Attachment.</td>
-		<td>Required</td>
+		<td>обязателен</td>
 		<td>Content-Type</td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row5">
 		<td>length</td>
 		<td>Integer</td>
 		<td>The length of the Attachment data in octets.</td>
-		<td>Required</td>
+		<td>обязателен</td>
 		<td>Content-Length</td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row6">
 		<td>sha2</td>
 		<td>String</td>
 		<td>The SHA-2 hash of the Attachment data. <br/>
-		This property is always required, even if fileURL is also specified. 
+		This property is always обязателен, even if fileURL is also specified. 
 		</td>
-		<td>Required</td>
+		<td>обязателен</td>
 		<td>X-Experience-API-Hash</td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row7">
@@ -1760,7 +1751,7 @@ The following table shows the data structure for the results of queries on the S
 			
 			Where no matching Statements are found, this property will contain an empty array.
 		</td>
-		<td>Required</td>
+		<td>обязателен</td>
 	</tr>
 	<tr id="2.5.s2.table1.row2"><td>more</td><td>IRL</td>
 		<td>Relative IRL that can be used to fetch more results, including the full path 

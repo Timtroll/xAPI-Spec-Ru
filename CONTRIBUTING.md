@@ -360,24 +360,24 @@ In situations where it is important to group text to be specific to the concept,
 Single quotes are also allowable if the text would be unclear due to certain property names. Basically, single quotes
 are the catch-all for any case where not having any clarifying punctuation or style would cause confusion.
 
-For example:
+Примера:
 
-    The reserved Verb 'http://adlnet.gov/expapi/verbs/voided' is an exception.
+    Зарезервированное Действие 'http://adlnet.gov/expapi/verbs/voided' как исключение.
 
-And
+и
 
     These additional properties are called ‘interaction component lists’
 
-And
+и
 
     The Score Object SHOULD include 'scaled'
 
-And
+и
 
-    The 'binary' value should be used.
+    Желательно использовать 'binary'.
 
 ### Headings
-Hashes (#) should be used for all headings following the following format:
+Значок (#) должен использоваться для создания заголовков, слежуйте этому формату:
 
 # Опытный API (1 hash)
 ## 1 Statement (2 hashes)
