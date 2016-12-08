@@ -426,7 +426,7 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 <table border ="1">
 	<tr><th>Свойство</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.2.2.s2.table1.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>обязателен</td></tr>
-	<tr id="2.4.2.2.s2.table1.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>по-желанию</td></tr>
+	<tr id="2.4.2.2.s2.table1.row2"><td>name</td><td>String</td><td>Имя Группы.</td><td>по-желанию</td></tr>
 	<tr id="2.4.2.2.s2.table1.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
 	<td>Члены этой группы. Это неупорядоченный список.</td>
 	<td>обязателен</td></tr>
@@ -439,9 +439,9 @@ UUID (все версии по [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt) �
 <table border ="1">
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.2.2.s2.table2.row1"><td>objectType</td><td>String</td><td><code>Group</code>. </td><td>обязателен</td></tr>
-	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Name of the Group.</td><td>по-желанию</td></tr>
+	<tr id="2.4.2.2.s2.table2.row2"><td>name</td><td>String</td><td>Имя Группы.</td><td>по-желанию</td></tr>
 	<tr id="2.4.2.2.s2.table2.row3"><td>member</td><td>Array of <a href="#agent">Agent Objects</a></td>
-	<td>Члены жтой Группы. Выводится несортированным списком.</td>
+	<td>Члены этой Группы. Выводится несортированным списком.</td>
 	<td>по-желанию</td></tr>
 	<tr id="2.4.2.2.s2.table2.row4"><td colspan="2">see <a href="#inversefunctional"> 4.1.2.3 Обратный функциональный идентификатор</a></td>
 	<td>Обратный функциональный идентификатор уникален для Группы.</td><td>обязателен</td></tr>	
