@@ -1263,90 +1263,88 @@ Learning Record Consumers не должны выводить успешност�
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.4.5.1.s2.table1.row1">
 		<td>scaled</td>
-		<td>Decimal number between -1 and 1, inclusive</td>
-		<td>The score related to the experience as modified by scaling and/or normalization. 
+		<td>Число от -1 до 1 включительно</td>
+		<td>Счет связаный с опытом путем масштабирования и/или нормализации.
 		</td>
-		<td>Recommended</td>
+		<td>рекомендуется</td>
 	</tr>
 	<tr id="2.4.5.1.s2.table1.row2">
 		<td>raw</td>
-		<td>Decimal number between min and max (if present, otherwise unrestricted), inclusive</td>
-		<td>The score achieved by the Actor in the experience described by the Statement. This is not modified by
-		any scaling or normalization.</td>
+		<td>Десятичное число между миниумом и максимумом (если он присутствует, в противном случае без ограничений), включительно</td>
+		<td>Счет достигнутый Актёром в наборе опыта, которые описан в Директиве. Это числов не изменяется масштабированием или нормализацией.</td>
 		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.5.1.s2.table1.row3">
 		<td>min</td>
-		<td>Decimal number less than max (if present)</td>
-		<td>The lowest possible score for the experience described by the Statement.</td>
+		<td>Число меньшее, чем максимум (если максимум присутствует)</td>
+		<td>Минимально возможный балл для оценки полученного опыта, который описан в Директиве.</td>
 		<td>по-желанию</td>
 	</tr>
 	<tr id="2.4.5.1.s2.table1.row4">
 		<td>max</td>
-		<td>Decimal number greater than min (if present)</td>
-		<td>The highest possible score for the experience described by the Statement.</td>
+		<td>Число большее чем минимум min (если минимум присутствует)</td>
+		<td>МАксимально возможный балл для оценки полученного опыта, который описан в Директиве.</td>
 		<td>по-желанию</td>
 	</tr>
 </table>
 
-The properties of the Score Object are based on the corresponding properties of `cmi.score` as defined in SCORM 2004 
-4th Edition. The "scaled" and "raw" properties do not necessarily relate directly as scaling and normalization can
-be applied differently by Learning Record Providers within different Communities of Practice. Scaling and normalization 
-are outside the scope of this specification.
+Свойства объекта Score основаны на соответствующих свойствах `cmi.score`, как это определено в SCORM 2004 (4-е издание). "scaled" и "raw"
+свойства не обязательно непосредственно связаны как масштабированием и/или нормализацией и могут применяться по-разному,
+в зависимости от Learning Record Providers в рамках различных сообществ. Масштабирование и нормализация
+выходят за рамки данной спецификации.
 
-###### <a name="2.4.5.1.s3"></a>Requirements
+###### <a name="2.4.5.1.s3"></a>Требования
 
-* <a name="2.4.5.1.s3.b1"></a>The Score Object SHOULD include "scaled" if a logical percent based score is known.
-* <a name="2.4.5.1.s3.b2"></a>The Score Object SHOULD NOT be used for scores relating to progress or completion. Consider 
-using an extension (preferably from an established Community of Practice) instead.
+* <a name="2.4.5.1.s3.b1"></a>Объект Object МОЖЕТ содержать свойство "scaled" если оценка на основе процентажа известна.
+* <a name="2.4.5.1.s3.b2"></a>Объект Object НЕ МОЖЕТ быть использован для оценки, прогресса или завершения. Для таких целей рекомендуется использовать Расширения.
 
 <a name="context"/>
 
-#### <a name="2.4.6">2.4.6</a> Context
+#### <a name="2.4.6">2.4.6</a> Контекст
 
-###### <a name="2.4.6.s1"></a>Description
-An optional property that provides a place to add contextual information to a Statement. All "context" properties are optional.
+###### <a name="2.4.6.s1"></a>Описание
 
-###### <a name="2.4.6.s2"></a>Rationale
-The "context" property provides a place to add some contextual information to a Statement. It can store information such 
-as the instructor for an experience, if this experience happened as part of a team-based Activity, or how an experience fits 
-into some broader activity.
+Дополнительное свойство, которое обеспечивает место для добавления контекстной информации в Директиву. Все свойства «context» являются необязательными.
 
-###### <a name="2.4.6.s3"></a>Details
+###### <a name="2.4.6.s2"></a>Обоснование
 
-The following table contains the properties of the Context Object.
+Свойство "context" предоставляет возможность, чтобы добавить некоторую контекстную информацию в Директиве. Оно может хранить такую информацию,
+в качестве инструкции, если это используется как часть команды на основе Активности, или в более широком смысле.
+
+###### <a name="2.4.6.s3"></a>Подробности
+
+Таблица содержит свойства объекта Context.
 
 <table border="1">
 <tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 <tr id="2.4.6.s3.table1.row1">
 	<td>registration</td>
 	<td>UUID</td>
-	<td>The registration that the Statement is associated with.</td>
+	<td>Регистрационный номер, который указывает что Директива Statement ассоциирована с контекстом.</td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row2">
 	<td>instructor</td>
-	<td>Agent (MAY be a Group)</td>
-	<td>Instructor that the Statement relates to, if not included as the Actor of the Statement.</td>
+	<td>Агент (МОЖЕТ быть и Группа)</td>
+	<td>Инструктор оОтносящийся к Директиве, если в Директиве не указан Актера.</td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row3">
 	<td>team</td>
 	<td>Group</td>
-	<td>Team that this Statement relates to, if not included as the Actor of the Statement.</td>
+	<td>Группа, относящаяся к Директиве, если в Директиве не указан Актера.</td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row4">
 	<td>contextActivities</td>
 	<td>contextActivities Object</td>
-	<td>A map of the types of learning activity context that this Statement is related to.
-	Valid context types are: <code>parent</code>, <code>"grouping"</code>, <code>"category"</code> and <code>"other"</code>.</td>
+	<td>Карта видов Активностей контекста с которыми связан контекст Директивы.Допустимые типы контекстов: <code>parent</code>, <code>"grouping"</code>, <code>"category"</code> и <code>"other"</code>.</td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row5">
 	<td>revision</td>
 	<td>String</td>
-	<td>Revision of the learning activity associated with this Statement. Format is free.
+	<td>Пересмотр учебной активности, связанной с Директивой. Формат является свободным.
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row6">
@@ -1357,46 +1355,46 @@ The following table contains the properties of the Context Object.
 </tr>
 <tr id="2.4.6.s3.table1.row7">
 	<td>language</td>
-	<td>String (as defined in <a href="http://tools.ietf.org/html/rfc5646">RFC 5646</a>)</td>
-	<td>Code representing the language in which the experience being recorded in this 
-	Statement (mainly) occurred in, if applicable and known.
+	<td>String (если установлено в <a href="http://tools.ietf.org/html/rfc5646">RFC 5646</a>)</td>
+	<td>Код, указывающий на язык, на котором записываются/описываются Активности Директивы, если это применимо и известно.
 	</td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row8">
 	<td>statement</td>
 	<td><a href="#stmtref">Statement Reference</a></td>
-	<td>Another Statement to be considered as context for this Statement. </td>
+	<td>Другая Директива которая рассматривается как контекст текущей Директивы. </td>
 	<td>по-желанию</td>
 </tr>
 <tr id="2.4.6.s3.table1.row9">
 	<td>extensions</td>
 	<td>Object</td>
-	<td>A map of any other domain-specific context relevant to this Statement. For example, 
-	in a flight simulator altitude, airspeed, wind, attitude, GPS coordinates might all be 
-	relevant (<a href="#miscext">See Extensions</a>)</td>
+	<td>Отображение любого другого контекста подобных Директив, имеющих отношение к текущей Директиве. Например, в высоте имитатора полета, воздушной скорости, ветра, отношение, координаты GPS - все может соответствовать друг другу. (<a href="#miscext">Смотри Extensions</a>)</td>
 	<td>по-желанию</td>
 </tr>
 
 </table>
 
-###### <a name="2.4.6.s4"></a>Requirements
+###### <a name="2.4.6.s4"></a>Требования
 
-* <a name="2.4.6.s4.b1"></a>The "revision" property MUST only be used if the Statement's Object is an Activity.
-* <a name="2.4.6.s4.b2"></a>The "platform" property MUST only be used if the Statement's Object is an Activity.
-* <a name="2.4.6.s4.b3"></a>The "language" property MUST NOT be used if not applicable or unknown.
-* <a name="2.4.6.s4.b4"></a>The "revision" property SHOULD be used to track fixes of minor issues (like a spelling error).
-* <a name="2.4.6.s4.b5"></a>The "revision" property SHOULD NOT be used if there is a major change in learning objectives, pedagogy, 
-or assets of an Activity. (Use a new Activity id instead).
+* <a name="2.4.6.s4.b1"></a>Свойство "revision" ДОЛЖНО использоваться только если объект Директивы - Активность.
+* <a name="2.4.6.s4.b2"></a>Свойство "platform" ДОЛЖНО использоваться только если объект Директивы - Активность.
+* <a name="2.4.6.s4.b3"></a>Свойство "language" НЕ ДОЛЖНО использоваться если это неприменимо или неизвестно.
+* <a name="2.4.6.s4.b4"></a>Свойство "revision" ЖЕЛАТЕЛЬНО использовать для незначительных правок (вроде опечаток).
+* <a name="2.4.6.s4.b5"></a>Свойство "revision" НЕ ЖЕЛАТЕЛЬНО использовать если изменения значительны и затрагивают цели обучения, педагогику. (В таких случаях создавайте новую Активность).
 
-__Note:__ Revision has no behavioral implications within the scope of xAPI. It is simply stored
-so that it is available (e.g. for interpreting and displaying data).
+__Note:__ Ревизии не имеют поведенческих последствий, подпадающих под действие XAPI. Они просто сохраняются, если установлены (например, для интерпретации и отображения данных).
 
 <a name="Registration"/>
 
-##### <a name="2.4.6.1">2.4.6.1</a> Registration Property
+##### <a name="2.4.6.1">2.4.6.1</a> Регистрационные свойства
 
-###### <a name="2.4.6.1.s1"></a>Rationale/Details
+###### <a name="2.4.6.1.s1"></a>Обоснование/Подроюности
+
+Когда LRS является неотъемлемой частью LMS, то LMS вероятно, поддерживает концепцию регистрации.
+Опыт API применяет концепцию регистрации в более широком смысле. Регистрационная может быть
+считается попытка, сеанс, или может охватывать несколько деятельности. Там не ожидается, что
+завершая активность завершает регистрацию. Не является регистрация обязательно ограничено одним агентом.
 
 When an LRS is an integral part of an LMS, the LMS likely supports the concept of registration. 
 The Experience API applies the concept of registration more broadly. A registration could be 
