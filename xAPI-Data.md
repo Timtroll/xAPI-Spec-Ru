@@ -1422,39 +1422,34 @@ __Note:__ Ревизии не имеют поведенческих послед
  
 * <a name="2.4.6.2.s3.b2"></a>__Grouping__: Активность с непрямой связью с другой Активностью объекта Директивы. Например: курс как часть квалификации. Курс, который имеет несколько классов. Курс связан с классом как родитель, квалификация относится к классу как к части Группы.
 
-* <a name="2.4.6.2.s3.b3"></a>__Category__: an Activity used to categorize the Statement. "Tags" would be a synonym. 
-Category SHOULD be used to indicate a profile of xAPI behaviors, as well as other categorizations. For example: Anna attempts 
-a biology exam, and the Statement is tracked using the cmi5 profile. The Statement's Activity refers to the exam, and the 
-category is the cmi5 profile.
+* <a name="2.4.6.2.s3.b3"></a>__Category__: Активность используется для классификации Директив. "Tags" являются синонимом.
+ЖЕЛАТЕЛЬНО использовать Категорию для указания профиля поведения XAPI. Например: Анна пытается сдать экзамен по биологии, и Директива отслеживается с помощью профиля cmi5. В Активность Директивы относится к экзамену, и Категории профиля cmi5.
 
-* <a name="2.4.6.2.s3.b4"></a>__Other__: a contextActivity that doesn't fit one of the other properties. For example: Anna 
-studies a textbook for a biology exam. The Statement's Activity refers to the textbook, and the exam is a contextActivity 
-of type `other`.
+* <a name="2.4.6.2.s3.b4"></a>__Other__: Свойство contextActivity используется отдельно. Например: Anna
+изучает учебник для экзамена по биологии. Активность Директивы относится к учебнику, а экзамен является contextActivity
+типа `other`.
 
-Single Activity Objects are allowed as values so that 0.95 Statements will be compatible with 1.0.0.
+Одиночные объекты Активность разрешены как значения, для совместимости Директив в версиях 0,95 и 1.0.0.
 
-__Note:__ The values in this section are not for expressing all the relationships the Statement Object has. Instead, they 
-are for expressing relationships appropriate for the specific Statement (though the nature of the Object will often be 
-important in determining that). For instance, it is appropriate in a Statement about a test to include the course the test 
-is part of as a "parent", but not to include every possible degree program the course could be part of in the grouping value.
+__Note:__ Значения, приведенные в данном разделе, не выражают всех отношений объектов Директив. Они
+предназначены для выражения отношений подходят для конкретной Директивы (хотя природа объекта зачастую будет
+иметь важное значение при определении поведения). Например, в Директиве об экзамене уместно указать, что ход экзамена
+является "parent".
 
-###### <a name="2.4.6.2.s4"></a>Requirements
-* <a name="2.4.6.2.s4.b1"></a>Every key in the contextActivities Object MUST be one of parent, grouping, category, or other.
-* <a name="2.4.6.2.s4.b2"></a>Every value in the contextActivities Object MUST be either a single Activity Object or an array of Activity Objects.
-* <a name="2.4.6.2.s4.b3"></a>The LRS MUST return every value in the contextActivities Object as an array, even if it arrived as a single Activity Object.
-* <a name="2.4.6.2.s4.b4"></a>The LRS MUST return single Activity Objects as an array of length one containing the same Activity.
-* <a name="2.4.6.2.s4.b5"></a>The Learning Record Provider SHOULD ensure that every value in the contextActivities Object is an array of Activity Objects 
-instead of a single Activity Object.
+###### <a name="2.4.6.2.s4"></a>Требования
 
-###### <a name="2.4.6.2.s5"></a>Example
+* <a name="2.4.6.2.s4.b1"></a>Каждый ключ объекта contextActivities должен быть одним родителем, Отношением к Группе, Категирии, или другой.
+* <a name="2.4.6.2.s4.b2"></a>Каждое значение в объекте contextActivities должнj быть либо одним объектом деятельности или массивом объектов Активностей.
+* <a name="2.4.6.2.s4.b3"></a>LRS ДОЛЖЕН возвращать любое значение в объекте contextActivities как массив, даже если он прибыл как единый объект Активности.
+* <a name="2.4.6.2.s4.b4"></a>LRS ДОЛЖЕН возвращать объекты одного вида Активности как массив с одним элементом, который содержит ту же Активность.
+* <a name="2.4.6.2.s4.b5"></a>Learning Record Provider ПО-ВОЗМОЖНОСТИ должен гарантировать, что каждое значение в объекте contextActivities представляет собой массив объектов Активности, а не один объект Активности.
 
-Consider the following hierarchical structure: "Questions 1 to 6"
-are part of "Test 1" which in turn belongs to the course "Algebra 1". 
-The six questions are registered as part of the test by declaring
-"Test 1" as their parent. Also they are grouped with other Statements
-about "Algebra 1" to fully mirror the hierarchy. This is particularly
-useful when the Object of the Statement is an Agent, not an Activity.
-"Andrew mentored Ben with context Algebra I".
+###### <a name="2.4.6.2.s5"></a>Пример
+
+Рассмотрим следующую иерархическую структуру: "Вопросы от 1 до 6" являются частью "Test 1", который, в свою очередь принадлежит к курсу "Алгебра 1".
+Шесть вопросов обединются как часть теста, объявляя "Test 1" в качестве своего родителя. Кроме того, они сгруппированы с другими Директивами
+курса "Алгебра 1", чтобы полностью отразить иерархию. 
+Это особенно полезно, когда объектом Директивы является Агент, а не Активность. "Эндрю наставничество Бен с контекста Алгебра".
 
 ```
 {
@@ -1475,120 +1470,111 @@ useful when the Object of the Statement is an Agent, not an Activity.
 
 #### <a name="2.4.7">2.4.7</a> Timestamp
 
-###### <a name="2.4.7.s1"></a>Description
+###### <a name="2.4.7.s1"></a>Описание
 
-The time at which the experience occurred.
+Время, в которое было проведено обучение.
 
-###### <a name="2.4.7.s2"></a>Details
+###### <a name="2.4.7.s2"></a>Подробности
 
-The "timestamp" property is of type [Timestamp](#timestamps). It is formatted according to the normal format of ISO 8601 and 
-corresponds to the time of when the events described within this Statement occurred. If it is not included in the Statement 
-when it is submitted to the LRS, the LRS populates it with the same value it would use with [Stored](#stored).
+Свойство "timestamp" имеет тип [Timestamp](#timestamps). Он отформатирован в соответствии формату ISO 8601 и
+соответствует времени, когда произошли события, описанные в Директиве. Если он не включен в Директиву,
+созданную LRS, LRS определяет его временем сохранения [Stored](#stored).
 
-The "timestamp property" in a Statement can differ from the ["stored" property](#stored) (the time at which the Statement is 
-stored). Namely, there can be delays between the occurrence of the experience and the reception of the corresponding 
-Statement by the LRS. 
+Свойство "timestamp" в Директиве может отличаться от [свойства "stored"](#stored) (время, когда данная Директива
+сохранена). А именно, могут возникать задержки между появлением полеченного опыта и получения соответствующей
+Директивы от LRS.
 
-Where the experience occurs over a period of time, the "timestamp" property can represent the start, end or any point of time 
-during the experience. It is expected that Communities of Practice will define an appropriate point to record the 
-timestamp for different experiences. For example, when recording the experience of eating at a restaurant, it might 
-be most appropriate to record the timestamp of the start of the experience; when recording the experience of 
-completing a qualification, it might be most appropriate to record the timestamp of the end of the experience.
-These examples are for illustrative purposes only and are not meant to be prescriptive.
+Там, где получение опыта происходит в течение определенного периода времени, то свойство "timestampи" может представлять начало, конец или любой момент времени процесса обучения. Ожидается, что практики будет определять соответствующую точку для записи
+метка времени для различных обучающих процессов. Например, при записи опыта поведения в ресторане, наиболее подходящей для записи метки времени было бы начала процесса; при записи результатов полученного опыта - время окончания.
 
-###### <a name="2.4.7.s3"></a>Requirements
+Этот пример приведен только в иллюстративных целях и не предназначены для обязательного следования ему.
 
-* <a name="2.4.7.s3.b1"></a>For requirements pertaining to the Timestamp data type, see [Section 4.5 ISO 8601 Timestamps](#timestamps).
-* <a name="2.4.7.s3.b2"></a>The "timestamp" property SHOULD* be set by the LRS to the value of the ["stored" property](#stored) 
-if not provided.
-* <a name="2.4.7.s3.b3"></a>A "timestamp" property MAY represent any point during an experience, not necessarily the 
-beginning or end. 
-* <a name="2.4.7.s3.b4"></a>A Learning Record Provider MUST NOT use a future time for a "timestamp" property in a Statement.
-* <a name="2.4.7.s3.b5"></a>A SubStatement MAY have a "timestamp" property that is in the future.
-* <a name="2.4.7.s3.b6"></a>An LRS SHOULD* NOT reject a timestamp for having a greater value than the current time, to prevent 
-issues due to clock errors.
+###### <a name="2.4.7.s3"></a>Требования
+
+* <a name="2.4.7.s3.b1"></a>Требования к относящихся к типу данных "timestamp" смотри [Section 4.5 ISO 8601 Timestamps](#timestamps).
+* <a name="2.4.7.s3.b2"></a>ЖЕЛАТЕЛЬНО, чтобы свойство "timestamp" устанавливалось LRS как значение свойства ["stored"](#stored) 
+если его не было.
+* <a name="2.4.7.s3.b3"></a>Свойство "timestamp" МОЖЕТ представлять любой момент процесса обучения, а не только начало и конец.
+* <a name="2.4.7.s3.b4"></a>Learning Record Provider НЕ ДОЛЖЕН использовать в Директиве свойство "timestamp" в будущем времеми.
+* <a name="2.4.7.s3.b5"></a>ПодДиректива МОЖЕТ иметь свойство "timestamp", в будущем времени.
+* <a name="2.4.7.s3.b6"></a>LRS ЖЕЛАТЕЛЬНО НЕ отклонять "timestamp" который имеет время которое не наступило, чтобы предотвратить
+проблемы, связанные с ошибками синхронизации по времени.
 
 <a name="stored"/> 
 
 #### <a name="2.4.8">2.4.8</a> Stored
 
-###### <a name="2.4.8.s1"></a>Description
+###### <a name="2.4.8.s1"></a>Описание
 
-The time at which a Statement is stored by the LRS. This can be any time between when the LRS receives the Statement and 
-when it is written to storage. 
+Время, указанное Директиве задается LRS. Это может происходить в любое момент между тем, когда LRS принимает Директиву и
+когда он записывает ее в хранилище.
 
-###### <a name="2.4.8.s2"></a>Details
+###### <a name="2.4.8.s2"></a>Подробности
 
-The "stored" property is of type [Timestamp](#timestamps). The "stored" property is the literal time the Statement was stored. 
+Свойство "stored" имеет тип [Timestamp](#timestamps). Свойство "stored" является временем, когда Директива была сохранена.
 
-###### <a name="2.4.8.s3"></a>Requirements
+###### <a name="2.4.8.s3"></a>Требования
 
-* <a name="2.4.8.s3.b1"></a>For requirements pertaining to the Timestamp data type, see [ISO 8601 Timestamps](#timestamps) below.
-* <a name="2.4.8.s3.b2"></a>The "stored" property MUST be set by the LRS; An LRS SHOULD validate and then MUST overwrite any 
-value currently in the "stored" property of a Statement it receives.
-* <a name="2.4.8.s3.b3"></a>The "stored" property SHOULD be the current or a past time.
+* <a name="2.4.8.s3.b1"></a>Требования к типу данных Timestamp описны в [ISO 8601 Timestamps](#timestamps) ниже.
+* <a name="2.4.8.s3.b2"></a>Свойство "stored" ДОЛЖНО устанавлеваться LRS. ЖЕЛАТЕЛЬНО, чтобы LRS валидировало свойство когда ДОЛЖНО перезаписать свойство "stored" Директивы.
+* <a name="2.4.8.s3.b3"></a>ЖЕЛАТЕЛЬНО, ятобы свойство "stored" или текущим временем или временем в прошлом.
 
 <a name="authority"/> 
 
 #### <a name="2.4.9">2.4.9</a> Authority
 
-###### <a name="2.4.9.s1"></a>Description
+###### <a name="2.4.9.s1"></a>Описание
 
-The authority property provides information about whom or what has asserted that this Statement is true. 
+Авторитет (authority) предоставляет информацию о том кто утверждал, что данное утверждение верно.
 
-###### <a name="2.4.9.s2"></a>Details
+###### <a name="2.4.9.s2"></a>Подробности
 
-The asserting authority represents the authenticating user or some system or application.
+Авторитет (authority) подтверждает аутентификацию пользователя или какой-либо системы или приложения.
 
-###### <a name="2.4.9.s3"></a>Requirements
+###### <a name="2.4.9.s3"></a>Третования
 
-* <a name="2.4.9.s3.b1"></a>Authority MUST be an Agent, except in 3-legged OAuth, where it MUST be a Group with two Agents. 
-The two Agents represent an application and user together.
-* <a name="2.4.9.s3.b2"></a>The LRS MUST include the user as an Agent as the entire authority if a user connects 
-directly (using HTTP Basic Authentication) or is included as part of a Group. 
-* <a name="2.4.9.s3.b3"></a>The LRS MUST ensure that all Statements stored have an authority.
-* <a name="2.4.9.s3.b4"></a>The LRS SHOULD overwrite the authority on all Statements it stores,
-based on the credentials used to send those Statements.
-* <a name="2.4.9.s3.b5"></a>The LRS MAY leave the submitted authority unchanged but SHOULD do so only 
-where a strong trust relationship has been established, and with extreme caution.
-* <a name="2.4.9.s3.b6"></a>The LRS MAY identify the user with any of the legal identifying properties if 
-a user connects directly (using HTTP Basic Authentication) or a part of 3-legged OAuth. 
+* <a name="2.4.9.s3.b1"></a>Авторитетом Должен быть Агент, за исключением использования протокола OAuth, где им ДОЛЖНА быть группа из двух Агентов. Эти два Агенты вместе представляют собой Приложение и Пользователя.
+* <a name="2.4.9.s3.b2"></a>LRS ДОЛЖЕН вставлять пользователя в качестве Агента как Авторитета, если пользователь подключается
+напрямую (с использованием HTTP Basic Authentication) или включен как часть Группы.
+* <a name="2.4.9.s3.b3"></a>LRS ДОЛЖЕН гарантировать, что все хранимые Директивы имеют полномочия.
+* <a name="2.4.9.s3.b4"></a>В LRS ДОЛЖЕН перезаписывать полномочия для всех Директив, которые он хранит,
+на основе учетных данных, используемых для отправки этих Директив.
+* <a name="2.4.9.s3.b5"></a>LRS МОЖЕТ оставить полномочия без изменений, но должен делать это только в случае, 
+когда было установлены сильные доверительные отношения, и использовать это с особой осторожностью.
+* <a name="2.4.9.s3.b6"></a>LRS МОЖЕТ идентифицировать пользователя по любым легальным идентифицирующим свойствам, если
+пользователь подключается напрямую (с помощью HTTP Basic Authentication) или с помощью протокола OAuth. 
 
-##### <a name="2.4.9.s4"></a>OAuth Credentials as Authority
+##### <a name="2.4.9.s4"></a>OAuth Полномочия как Авторитета
 
-###### <a name="2.4.9.s5"></a>Description
+###### <a name="2.4.9.s5"></a>Описание
 
-This is a workflow for use of OAuth. 2-legged and 3-legged OAuth are both supported.
+Описание процесса для использования OAuth. 2-я и 3-я версии OAuth поддерживаются.
 
-###### <a name="2.4.9.s6"></a>Details
+###### <a name="2.4.9.s6"></a>Подробности
 
-This workflow assumes a Statement is stored using a validated OAuth connection and the LRS 
-creates or modifies the authority property of the Statement.
+Этот рабочий процесс предполагает что Директивы сохранены с использованием соединения OAuth и LRS
+создает или изменяет свойство Полномочий Директивы.
 
-In a 3-legged OAuth workflow, authentication involves both an OAuth consumer and a user of the 
-OAuth service provider. For instance, requests made by an authorized Twitter plug-in on their 
-Facebook account will include credentials that are specific not only to Twitter as a Client application, 
-or them as a user, but the unique combination of both.
+В 3-й версии OAuth, аутентификация OAuth воспринимается как подключение потребителя и пользователя от
+поставщика услуг OAuth. Например, запросы сделаныt Twitter-плагином в учетную запись на их Facebook будет включать в себя учетные данные, которые являются специфическими не только Twitter, но комбинацией обоих Twitter+Facebook.
 
-###### <a name="2.4.9.s7"></a>Requirements
+###### <a name="2.4.9.s7"></a>Требования
 
-* <a name="2.4.9.s7.b1"></a>The authority MUST contain an Agent Object that represents the OAuth consumer, either by itself, or 
-as part of a group in the case of 3-legged OAuth.
-* <a name="2.4.9.s7.b2"></a>The Agent representing the OAuth consumer MUST be identified by account.
-* <a name="2.4.9.s7.b3"></a>The Agent representing the OAuth consumer MUST use the consumer key as the value of the 
-account's "name" property.
-* <a name="2.4.9.s7.b4"></a>If the Agent representing the OAuth consumer is a registered application, the token request endpoint 
-MUST be used as the value of the account's "homePage" property.
-* <a name="2.4.9.s7.b5"></a>If the Agent representing the OAuth consumer is not a registered application, the temporary 
-credentials endpoint MUST be used as the value of the account's "homePage" property.
-* <a name="2.4.9.s7.b6"></a>An LRS MUST NOT trust the application portion of the authority in the event the account name is from 
-the same source as the unregistered application. (Multiple unregistered applications could choose the same consumer key. 
-As a result, there is no consistent way to verify this combination of temporary credentials and the account name.) 
-* <a name="2.4.9.s7.b7"></a>Each unregistered consumer SHOULD use a unique consumer key.
+* <a name="2.4.9.s7.b1"></a>Уполномоченый ДОЛЖЕН содержать объект Агент, представляющий OAuth юзера, либо самостоятельно, либо
+как часть группы, в случае 3-й версии OAuth.
+* <a name="2.4.9.s7.b2"></a>Агент, авторизующися через OAuth ДОЛЖЕН быть идентифицирован по аккаунту.
+* <a name="2.4.9.s7.b3"></a>Агент, авторизующися через OAuth ДОЛЖЕН использовать ключ потребителя в качестве значения
+Свойство "name" его учетной записи.
+* <a name="2.4.9.s7.b4"></a>Если Агент, авторизующися через OAuth является зарегистрированным приложением, маркер запроса конечной точки
+ДОЛЖНО быть значение свойства "homePage" аккаунта.
+* <a name="2.4.9.s7.b5"></a>>Если Агент, авторизующися через OAuth НЕ является зарегистрированным приложением, временным маркером запроса конечной точки ДОЛЖНО быть значение свойства "homePage" аккаунта.
+* <a name="2.4.9.s7.b6"></a>LRS НЕ ДОЛЖЕН доверять авторитетности в случае, если имя учетной записи соответствует незарегистрированному приложению. (Несколько незарегистрированных приложений могут выбрать один и тот же ключ потребителя.
+В результате, нет никакого последовательного способа проверить эту комбинацию временных учетных данных и имени учетной записи.)
+* <a name="2.4.9.s7.b7"></a>Каждый незарегистрированный потребитель ДОЛЖЕН использовать уникальный ключ потребителя (consumer key).
 
-###### <a name="2.4.9.s8"></a>Example
+###### <a name="2.4.9.s8"></a>Пример
 
-The pairing of an OAuth consumer and a user.
+Пара OAuth пользователь и юзер.
 
 ```
 "authority": {
@@ -1610,47 +1596,41 @@ The pairing of an OAuth consumer and a user.
 <a name="version"/> 
 
 #### <a name="2.4.10">2.4.10</a> Version
-###### <a name="2.4.10.s1"></a>Description
+###### <a name="2.4.10.s1"></a>Описание
 
-Version information in Statements helps Learning Record Consumers get their bearings. Since
-the Statement data model is guaranteed consistent through all 1.0.x versions, in order to support data
-flow among such LRSs, the LRS is given some flexibility on Statement versions that are accepted.
+Информация о версии в Директиве помогает Learning Record Consumers получают подтверждение, что данных Директивы гарантированно соответствует  версии 1.0.x, в целях совместимости данных LRS-ов, LRSs дается некоторая гибкость в версиях Директив, которые могут быть приняты.
 
-###### <a name="2.4.10.s2"></a>Requirements
+###### <a name="2.4.10.s2"></a>Требования
 
-* <a name="2.4.10.s2.b1"></a>Version MUST be formatted as laid out for the API version header in [Versioning](./xAPI-Communication.md#versioning)
+* <a name="2.4.10.s2.b1"></a>Версия должна быть в формате как это предусмотрено тут [Versioning](./xAPI-Communication.md#versioning)
 
-###### <a name="2.4.10.s3"></a>LRS Requirements
+###### <a name="2.4.10.s3"></a>Требования к LRS
 
-* <a name="2.4.10.s3.b1"></a>An LRS MUST accept all Statements where their version starts with `1.0.` if they otherwise validate.
-* <a name="2.4.10.s3.b2"></a>An LRS MUST reject all Statements with a version specified that does not start with `1.0.`.
-* <a name="2.4.10.s3.b3"></a>Statements returned by an LRS MUST retain the version they are accepted with. If they
-lack a version, the version MUST be set to `1.0.0`.
+* <a name="2.4.10.s3.b1"></a>LRS ДОЛЖНА принимать все Директивы, с версии `1.0.`, если они прошли проверку.
+* <a name="2.4.10.s3.b2"></a>LRS ДОЛЖНА отклонять все Директивы до версии `1.0.`.
+* <a name="2.4.10.s3.b3"></a>Директивы, возвращенные LRS должны сохранять ту версию с которой они были приняты. Если они
+не имеют версии, версия должна быть установлена в `1.0.0`.
 
+###### <a name="2.4.10.s4"></a>Требования к Learning Record Provider
 
-###### <a name="2.4.10.s4"></a>Learning Record Provider Requirements
+* <a name="2.4.10.s4.b1"></a>Если Learning Record Provider устанавливает версию, она ДОЛЖНЫ быть установлна в `1.0.0`.
+* <a name="2.4.10.s4.b2"></a>Learning Record Provider`у НЕ РЕКОМЕНДУРЕТСЯ Устанавливать версию в Дирекртиве.
 
-* <a name="2.4.10.s4.b1"></a>If Learning Record Providers set the Statement version, they MUST set it to `1.0.0`.
-* <a name="2.4.10.s4.b2"></a>Learning Record Providers SHOULD NOT set the Statement version.
-
-__Note:__ The requirement for the "version" property to contain the value `1.0.0`, rather than the latest
-patch version is deliberate since Statements in any version of 1.0.x conform to the 1.0.0 data model. In fact, 
-a single Statement may be included in multiple requests over time, each following a different patch version 
-of the specification. The patch version of the specification being followed can be determined from the 
-["X-Experience-API-Version" header](./xAPI-Communication.md#versioning) being used in each request. 
+__Note:__ Необходимость устанавливать свойство "version" в значение `1.0.0` является преднамеренной, поскольку Директивы в любой версии 1.0.x соответствуют модели данных 1.0.0. По факту, одна Директива может быть включена в несколько Директив в течение долгого времени, пока выходят другие версии спецификации. Версия спецификации соблюдаются может быть определена из
+["X-Experience-API-Version" header](./xAPI-Communication.md#versioning) и используется в каждом запросе.
 
 <a name="attachments"/>
-#### <a name="2.4.11">2.4.11</a> Attachments
+#### <a name="2.4.11">2.4.11</a> Вложения (Attachments)
 
-###### <a name="2.4.11.s1"></a>Rationale
+###### <a name="2.4.11.s1"></a>Обоснование
 
-In some cases an Attachment is logically an important part of a Learning Record. It could be an essay, a video, etc. 
-Another example of such an Attachment is (the image of) a certificate that was granted as a result of an experience. 
-It is useful to have a way to store these Attachments in and retrieve them from an LRS. 
+В некоторых случаях Вложение является важной частью обучения (Learning Record). Это может быть эссе, видео и т.д.
+Другим примером такого вложение (изображение) сертификат, который подтверждает получение опыта.
+Полезно иметь способ хранить эти вложения и извлекать их из LRS.
 
-###### <a name="2.4.11.s2"></a>Details
+###### <a name="2.4.11.s2"></a>Подробности
 
-The table below lists all properties of the Attachment Object.
+В таблице перечислены все свойства Attachment Object.
 
 <table>
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th><th>Corresponding request parameter</th></tr>
@@ -1659,45 +1639,44 @@ The table below lists all properties of the Attachment Object.
 
 		<td>usageType</td>
 		<td>IRI</td>
-		<td>Identifies the usage of this Attachment. For example: one expected use case
-		for Attachments is to include a "completion certificate". An IRI corresponding
-		to this usage MUST be coined, and used with completion certificate attachments.</td>
+		<td>Определяет использование данного вложения. Например: один ожидаемый случай использования
+		для вложений должен включать "сертификат о прохождении курса". IRI соответствующий
+		для этого использования должен быть придуман и использован с вложением сертификата о прохождении курса.</td>
 		<td>обязателен</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row2">
 		<td>display</td>
-		<td><a href="#lang-maps">Language Map</a></td>
-		<td>Display name (title) of this Attachment.</td>
+		<td><a href="#lang-maps">Языковая карта</a></td>
+		<td>Заголовок (title) вложения.</td>
 		<td>обязателен</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row3">
 		<td>description</td>
-		<td><a href="#lang-maps">Language Map</a></td>
-		<td>A description of the Attachment</td>
+		<td><a href="#lang-maps">Языковая карта</a></td>
+		<td>Описание вложения</td>
 		<td>по-желанию</td>
 		<td></td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row4">
 		<td>contentType</td>
 		<td><a href="https://www.ietf.org/rfc/rfc2046.txt?number=2046">Internet Media Type</a></td>
-		<td>The content type of the Attachment.</td>
+		<td>Содержимое вложения.</td>
 		<td>обязателен</td>
 		<td>Content-Type</td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row5">
 		<td>length</td>
 		<td>Integer</td>
-		<td>The length of the Attachment data in octets.</td>
+		<td>Длина данных вложения в октетах.</td>
 		<td>обязателен</td>
 		<td>Content-Length</td>
 	</tr>
 	<tr id="2.4.11.s2.table1.row6">
 		<td>sha2</td>
 		<td>String</td>
-		<td>The SHA-2 hash of the Attachment data. <br/>
-		This property is always обязателен, even if fileURL is also specified. 
+		<td>SHA-2 хэш-данных Вложения. <br/>Это свойство всегда обязателен, даже если указан fileURL.
 		</td>
 		<td>обязателен</td>
 		<td>X-Experience-API-Hash</td>
@@ -1705,173 +1684,145 @@ The table below lists all properties of the Attachment Object.
 	<tr id="2.4.11.s2.table1.row7">
 		<td>fileUrl</td>
 		<td>IRL</td>
-		<td>An IRL at which the Attachment data can be retrieved, or from which it used 
-		to be retrievable. </td>
-<td>по-желанию</td>
+		<td>IRL, при котором данные Вложение может быть восстановлено, или по которому его пожно получить.</td>
+		<td>по-желанию</td>
 		<td></td>
 	</tr>
 </table>
 
-In the case of wanting to include an Attachment(s) for a SubStatement, it is strongly recommended to include the 
-Attachment(s) in the Statement's Attachment object and to include the payloads as normally done for a Statement.
+В случае желания включить Вложения для ПодДирективы, настоятельно рекомендуется включать
+Вложения в объекте вложений Директивы.
 
 <a name="retrieval"/> 
-### <a name="2.5">2.5</a> Retrieval of Statements
+### <a name="2.5">2.5</a> Извлечение Директив
 
-###### <a name="2.5.s1"></a>Description
+###### <a name="2.5.s1"></a>Описание
 
-A collection of Statements can be retrieved by performing a query on the Statement 
-Resource, see [Statement Resource](./xAPI-Communication.md#stmtres) for details. 
+Коллекция Директив может быть получена путем выполнения запроса Ресурсах Директивы (Statement Resource)
+смотри [Statement Resource](./xAPI-Communication.md#stmtres) тут подробнее.
 
-###### <a name="2.5.s2"></a>Details
+###### <a name="2.5.s2"></a>Подробности
 
-The following table shows the data structure for the results of queries on the Statement Resource.
+В таблице показана структура данных для результатов запросов о Ресурсах Директивы (Statement Resource).
+
 <table>
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="2.5.s2.table1.row1"><td>statements</td><td>Array of Statements</td>
-		<td>List of Statements. If the list returned has been limited (due to pagination), 
-			and there are more results, they will be located at the "statements" property 
-			within the container located at the IRL provided by the "more" property of 
-			this Statement result Object.
-			
-			Where no matching Statements are found, this property will contain an empty array.
+		<td>Список Директив. Если был возвращен ограниченый список (например из-за разбиения на страницы),
+			и есть еще результаты, то они будут расположены в свойстве "statements" внутри контейнера, 
+			расположенного в IRL, предоставленной свойством "more" объекта результата Директивы.
+
+			Если соответствующие Директивы не будут найдены, это свойство "more" будет содержать пустой массив.
 		</td>
 		<td>обязателен</td>
 	</tr>
 	<tr id="2.5.s2.table1.row2"><td>more</td><td>IRL</td>
-		<td>Relative IRL that can be used to fetch more results, including the full path 
-			and optionally a query string but excluding scheme, host, and port. 
-			Empty string if there are no more results to fetch.
+		<td>Относительный IRL, которые можно использовать для получения следующий порции результатов, включая полный путь
+			и необязательно строку запроса, но без схемы, хоста и порта.
+			Пустая строка, если нет больше результатов.
 		</td>
-		<td>Required if the list returned has been limited, otherwise optional.</td>
+		<td>обязателен (если возвращается не полняй список), в остальных случаях - по-желанию</td>
 	</tr>
 </table>
 
-###### <a name="2.5.s3"></a>Requirements
+###### <a name="2.5.s3"></a>Требования
 
-* <a name="2.5.s3.b1"></a>The IRL retrieved from the "more" property MUST be usable for at least 24 hours after it is returned 
-by the LRS. 
-* <a name="2.5.s3.b2"></a>An LRS MAY include all necessary information within the "more" property IRL to continue the query 
-to avoid the need to store IRLs and associated query data.
-* <a name="2.5.s3.b3"></a>An LRS SHOULD NOT generate extremely long IRLs within the "more" property.
-* <a name="2.5.s3.b4"></a>An LRS MAY re-run the query at the point in time that the IRL retrieved from the "more" property 
-is accessed such that the batch retrieved includes Statements which would have been included in that batch if present in the 
-LRS at the time the original query was run and excludes Statements from that batch which have since been voided. 
-* <a name="2.5.s3.b5"></a>Alternatively, an LRS MAY cache a list of Statements to be returned at the "more" property such that 
-the batch of Statements returned matches those Statements that would have been returned when the original query was run. 
-* <a name="2.5.s3.b6"></a>An LRS MAY remove voided Statements from the cached list of Statements if using this method. 
-* <a name="2.5.s3.b7"></a>A Learning Record Consumer SHOULD NOT attempt to interpret any meaning from the IRL returned from the 
-"more" property.
+* <a name="2.5.s3.b1"></a>IRL извлекается из свойства "more" и ДОЛЖНА быть доступной в течение по крайней мере 24 часов с момента возврата от LRS.
+* <a name="2.5.s3.b2"></a>LRS МОЖЕТ включать всю необходимую информацию с помощью свойства "more" IRL продолжить запрос
+чтобы избежать хранение IRL и связанных с ними данных запроса.
+* <a name="2.5.s3.b3"></a>LRS НЕ ЖЕЛАТЕЛЬНО генерировать чрезвычайно длинные IRLs в со свойством "more".
+* <a name="2.5.s3.b4"></a>LRS МОЖЕТ повторно выполнить запрос IRL, извлекая дополнительную информацию из свойства "more" таким образом, что будут извлекаться Директивы, которые были включены в эту порцию данных, если они присутствовали в LRS в момент первоначального запроса и исключать Директивы, которые с момента первоначального запроса были аннулированы.
+* <a name="2.5.s3.b5"></a>В качестве альтернативы, LRS МОЖЕТ кэшировать список Директив, которые будут возвращены в свойстве "more" таким образом, чтобы партия возвращенных Директив была целостной.
+* <a name="2.5.s3.b6"></a>LRS  с помощью "more" МОЖЕТ удалить аннулированую Директиву изкешированной списка Директив.
+* <a name="2.5.s3.b7"></a>Желательно, чтобы Learning Record Consumer не пытался интерпретировать любое значение из IRL полученные из свойства "more".
 
 <a name="signature"/>
-### <a name="2.6">2.6</a> Signed Statements
+### <a name="2.6">2.6</a>Подписанные Директивы (Signed Statements)
 
-##### <a name="2.6.s1"></a>Description
+##### <a name="2.6.s1"></a>Описание
 
-A Statement can include a [digital signature](https://en.wikipedia.org/wiki/Digital_signature) 
-to provide strong and durable evidence of the authenticity and integrity of the Statement.
+Директива может включать в себя [Цифровую подпись](https://en.wikipedia.org/wiki/Digital_signature)
+чтобы обеспечить подлинность и целостность Директивы.
 
-##### <a name="2.6.s2"></a>Rationale
+##### <a name="2.6.s2"></a>Обоснование
 
-Some Statements will have regulatory or legal significance, or otherwise require strong
-and durable evidence of their authenticity and integrity. It might be necessary to verify
-these Statements without trusting the environment they were first recorded in, or perhaps
-without access to that environment. Digital signatures will enable a third-party to validate such Statements.
+Некоторые Директивы будут иметь легальное значение, или могут потребовать доказательства их подлинности и целостности. Это может быть необходимо, чтобы проверить эти Директивы, не если они были впервые зарегистрированы, или, возможно, не имеет доступа к защищенной среде. Цифровые подписи позволят третьей стороне удостоветиться в подлинности.
 
-##### <a name="2.6.s3"></a>Details
+##### <a name="2.6.s3"></a>Подробности
 
-Signed Statements include a JSON web signature (JWS) as an Attachment. This allows
-the original serialization of the Statement to be included along with the signature.
-For interoperability, the "RSA + SHA" series of JWS algorithms have been selected, and
-for discoverability of the signer X.509 certificates SHOULD be used.
+Подписанные заявления включают подпись в формате JSON (JWS) как вложение. Это сериализовать Директиву вместе с подписью.
+Для этого были отобраны алгоритмы "RSA + SHA", так и для простоты РЕКОМЕНДУЕТСЯ использовать сертификаты X.509.
 
-##### <a name="2.6.s4"></a>Signature Requirements
-* <a name="2.6.s4.b1"></a>A Signed Statement MUST include a JSON web signature (JWS) as defined here:
-http://tools.ietf.org/html/rfc7515, as an Attachment with a usageType
-of `http://adlnet.gov/expapi/attachments/signature` and a contentType of `application/octet-stream`.
-* <a name="2.6.s4.b2"></a>JWS Compact Serialization SHOULD* be used to create the JSON web signature. Use of JWS 
-JSON Serialization is strongly discouraged, is unlikely to be interoperble with other systems, and will be forbidden 
-in a future version of this specification. 
+##### <a name="2.6.s4"></a>Требования с подписи
+
+* <a name="2.6.s4.b1"></a>Подписанная Директива ДОЛЖНА включать в себя подпись в формате JSON (JWS), как определено здесь: http://tools.ietf.org/html/rfc7515, как Вложение "usageType" `http://adlnet.gov/expapi/attachments/signature` и contentType типа `application/octet-stream`.
+* <a name="2.6.s4.b2"></a>JWS Compact Serialization МОЖЕТ быть использована для создания подписи в формате JSON. Использование JWS JSON Serialization настоятельно НЕ рекомендуется, вряд ли она будет совместима с другими системами. К тому же она запрещена в будущей версии этой спецификации.
 * <a name="2.6.s4.b3"></a>The JWS signature MUST have a payload of a valid JSON serialization of the complete Statement 
 before the signature was added.
-* <a name="2.6.s4.b4"></a>The JWS signature MUST use an algorithm of "RS256", "RS384", or "RS512".
-* <a name="2.6.s4.b5"></a>The JWS signature SHOULD have been created based on the private key associated with an
-X.509 certificate.
-* <a name="2.6.s4.b6"></a>If X.509 was used to sign, the JWS header SHOULD include the "x5c" property containing
-the associated certificate chain.
+* <a name="2.6.s4.b4"></a>Подпись JWS ДОЛЖНА использовать алгоритмы "RS256", "RS384", или "RS512".
+* <a name="2.6.s4.b5"></a>Подпись JWS ДОЛЖНА была быть создана на основе закрытого ключа, связанного с сертификатом X.509.
+* <a name="2.6.s4.b6"></a>Если Х.509 использовался для подписи, в заголовок JWS следует включить свойство "x5c", содержащий соответствующую цепочку сертификатов.
 
-##### <a name="2.6.s5"></a>LRS Requirements
-* <a name="2.6.s5.b1"></a>The LRS MUST reject requests to store Statements that contain malformed signatures, with `400 Bad Request`.
-* <a name="2.6.s5.b2"></a>The LRS SHOULD include a message in the response of a rejected statement. 
-* <a name="2.6.s5.b3"></a>In order to verify signatures are well formed, the LRS MUST do the following:
-* <a name="2.6.s5.b3.b1"></a>Decode the JWS signature, and load the signed serialization of the Statement from the
-  JWS signature payload.
-* <a name="2.6.s5.b3.b2"></a>Validate that the original Statement is logically equivalent to the received Statement. 
-See [Statement comparision requirements](#statement-comparison-requirements).
-* <a name="2.6.s5.b3.b3"></a>If the JWS header includes an X.509 certificate, validate the signature against that
-certificate as defined in JWS.
-* <a name="2.6.s5.b3.b4"></a>Validate that the signature requirements outlined above have been met. 
+##### <a name="2.6.s5"></a>Требования к LRS
 
-__Note:__ The step of validating against the included X.509 certificate is intended as a
-way to catch mistakes in the signature, not as a security measure. The steps to authenticate
-a signed Statement will vary based on the degree of certainty required and are outside
-the scope of this specification.
+* <a name="2.6.s5.b1"></a>LRS ДОЛЖНА отвергать запросы сохранять Директивы, содержащие искаженные подписи, отвечая `400 Bad Request`.
+* <a name="2.6.s5.b2"></a>В LRS ЖЕЛАТЕЛЬНО включать сообщения в ответе отклоненного заявления.
+* <a name="2.6.s5.b3"></a>Для того, чтобы проверить формат подписи LRS должен выполнить следующие действия:
+* <a name="2.6.s5.b3.b1"></a>Расшифровать подпись JWS и загрузть подписанную Директиву.
+* <a name="2.6.s5.b3.b2"></a>Подтвердить, что первоначальная Директива логически эквивалентна принятой. Смотри [Statement comparision requirements](#statement-comparison-requirements).
+* <a name="2.6.s5.b3.b3"></a>Если заголовок JWS содержит сертификат X.509, проверки подпись этого сертификата, как это определено в JWS.
+* <a name="2.6.s5.b3.b4"></a>Проверить, что требования к подписи, описанные выше, были выполнены.
 
-##### <a name="2.6.s6"></a>Client Requirements
+__Note:__ Этап проверки сертификата X.509 задумана как способ найти ошибки в подписи, а не в качестве меры безопасности. Шаги для проверки подлинности подписанной Директивы будут меняться в зависимости от необходимости и выходят за рамки данной спецификации.
 
-* <a name="2.6.s6.b1"></a>Clients MUST follow the signature requirements outlined above.
-* <a name="2.6.s6.b2"></a>Clients MUST NOT assume a signature is valid simply because an LRS has accepted it.
+##### <a name="2.6.s6"></a>Требования к клиенту
 
-##### <a name="2.6.s7"></a>Example
+* <a name="2.6.s6.b1"></a>Клиенты ДОЛЖНЫ следовать требованиям к подписи, изложенным выше.
+* <a name="2.6.s6.b2"></a>Клиенты НЕ ДОЛЖНЫ думать, что подпись действительна лишь потому, что LRS принял его.
 
-See [Appendix D: Example Signed Statement](#Appendix2D) for an example.
+##### <a name="2.6.s7"></a>Пример
+
+Смотри [Приложение D: Example Signed Statement](#Appendix2D) там примеры.
 
 <a name="metadata"/>
 
-## <a name="3.0">3.0</a> Metadata
+## <a name="3.0">3.0</a>Метаданные
 
-Metadata is additional information about the resource. It enables decision making, search, and discoverability. 
-In xAPI, metadata can be utilized in a variety of locations. The most common is within [Activity Definitions](#actdef).
+Метаданные - дополнительная информация о ресурсе. Это дает возможность для принятия решений, поиска и общей понятности.
+В XAPI, метаданные могут быть использованы в самых разных местах. Наиболее распространенные опитаны тут - [Определения Активностей](#actdef).
 
 <a name="iri-requirements"/>
 
-### <a name="3.1">3.1</a> IRI Requirements
+### <a name="3.1">3.1</a>Требования к IRI
 
-xAPI uses IRIs for identifiers. Using IRIs ensures uniqueness and promotes resolvability. The LRS and Learning Record 
-Provider each have responsibilities in regard to each IRI as outlined below. Activity Definitions have additional rules 
-which can be found [here](#actdef).
+XAPI использует IRI для роутинга. Это обеспечивает уникальность и способствует удобству. LRS и Learning Record 
+Provider несут ответственность за работу отдельного IRI, как описано ниже. Activity Definitions имеют дополнительные правила, которые можно найти [здесь](#actdef).
 
 ##### <a name="3.1.s1"></a>Metadata Provider Requirements
 
-These requirements also apply to Learning Record Providers defining new IRIs. 
+Эти требования применяются также к Learning Record Providers для определения новых роутов.
 
-* <a name="3.1.s1.b1"></a>[Metadata Providers](./xAPI-About.md#def-metadata-provider) defining new IRIs SHOULD* only use IRIs they control 
-or have permission from the controller to use.
-* <a name="3.1.s1.b2">Metadata Providers defining new Verb IRIs MUST only use IRIs they control 
-or have permission from the controller to use.
-* <a name="3.1.s1.b3"></a>Where a suitable identifier already exists, the Metadata Provider SHOULD use the corresponding 
-existing identifier and SHOULD NOT create a new identifier.
-* <a name="3.1.s1.b4"></a>When re-using an existing identifier, Metadata Providers SHOULD* ensure that the exact character 
-equivelent IRI is used. 
-* <a name="3.1.s1.b5"></a>The Metadata Provider MAY create their own identifiers where a suitable identifier does not already exist.
-* <a name="3.1.s1.b6"></a>When defining identifiers, the Metadata Provider MAY use IRIs containing anchors so that a single 
-page can contain definitions for multiple identifiers. E.g. `http://example.com/xapi/verbs#defenestrated`
-* <a name="3.1.s1.b7"></a>When defining identifiers, the Metadata Provider SHOULD use lowercase IRIs. 
+* <a name="3.1.s1.b1"></a>[Metadata Providers](./xAPI-About.md#def-metadata-provider) определение новых IRIs ЖЕЛАТЕЛЬНО использовать только для контроллеров или иметь разрешать контроллерам их использовать.
 
-##### <a name="3.1.s2"></a>LRS Requirements
+* <a name="3.1.s1.b2">Metadata Providers определяющие новвые Действия IRIs ДОЛЖНЫ использовать только соответствующий контроллер.
+* <a name="3.1.s1.b3"></a>Если подходящий идентификатор уже существует, Поставщику метаданных ЖЕЛАТЕЛЬНО использовать соответствующий существующий идентификатор, а не создавать новый идентификатор.
+* <a name="3.1.s1.b4"></a>При повторном использовании существующего идентификатора, Metadata Providers ЖЕЛАТЕЛЬНО убедиться, что он точно соответствует по характеру использования.
+* <a name="3.1.s1.b5"></a>Metadata Provider МОЖЕТ создавать свои собственные идентификаторы, если подходящих идентификаторов не существует.
+* <a name="3.1.s1.b6"></a>При определении идентификаторов, Metadata Provider МОЖЕТ использовать IRIs содержащие якоря, так что одна страница может содержать определения для нескольких идентификаторов. Например `http://example.com/xapi/verbs#defenestrated`
+* <a name="3.1.s1.b7"></a>При определении идентификаторов, Metadata Provider ЖЕЛАТЕЛЬНО использовать нижний регистр в IRIs.
 
-* <a name="3.1.s2.b1"></a>When storing or comparing IRIs, LRSs SHOULD* handle them only by using one or more of the approaches 
-described in [5.3.1 (Simple String Comparison) and 5.3.2 (Syntax-Based Normalization) of RFC 3987](https://tools.ietf.org/html/rfc3987#section-5.3), and 
-SHOULD* NOT handle them using any approaches described in [5.3.3 (Scheme-Based Normalization) or 5.3.4 (Protocol-Based Normalization) of the same RFC](https://tools.ietf.org/html/rfc3987#section-5.3), 
-or any other approaches.
-* <a name="3.1.s2.b2"></a>LRSs SHOULD* apply the same IRI comparison and normalization rules with all IRIs in parameters and 
-fields defined to contain IRIs.
+##### <a name="3.1.s2"></a>Требования к LRS
+
+* <a name="3.1.s2.b1"></a>При сохранении и сравнении IRIs, LRSs ЖЕЛАТЕЛЬНО обращаться с ними только с помощью одного или нескольких из подходов, описанных в [5.3.1 (Simple String Comparison) и 5.3.2 (Syntax-Based Normalization) из RFC 3987](https://tools.ietf.org/html/rfc3987#section-5.3), и ЖЕЛАТЕЛЬНО НЕ обрабатывать их с помощью любых подходов, описанных в [5.3.3 (Scheme-Based Normalization) или 5.3.4 (Protocol-Based Normalization) того же RFC](https://tools.ietf.org/html/rfc3987#section-5.3), а также любые другие подходы.
+* <a name="3.1.s2.b2"></a>LRSs ЖЕЛАТЕЛЬНО применять те же правила сравнения и нормализации IRI как и со всеми IRIs.
 
 <a name="miscmeta"/>
 
-### <a name="3.2">3.2</a> Hosted Metadata
+### <a name="3.2">3.2</a>Размещенные Метаданные (Hosted Metadata)
 
-##### <a name="3.2.s1"></a>Description
+##### <a name="3.2.s1"></a>Описание
+
+Дополнительная информация об идентификаторе может быть предоставлена в заявлении и может быть размещен в месте, на которое указывает идентификатор IRI. В том числе и метаданные в заявлении позволяет метаданные о IRI быть выражено без необходимости ее решения. Хостинг метаданных по месту нахождения IRI позволяет владельцу ИРИ определить канонический метаданные для этого IRI.
 
 Additional information about an identifier can be provided within a Statement and can 
 be hosted at the location pointed to by the identifier IRI. Including metadata in a Statement
