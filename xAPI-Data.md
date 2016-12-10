@@ -1392,43 +1392,35 @@ __Note:__ Ревизии не имеют поведенческих послед
 ###### <a name="2.4.6.1.s1"></a>Обоснование/Подроюности
 
 Когда LRS является неотъемлемой частью LMS, то LMS вероятно, поддерживает концепцию регистрации.
-Опыт API применяет концепцию регистрации в более широком смысле. Регистрационная может быть
-считается попытка, сеанс, или может охватывать несколько деятельности. Там не ожидается, что
-завершая активность завершает регистрацию. Не является регистрация обязательно ограничено одним агентом.
+Опыт API применяет концепцию регистрации в более широком смысле. Регистрацией может 
+считается попытка внесения информации, сессия - она может охватывать несколько Активностей. Там не ожидается, что
+завершая Активность завершается регистрация. Регистрация обязательно ограничена одним Агентом.
 
-When an LRS is an integral part of an LMS, the LMS likely supports the concept of registration. 
-The Experience API applies the concept of registration more broadly. A registration could be 
-considered to be an attempt, a session, or could span multiple Activities. There is no expectation that 
-completing an Activity ends a registration. Nor is a registration necessarily confined to a single Agent.
-
-The Registration is also used when storing documents within the State Resource, e.g. for 
-bookmarking. Normally the same registration is used for requests to both the Statement and 
-State Resources relating to the same learning experience so that all data recorded for the experience is consistent. 
+Регистрации используется также при сохранении документов в State Resource, например, для создания закладок. 
+Обычно же регистрация используется для запросов к Директивам и State Resource, относящиеся к процессу обучения. 
+Причем это делается таким образом, чтобы все записанные данные были согласованы между собой.
 
 <a name="contextActivities"/>
 
-##### <a name="2.4.6.2">2.4.6.2</a> ContextActivities Property
+##### <a name="2.4.6.2">2.4.6.2</a> Свойство ContextActivities
 
-###### <a name="2.4.6.2.s1"></a>Description
+###### <a name="2.4.6.2.s1"></a>Описание
 
-A map of the types of learning activity context that this Statement is related to.
+Карта видов Активностей в контексте обучения для узаканный Директивы.
 
-###### <a name="2.4.6.2.s2"></a>Rationale
+###### <a name="2.4.6.2.s2"></a>Обоснование
 
-Many Statements do not just involve one (Object) Activity that is the focus, but relate to other contextually relevant 
-Activities. The "contextActivities" property allow for these related Activities to be represented in a structured manner.
+Многие Директивы не только содержат (Object) Активность, которая находится в центре внимания, но относятся к другим релевантным Активностям. Свойство "contextActivities" позволяет связывать Активности должны и представлять все в структурированном виде.
 
-###### <a name="2.4.6.2.s3"></a>Details
+###### <a name="2.4.6.2.s3"></a>Подробности
 
-There are four valid context types. All, any or none of these MAY be used in a given Statement:
+Существует четыре валидных типа контекста. в Директиве МОГУТ использоваться все или никакие:
 
-* <a name="2.4.6.2.s3.b1"></a>__Parent__: an Activity with a direct relation to the Activity which is the Object of the Statement. 
-In almost all cases there is only one sensible parent or none, not multiple. For example: a Statement about a quiz question
-would have the quiz as its parent Activity.
+* <a name="2.4.6.2.s3.b1"></a>__Parent__: Активности с прямой связью с другой Активностью, которая является объектом Директивы.
+Почти во всех случаях есть только один родитель, но не несколько. Например: Директива вопроса викторины
+будет иметь Активность викторины в качестве своей родительской деятельности.
  
-* <a name="2.4.6.2.s3.b2"></a>__Grouping__: an Activity with an indirect relation to the Activity which is the Object of the 
-Statement. For example: a course that is part of a qualification. The course has several classes. The course relates to a class 
-as the parent, the qualification relates to the class as the grouping.
+* <a name="2.4.6.2.s3.b2"></a>__Grouping__: Активность с непрямой связью с другой Активностью объекта Директивы. Например: курс как часть квалификации. Курс, который имеет несколько классов. Курс связан с классом как родитель, квалификация относится к классу как к части Группы.
 
 * <a name="2.4.6.2.s3.b3"></a>__Category__: an Activity used to categorize the Statement. "Tags" would be a synonym. 
 Category SHOULD be used to indicate a profile of xAPI behaviors, as well as other categorizations. For example: Anna attempts 
