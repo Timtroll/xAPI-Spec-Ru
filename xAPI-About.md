@@ -291,83 +291,67 @@ __Learning Management System (LMS)__: "Пакет программного об�
 
 LMS в данном документе используется в качестве примера того, как в системе идентифицируется "доверенный" пользователь и получает доступ к его процессу обучения.
 
-<a name="def-learning-record" ></a>
+<a name="def-learning-record" ></a> Learning Record
 
-__Learning Record__: An account of a learning experience that is formatted according to the rules of xAPI.  A Learning Record
-takes on many forms, including Statements, documents, and their parts.  This definition is intended to be all-inclusive.
+__Learning Record__: Запись полученного опыта, который отформатирован в соответствии с правилами XAPI. Learning Record принимает различные формы, в том числе Директивы, документы, а также их составные части. 
 
-<a name="def-learning-record-consumer" ></a>
+<a name="def-learning-record-consumer" ></a> Learning Record Consumer (LRC)
 
-__Learning Record Consumer (LRC)__: An xAPI Client that accesses data from Learning Record Store(s) with the intent of processing 
-the data, including interpretation, analysis, translation, dissemination, and aggregation.
+__Learning Record Consumer (LRC)__: Клиент XAPI, который получает доступ к данным из Learning Record Store (LRS) с целью обработки данных, в том числе интерпретации, анализа, перевода, распространения и агрегации.
 
-<a name="def-learning-record-provider" ></a>
+<a name="def-learning-record-provider" ></a> Learning Record Provider (LRP)
 
-__Learning Record Provider (LRP)__: An xAPI Client that sends data to Learning Record Store(s).  Often, the Learning Record 
-Provider will create Learning Records while monitoring a learner as a part of a Learning Experience.
+__Learning Record Provider (LRP)__: Клиент XAPI, который отправляет данные в Learning Record Store (LRS). Часто это Learning Record 
+Provider (LRP), который будет создавать отчеты по обучению при мониторинге ученика для ведения учебного процесса.
 
-<a name="def-learning-record-store" ></a>
+<a name="def-learning-record-store" ></a>Learning Record Store (LRS)
 
-__Learning Record Store (LRS)__: A server (i.e. system capable of receiving and processing web requests) that is responsible 
-for receiving, storing, and providing access to Learning Records.
+__Learning Record Store (LRS)__: Сервер (т.е. система, способная принимать и обрабатывать веб-запросы), который отвечает за прием, хранение и обеспечение доступа к процессу обучения.
 
-<a name="def-metadata-consumer" ></a>
+<a name="def-metadata-consumer" ></a>Metadata Consumer
 
-__Metadata Consumer__: A person, organization, software program or other thing that seeks to determine the meaning represented
-by an IRI used within this specification and/or retrieves metadata about an IRI. An LRS might or might not be a metadata consumer. 
+__Metadata Consumer__: Человек, организация, программа или еще что-то/кто-то, которые стремятся определить значение представленого в IRI и  используется в данном описании для извлечения метаданные об IRI. LRS может быть или может не быть потребителем метаданных.
 
-<a name="def-metadata-provider" ></a>
+<a name="def-metadata-provider" ></a>Metadata Provider
 
-__Metadata Provider__: A person, organization, software program or other thing that coins IRIs to be used within 
-this specification and/or hosts metadata about an IRI. 
+__Metadata Provider__: Человек, организация, программа или еще что-то/кто-то, использующие IRIs метаданные через IRI.
 
-<a name="def-persona" ></a>
+<a name="def-persona" ></a>Persona
 
-__Persona__: A set of one or more representations which defines an Actor uniquely.  Conceptually, this is like 
-having a "home email" and a "work email".  Both are the same person, but have different data, associations, etc.
+__Persona__: Набор из одного или нескольких представлений, которые однозначно определяют Актера. Концептуально, это походит на наличие "home email"/"work email". Это один и тот же человек, но имеющий разные данные о себе.
 
-<a name="def-profile" ></a>
+<a name="def-profile" ></a>Profile
 
-__Profile__: A specific set of rules and documentation for implementing xAPI in a particular context. Profiles generally provide a 
-particular vocabulary of terms, some created specifically for the profile, and some are referenced from other vocabularies. 
-Sometimes a profile might provide multiple vocabularies for different situations, and sometimes someone might curate a vocabulary 
-from multiple sources without creating a profile.  Not to be confused with [Document Profile Resource](#def-document-profile).
+__Profile__: Специфический набор правил и документации для реализации XAPI в определенном контексте. Профили обычно обеспечивают определенный словарь терминов, некоторые созданы специально для профиля, а некоторые из них ссылаются на другие словарей. Иногда профиль может предоставить несколько словарей для различных ситуаций, а иногда кто-то может собирать словарь из нескольких источников без создания профиля. Не следует путать с [Document Profile Resource](#def-документ-профиль).
 
-<a name="def-registration" ></a>
+<a name="def-registration" ></a>Registration
 
-__Registration__: An instance of an Actor experiencing a particular Activity.
+__Registration__: Инстанс Актера, который проводит определенную Активность.
 
-<a name="def-rest" ></a>
+<a name="def-rest" ></a>Representational State Transfer (REST)
 
-__Representational State Transfer (REST)__: An architecture for designing networked web services.
-It relies on HTTP methods and uses current web best practices.
+__Representational State Transfer (REST)__: Архитектура для разработки сетевых веб-сервисов. Опирается на методы HTTP и использует лучшие веб практики.
 
-<a name="def-service" ></a>
+<a name="def-service" ></a>Service
 
-__Service__: A software component responsible for one or more aspects of the distributed learning process. 
-An LMS typically combines many services to design a complete learning experience.
+__Service__: Компонент программного обеспечения, ответственный за распределение одного или более аспектов процесса обучения. Например, LMS -  сочетает в себе множество услуг, чтобы создать полный цикл обучения.
 
-<a name="def-statement" ></a>
+<a name="def-statement" ></a>Директива (Statement)
 
-__Statement__: A data sctructure showing evidence for any sort of experience or event which is to be tracked 
-in xAPI as a Learning Record.  A set of several Statements, each representing an event in time, might be used 
-to track complete details about a learning experience.
+__Statement__: Структура данных, показывающая како рода опыт или событие будет отслеживаться в XAPI как Learning Record. Набор из нескольких Директив, каждая из которых представляет собой событие во времени, и может быть использована для отслеживания всей информацию о качестве получения учебного опыта.
 
-<a name="def-tcapi"></a>
+<a name="def-tcapi"></a>Tin Can API (TCAPI)
 
-__Tin Can API (TCAPI)__: The previous name of the API defined in this document, often used in 
-informal references to the Experience API.
+__Tin Can API (TCAPI)__: Предыдущее название API, описанного текущим документом, часто используется в неформальных ссылок на Опытный API.
 
-<a name="def-verb" ></a>
+<a name="def-verb" ></a>Действие (Verb)
 
-__Verb__: Is the action being done by the Actor within the Activity within a Statement. 
-A Verb represents the "did" in "I did this".
+__Verb__: Действие которое производится Актером в рамках Активности в Директиве.
+Например Действие "сделал" в предложении "я сделал это".
 
-<a name="def-vocabulary" ></a>
+<a name="def-vocabulary" ></a>Vocabulary
 
-__Vocabulary__: A list or collection of the terms that are used by a COP for labeling or categorizing information in a 
-particular domain. The use of a vocabulary ensures that everyone is using the same word to mean the same thing. For more 
-information on vocabularies, see the [xAPI Vocabulary Companion Specification](https://github.com/adlnet/companion-specification-for-xapi-vocabularies/blob/master/SUMMARY.md).
+__Vocabulary__: Перечень или совокупность терминов, которые используются в комьюнити для маркировки или категоризации информации в той или иной области. Использование словаря гарантирует, что каждый использует то же слово в одинаковом смысле. Для получения более подробной информации о словарях смотри [xAPI Vocabulary Companion Specification](https://github.com/adlnet/companion-specification-for-xapi-vocabularies/blob/master/SUMMARY.md).
 
 <a name="xapi-components" ></a>
 
