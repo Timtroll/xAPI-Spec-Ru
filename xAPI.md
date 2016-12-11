@@ -2,7 +2,7 @@
 
 Спецификация разделена на 3 документа:
 
-*   Часть первая:   [Описание опытного API](./xAPI-About.md#partone)
-*   Часть вторая:   [Данные опытного API](./xAPI-Data.md#parttwo)
+*   Часть первая:   [Описание xAPI](./xAPI-About.md#partone)
+*   Часть вторая:   [Данные xAPI](./xAPI-Data.md#parttwo)
 *   Часть тертья:   [Обработка данных, Валидация и Безопасность](./xAPI-Communication.md#partthree)
 

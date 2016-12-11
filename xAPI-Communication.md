@@ -1,4 +1,4 @@
-# Опытный API
+# xAPI-SpecRu
 ## Расширенное распределенное обучение (ADL) Co-Laboratories
 ## Advanced Distributed Learning (ADL) Co-Laboratories
 ## (Вольный перевод от Timtroll https://github.com/adlnet/xAPI-Spec)
@@ -15,12 +15,12 @@
 > "как есть" БЕЗ КАКИХ ЛИБО ГАРАНТИЙ И УСЛОВИЙ явных или подразумеваемых. Смотри Лицензию на родном языке которая регулирует права и
 > ограничения по данной Лицензии.
 
-> Данный документ составлен членами Experience API Working Group (смотри список в [CONTRIBUTING.md](CONTRIBUTING.md#contributors))
+> Данный документ составлен членами  xAPI Working Group (смотри список в [CONTRIBUTING.md](CONTRIBUTING.md#contributors))
 > при поддержке Deputy Assistant Secretary of Defense (Readiness) Advanced Distributed Learning (ADL) Initiative. Все замечания 
 > и отклики посылайте сюда helpdesk@adlnet.gov
 
 ## Содержание
-*	Часть первая:	[Про опытный API](./xAPI-About.md#partone)
+*	Часть первая:	[Про xAPI](./xAPI-About.md#partone)
 	*	1.0.	[Введение](./xAPI-About.md#introduction-partone) 
 	*	2.0.	[Как использовать данный документ](./xAPI-About.md#readingguidelines)
 		*	2.1.	[Обязано быть / Как есть / Возможно будет](./xAPI-About.md#def-must-should-may)
@@ -28,12 +28,12 @@
 	*	3.0.	[Сериализация и JavaScript Object запись](./xAPI-About.md#json)
 	*	4.0.	[Определения](./xAPI-About.md#definitions) 
 	*	5.0.	[xAPI компоненты](./xAPI-About.md#xapi-components) 
-	*	6.0.	[расширенный xAPI](./xAPI-About.md#extending-xapi) 
+	*	6.0.	[Расширения xAPI](./xAPI-About.md#extending-xapi) 
 	*	7.0.	[Профили и Комьюнити на практике](./xAPI-About.md#COPs)
 	*	[Приложения](./xAPI-About.md#append1)
 		*	[Приложение A: регистрация изменений](./xAPI-About.md#Appendix1A)
 		*	[Приложение B: cmi5 примеры](./xAPI-About.md#Appendix1B)
-*	Часть вторая:	[Данные опытного API](./xAPI-Data.md#parttwo)
+*	Часть вторая:	[Данные xAPI](./xAPI-Data.md#parttwo)
 	*	1.0.	[Документация](./xAPI-Data.md#documents) 
 	*	2.0.	[Формулировки](./xAPI-Data.md#statements)
 		*	2.1.	[Общая цель](./xAPI-Data.md#statement-purpose)
@@ -106,52 +106,43 @@
 
 
 <a name="partthree" />
-# Part Three: Data Processing, Validation, and Security 
+# Часть третья: Обработка данных, Валидация и Безопасность
 
-This third part details the more technical side of the Experience API, dealing with how Statements are transferred between 
-Learning Record Provider and LRS. A number of libraries are available for a range of technologies (including JavaScript) 
-which handle this part of the specification. It therefore might not be necessary for Learning Record Providers to fully 
-understand every detail of this part of the specification.
+Это третья часть c более детальной технической стороной xAPI, описывающия как Директивы передаются между Learning Record Provider и LRS. Ряд библиотек доступны для использования с целым рядом технологий (в том числе JavaScript), которые могут обрабатывать эту часть спецификации. Поэтому такое описание не может быть необходимым для Learning Record Providers.
 
 <a name="requests"/>
 
-## <a name="1.0">1.0</a> Requests
+## <a name="1.0">1.0</a> Запросы (Requests)
 
-xAPI tracking is done via HTTP Requests from the Learning Record Provider (client) to the LRS (server). This 
-specification offers guidance in some aspects of this communication.  Where no guidance is offered, it is 
-recommended that those implementing xAPI use current industry best practices.
+Отслеживание в xAPI осуществляется с помощью HTTP-запросов от Learning Record Provider (client) к LRS (server). Эта спецификация предлагает руководство в построении некоторых аспектов этой связи. Там, где нет прямых указаний, рекомендуется, чтобы эти реализаторы xAPI использовали существующие лучшие методы.
 
 <a name="httphead"/>
 
-### <a name="1.1">1.1</a> HEAD Request Implementation
+### <a name="1.1">1.1</a> Реализация HEAD Request
 
-###### <a name="1.1.s1"></a>Description
-The behavior of the LRS in response to PUT, POST, GET and DELETE requests is outlined in [Resources](#resources) below. 
-All resources that support GET requests also support HEAD.
-The LRS will respond to HEAD requests by returning the meta information only, using the HTTP headers, and 
-not the actual document.
+###### <a name="1.1.s1"></a>Описание
 
-###### <a name="1.1.s2"></a>Rationale
+Поведение LRS в ответ на PUT, POST, GET и DELETE запрос описана в [Ресурсы](#resources) ниже.
+Все ресурсы, которые поддерживают GET также поддерживают HEAD.
+LRS будет отвечать на запросы в HEAD, возвращая метаинформацию только используя заголовки HTTP, а не BODY.
 
-Clients accessing the LRS might need to check if a particular Statement exists, or determine
-the modification date of documents such as those in State, Activity Profile, or Agent Profile Resources. Particularly
-for large documents, it is more efficient not to retrieve the entire document just to check its modification date.
+###### <a name="1.1.s2"></a>Обоснование
 
-###### <a name="1.1.s3"></a>LRS Requirements
-* <a name="1.1.s3.b1"></a>The LRS MUST respond to any HTTP HEAD request as it would have responded to an otherwise
-identical HTTP GET request except:
-    * <a name="1.1.s3.b1.b1"></a>The message-body MUST be omitted.
-    * <a name="1.1.s3.b1.b2"></a>The Content-Length header MAY be omitted, in order to avoid wasting LRS resources.
+Подключение клиентов к LRS, возможно потребует проверить, существует ли конкретная Директива, или попытается определить дату изменения документов, таких, как в State, Activity Profile или Agent Profile Resources. В частности, для больших документов, это является более эффективным, чтобы не получать весь документ только для получения его даты изменения.
+
+###### <a name="1.1.s3"></a>Требования к LRS
+
+* <a name="1.1.s3.b1"></a>LRS ДОЛЖЕН ответить на любой HTTP HEAD запрос, как если бы он отвечал на запрос HTTP GET, с такими ограничениями:
+    * <a name="1.1.s3.b1.b1"></a>Тело сообщения ДОЛЖНО быть опущено.
+    * <a name="1.1.s3.b1.b2"></a>Заголовок Content-Length, МОЖЕТ быть опущен, для экономии ресурсов LRS.
 
 <a name="headers"/> 
 
 ### <a name="1.2">1.2</a> Headers
 
 ##### <a name="1.2.s1"></a>Header Parameters
-Some header parameters used within xAPI data transfer are 
-[standard HTTP headers](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). Others are specific to this
- specification. The following request headers are expected to be used by the Learning Record Providers in some or all 
- of the types of request and situations described in this specification:
+
+Некоторые параметры Header, используемые xAPI в передаче данных - [Стандартные заголовки HTTP](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields). Следующие заголовки запроса, как ожидается, будут использоватьсяLearning Record Providers в некоторых или всех типах запросов и ситуаций, описанных в данной спецификации:
 
 * <a name="1.2.s1.b1"></a>Accept
 * <a name="1.2.s1.b2"></a>Accept-Encoding
@@ -164,8 +155,7 @@ Some header parameters used within xAPI data transfer are
 * <a name="1.2.s1.b9"></a>If-None-Match
 * <a name="1.2.s1.b10"></a>X-Experience-API-Version 
 
-The following response headers are expected to be used by the LRS. Again, not all of these apply
-to every type of request and/or situations:
+Ожидается, что следующие заголовки будут использоваться LRS. Опять же, не все из них относятся к любому типу запроса и/или ситуации:
 
 * <a name="1.2.s1.b11"></a>Content-Type
 * <a name="1.2.s1.b12"></a>Content-Length
@@ -175,48 +165,41 @@ to every type of request and/or situations:
 * <a name="1.2.s1.b16"></a>X-Experience-API-Version
 * <a name="1.2.s1.b17"></a>X-Experience-API-Consistent-Through
 
-The lists above are not intended to be exhaustive. See requirements throughout this document for more details.
+Этот перечень не являюеся исчерпывающими. Смотри требования, представленные в данном документе для получения более подробной информации.
 
 <a name="alt-request-syntax"/>
 
-### <a name="1.3">1.3</a> Alternate Request Syntax
+### <a name="1.3">1.3</a>Альтернативный синтаксис запроса
 
 
-###### <a name="1.3.s1"></a>Description
+###### <a name="1.3.s1"></a>Описание
 
-One of the goals of the xAPI is to allow cross-domain tracking, and even though xAPI seeks to enable tracking from 
-applications other than browsers, browsers still need to be supported. For example, Internet Explorer 8 and 9 do not 
-implement Cross Origin Resource Sharing, but rather use their own Cross Domain Request API, which cannot use all of 
-the xAPI as described above due to only supporting "GET" and "POST", and not allowing HTTP headers to be set.
+Одна из целей xAPI, чтобы позволить кросс-доменного отслеживание, и даже если XAPI стремится включить отслеживание из небраузерных приложений приложений, браузеры по-прежнему нуждаются в поддержке. Например, Internet Explorer 8 и 9 не в состоянии реализовать  Cross Origin Resource Sharing, а использует  свой собственный Cross Domain Request API, который не могут использовать все чAPI, как описано выше в связи с только поддержкой "GET" и "POST" и не позволяя устанавливать заголовки HTTP.
 
-###### <a name="1.3.s2"></a>Details/Requirements
+###### <a name="1.3.s2"></a>Подробности/Требования
 
-The following describes alternate syntax to use only when unable to use the usual syntax for specific calls due to the 
-restrictions mentioned above. This alternate syntax can also be used to GET Statements due to limits on query string length.
+Ниже описывается альтернативный синтаксис для использования в случаях, когда невозможно использовать обычный синтаксис для конкретных вызовов из-за ограничений, упомянутых выше. Этот альтернативный синтаксис может быть использован для получения Директив из-за ограничений по длине строки запроса GET.
 
-See [Appendix C: Cross Domain Request Example](#Appendix3C) for an example. 
+Смотри примеры в [Приложение C: Cross Domain Request Example](#Appendix3C). 
 
-###### <a name="1.3.s3"></a>Requirements
+###### <a name="1.3.s3"></a>Требования
 
 __Method__:
-* <a name="1.3.s3.b1"></a>All xAPI requests issued MUST be POST. 
-* <a name="1.3.s3.b2"></a>The intended xAPI method MUST be included as the value of the "method" query 
-string parameter. 
-* <a name="1.3.s3.b3"></a>The Learning Record Provider MUST NOT include any other query string parameters on the request.
+* <a name="1.3.s3.b1"></a>Все xAPI запросы ДОЛЖНЫ быть POST. 
+* <a name="1.3.s3.b2"></a>Предполагаемый метод xAPI ДОЛЖЕН быть включен в качестве значения "method" параметр строки запроса query.
+* <a name="1.3.s3.b3"></a>Learning Record Provider НЕ ДОЛЖЕН включать в запрос любые другие параметры строки query.
 
-Example: http://example.com/xAPI/statements?method=PUT
+Пример: http://example.com/xAPI/statements?method=PUT
 
 __Content__:
-* <a name="1.3.s3.b4"></a>If the xAPI call involved sending content, the Learning Record Provider MUST URL encode that content and 
-include it as a form parameter called "content". 
-* <a name="1.3.s3.b5"></a>The LRS MUST interpret this content as a UTF-8 string. Storing binary data is not supported with this syntax.
+* <a name="1.3.s3.b4"></a>Если вызов xAPI участвует передаче контента, Learning Record Provider ДОЛЖЕН закодировать URL, чтобы включить содержание в качестве параметра формы под названием "content".
+* <a name="1.3.s3.b5"></a>LRS ДОЛЖЕН интерпретировать этот "content" в виде строки UTF-8. Передача/Хранение двоичных данных не поддерживается.
 
 __Headers__:
-* <a name="1.3.s3.b6"></a>The Learning Record Provider MAY include any header parameters required by this specification which are 
-expected to appear in the HTTP header as form parameters with the same names. This applies 
-to the following parameters: Authorization, X-Experience-API-Version, Content-Type, Content-Length,
-If-Match and If-None-Match. It does not apply to Content-Transfer-Encoding.
-* <a name="1.3.s3.b7"></a>The LRS MUST treat the form parameters listed above as header parameters. 
+* <a name="1.3.s3.b6"></a>Learning Record Provider МОЖЕТ включать в себя любые параметры заголовка, необходимые по данной спецификации, которые, как ожидается, появится в HTTP-заголовке в качестве параметров формы с одинаковыми именами. Это относится к следующим параметрам: Authorization, X-Experience-API-Version, Content-Type, Content-Length,
+If-Match and If-None-Match.
+Это не относится к параметру Content-Transfer-Encoding.
+* <a name="1.3.s3.b7"></a>Параметры, перечисленные выше в качестве параметров заголовка LRS ДОЛЖЕН воспринимать как параметры формы.
 * <a name="1.3.s3.b8"></a>The Learning Record Provider MUST include other header parameters not listed above in the HTTP header as normal. 
 * <a name="1.3.s3.b9"></a>The Learning Record Provider SHOULD* still include a Content-Type header (in the HTTP header) for this type of 
 request with a value of 'application/x-www-form-urlencoded'. 
@@ -458,7 +441,7 @@ define their endpoints with path segments starting with `extensions/`.
 
 ###### <a name="2.1.s1"></a>Description
 
-The basic communication mechanism of the Experience API.
+The basic communication mechanism of the  xAPI.
 
 <a name="stmtresput"/>
 
@@ -816,7 +799,7 @@ voiding Statement, which cannot be voided.
 ### <a name="2.2">2.2</a> Document Resources 
 
 ##### <a name="2.2.s1"></a>Description
-The Experience API provides a facility for Learning Record Providers to save arbitrary data in 
+The  xAPI provides a facility for Learning Record Providers to save arbitrary data in 
 the form of documents, perhaps related to an Activity, Agent, or combination of both.
 
 ##### <a name="2.2.s2"></a>Details
@@ -1398,7 +1381,7 @@ required by [Versioning](#versioning).
 ###### <a name="3.0.s1"></a>Description
 
 The function of the LRS within the xAPI is to store and retrieve Statements. As long as it has sufficient information 
-to perform these tasks, it is expected that it does them. Validation of Statements in the Experience API is focused 
+to perform these tasks, it is expected that it does them. Validation of Statements in the  xAPI is focused 
 solely on syntax, not semantics. Enforcing the rules that ensure valid meaning among Verb definitions, Activity types, 
 and extensions is the responsibility of the Learning Record Provider sending the Statement. 
 
