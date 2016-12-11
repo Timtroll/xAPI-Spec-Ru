@@ -172,32 +172,17 @@ XAPI разработан для того:
 <a name="json"></a>
 ## 3.0 Сериализация и JavaScript Object запись
 
-Сериализация процесс преобразования объектов данных и структуры в формат для хранения или передачи, таким образом, что исходный объект данных могут быть воссозданы из полученного сериализации. В некоторых случаях это может быть возможно сериализовать часть данных в более чем одним способом. Например, логическое свойство со значением, соответствующим истинным могут быть представлены в виде `true` или '1' в зависимости от используемого сериализации.
+Сериализация процесс преобразования объектов данных и структуры в формат для хранения или передачи, таким образом, что исходный объект данных могут быть воссозданы из полученной сериализации. В некоторых случаях возможно сериализовать часть данных более чем одним способом. Например, логическое свойство со значением, соответствующим истинным могут быть представлены в виде `true` или `1` в зависимости от используемого типа  сериализации.
 
-Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the 
-original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece 
-of data in more than one way. For example, a boolean property with a value corresponding to true might be represented 
-as `true` or `1` depending on the serialization used. 
+XAPI следует правилам JSON для сериализации (так логические значения представлены в виде `true` или `false`). Возможно также представлять объекты с использованием других типов сериализации, например XML. Но это выходит за рамки данной спецификации. Данная спецификация использует исключительно JSON для представления объектов.
 
-XAPI следует правилам JSON для сериализации (так логические значения представлены в виде `` true` или false`). Он также может быть возможным, чтобы представить объекты, определенные в данном описании, с использованием других сериализации, такие как XML. Это выходит за рамки данной спецификации и использования ничего, кроме JSON для представления объектов, определенных в данном описании, не совместимую.
-
-xAPI follows the rules of JSON for serializations (so boolean values are represented as `true` or `false`). It might 
-also be possible to represent the objects defined in this specification using other serializations, such as XML. This is out 
-of scope of this specification and use of anything other than JSON to represent the objects defined in this specification 
-is not conformant. 
-
-Даже в пределах правил JSON есть возможные варианты, каким образом данные могут быть сериализованы, особенно в отношении данных о времени. Это имеет большое значение, как ряд особенностей XAPI полагаются на системы, находящихся в состоянии определить, являются ли два утверждения эквивалентны. См [Неизменность и исключения] (./ xAPI-Data.md # заявление-неизменность-и-исключения) для получения более подробной информации о свойствах Заявления пострадавших от этого.
-
-Even within the rules of JSON there are possible variations of how data can be serialized, especially in relation to data 
-about time. This is significant as a number of features of xAPI rely on systems being able to determine whether two 
-Statements are equivalent. See [Immutability and exceptions](./xAPI-Data.md#statement-immutability-and-exceptions) 
-for more details about the properties of the Statement affected by this. 
+Даже в пределах правил JSON есть возможны различные варианты сериализации, особенно в отношении данных о времени. Это имеет большое значение, так как ряд особенностей XAPI полагается на системы, которые в состоянии определить, что два утверждения эквивалентны между собой. Смотри [Неизменность и исключения](./xAPI-Data.md#заявление-неизменность-и-исключения) для получения более подробной информации о свойствах Заявления которые могут пострадать от этого.
 
 JSON allows for objects to have properties that contain empty objects. This is not recommended within xAPI; if the Statement 
 is not intended to contain data about a property then it is expected that the property will not be used at all. 
 All required properties are required to contain values. 
 
-JSON позволяет объектам иметь свойства, которые содержат пустые объекты. Это не рекомендуется в пределах XAPI; если заявление не предназначено, чтобы содержать данные о свойстве, то ожидается, что свойство не будет использоваться на всех. Все необходимые свойства должны содержать значения.
+JSON позволяет объектам иметь свойства, которые содержат пустые объекты, но это не рекомендуется в пределах XAPI; если заявление не предназначено, чтобы содержать данные о свойстве, то ожидается, что свойство не будет использоваться вовсе. Все необходимые свойства ДОЛЖНЫ содержать значения.
 
 <a name="definitions"></a>
 ## 4.0 Определения
@@ -234,105 +219,77 @@ JSON позволяет объектам иметь свойства, котор
 * [Термины](#def-verb)
 * [Словарь](#def-vocabulary)
 
-<a name="def-activity" ></a>
+<a name="def-activity" ></a>Активность
 
-__Activity__: A type of Object making up the "this" in "I did this"; it is something 
-with which an Actor interacted. It can be a unit of instruction, experience, or performance that is 
-to be tracked in meaningful combination with a Verb. Interpretation of Activity is broad, meaning that 
-Activities can even be tangible objects such as a chair (real or virtual). In the Statement "Anna 
-tried a cake recipe", the recipe constitutes the Activity in terms of the xAPI Statement. Other 
-examples of Activities include a book, an e-learning course, a hike, or a meeting.
+__Activity__: Тип объекта, составляющие понятие "это" в выражении "Я сделал это"; это что-то, с которым взаимодействовал Актер. Это может быть единицей обучения, получения опыта или производительность, которые будут отслеживаться в значимой комбинации с Действием. Интерпретация довольно широка, а это означает, что Активностью могут быть даже материальные объекты, такие как стул (реальный или виртуальный). В заявлении "Анна попыталась рецепт пирога", рецепт представляет собой Активность с точки зрения Директивы XAPI. Другие примеры Активности включают в себя книги, электронный учебный курс, поход, или встречу.
 
-<a name="def-activity-provider" ></a>
+<a name="def-activity-provider" ></a> Провайдер Активности (Activity Provider - AP)
 
-__Activity Provider (AP)__: Now referred to as a Learning Record Provider. This change differentiates that 
-the activity itself is not always the responsibility of software, rather just the tracking portion is. 
+__Activity Provider (AP)__: В настоящее время так называется поставщик услуг обучения (Learning Record Provider). Это говорит о том, что сама Активность не всегда соответствует программному обеспечению, а является только частью отслеживания.
 
-<a name="def-actor" ></a>
+<a name="def-actor" ></a> Актер (юзер)
 
-__Actor__: An individual or group representation tracked using Statements performing an action within 
-an Activity.  Is the "I" in "I did this".
+__Actor__: Индивидуальное или групповое представление отслеживается с помощью инструкций выполнения Директив в рамках Активности. Это и есть понятине "я" в сентенции "я сделал это".
 
-<a name="def-api" ></a>
+<a name="def-api" ></a> API
 
-__Application Programming Interface (API)__: A set of rules and standards created to allow access into 
-a software application or tool.
+__Application Programming Interface (API)__: Набор правил и стандартов, созданный для обеспечения доступа r программноve приложению или инструменту.
 
-<a name="def-authentication" ></a>
+<a name="def-authentication" ></a> Аутентификация
 
-__Authentication__: The concept of verifying identity. Authentication allows interactions between two 
-"trusted" parties.
+__Authentication__: Концепция проверки личности. Аутентификация позволяет разрещить взаимодействие между двумя "доверенными" лицами.
 
-<a name="def-authorization" ></a>
+<a name="def-authorization" ></a> Авторизация
 
-__Authorization__: The affordance of permissions based on role; the process of making one party 
-"trusted" by another.
+__Authorization__: Применимость прав доступа, основанная на ролях; процесс создания одной стороны "доверенной" другой
 
-<a name="def-client" ></a>
+<a name="def-client" ></a> Клиент (Client)
 
-__Client__: Refers to any entity that might interact through requests. Some examples could be a 
-Learning Record Provider, a Learning Record Consumer, a Learning Record Store (LRS), or a Learning 
-Management System (LMS).
+__Client__: Относится к любой сущности, которая может взаимодействовать через запросы. В качестве примера можно привести Learning Record Provider, Learning Record Consumer, Learning Record Store (LRS) или Learning Management System (LMS).
 
 <a name="def-community-of-practice" ></a>
 
-__Community of Practice (CoP)__: A group of practitioners connected by a common cause, role or purpose, which operates in a common 
-modality. CoPs are focused on implementing xAPI within a specific knowledge domain or use case. CoPs or independent developers, 
-can create domain-specific vocabularies, profiles, and recipes. These practices usually involve work around defining use cases 
-and curating the various vocabulary terms, synonyms, and other related metadata that might be preferred within a CoP. They can 
-also reuse existing vocabularies, profiles, and recipes already published by other CoPs or participants of the xAPI community.
+__Community of Practice (CoP)__: Группа практиков, связанных общим делом, ролях или цели, которая действует в общих интересах. Группа сосредоточена на реализации XAPI в рамках конкретной области знаний или использования. Группа или независимые разработчики могут создавать предметно-ориентированные словари, профили и рецепты. Такая практика, как правило, связана с работой вокруг определения вариантов использования и курирования различных терминов словаря, синонимов и других связанных метаданных, которые могут быть предпочтительными в пределах Группы. Они также могут использовать существующие словари, профили и рецепты уже опубликованные другими Группами или участниками сообщества XAPI.
 
 <a name="def-document-profile" ></a>
 
-__Document Profile Resource__: A construct where information about the learner or activity is kept, typically in name/document pairs 
-that have meaning to an instructional system component. Not to be confused with [Profile](#def-profile).
+__Document Profile Resource__: Конструкция, где информация об учащемся или Активности сохраняется, как правило, в виде пар имя/документ, и которые имеют значение в учебной составляющей системы. Не следует путать с [Профиль](#def-профиль).
 
 <a name="def-endpoint" ></a>
 
-__Endpoint__: An entry point in a service-oriented-architecture.  xAPI mirrors this approach with resources 
-by defining the IRI from which communication takes place as an endpoint.
+__Endpoint__: Точка входа в сервис. XAPI отражает этот подход с ресурсами, определив IRI, из которого происходит коммуникация в качестве конечной точки.
 
 <a name="def-experience-api" ></a>
 
-__Experience API (xAPI)__: The collection of rules articulated in this document which determines how learning 
-experiences are defined, formatted, and exchanged so that independent software programs can exchange and make 
-use of this information.
+__Experience API (xAPI)__: Совокупность правил, сформулированных в этом документе, которые определяют как - определять опыт обучения, форматировать и обмениваться таким образом, чтобы сторонние программы могли обмениваться и использовать эту информацию.
 
-<a name ="def-immutable" ></a>
+<a name ="def-immutable" ></a> Неизменямость
 
-__Immutable__:  Adjective used to describe things which cannot be changed. With some exceptions, Statements in the xAPI 
-are immutable. This ensures that when Statements are shared between LRSs, multiple copies of the Statement remain the same.
+__Immutable__: Понятие используется для описания вещей, которые не могут быть изменены. За некоторыми исключениями, Директивы в XAPI неизменны. Это гарантирует, что, когда Директивы распределяются между LRS, множественные копии Директив остаются прежними.
 
-<a name="def-iri" ></a>
+<a name="def-iri" ></a> Уникальный идентификатор ресурса (IRI)
 
-__Internationalized Resource Identifier  (IRI)__: A unique identifier which could be an IRL. Used to identify an object 
-such as a verb, activity or activity type. Unlike URIs, IRIs can contain some characters outside of the ASCII character 
-set in order to support international languages. 
+__Internationalized Resource Identifier  (IRI)__: Уникальный идентификатор, который может быть IRL. Используется для идентификации объекта, такого как Действие, Активность или вида Активности. В отличие от URIs, IRIs может содержать некоторые символы за пределами списка ASCII.
 
-IRIs always include a scheme. This is not a requirement of this standard, but part of the definition of IRIs, per 
-[RFC 3987](http://www.ietf.org/rfc/rfc3987.txt). What are sometimes called "relative IRIs" are not IRIs.
+IRIs всегда включают в себя схему. Это не является требованием настоящего стандарта, но часть определения IRIs согласно [RFC 3987] (http://www.ietf.org/rfc/rfc3987.txt). То, что иногда называют "relative IRIs" не является IRIs.
 
-<a name="def-irl" ></a>
+<a name="def-irl" ></a> IRL
 
-__Internationalized Resource Locator (IRL)__:  In the context of this document, an IRL is an IRI that when translated 
-into a URI (per the IRI to URI rules), is a URL. 
+__Internationalized Resource Locator (IRL)__:  В контексте этого документа, то IRL является IRI, что при переводе в URI (согласно IRI правилам - URI), является URL.
 
-<a name="def-inverse-functional-identifier" ></a>
+<a name="def-inverse-functional-identifier" ></a> Обратный Функциональный идентификатор (Inverse Functional Identifier)
 
-__Inverse Functional Identifier__: An identifier which is unique to a particular persona or Group.
+__Inverse Functional Identifier__: Идентификатор, который является уникальным для конкретной персоны или группы.
 
-<a name="def-learning-experience" ></a>
+<a name="def-learning-experience" ></a> Опыт обучения (Learning Experience)
 
-__Learning Experience__: An event associated with learning.  It is highly diverse as far as what it can be.
-Examples include reading a book, taking an online course, going on a field trip, engaging in self-directed 
-research, or receiving a certificate for a completed course.
+__Learning Experience__: Событие, связанное с обучением. Примеры включают в себя - чтение книги, онлайн курс, поход на экскурсию, самостоятельные зянятия или получение сертификата по завершеннии курса.
 
-<a name="def-learning-management-system" ></a>
+<a name="def-learning-management-system" ></a> Learning Management System (LMS)
 
-__Learning Management System (LMS)__: "A software package used to administer one or more courses to one or more learners. 
-An LMS is typically a web-based system that allows learners to authenticate themselves, register for courses, complete 
-courses and take assessments" (Learning Systems Architecture Lab definition). An LMS in this document is used as an 
-example of how a user is identified as "trusted" within a system and able to access its Learning Experiences.
+__Learning Management System (LMS)__: "Пакет программного обеспечения, используемого для управления одним или более курсами для одного или более учеников. LMS обычно представляет собой веб-система, которая позволяет учащимся проходить проверку подлинности, зарегистрироваться на курсы, проходить курсы и получать оценки "(определение Learning Systems Architecture Lab). 
+
+LMS в данном документе используется в качестве примера того, как в системе идентифицируется "доверенный" пользователь и получает доступ к его процессу обучения.
 
 <a name="def-learning-record" ></a>
 
