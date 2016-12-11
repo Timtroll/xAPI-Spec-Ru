@@ -1822,154 +1822,108 @@ Provider несут ответственность за работу отдел�
 
 ##### <a name="3.2.s1"></a>Описание
 
-Дополнительная информация об идентификаторе может быть предоставлена в заявлении и может быть размещен в месте, на которое указывает идентификатор IRI. В том числе и метаданные в заявлении позволяет метаданные о IRI быть выражено без необходимости ее решения. Хостинг метаданных по месту нахождения IRI позволяет владельцу ИРИ определить канонический метаданные для этого IRI.
+Дополнительная информация об идентификаторе может быть предоставлена в Директиве и может быть размещен в месте, на которое указывает идентификатор IRI, в том числе и метаданные Директивы. Размещение метаданных по месту нахождения IRI позволяет владельцу определить их каноничность.
 
-Additional information about an identifier can be provided within a Statement and can 
-be hosted at the location pointed to by the identifier IRI. Including metadata in a Statement
-allows metadata about the IRI to be expressed without the necessity of resolving it. Hosting
-metadata at the IRI location allows the owner of the IRI to define the canonical metadata for
-that IRI. 
+##### <a name="3.2.s2"></a>Подробности
 
-##### <a name="3.2.s2"></a>Details
+Некоторые типы идентификаторов IRI, которые используются в данной спецификации:
 
-There are several types of IRI identifiers used in this specification:
+* <a name="3.2.s2.b1"></a>[Действие (Verb)](#verb)
+* <a name="3.2.s2.b2"></a>[id Активности (Activity id)](#acturi)
+* <a name="3.2.s2.b3"></a>[тип Активности (Activity type)](#acttype)
+* <a name="3.2.s2.b4"></a>[расширеннный ключ (extension key)](#miscext)
+* <a name="3.2.s2.b5"></a>[usageType вложения (attachment usage type)](#attachmentUsage)
 
-* <a name="3.2.s2.b1"></a>[Verb](#verb)
-* <a name="3.2.s2.b2"></a>[Activity id](#acturi)
-* <a name="3.2.s2.b3"></a>[Activity type](#acttype)
-* <a name="3.2.s2.b4"></a>[extension key](#miscext)
-* <a name="3.2.s2.b5"></a>[attachment usage type](#attachmentUsage)
+Структуры размещенных метаданных об идентификаторах Активностей смотри [Activity Definition Object](#activity).
 
-For the structure of hosted metadata about Activity ids, see [Activity Definition Object](#activity).
-
-For the structure of hosted metadata about all other identifiers, see the format below:
+В таблице представлен формат размещения метаданный всех других идентификаторов:
 
 <table>
 	<tr><th>Свойства</th><th>Тип</th><th>Описание</th><th>Обязательность</th></tr>
 	<tr id="3.2.s2.table1.row1">
 		<td>name</td>
 		<td><a href="#lang-maps">Language Map</a></td>
-		<td>The human readable/visual name. For Verbs, this is equivalent to the "display" property in a Statement.</td>
+		<td>Понятное человеку имя. Для Действий (Verbs), это эквивалентно свойству "display" в Директиве.</td>
 		<td>по-желанию</td>
 	</tr>
 	<tr id="3.2.s2.table1.row2">
 		<td>description</td>
 		<td><a href="#lang-maps">Language Map</a></td>
-		<td>description</td>
+		<td>описание</td>
 		<td>по-желанию</td>
 	</tr>
 </table>
 
-Hosted metadata consists of a document containing a JSON object as described above. If this hosted metadata is provided, 
-it is the canonical source of information about the identifier it describes. It is recommended that those implementing xAPI
-look for and use established, widely adopted identifiers for all types of IRI identifiers other than Activity id.
+Размещенные метаданные состоят из документа, содержащего JSON объект, как описано выше. Если метаданные является каноническим источником информации идентификатора котороый он описывает. Рекомендуется тем, кто реализует XAPI использовать идентификаторы для всех типов IRI, отличных от идентификаторов Активностей.
 
 ##### <a name="3.2.s3"></a>Metadata Provider Requirements
 
-* <a name="3.2.s3.b1"></a>Metadata MAY be provided with an identifier.
-* <a name="3.2.s3.b2"></a>If metadata is provided, both "name" and "description" SHOULD be included.
-* <a name="3.2.s3.b3"></a>For any of the identifier IRIs above the Metadata Provider SHOULD make a human-readable description of the 
-intended usage accessible at the IRI.
-* <a name="3.2.s3.b4"></a>For any of the identifier IRIs above the Metadata Provider SHOULD ensure that this JSON metadata 
-available at that IRI when the IRI is requested and a Content-Type of `application/json` is requested.
-* <a name="3.2.s3.b5"></a>Where the IRI represents an Activity, the Metadata Provider MAY host metadata using 
-the [Activity Definition](#actdef) JSON format which is used in Statements, with a Content-Type of `application/json`.
+* <a name="3.2.s3.b1"></a>Метаданные МОГУТ предоставляться идентифицированными.
+* <a name="3.2.s3.b2"></a>Если метаданные были представлены, то свойства "name" и "description" ЖЕЛАТЕЛЬНО также вклатывать в ответ.
+* <a name="3.2.s3.b3"></a>Идентификаторы IRIs ЖЕЛАТЕЛЬНО делать удобными для восприятия человеком заполняя описания предполагаемого использования IRI.
+* <a name="3.2.s3.b4"></a>Для любого из IRIs идентификатора ЖЕЛАТЕЛЬНО гарантировать, что эти метаданные доступны в формате JSON при запросе Content-Type `application/json`.
+* <a name="3.2.s3.b5"></a>Там, где IRI представляет собой Активность, Metadata Provider МОЖЕТ принимать метаданные с помощью функции [Activity Definition](#actdef) формат JSON, который используется в Директивах - Content-Type `application/json`.
 
-##### <a name="3.2.s4"></a>LRS Requirements
+##### <a name="3.2.s4"></a>Требования к LRS
 
-* <a name="3.2.s4.b1"></a>The LRS MAY act as a [Metadata Consumer](./xAPI-About.md#def-metadata-consumer) and attempt to resolve identifier IRIs.
-* <a name="3.2.s4.b2"></a>If an Activity IRI is a URL, an LRS SHOULD attempt to GET that URL, and include in HTTP
-headers: `Accept: application/json, */*`. This SHOULD be done as soon as practical after the LRS
-first encounters the Activity id.
-* <a name="3.2.s4.b3"></a>Upon loading JSON which is a valid Activity Definition from a URL used as an Activity id,
- an LRS SHOULD incorporate the loaded definition into its canonical definition for that Activity,
-while preserving names or definitions not included in the loaded definition.
-* <a name="3.2.s4.b4"></a>Upon loading any document from which the LRS can parse an Activity Definition
-from a URL used as an Activity id, an LRS MAY consider this definition when determining
-its canonical representation of that Activity's definition.
+* <a name="3.2.s4.b1"></a>LRS МОЖЕТ выступать в качестве [Metadata Consumer](./xAPI-About.md#def-metadata-consumer).
+* <a name="3.2.s4.b2"></a>Если активность IRI представлена как URL - LRS ЖЕЛАТЕЛЬНО пытаться получить этот URL-адрес, а ключив в HTTP заголовок: `Accept: application/json, */*`. Это должно быть сделано, если LRS впервые сталкивается с таким идентификатором Активности.
+* <a name="3.2.s4.b3"></a>После загрузки валидного JSON определения Активности из URL, используемого в качестве идентификатора операции, LRS ЖЕЛАТЕЛЬНО включить определение загруженного в его каноническом определение для этой деятельности, при сохранении имен или определений, не включенных в загруженном определении.
+* <a name="3.2.s4.b4"></a>При загрузке какого-либо документа, из которого LRS можно получить определение Активности из URL, используемого в качестве идентификатора операции, LRS МОЖЕТ рассмотреть каноничность представления.
 
-##### <a name="3.2.s5"></a>Metadata Consumer Requirements
+##### <a name="3.2.s5"></a>Требования к Metadata Consumer
 
-* <a name="3.2.s5.b1"></a>If a Metadata Consumer obtains metadata from an IRI, it SHOULD make a strong presumption that the 
-metadata found at that IRI is authoritative in regards to the properties and languages included in that metadata. 
-* <a name="3.2.s5.b2"></a>The Metadata Consumer MAY use other sources of information to fill in missing details, 
-such as translations, or take the place of the hosted metadata entirely if it was not provided, cannot be loaded or the 
-Metadata Consumer does not trust it. Other sources of information MAY include metadata in other formats stored at the 
-IRI of an identifier, particularly if that identifier was not coined for use with this specification.
-
+* <a name="3.2.s5.b1"></a>Если Metadata Consumer получает метаданные из IRI, ЖЕЛАТЕЛЬНО убедиться, что метаданные являются авторитетным в отношении свойств и языков, включенных в них.
+* <a name="3.2.s5.b2"></a>Metadata Consumer МОЖЕТ использовать другие источники информации для заполнения недостающих деталей, таких как переводы или заполнить недостающие данные и МОЖЕТ не загрузать матаданные, которым у него нет доверия. Другие источники информации могут включать метаданные в других форматах, хранящихся в IRI, особенно если этот идентификатор не был придуман для использования в соответствии с этой спецификацией.
 
 <a name="special-data"/>
 
-## <a name="4.0">4.0</a> Special Data Types and Rules
+## <a name="4.0">4.0</a>Special Data Types и Rules
 
-The following are data types requiring additional rules that are found commonly in this specification.
+Перечислены ниже типы данных, которые требуют дополнительных правил, согласно данной спецификации.
 
 <a name="miscext"/> 
 
-### <a name="4.1">4.1</a> Extensions
+### <a name="4.1">4.1</a>Расширения (Extensions)
 
-##### <a name="4.1.s1"></a>Description
+##### <a name="4.1.s1"></a>Описание
 
-Extensions are available as part of Activity Definitions, as part of a Statement's "context" property, or as part of a 
-Statement's "result" property. In each case, extensions are intended to provide a natural way to extend those properties 
-for some specialized use. The contents of these extensions might be something valuable to just one application, or it might 
-be a convention used by an entire Community of Practice.
+Расширения доступны как часть Определения Активностей, как часть свойства "context" Директивы, либо как часть свойства "result" в Директиве. В каждом случае расширения предназначены для того, чтобы расширить эти свойства для специализированного использования. Содержание этих Расширений может быть ценным для обработк в одном приложении, или это может быть соглашение, используемое целым сообществом практики.
 
-##### <a name="4.1.s2"></a>Details
+##### <a name="4.1.s2"></a>Подробности
 
-Extensions are defined by a map and logically relate to the part of the Statement where they are present. The values of an 
-extension can be any JSON value or data structure. Extensions in the "context" property provide context to the core experience, 
-while those in the "result" property provide elements related to some outcome. Within Activities, extensions provide additional 
-information that helps define an Activity within some custom application or Community of Practice. The meaning and structure of 
-extension values under an IRI key are defined by the person who controls the IRI.
+Расширения определяются картой и логически связаны с той части Директивы, где они присутствуют. Значения расширения может быть любое значение в формате JSON или структура данных. Расширения в свойстве "context" обеспечить контекст для обработки опыта, в то время как те, в свойстве «result» обеспечиваются элементы, связанные с результатом. В рамках Активности, расширения обеспечивают дополнительную информацию, которая помогает определить Активность в определенном пользовательском приложении. Смысл и структура расширения в IRI определяются лицом, которое контролирует IRI.
 
-##### <a name="4.1.s3"></a>Requirements
+##### <a name="4.1.s3"></a>Требования
 
-* <a name="4.1.s3.b1"></a>The keys of an extensions map MUST be IRIs.
-* <a name="4.1.s3.b2"></a>An LRS MUST NOT reject a Statement based on the values of the extensions map.
-* <a name="4.1.s3.b3"></a>Learning Record Providers SHOULD always strive to map as much information as possible into the built-in 
-elements in order to leverage interoperability among Experience API conformant tools.
-* <a name="4.1.s3.b4"></a>All extension IRIs SHOULD have controllers.
-* <a name="4.1.s3.b5"></a>The controller of an IRL extension key SHOULD make a human-readable description of the intended meaning of 
-the extension supported by the IRL accessible at the IRL.
+* <a name="4.1.s3.b1"></a>Ключи карты расширений Должы быть IRIs.
+* <a name="4.1.s3.b2"></a>LRS НЕ ДОЛЖНО отклонять Директиву, которая основана на карте расширений.
+* <a name="4.1.s3.b3"></a>Learning Record Providers ЖЕЛАТЕЛЬНО всегда основываться на карте расщирений, чтобы получить как можно больше информации о встроенных элементах, чтобы задействовать максимальные возможности взаимодействия между Опытным API и согласующихся инструментов.
+* <a name="4.1.s3.b4"></a>Все расширения IRIs ДОЛЖНЫ иметь контроллеры.
+* <a name="4.1.s3.b5"></a>Контроллер расширения из ключа IRL должно сделать удобочитаемым описание предполагаемого значения расширения в IRL.
 
 __Note:__ A Statement defined entirely by its extensions becomes meaningless as no other system can make sense of it. 
 
 <a name="lang-maps"/> 
 
-### <a name="4.2">4.2</a> Language Maps
+### <a name="4.2">4.2</a>Карта языков (Language Maps)
 
-##### <a name="4.2.s1"></a>Description
+##### <a name="4.2.s1"></a>Описание
 
-A language map is a dictionary where the key is a [RFC 5646 Language Tag](http://tools.ietf.org/html/rfc5646), and the 
-value is a string in the language specified in the tag. This map SHOULD be populated as fully as possible based on the 
-knowledge of the string in question in different languages. 
+Языковая карта представляет собой словарь, где слово является ключом [RFC 5646 Язык Tag](http://tools.ietf.org/html/rfc5646), а значение является строкой на языке, указанном в теге. Эта карта должна быть заполнена настолько полно, насколько это возможно.
 
-The shortest valid language code for each language string is generally preferred. The 
-[ISO 639 language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) plus an 
-[ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) allows for the designation of
-basic languages (e.g., `es` for Spanish) and regions (e.g.,
-`es-MX`, the dialect of Spanish spoken in Mexico). If only the ISO 639 language code is known for certain, 
-do not guess at the possible ISO 3166-1 country code. For example, if
-only the primary language is known (e.g., English) then use the top level
-language tag `en`, rather than `en-US`. If the specific regional variation is known, then use the full language code.
+Для каждого языка наиболее предпочтительным является наибольшая краткость.
+[ISO 639 language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) плюс [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) позволяют обозначать основные языки (например, `es` для испанского языка) и регионов (например,` es-MX`, диалект испанского языка в Мексике). Если известна конкретная региональная вариация, то используйте полный код языка.
 
-__Note:__ For Chinese languages, the significant linguistic diversity represented by `zh` means that the ISO 639 language 
-code is generally insufficient.
+__Note:__ Для китайского языка представленние `zh` по ISO 639 недостаточно из-за высококого многобразия диалектов.
 
-The content of strings within a language map is plain text. It is expected that any formatting code 
-such as HTML tags or markdown will not be rendered, but will be displayed as code when this string is 
-displayed to an end user. An important exception to this is if language map Object is used in an extension and 
-the owner of that extension IRI explicitly states that a particular form of code will be rendered.
+Содержание строк в пределах языковой карты в текстовом виде. Ожидается, что не бедет содержатья любвх код форматирования, например HTML. Важным исключением является случай, когда карта языка объекта используется в расширении и владелец этого расширения IRI прямо говорит о той или иной форме кода.
 
 <a name="iris"/>
 
 ### <a name="4.3">4.3</a> IRIs
 
-Internationalized Resource Identifiers, or IRIs, are unique identifiers which could also be resolvable. Because 
-resolving is not a requirement, IRIs/URIs are used instead of IRLs/URLs. In order to allow the greatest flexibility 
-in the characters used in an identifier, IRIs are used instead of URIs as IRIs can contain some characters outside 
-of the ASCII character set. 
+Internationalized Resource Identifiers или IRIs, представляют собой уникальные идентификаторы. Посколько получение не является обязательным требованием, IRIs/URIs используются вместо IRLs/URL. Для того чтобы обеспечить наибольшую гибкость в идентификаторе, IRIs используются вместо URIs и может содержать некоторые символы, находящиеся вне набора символов ASCII.
 
 See [Metadata](#metadata). 
 
@@ -1977,85 +1931,77 @@ See [Metadata](#metadata).
 
 ### <a name="4.4">4.4</a> UUIDs
 
-Universally Unique Identifiers, or UUIDs, are 128-bit values that are globally unique. Unlike IRIs, there is 
-no expectation of resolvability as UUIDs take on a completely different format.  UUIDs MUST be in the standard 
-string form.  It is recommended variant 2 in [RFC 4122](http://tools.ietf.org/html/rfc4122) is used.
+Universally Unique Identifiers или UUID - 128-битные значения, которые являются глобально уникальными. UUID, должны быть в стандартной форме строки. Рекомендуется использовать вариант 2 из стандарта [RFC 4122] (http://tools.ietf.org/html/rfc4122).
 
 <a name="timestamps"/>
 
 ### <a name="4.5">4.5</a> ISO 8601 Timestamps
 
-Timestamps are a format type which represent a specific time. They are formatted according to ISO 8601's normal format. 
-Statements sent to an LRS can be expected to keep precision to at least milliseconds 
+Timestamps представляют собой тип формата ISO 8601. Директивы, отправленные в LRS ожидают точность, по крайней мере до миллисекунд.
 
-###### <a name="4.5.s1"></a>Requirements
-* <a name="4.5.s1.b1"></a>A Timestamp MUST be formatted according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations).
-* <a name="4.5.s1.b2"></a>A Timestamp SHOULD* be expressed using the format described in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt), which is a profile of ISO 8601. 
-* <a name="4.5.s1.b3"></a>A Timestamp MUST preserve precision to at least milliseconds (3 decimal points beyond seconds).
-* <a name="4.5.s1.b4"></a>A Timestamp SHOULD* include the time zone.
-* <a name="4.5.s1.b5"></a>If the Timestamp includes a time zone, the LRS MAY be return the Timestamp using a different 
-timezone to the one originally used in the Statement so long as the point in time referenced is not affected. 
-* <a name="4.5.s1.b6"></a>The LRS SHOULD* return the Timestamp in UTC timezone. 
-* <a name="4.5.s1.b7"></a>A Timestamp MAY be truncated or rounded to a precision of at least 3 decimal digits for seconds. 
+###### <a name="4.5.s1"></a>Требования
+
+* <a name="4.5.s1.b1"></a>Timestamp ДОЛЖЕН быть отформатирован в соответствии с  [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations).
+* <a name="4.5.s1.b2"></a>Timestamp ЖЕЛАТЕЛЬНО использовать в формате по[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt), which is a profile of ISO 8601. 
+* <a name="4.5.s1.b3"></a>Точность Timestamp должна быть по крайней мере до миллисекунд (3 знака после запятой за пределами секунд).
+* <a name="4.5.s1.b4"></a>ЖЕЛАТЕЛЬНО, чтобы Timestamp содержал часовой пояс.
+* <a name="4.5.s1.b5"></a>Если Timestamp включает в себя часовой пояс, то LRS МОЖЕТ быть вернуть Timestamp, используя другой часовой пояс, тот, что используется в Директиве.
+* <a name="4.5.s1.b6"></a>Желатолько, чтобы LRS возвращял Timestamp in UTC часовом поясе. 
+* <a name="4.5.s1.b7"></a>Timestamp может быть усечен или округлен с точностью до милисекунд.
 
 <a name="durations"/>
 
-### <a name="4.6">4.6</a> ISO 8601 Durations
+### <a name="4.6">4.6</a> Длительность (ISO 8601 Durations)
 
-Durations are strings representing the amount of time something took.
+Длительности представляют собой строки, представляющие количество времени.
 
-###### <a name="4.6.s1"></a>Requirements
+###### <a name="4.6.s1"></a>Требования
 
-* <a name="4.6.s1.b1"></a>A Duration MUST be expressed using the format for Duration in ISO 8601:2004(E) section 4.4.3.2.
-The alternative format (in conformity with the format used for time points and described in ISO 8601:2004(E) 
-section 4.4.3.3) MUST NOT be used.
-* <a name="4.6.s1.b2"></a>Learning Record Providers SHOULD provide a maximum precision of 0.01 seconds. 
-* <a name="4.6.s1.b3"></a>Learning Record Providers MAY provide less precision, for example in the case of reading a 
-University Degree precision might be in months or years. 
-* <a name="4.6.s1.b4"></a>On receiving a Duration with more than 0.01 second precision, the LRS SHOULD* NOT reject the 
-request but MAY truncate the "duration" property to 0.01 second precision. 
-* <a name="4.6.s1.b5"></a>When comparing Durations, any precision beyond 0.01 second precision SHOULD* NOT be included 
-in the comparison.
+* <a name="4.6.s1.b1"></a>Длительность ДОЛЖНА быть выражена с использованием формата Duration в ISO 8601:2004(E) раздел 4.4.3.2.
+НЕ ДОЛЖЕН быть использован fльтернативный формат (в соответствии с форматом из ISO 8601:2004(E) раздел 4.4.3.3).
+* <a name="4.6.s1.b2"></a>:ЖЕЛАТЕЛЬНО, чтобы Learning Record Providers обеспечивал точность в 0.01 секунды.
+* <a name="4.6.s1.b3"></a>Learning Record Providers МОЖЕТ обеспечивать меньшую точность, например, в случае получения сроков о Высшем образовании, что может составлять несколько месяцев или лет.
+* <a name="4.6.s1.b4"></a>При получении Длительност и с точностью более чем 0,01 секунды, НЕ ЖЕЛАТЕЛЬНО чтобы LRS отклонял запрос, но МОЖЕТ усекать свойство "duration" до 0,01 секунды.
 
-###### <a name="4.6.s2"></a>Examples
+###### <a name="4.6.s2"></a>Примеры
 
-The table below provides some example ISO 8601 Durations. This list is not intended to be exhaustive. 
+В таблице приводятся некоторые примеры длительностей по ISO 8601 . Этот перечень не является исчерпывающим.
 
 <table>
-	<tr><th>Example</th><th>Explanation</th></tr>
+	<tr><th>Пример</th><th>Объяснение</th></tr>
 	<tr id="4.6.s2.table1.row1">
 		<td>PT4H35M59.14S</td>
-		<td>Four hours, thirty five minutes and 59.14 seconds.</td>
+		<td>4 часа 35 минут и 59.14 секунды.</td>
 	</tr>
 	<tr id="4.6.s2.table1.row2">
 		<td>P16559.14S</td>
-		<td>The same time period as above represented in seconds. 
-		(Note: if the time period in question contained a leap second, this conversion would be inaccurate)</td>
+		<td>Период времени, описаный выше, представлен в секундах.
+		(Примечание: если период времени в запросе содержал длительность в секундах, то преобразование при ответе будет некорректно)</td>
 	</tr>
 	<tr id="4.6.s2.table1.row3">
 		<td>P3Y1M29DT4H35M59.14S</td>
-		<td>A Duration also including years, months and days.</td>
+		<td>3 года, 1 месяц, 29 дней 4 часа, 35 минут, 59.14 секунд. Длительность включает годы, месяцы и дни.</td>
 	</tr>
 	<tr id="4.6.s2.table1.row4">
 		<td>P3Y</td>
-		<td>Approximately three years e.g. completion of a qualification.</td>
+		<td>Завершение квалификации примерно через три года.</td>
 	</tr>
 	<tr id="4.6.s2.table1.row5">
 		<td>P4W</td>
-		<td>Four weeks. Note that weeks cannot be combined with other time periods. 'P4W1D' is not valid.</td>
+		<td>Четыре недели. Обратите внимание, что недели не могут быть объединены с другими периодами времени. 'P4W1D' не является действительным.</td>
 	</tr>
 </table>
 
-Durations are expected to be presented in the format in which they are recorded. For example if a Duration is tracked
-in seconds (or fractions of a second) there is no need to convert this to hours, minutes, and seconds. 
+Ожидается, что Длительности будут представлены в том же формате, в котором они записаны. Например, если продолжительность отслеживается в секундах (или доли секунды) не существует никакой необходимости преобразовать это в часах, минутах и секундах.
 
 <a name="append2"/>
-## <a name="4.6.s3"></a>Appendices
+## <a name="4.6.s3"></a>Приложения
 <a name="Appendix2A"/>
  
-### <a name="A">Appendix A</a>: Example Statements
+### <a name="A">Приложение A</a>: Пример Директивы
 
-Example of a simple Statement (line breaks are for display purposes only):
+Пример простой Директивы (переводы строк использованы только для наглядности):
+
 ```
 {
 	"id":"fd41c918-b88b-4b20-a0a5-a4c32391aaa0",
@@ -2086,13 +2032,15 @@ Example of a simple Statement (line breaks are for display purposes only):
 	}
 }
 ``` 
-Completion with Verb named "attempted" and Duration expressed in seconds (not converted to minutes and seconds):
+
+Завершение Действия под названием "attempted" и продолжительность в секундах (не преобразуется в минуты и секунды):
+
 ```
 {
 	"id":"7ccd3322-e1a5-411a-a67d-6a735c76f119",
 	"timestamp": "2015-12-18T12:17:00+00:00",
 	"actor":{
-"objectType": "Agent",
+		"objectType": "Agent",
 		"name":"Example Learner",
 		"mbox":"mailto:example.learner@adlnet.gov"
 	},
@@ -2123,230 +2071,233 @@ Completion with Verb named "attempted" and Duration expressed in seconds (not co
 	}
 }
 ```
-A long example Statement showcasing most of the properties available. This example shows
-a Statement returned by an LRS including the "authority" and "stored" properties set by the LRS:
+
+Большой пример Директивы демонстрирующий большинство доступных свойств. Этот пример показывает Директиву, возвращенную LRS и включает свойства "authority" и "stored" свойств, установленные LRS:
+
 ```
 {
-"id": "6690e6c9-3ef0-4ed3-8b37-7f3964730bee",
-"actor": {
-"name": "Team PB",
-"mbox": "mailto:teampb@example.com",
-"member": [
-{
-"name": "Andrew Downes",
-"account": {
-"homePage": "http://www.example.com",
-"name": "13936749"
-},
-"objectType": "Agent"
-},
-{
-"name": "Toby Nichols",
-"openid": "http://toby.openid.example.org/",
-"objectType": "Agent"
-},
-{
-"name": "Ena Hills",
-"mbox_sha1sum": "ebd31e95054c018b10727ccffd2ef2ec3a016ee9",
-"objectType": "Agent"
-}
-],
-"objectType": "Group"
-},
-"verb": {
-"id": "http://adlnet.gov/expapi/verbs/attended",
-"display": {
-"en-GB": "attended",
-"en-US": "attended"
-}
-},
-"result": {
-"extensions": {
-"http://example.com/profiles/meetings/resultextensions/minuteslocation": "X:\\meetings\\minutes\\examplemeeting.one"
-},
-"success": true,
-"completion": true,
-"response": "We agreed on some example actions.",
-"duration": "PT1H0M0S"
-},
-"context": {
-"registration": "ec531277-b57b-4c15-8d91-d292c5b2b8f7",
-"contextActivities": {
-"parent": [
-{
-"id": "http://www.example.com/meetings/series/267",
-"objectType": "Activity"
-}
-],
-"category": [
-{
-"id": "http://www.example.com/meetings/categories/teammeeting",
-"objectType": "Activity",
-"definition": {
+	"id": "6690e6c9-3ef0-4ed3-8b37-7f3964730bee",
+	"actor": {
+		"name": "Team PB",
+		"mbox": "mailto:teampb@example.com",
+		"member": [
+			{
+				"name": "Andrew Downes",
+				"account": {
+					"homePage": "http://www.example.com",
+					"name": "13936749"
+				},
+				"objectType": "Agent"
+			},
+			{
+				"name": "Toby Nichols",
+				"openid": "http://toby.openid.example.org/",
+				"objectType": "Agent"
+			},
+			{
+				"name": "Ena Hills",
+				"mbox_sha1sum": "ebd31e95054c018b10727ccffd2ef2ec3a016ee9",
+				"objectType": "Agent"
+			}
+		],
+		"objectType": "Group"
+	},
+	"verb": {
+		"id": "http://adlnet.gov/expapi/verbs/attended",
+		"display": {
+			"en-GB": "attended",
+			"en-US": "attended"
+		}
+	},
+	"result": {
+		"extensions": {
+			"http://example.com/profiles/meetings/resultextensions/minuteslocation": "X:\\meetings\\minutes\\examplemeeting.one"
+		},
+		"success": true,
+		"completion": true,
+		"response": "We agreed on some example actions.",
+		"duration": "PT1H0M0S"
+	},
+	"context": {
+		"registration": "ec531277-b57b-4c15-8d91-d292c5b2b8f7",
+		"contextActivities": {
+		"parent": [
+			{
+			"id": "http://www.example.com/meetings/series/267",
+			"objectType": "Activity"
+			}
+		],
+		"category": [
+			{
+				"id": "http://www.example.com/meetings/categories/teammeeting",
+				"objectType": "Activity",
+				"definition": {
+					"name": {
+						"en": "team meeting"
+					},
+					"description": {
+						"en": "A category of meeting used for regular team meetings."
+					},
+					"type": "http://example.com/expapi/activities/meetingcategory"
+				}
+			}
+		],
+		"other": [
+			{
+				"id": "http://www.example.com/meetings/occurances/34257",
+				"objectType": "Activity"
+			},
+			{
+				"id": "http://www.example.com/meetings/occurances/3425567",
+				"objectType": "Activity"
+			}
+		]
+		},
+		"instructor" :
+		{
+			"name": "Andrew Downes",
+			"account": {
+				"homePage": "http://www.example.com",
+				"name": "13936749"
+			},
+			"objectType": "Agent"
+		},
+		"team":
+		{
+			"name": "Team PB",
+			"mbox": "mailto:teampb@example.com",
+			"objectType": "Group"
+		}, 
+		"platform" : "Example virtual meeting software",
+		"language" : "tlh",
+		"statement" : {
+			"objectType":"StatementRef",
+			"id" :"6690e6c9-3ef0-4ed3-8b37-7f3964730bee"
+		}
+	},
+	"timestamp": "2013-05-18T05:32:34.804+00:00",
+	"stored": "2013-05-18T05:32:34.804+00:00",
+	"authority": {
+		"account": {
+			"homePage": "http://cloud.scorm.com/",
+			"name": "anonymous"
+		},
+		"objectType": "Agent"
+	},
+	"version": "1.0.0",
+	"object": {
+		"id": "http://www.example.com/meetings/occurances/34534",
+		"definition": {
+			"extensions": {
+				"http://example.com/profiles/meetings/activitydefinitionextensions/room": {"name": "Kilby", "id" : "http://example.com/rooms/342"}
+			},
 			"name": {
-			"en": "team meeting"
+				"en-GB": "example meeting",
+				"en-US": "example meeting"
 			},
 			"description": {
-			"en": "A category of meeting used for regular team meetings."
+				"en-GB": "An example meeting that happened on a specific occasion with certain people present.",
+				"en-US": "An example meeting that happened on a specific occasion with certain people present."
 			},
-			"type": "http://example.com/expapi/activities/meetingcategory"
-			}
-}
-],
-"other": [
-{
-"id": "http://www.example.com/meetings/occurances/34257",
-"objectType": "Activity"
-},
-{
-"id": "http://www.example.com/meetings/occurances/3425567",
-"objectType": "Activity"
-}
-]
-},
-"instructor" :
-{
-	"name": "Andrew Downes",
-"account": {
-"homePage": "http://www.example.com",
-"name": "13936749"
-},
-"objectType": "Agent"
-},
-"team":
-{
-	"name": "Team PB",
-	"mbox": "mailto:teampb@example.com",
-	"objectType": "Group"
-}, 
-"platform" : "Example virtual meeting software",
-"language" : "tlh",
-"statement" : {
-	"objectType":"StatementRef",
-	"id" :"6690e6c9-3ef0-4ed3-8b37-7f3964730bee"
-}
-
-},
-"timestamp": "2013-05-18T05:32:34.804+00:00",
-"stored": "2013-05-18T05:32:34.804+00:00",
-"authority": {
-"account": {
-"homePage": "http://cloud.scorm.com/",
-"name": "anonymous"
-},
-"objectType": "Agent"
-},
-"version": "1.0.0",
-"object": {
-"id": "http://www.example.com/meetings/occurances/34534",
-"definition": {
-"extensions": {
-"http://example.com/profiles/meetings/activitydefinitionextensions/room": {"name": "Kilby", "id" : "http://example.com/rooms/342"}
-},
-"name": {
-"en-GB": "example meeting",
-"en-US": "example meeting"
-},
-"description": {
-"en-GB": "An example meeting that happened on a specific occasion with certain people present.",
-"en-US": "An example meeting that happened on a specific occasion with certain people present."
-},
-"type": "http://adlnet.gov/expapi/activities/meeting",
-"moreInfo": "http://virtualmeeting.example.com/345256"
-},
-"objectType": "Activity"
-}
+			"type": "http://adlnet.gov/expapi/activities/meeting",
+			"moreInfo": "http://virtualmeeting.example.com/345256"
+		},
+		"objectType": "Activity"
+	}
 }
 ```
 <a name="Appendix2B"/>
 
-### <a name="B">Appendix B</a>: Examples of Statement's Objects of different types
+### <a name="B">Приложение B</a>: Примеры объектов Директив (Statement's Objects) различного типа
 
-The Object of a Statement can be an Activity, an Agent, a Group or a Statement. 
-This appendix provides one example of each. 
+Объект Директивы может быть Активностью, Агентом, Группой или Директивой.
+Ниже приводится один пример каждого из вариантов.
 
-###### <a name="B.s1"></a>Object is Activity
+###### <a name="B.s1"></a>Объект Директивы - Активность
+
 ```
 {
-"id": "http://www.example.co.uk/exampleactivity",
-"definition": {
-"name": {
-"en-GB": "example activity",
-"en-US": "example activity"
-},
-"description": {
-"en-GB": "An example of an activity",
-"en-US": "An example of an activity"
-},
-"type": "http://www.example.co.uk/types/exampleactivitytype"
-},
-"objectType": "Activity"
+	"id": "http://www.example.co.uk/exampleactivity",
+	"definition": {
+		"name": {
+			"en-GB": "example activity",
+			"en-US": "example activity"
+		},
+		"description": {
+			"en-GB": "An example of an activity",
+			"en-US": "An example of an activity"
+		},
+		"type": "http://www.example.co.uk/types/exampleactivitytype"
+	},
+	"objectType": "Activity"
 }
 ```
 
-###### <a name="B.s2"></a>Object is Agent
+###### <a name="B.s2"></a>Объект Директивы - Агент
+
 ```
 {
-"name": "Andrew Downes",
-"mbox": "mailto:andrew@example.co.uk",
-"objectType": "Agent"
+	"name": "Andrew Downes",
+	"mbox": "mailto:andrew@example.co.uk",
+	"objectType": "Agent"
 }
 ```
 
-###### <a name="B.s3"></a>Object is Group
+###### <a name="B.s3"></a>Объект Директивы - Группа
 
-This example shows an Identified Group with members. 
+Этот пример показывает, идентифицированную Группу с членами.
+
 ```
 {
-"name": "Example Group",
-"account" : {
-	"homePage" : "http://example.com/homePage",
-	"name" : "GroupAccount"
-},
-"objectType": "Group",
-"member": [
-{
-"name": "Andrew Downes",
-"mbox": "mailto:andrew@example.com",
-"objectType": "Agent"
-},
-{
-"name": "Aaron Silvers",
-"openid": "http://aaron.openid.example.org",
-"objectType": "Agent"
+	"name": "Example Group",
+	"account" : {
+		"homePage" : "http://example.com/homePage",
+		"name" : "GroupAccount"
+	},
+	"objectType": "Group",
+	"member": [
+		{
+			"name": "Andrew Downes",
+			"mbox": "mailto:andrew@example.com",
+			"objectType": "Agent"
+		},
+		{
+			"name": "Aaron Silvers",
+			"openid": "http://aaron.openid.example.org",
+			"objectType": "Agent"
+		}
+	]
 }
-]
-}
 ```
 
 
-###### <a name="B.s4"></a>Object is Statement
+###### <a name="B.s4"></a>Объект Директивы - Директива
 
-This example shows a SubStatement Object whose Object is a Statement Reference.
+Этот пример показывает ПодДирективу объекта, чей объект является ссылкой Директивы (Statement Reference).
 
 ```
 {
-"objectType": "SubStatement",
-"actor" : {
-"objectType": "Agent", 
-"mbox":"mailto:agent@example.com" 
-},
-"verb" : { 
-"id":"http://example.com/confirmed", 
-"display":{
-"en":"confirmed"
-} 
-},
-"object": {
-"objectType":"StatementRef",
+	"objectType": "SubStatement",
+	"actor" : {
+		"objectType": "Agent", 
+		"mbox":"mailto:agent@example.com" 
+	},
+	"verb" : { 
+		"id":"http://example.com/confirmed", 
+		"display":{
+		"en":"confirmed"
+	} 
+	},
+	"object": {
+		"objectType":"StatementRef",
 		"id" :"9e13cefd-53d3-4eac-b5ed-2cf6693903bb"
-}
+	}
 }
 ```
 
 <a name="Appendix2C"/>
 
-### <a name="C">Appendix C</a>: Example definitions for Activities of type `cmi.interaction`
+### <a name="C">Приложение C</a>: Пример определений для Активностей типа `cmi.interaction`
 
 ###### <a name="C.s1"></a>true-false
 
@@ -2364,6 +2315,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s2"></a>choice
+
 ```
 "definition": {
 	"description": {
@@ -2404,6 +2356,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s3"></a>fill-in
+
 ```
 "definition": {
 	"description": {
@@ -2472,6 +2425,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s6"></a>matching
+
 ```
 "definition": {
 	"description": {
@@ -2538,6 +2492,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s7"></a>performance
+
 ```
 "definition": {
 	"description": {
@@ -2572,6 +2527,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s8"></a>sequencing
+
 ```
 "definition": {
 	"description": {
@@ -2611,6 +2567,7 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 ```
 
 ###### <a name="C.s9"></a>numeric
+
 ```
 "definition": {
 	"description": {
@@ -2624,9 +2581,11 @@ This example shows a SubStatement Object whose Object is a Statement Reference.
 }
 ```
 
+В этом примере минимально правильный ответ `4` и нет максимума. `5`,` 6` или `976` - все правильные ответы.
 In this example the minimum correct answer is `4` and there is no maximum. `5`, `6` or `976` would all be correct answers. 
 
 ###### <a name="C.s10"></a>other
+
 ```
 "definition": {
 	"description": {
@@ -2642,45 +2601,45 @@ In this example the minimum correct answer is `4` and there is no maximum. `5`, 
 
 <a name="Appendix2D"/>
 
-### <a name="D">Appendix D</a>: Example Signed Statement
+### <a name="D">Приложение D</a>: Пример подписанной Диррективы (Signed Statement)
 
-An example signed Statement, as described in: [Section 2.6 Signed Statements](#signature).
+Пример подписанной Директивы, как описано в разделе: [Раздел 2.6 Signed Statements](#signature).
 
-The original Statement serialization to be signed. New lines in this example are included
-via CR+LF (0x0D + 0x0A).
+Сериализация Директива должна быть подписана. Новые строки в данном примере включены с помощью CR+LF (0x0D+0x0A).
 
 ```
 {
-"version": "1.0.0",
-"id": "33cff416-e331-4c9d-969e-5373a1756120",
-"actor": {
-"mbox": "mailto:example@example.com",
-"name": "Example Learner",
-"objectType": "Agent"
-},
-"verb": {
-"id": "http://adlnet.gov/expapi/verbs/experienced",
-"display": {
-"en-US": "experienced"
-}
-},
-"object": {
-"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
-"objectType": "Activity",
-"definition": {
-"name": {
-"en-US": "Tax Tips & Information : How to File a Tax Return "
-},
-"description": {
-"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
-}
-}
-},
-"timestamp": "2013-04-01T12:00:00Z"
+	"version": "1.0.0",
+	"id": "33cff416-e331-4c9d-969e-5373a1756120",
+	"actor": {
+		"mbox": "mailto:example@example.com",
+		"name": "Example Learner",
+		"objectType": "Agent"
+	},
+	"verb": {
+		"id": "http://adlnet.gov/expapi/verbs/experienced",
+		"display": {
+			"en-US": "experienced"
+		}
+	},
+	"object": {
+		"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
+		"objectType": "Activity",
+		"definition": {
+			"name": {
+				"en-US": "Tax Tips & Information : How to File a Tax Return "
+			},
+			"description": {
+				"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
+			}
+		}
+	},
+	"timestamp": "2013-04-01T12:00:00Z"
 }
 ```
 
-Example private key for X.509 certificate that will be used for signing:
+Пример использования для подписи приватного ключа сертификата X.509:
+
 ```
 -----BEGIN RSA PRIVATE KEY-----
 MIICXAIBAAKBgQDjxvZXF30WL4oKjZYXgR0ZyaX+u3y6+JqTqiNkFa/VTnet6Ly2
@@ -2699,7 +2658,8 @@ lBRK8g7ZncekbGW3aRLVGVOxClnLLTzwOlamBKOUm8V6XxsMHQ6TE2D+fKJoNUY1
 -----END RSA PRIVATE KEY-----
 ```
 
-Example public X.509 certificate
+Пример публичного сертификата X.509
+
 ```
 -----BEGIN CERTIFICATE-----
 MIIDATCCAmqgAwIBAgIJAMB1csNuA6+kMA0GCSqGSIb3DQEBBQUAMHExCzAJBgNV
@@ -2722,7 +2682,8 @@ OFWZxvA=
 -----END CERTIFICATE-----
 ```
 
-Example certificate authority certificate
+Пример сертификата сертификации (Example certificate authority certificate)
+
 ```
 -----BEGIN CERTIFICATE-----
 MIIDNzCCAqCgAwIBAgIJAMB1csNuA6+jMA0GCSqGSIb3DQEBBQUAMHExCzAJBgNV
@@ -2746,64 +2707,69 @@ ma5/Ycs0GTyrECY=
 -----END CERTIFICATE-----
 ```
 
+WS Заголовок. Следует отметить, что наряду с указанием алгоритма, цепочки сертификатов был включен сертификат подписи.
+
 JWS Header. Note that along with specifying the algorithm, the certificate chain for
 the signing certificate has been included.
+
 ```
 {
-"alg": "RS256",
-"x5c": [
+	"alg": "RS256",
+	"x5c": [
 "MIIDATCCAmqgAwIBAgIJAMB1csNuA6+kMA0GCSqGSIb3DQEBBQUAMHExCzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlUZW5uZXNzZWUxGDAWBgNVBAoTD0V4YW1wbGUgQ29tcGFueTEQMA4GA1UEAxMHRXhhbXBsZTEiMCAGCSqGSIb3DQEJARYTZXhhbXBsZUBleGFtcGxlLmNvbTAeFw0xMzA0MDQxNTI4MzBaFw0xNDA0MDQxNTI4MzBaMIGWMQswCQYDVQQGEwJVUzESMBAGA1UECBMJVGVubmVzc2VlMREwDwYDVQQHEwhGcmFua2xpbjEYMBYGA1UEChMPRXhhbXBsZSBDb21wYW55MRAwDgYDVQQLEwdFeGFtcGxlMRAwDgYDVQQDEwdFeGFtcGxlMSIwIAYJKoZIhvcNAQkBFhNleGFtcGxlQGV4YW1wbGUuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDjxvZXF30WL4oKjZYXgR0ZyaX+u3y6+JqTqiNkFa/VTnet6Ly2OT6ZmmcJEPnq3UnewpHoOQ+GfhhTkW13j06j5iNn4obcCVWTL9yXNvJH+Ko+xu4Yl/ySPRrIPyTjtHdG0M2XzIlmmLqm+CAS+KCbJeH4tf543kIWC5pC5p3cVQIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUVs3v5afEdOeoYeVajAQE4v0WS1QwHwYDVR0jBBgwFoAUyVIc3yvra4EBz20I4BF39IAixBkwDQYJKoZIhvcNAQEFBQADgYEAgS/FF5D0Hnj44rvT6kgn3kJAvv2lj/fyjztKIrYS33ljXGn6gGyA4qtbXA23PrO4uc/wYCSDICDpPobh62xTCd9qObKhgwWOi05PSBLqUu3mwfAe15LJBJBqPVZ4K0kppePBU8m6aIZoH57L/9t4OoaL8yKs/qjKFeI1OFWZxvA=",
 "MIIDNzCCAqCgAwIBAgIJAMB1csNuA6+jMA0GCSqGSIb3DQEBBQUAMHExCzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlUZW5uZXNzZWUxGDAWBgNVBAoTD0V4YW1wbGUgQ29tcGFueTEQMA4GA1UEAxMHRXhhbXBsZTEiMCAGCSqGSIb3DQEJARYTZXhhbXBsZUBleGFtcGxlLmNvbTAeFw0xMzA0MDQxNTI1NTNaFw0yMzA0MDIxNTI1NTNaMHExCzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlUZW5uZXNzZWUxGDAWBgNVBAoTD0V4YW1wbGUgQ29tcGFueTEQMA4GA1UEAxMHRXhhbXBsZTEiMCAGCSqGSIb3DQEJARYTZXhhbXBsZUBleGFtcGxlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1sBnBWPZ0f7WJUFTJy5+01SlS5Z6DDD6Uye9vK9AycgV5B3+WC8HC5u5h91MujAC1ARPVUOtsvPRs45qKNFIgIGRXKPAwZjawEI2sCJRSKV47i6B8bDv4WkuGvQaveZGI0qlmN5R1Eim2gUItRj1hgcC9rQavjlnFKDY2rlXGukCAwEAAaOB1jCB0zAdBgNVHQ4EFgQUyVIc3yvra4EBz20I4BF39IAixBkwgaMGA1UdIwSBmzCBmIAUyVIc3yvra4EBz20I4BF39IAixBmhdaRzMHExCzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlUZW5uZXNzZWUxGDAWBgNVBAoTD0V4YW1wbGUgQ29tcGFueTEQMA4GA1UEAxMHRXhhbXBsZTEiMCAGCSqGSIb3DQEJARYTZXhhbXBsZUBleGFtcGxlLmNvbYIJAMB1csNuA6+jMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADgYEADhwTebGk735yKhm8DqCxvNnEZ0NxsYEYOjgRG1yXTlW5pE691fSH5AZ+T6fpwpZcWY5QYkoN6DnwjOxGkSfQC3/yGmcUDKBPwiZ5O2s9C+fE1kUEnrX2Xea4agVngMzR8DQ6oOauLWqehDB+g2ENWRLoVgS+ma5/Ycs0GTyrECY="
-]
+	]
 }
 ```
 
-JWS signature
+JWS подпись
+
 ```
 ew0KICAgICJhbGciOiAiUlMyNTYiLA0KICAgICJ4NWMiOiBbDQogICAgICAgICJNSUlEQVRDQ0FtcWdBd0lCQWdJSkFNQjFjc051QTYra01BMEdDU3FHU0liM0RRRUJCUVVBTUhFeEN6QUpCZ05WQkFZVEFsVlRNUkl3RUFZRFZRUUlFd2xVWlc1dVpYTnpaV1V4R0RBV0JnTlZCQW9URDBWNFlXMXdiR1VnUTI5dGNHRnVlVEVRTUE0R0ExVUVBeE1IUlhoaGJYQnNaVEVpTUNBR0NTcUdTSWIzRFFFSkFSWVRaWGhoYlhCc1pVQmxlR0Z0Y0d4bExtTnZiVEFlRncweE16QTBNRFF4TlRJNE16QmFGdzB4TkRBME1EUXhOVEk0TXpCYU1JR1dNUXN3Q1FZRFZRUUdFd0pWVXpFU01CQUdBMVVFQ0JNSlZHVnVibVZ6YzJWbE1SRXdEd1lEVlFRSEV3aEdjbUZ1YTJ4cGJqRVlNQllHQTFVRUNoTVBSWGhoYlhCc1pTQkRiMjF3WVc1NU1SQXdEZ1lEVlFRTEV3ZEZlR0Z0Y0d4bE1SQXdEZ1lEVlFRREV3ZEZlR0Z0Y0d4bE1TSXdJQVlKS29aSWh2Y05BUWtCRmhObGVHRnRjR3hsUUdWNFlXMXdiR1V1WTI5dE1JR2ZNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0R05BRENCaVFLQmdRRGp4dlpYRjMwV0w0b0tqWllYZ1IwWnlhWCt1M3k2K0pxVHFpTmtGYS9WVG5ldDZMeTJPVDZabW1jSkVQbnEzVW5ld3BIb09RK0dmaGhUa1cxM2owNmo1aU5uNG9iY0NWV1RMOXlYTnZKSCtLbyt4dTRZbC95U1BScklQeVRqdEhkRzBNMlh6SWxtbUxxbStDQVMrS0NiSmVINHRmNTQza0lXQzVwQzVwM2NWUUlEQVFBQm8zc3dlVEFKQmdOVkhSTUVBakFBTUN3R0NXQ0dTQUdHK0VJQkRRUWZGaDFQY0dWdVUxTk1JRWRsYm1WeVlYUmxaQ0JEWlhKMGFXWnBZMkYwWlRBZEJnTlZIUTRFRmdRVVZzM3Y1YWZFZE9lb1llVmFqQVFFNHYwV1MxUXdId1lEVlIwakJCZ3dGb0FVeVZJYzN5dnJhNEVCejIwSTRCRjM5SUFpeEJrd0RRWUpLb1pJaHZjTkFRRUZCUUFEZ1lFQWdTL0ZGNUQwSG5qNDRydlQ2a2duM2tKQXZ2MmxqL2Z5anp0S0lyWVMzM2xqWEduNmdHeUE0cXRiWEEyM1ByTzR1Yy93WUNTRElDRHBQb2JoNjJ4VENkOXFPYktoZ3dXT2kwNVBTQkxxVXUzbXdmQWUxNUxKQkpCcVBWWjRLMGtwcGVQQlU4bTZhSVpvSDU3TC85dDRPb2FMOHlLcy9xaktGZUkxT0ZXWnh2QT0iLA0KICAgICAgICAiTUlJRE56Q0NBcUNnQXdJQkFnSUpBTUIxY3NOdUE2K2pNQTBHQ1NxR1NJYjNEUUVCQlFVQU1IRXhDekFKQmdOVkJBWVRBbFZUTVJJd0VBWURWUVFJRXdsVVpXNXVaWE56WldVeEdEQVdCZ05WQkFvVEQwVjRZVzF3YkdVZ1EyOXRjR0Z1ZVRFUU1BNEdBMVVFQXhNSFJYaGhiWEJzWlRFaU1DQUdDU3FHU0liM0RRRUpBUllUWlhoaGJYQnNaVUJsZUdGdGNHeGxMbU52YlRBZUZ3MHhNekEwTURReE5USTFOVE5hRncweU16QTBNREl4TlRJMU5UTmFNSEV4Q3pBSkJnTlZCQVlUQWxWVE1SSXdFQVlEVlFRSUV3bFVaVzV1WlhOelpXVXhHREFXQmdOVkJBb1REMFY0WVcxd2JHVWdRMjl0Y0dGdWVURVFNQTRHQTFVRUF4TUhSWGhoYlhCc1pURWlNQ0FHQ1NxR1NJYjNEUUVKQVJZVFpYaGhiWEJzWlVCbGVHRnRjR3hsTG1OdmJUQ0JuekFOQmdrcWhraUc5dzBCQVFFRkFBT0JqUUF3Z1lrQ2dZRUExc0JuQldQWjBmN1dKVUZUSnk1KzAxU2xTNVo2RERENlV5ZTl2SzlBeWNnVjVCMytXQzhIQzV1NWg5MU11akFDMUFSUFZVT3RzdlBSczQ1cUtORklnSUdSWEtQQXdaamF3RUkyc0NKUlNLVjQ3aTZCOGJEdjRXa3VHdlFhdmVaR0kwcWxtTjVSMUVpbTJnVUl0UmoxaGdjQzlyUWF2amxuRktEWTJybFhHdWtDQXdFQUFhT0IxakNCMHpBZEJnTlZIUTRFRmdRVXlWSWMzeXZyYTRFQnoyMEk0QkYzOUlBaXhCa3dnYU1HQTFVZEl3U0JtekNCbUlBVXlWSWMzeXZyYTRFQnoyMEk0QkYzOUlBaXhCbWhkYVJ6TUhFeEN6QUpCZ05WQkFZVEFsVlRNUkl3RUFZRFZRUUlFd2xVWlc1dVpYTnpaV1V4R0RBV0JnTlZCQW9URDBWNFlXMXdiR1VnUTI5dGNHRnVlVEVRTUE0R0ExVUVBeE1IUlhoaGJYQnNaVEVpTUNBR0NTcUdTSWIzRFFFSkFSWVRaWGhoYlhCc1pVQmxlR0Z0Y0d4bExtTnZiWUlKQU1CMWNzTnVBNitqTUF3R0ExVWRFd1FGTUFNQkFmOHdEUVlKS29aSWh2Y05BUUVGQlFBRGdZRUFEaHdUZWJHazczNXlLaG04RHFDeHZObkVaME54c1lFWU9qZ1JHMXlYVGxXNXBFNjkxZlNINUFaK1Q2ZnB3cFpjV1k1UVlrb042RG53ak94R2tTZlFDMy95R21jVURLQlB3aVo1TzJzOUMrZkUxa1VFbnJYMlhlYTRhZ1ZuZ016UjhEUTZvT2F1TFdxZWhEQitnMkVOV1JMb1ZnUyttYTUvWWNzMEdUeXJFQ1k9Ig0KICAgIF0NCn0.ew0KICAgICJ2ZXJzaW9uIjogIjEuMC4wIiwNCiAgICAiaWQiOiAiMzNjZmY0MTYtZTMzMS00YzlkLTk2OWUtNTM3M2ExNzU2MTIwIiwNCiAgICAiYWN0b3IiOiB7DQogICAgICAgICJtYm94IjogIm1haWx0bzpleGFtcGxlQGV4YW1wbGUuY29tIiwNCiAgICAgICAgIm5hbWUiOiAiRXhhbXBsZSBMZWFybmVyIiwNCiAgICAgICAgIm9iamVjdFR5cGUiOiAiQWdlbnQiDQogICAgfSwNCiAgICAidmVyYiI6IHsNCiAgICAgICAgImlkIjogImh0dHA6Ly9hZGxuZXQuZ292L2V4cGFwaS92ZXJicy9leHBlcmllbmNlZCIsDQogICAgICAgICJkaXNwbGF5Ijogew0KICAgICAgICAgICAgImVuLVVTIjogImV4cGVyaWVuY2VkIg0KICAgICAgICB9DQogICAgfSwNCiAgICAib2JqZWN0Ijogew0KICAgICAgICAiaWQiOiAiaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj14aDRrSWlIM1NtOCIsDQogICAgICAgICJvYmplY3RUeXBlIjogIkFjdGl2aXR5IiwNCiAgICAgICAgImRlZmluaXRpb24iOiB7DQogICAgICAgICAgICAibmFtZSI6IHsNCiAgICAgICAgICAgICAgICAiZW4tVVMiOiAiVGF4IFRpcHMgJiBJbmZvcm1hdGlvbiA6IEhvdyB0byBGaWxlIGEgVGF4IFJldHVybiAiDQogICAgICAgICAgICB9LA0KICAgICAgICAgICAgImRlc2NyaXB0aW9uIjogew0KICAgICAgICAgICAgICAgICJlbi1VUyI6ICJGaWxpbmcgYSB0YXggcmV0dXJuIHdpbGwgcmVxdWlyZSBmaWxsaW5nIG91dCBlaXRoZXIgYSAxMDQwLCAxMDQwQSBvciAxMDQwRVogZm9ybSINCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0sDQogICAgInRpbWVzdGFtcCI6ICIyMDEzLTA0LTAxVDEyOjAwOjAwWiINCn0.FWuwaPhwUbkk7h9sKW5zSvjsYNugvxJ-TrVaEgt_DCUT0bmKhQScRrjMB6P9O50uznPwT66oF1NnU_G0HVhRzS5voiXE-y7tT3z0M3-8A6YK009Bk_digVUul-HA4Fpd5IjoBBGe3yzaQ2ZvzarvRuipvNEQCI0onpfuZZJQ0d8
 ```
 
-Signed Statement
+Подписанная Директива
+
 ```
 {
-"version": "1.0.0",
-"id": "33cff416-e331-4c9d-969e-5373a1756120",
-"actor": {
-"mbox": "mailto:example@example.com",
-"name": "Example Learner",
-"objectType": "Agent"
-},
-"verb": {
-"id": "http://adlnet.gov/expapi/verbs/experienced",
-"display": {
-"en-US": "experienced"
-}
-},
-"object": {
-"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
-"objectType": "Activity",
-"definition": {
-"name": {
-"en-US": "Tax Tips & Information : How to File a Tax Return "
-},
-"description": {
-"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
-}
-}
-},
-"timestamp": "2013-04-01T12:00:00Z",
-"attachments": [
-{
-"usageType": "http://adlnet.gov/expapi/attachments/signature",
-"display": { "en-US": "Signature" },
-"description": { "en-US": "A test signature" },
-"contentType": "application/octet-stream",
-"length": 4235,
-"sha2": "672fa5fa658017f1b72d65036f13379c6ab05d4ab3b6664908d8acf0b6a0c634"
-}
-]
+	"version": "1.0.0",
+	"id": "33cff416-e331-4c9d-969e-5373a1756120",
+	"actor": {
+		"mbox": "mailto:example@example.com",
+		"name": "Example Learner",
+		"objectType": "Agent"
+	},
+	"verb": {
+		"id": "http://adlnet.gov/expapi/verbs/experienced",
+		"display": {
+		"en-US": "experienced"
+	}
+	},
+	"object": {
+		"id": "https://www.youtube.com/watch?v=xh4kIiH3Sm8",
+		"objectType": "Activity",
+		"definition": {
+			"name": {
+				"en-US": "Tax Tips & Information : How to File a Tax Return "
+			},
+			"description": {
+				"en-US": "Filing a tax return will require filling out either a 1040, 1040A or 1040EZ form"
+			}
+		}
+	},
+	"timestamp": "2013-04-01T12:00:00Z",
+	"attachments": [
+		{
+			"usageType": "http://adlnet.gov/expapi/attachments/signature",
+			"display": { "en-US": "Signature" },
+			"description": { "en-US": "A test signature" },
+			"contentType": "application/octet-stream",
+			"length": 4235,
+			"sha2": "672fa5fa658017f1b72d65036f13379c6ab05d4ab3b6664908d8acf0b6a0c634"
+		}
+	]
 }
 ```
 
-__Note:__ Attached signature not shown, see [Attachments](#attachments) for Attachment message format.
+__Note:__ Прикрепленная подпись не показана, смотри [Приложения](#attachments)) где описан формат вложений сообщений.
 
