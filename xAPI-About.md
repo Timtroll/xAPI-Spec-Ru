@@ -158,51 +158,35 @@ XAPI разработан для того:
 <a name="interpret-text-table"></a>
 ### 2.2 Руководство для Interpreting Descriptive Text и Tables
 
-Как правило, если руководство оказывается техническая или, как представляется, является обязательным требованием, интерпретировать его как таковое. Это особенно верно в отношении более длительных, более подробных объяснений, и таблиц, каждая из которых будет неинтуитивными и / или длительным, чтобы рассекать в список требований.
+Как правило, требевания представляется как обязательное, интерпретирего именно так. Это особенно касается более подробных объяснений и таблиц, каждая из которых может быть неинтуитивной и/или подробной.
 
-Таблицы используются в данном описании для определения требований к спискам свойств, параметров и т.д.
-Таблицы определить, какие свойства необходимы, рекомендуется и по желанию. Как правило, понятие "необязательно" относится к службе создания объекта, в то время как услуги приема и интерпретации объекта нужно, чтобы иметь возможность интерпретировать все свойства этого объекта. Часто, свойства не являются обязательными, поскольку данные не могут быть актуальны в любом контексте; если данные актуальны в конкретном контексте, то ожидается, свойство будет заполняться.
+Таблицы используются в для более четкого определения требований к спискам свойств, параметров и т.д.
+Таблицы определяют какие свойства "обязательны", "рекомендованы" или "по-желанию". Как правило, понятие "по-желанию" относится к созданию объекта, в то время как услуги приема и интерпретации объекта "обязательны", чтобы у систем был возможность корректно интерпретировать все свойства объекта. Часто, свойства не являются обязательными, поскольку данные не могут быть актуальны в любом контексте; если данные актуальны в конкретном контексте, то ожидается, свойство будет заполняться.
 
-Если дополнительное свойство или параметр содержит объект со свойствами, которые рекомендуются или требуются, то эти свойства только рекомендуются / требуется, если свойство или параметр, содержащий их используют.
+Если свойство или параметр "по-желанию"  содержит объект со свойствами, которые "обязательны" или "рекомендованы", то эти свойства "обязательны" или "рекомендованы" для объектов, которые их используют.
 
-Примеры приведены в описании и в приложениях для иллюстрации осуществления. Содержание этих примеров является вымышленным, чтобы проиллюстрировать требования спецификации и не всегда могут проиллюстрировать передовой практики подход к отслеживания конкретного опыта обучения, используемый в примере. Примерами могут быть использованы для информирования толкования требований, но не предназначены для иметь приоритет над требованиями.
-В случае, если спецификация не включает в себя требования, относящиеся к конкретной грани реализации, что деталь можно считать вне рамки данной спецификации. Это до реализатора, чтобы определить разумный подход. Эта спецификация пытается избежать неясности и, как правило, дают логическое обоснование, даже если там нет требования в данной области.
+Примеры приведены в описании и в Приложениях для иллюстрации реализации. Содержание этих Примеров является вымышленным, чтобы проиллюстрировать требования спецификации и не всегда могут проиллюстрировать подход к отслеживанию конкретного процесса обучения, который используется в примере. Примеры могут быть использованы для информирования толкования требований, но не предназначены для того, чтобы иметь приоритет над требованиями. 
 
-As a rule of thumb, if the guideline appears technical or seems to be a requirement, interpret it 
-as such. This is especially true of longer, more, detailed explanations and of tables, each of which would 
-be unintuitive and/or lengthy to dissect into a list of requirements.
-
-Tables are used throughout this specification to define requirements for lists of properties, parameters, etc.
-The tables define which properties are required, recommended and optional. Generally, the notion of "optional" relates to 
-the service creating the object, while services receiving and interpreting the object need to be able to interpret all 
-properties of that object. Often, properties are optional because the data may not be relevant in every context; 
-if the data is relevant in a particular context, then it is expected the property will be populated.
-
-If an optional property or parameter contains an object with properties that are recommended or required, then 
-these properties are only recommended/required if the property or parameter containing them is used.
-
-Examples are provided throughout the specification and in appendices to illustrate implementation. The content of these 
-examples is fictional in order to illustrate the requirements of the specification and may not always 
-illustrate the best practice approach to tracking the particular learning experience used in the example. Examples 
-can be used to inform interpretation of requirements, but are not intended to take precedence over requirements. 
-
-Where the specification does not include requirements relating to a particular facet of implementation, 
-that detail can be considered to be outside of the scope of this specification. It is up to the implementer 
-to determine a sensible approach. This specification tries to avoid vagueness and will usually give a rationale 
-even if there no requirement in a given area.
+В случае, если спецификация не включает в себя требования, относящиеся к конкретной реализации, нужно стараться придерживаться общих рабмок и подходов данной спецификации. Данная спецификация пытается избежать неясности и, как правило, дает логическое обоснование, даже если там нет требования в конкретной области.
 
 <a name="json"></a>
 ## 3.0 Сериализация и JavaScript Object запись
+
+Сериализация процесс преобразования объектов данных и структуры в формат для хранения или передачи, таким образом, что исходный объект данных могут быть воссозданы из полученного сериализации. В некоторых случаях это может быть возможно сериализовать часть данных в более чем одним способом. Например, логическое свойство со значением, соответствующим истинным могут быть представлены в виде `true` или '1' в зависимости от используемого сериализации.
 
 Serialization is the process of translating data objects and structures into a format for storage or transmission, such that the 
 original data object can be recreated from the resulting serialization. In some cases it might be possible to serialize a piece 
 of data in more than one way. For example, a boolean property with a value corresponding to true might be represented 
 as `true` or `1` depending on the serialization used. 
 
+XAPI следует правилам JSON для сериализации (так логические значения представлены в виде `` true` или false`). Он также может быть возможным, чтобы представить объекты, определенные в данном описании, с использованием других сериализации, такие как XML. Это выходит за рамки данной спецификации и использования ничего, кроме JSON для представления объектов, определенных в данном описании, не совместимую.
+
 xAPI follows the rules of JSON for serializations (so boolean values are represented as `true` or `false`). It might 
 also be possible to represent the objects defined in this specification using other serializations, such as XML. This is out 
 of scope of this specification and use of anything other than JSON to represent the objects defined in this specification 
 is not conformant. 
+
+Даже в пределах правил JSON есть возможные варианты, каким образом данные могут быть сериализованы, особенно в отношении данных о времени. Это имеет большое значение, как ряд особенностей XAPI полагаются на системы, находящихся в состоянии определить, являются ли два утверждения эквивалентны. См [Неизменность и исключения] (./ xAPI-Data.md # заявление-неизменность-и-исключения) для получения более подробной информации о свойствах Заявления пострадавших от этого.
 
 Even within the rules of JSON there are possible variations of how data can be serialized, especially in relation to data 
 about time. This is significant as a number of features of xAPI rely on systems being able to determine whether two 
@@ -213,6 +197,7 @@ JSON allows for objects to have properties that contain empty objects. This is n
 is not intended to contain data about a property then it is expected that the property will not be used at all. 
 All required properties are required to contain values. 
 
+JSON позволяет объектам иметь свойства, которые содержат пустые объекты. Это не рекомендуется в пределах XAPI; если заявление не предназначено, чтобы содержать данные о свойстве, то ожидается, что свойство не будет использоваться на всех. Все необходимые свойства должны содержать значения.
 
 <a name="definitions"></a>
 ## 4.0 Определения
