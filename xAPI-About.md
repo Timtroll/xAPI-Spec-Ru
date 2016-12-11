@@ -140,52 +140,34 @@ XAPI разработан для того:
 
 ## 2.0 Как использовать данный документ
 
-This is a definitive document which describes how the Experience API is to be implemented.
-It is a technical document authored specifically for individuals and organizations implementing this 
-technology with the intent of such individuals developing interoperable tools, systems and services that 
-are independent of each other and interoperable with each other. 
+Это окончательный документ, который описывает как нужно реализовывать Опытный API. Данная спецификация  является техническим документом для отдельных лиц и организаций, реализующих эту технологию с целью развития функционально совместимых инструментов, систем и услуг, которые не зависят друг от друга и в состоянии взаимодействовать друг с другом.
 
-Whenever possible, the language and formatting used in this document is intended to be 
-_considerate_ of non-technical readers because various tools, systems and services 
-are based on the specification set described below. For this reason, sections that provide a 
-_high-level overview_ of a given facet of the Experience API are labeled **description** or 
-**rationale**. Items in this document labeled as **requirements**, **details** or **examples** are more technical.
+Всякий раз, когда это возможно, язык и форматирование, используемое в данном документе, предназначен для рассмотрения нетехническими читателями, так как различные инструменты, системы и услуги основаны на наборе спецификаций, описанных ниже. По этой причине, разделы, которые обеспечивают высший уровень данного Опытного API помечены **Описание** или **обоснование**. Элементы в этом документе помечены как **требования** , **подробности** или **примеры** носят более технический характер.
 
-This specification is split into three parts. Part one is this introduction. It offers some background, 
-high-level summaries and direction on how to read the rest of the specification. 
+Данная спецификация разделяется на три части. Часть первая это введение. Он предлагает некоторые общие описания, обобщения на высоком уровне и рекомендации как читать остальную часть спецификации.
 
-Part two of this specification defines a data model for various data objects that are used in this specification. 
-The most significant object within the xAPI data model is the "Statement" object. This specification defines the properties 
-of the Statement object (including "Actor", "Verb", "Object", "Result", and "Context") and the rules of syntax for the 
-values of those properties and how they are represented. This part helps to ensure that services implementing the 
-specification follow a consistent data structure.
+Во второй части этой спецификации определяет модель данных для различных объектов данных, которые используются в данном описании. Наиболее значимым объектом в модели данных XAPI является объект "Директива". Эта спецификация определяет свойства Директив (в том числе "Актер", "Действие", "Объект", "Результат" и "Контекст") и правила синтаксиса для значений этих свойств и как они представлены. Эта часть помогает гарантировать, что услуги, реализующие спецификации будут следовать определенным структурам данных.
 
-Part three of this specification sets out the transfer methods that must be used when communicating 
-information about learning experiences between services that adhere to the specification. This includes the format 
-of requests and the expected responses. Note that communication in xAPI is not restricted to a "Learning Record Store" (LRS) 
-receiving data from "content". LRSs can communicate with services ranging from "Learning Record Providers" to 
-"Learning Record Consumers" to other LRSs. xAPI follows the guidelines of the REST software architecture style, and as such 
-data is transferred via HTTP requests and responses. Part three also defines security methods allowing for the trusted 
-exchange of information between the LRS and trusted "Clients".
+В третьей части данной спецификации изложены методы передачи, которые должны использоваться при обмене информацией о получении опыта между службами, которые придерживаются данной спецификации. Это включает в себя формат запросов и ожидаемых ответов. Обратите внимание, что общение в XAPI не ограничивается "Learning Record Store" (LRS) получением данных из "content". LRS могут взаимодействовать с услугами, начиная от "Learning Record Providers" и "Learning Record Consumers" в другие LRS. XAPI следует рекомендациям REST архитектуры для программного обеспечения. Такие данные передаются с помощью HTTP-запросов и ответов. Часть третья также определяет методы защиты, позволяющие обезопасить обмен информацией между LRS и доверенными "Clients".
 
 <a name="def-must-should-may"></a>
 ### 2.1 Обязано быть / Как есть / Возможно будет
-There are three levels of obligation with regards to conformance to the xAPI specification identified by the terms 
-MUST, SHOULD and MAY. A service or system that fails to implement a MUST (or a MUST NOT) requirement is non-conformant. 
-Failing to meet a SHOULD requirement is not a violation of conformity, but goes against the recommendations of the specification. 
-MAY indicates an option, to be decided by the developer with no consequences for conformity. Usage 
-of these terms outside of requirement language does not designate a requirement and is avoided whenever possible. 
-Complete definitions of MUST, SHOULD, MAY, MUST NOT and SHOULD NOT are found in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-The use of an asterisk* following SHOULD indicates a very strong recommendation. It is planned that these 
-recommendations will become MUST requirements in a future version. Not following these recommendations could 
-risk interoperability and and/or lead to various other issues depending on the specifics of the recommendation. 
-These recommendations cannot be MUST requirements within this version as these would be breaking changes. 
-The xAPI Working Group strongly encourages adopters to implement these requirements as though they were MUST 
-requirements, while continuing to support other adopters that might not do so.
+Есть три уровня обязательностьи следования спецификачии XAPI - ДОЛЖНО, РЕКОМЕНДУЕТСЯ и МОЖЕТ. Служба или система, которая не выполняет требование ДОЛЖНО (или НЕ ДОЛЖНО) является несовместимой. Неудовлетворение требования ДОЛЖНО не является нарушением, но идет вразрез с рекомендациями спецификации. Нарушение требований РЕКОМЕНДУЕТСЯ указывает на возможность разных решений разработчиков без каких-либо последствий для соответствия. Полные описания ДОЛЖНО, РЕКОМЕНДУЕТСЯ и МОЖЕТ (MUST, SHOULD, MAY, MUST NOT and SHOULD NOT) вы найдете в [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 <a name="interpret-text-table"></a>
 ### 2.2 Руководство для Interpreting Descriptive Text и Tables
+
+Как правило, если руководство оказывается техническая или, как представляется, является обязательным требованием, интерпретировать его как таковое. Это особенно верно в отношении более длительных, более подробных объяснений, и таблиц, каждая из которых будет неинтуитивными и / или длительным, чтобы рассекать в список требований.
+
+Таблицы используются в данном описании для определения требований к спискам свойств, параметров и т.д.
+Таблицы определить, какие свойства необходимы, рекомендуется и по желанию. Как правило, понятие "необязательно" относится к службе создания объекта, в то время как услуги приема и интерпретации объекта нужно, чтобы иметь возможность интерпретировать все свойства этого объекта. Часто, свойства не являются обязательными, поскольку данные не могут быть актуальны в любом контексте; если данные актуальны в конкретном контексте, то ожидается, свойство будет заполняться.
+
+Если дополнительное свойство или параметр содержит объект со свойствами, которые рекомендуются или требуются, то эти свойства только рекомендуются / требуется, если свойство или параметр, содержащий их используют.
+
+Примеры приведены в описании и в приложениях для иллюстрации осуществления. Содержание этих примеров является вымышленным, чтобы проиллюстрировать требования спецификации и не всегда могут проиллюстрировать передовой практики подход к отслеживания конкретного опыта обучения, используемый в примере. Примерами могут быть использованы для информирования толкования требований, но не предназначены для иметь приоритет над требованиями.
+В случае, если спецификация не включает в себя требования, относящиеся к конкретной грани реализации, что деталь можно считать вне рамки данной спецификации. Это до реализатора, чтобы определить разумный подход. Эта спецификация пытается избежать неясности и, как правило, дают логическое обоснование, даже если там нет требования в данной области.
+
 As a rule of thumb, if the guideline appears technical or seems to be a requirement, interpret it 
 as such. This is especially true of longer, more, detailed explanations and of tables, each of which would 
 be unintuitive and/or lengthy to dissect into a list of requirements.
