@@ -200,57 +200,49 @@ __Headers__:
 If-Match and If-None-Match.
 Это не относится к параметру Content-Transfer-Encoding.
 * <a name="1.3.s3.b7"></a>Параметры, перечисленные выше в качестве параметров заголовка LRS ДОЛЖЕН воспринимать как параметры формы.
-* <a name="1.3.s3.b8"></a>The Learning Record Provider MUST include other header parameters not listed above in the HTTP header as normal. 
-* <a name="1.3.s3.b9"></a>The Learning Record Provider SHOULD* still include a Content-Type header (in the HTTP header) for this type of 
-request with a value of 'application/x-www-form-urlencoded'. 
-* <a name="1.3.s3.b10"></a>The Content-Type form parameter SHOULD* specify the content type of the content within the content form parameter. 
-* <a name="1.3.s3.b11"></a>The Learning Record Provider SHOULD* still include a Content-Length header (in the HTTP header) for this type of 
-request indicating the overall length of the request's content. 
-* <a name="1.3.s3.b12"></a>The Content-Length form parameter SHOULD* specify the length of the content within the 
-content form parameter and will therefore be a lower figure than the length listed in the Content-Length header. 
-
+* <a name="1.3.s3.b8"></a>Learning Record Provider ДОЛЖЕН содержать другие параметры заголовка, не только передаваемые в заголовке HTTP в обычном режиме.
+* <a name="1.3.s3.b9"></a>РЕКОМЕНДУЕТСЯ чтобы Learning Record Provider включал в HEADER заголовок Content-Type и посылал запросы со значением 'application/x-www-form-urlencoded'.
+* <a name="1.3.s3.b10"></a>РЕКОМЕНДУЕТСЯ использовать параметр Content-Type чтобы указывать тип содержимого содержания в параметре формы.
+* <a name="1.3.s3.b11"></a>Learning Record провайдеру РЕКОМЕНДУЕТСЯ включать в заголовок Content-Length с указанием общей длинызапроса. 
+* <a name="1.3.s3.b12"></a>В параметре формы Content-Length РЕКОМЕНДУЕТСЯ указать именно длину содержимого внутри
+ формы и поэтому длина будет меньше, чем обычная длина указываемая в Content-Length.
+ 
 __Query string parameters__:
-* <a name="1.3.s3.b13"></a>Any query string parameters other than "method" MUST instead be included as a form parameter 
-with the same name. 
-* <a name="1.3.s3.b14"></a>The LRS MUST treat any form parameters other than "content" or the header parameters 
-listed above as query string parameters. 
+* <a name="1.3.s3.b13"></a>Любые параметры строки запроса отличные от "method" ДОЛЖНЫ быть включены в качестве параметров формы с теми же названиями.
+* <a name="1.3.s3.b14"></a>LRS ДОЛЖЕН рассматривать ВСЕ параметры заголовка отличные от "content" в качестве параметров строки запроса параметров формы.
 
-__Attachments__: Note that due to issues relating to encoding, it is not possible to send 
-binary data attachments using this syntax. See [Attachments](./xAPI-Data.md#attachments) 
+__Attachments__: Следует отметить, что не представляется возможным отправлять бинарные вложения данных, используя текущий синтаксис. Смотри [Приложения](./xAPI-Data.md#attachments) 
 
-* <a name="1.3.s3.b15"></a>The LRS MUST support the syntax above.
+* <a name="1.3.s3.b15"></a>LRS ДОЛЖНА подделжывать синтаксис описанный выше.
 
-There might be cases where there is a requirement for the Learning Record Provider to support applications or browsers where the 
-Client code is hosted on a different scheme (HTTP or HTTPS) from the LRS. A proxy is only needed IF you want to support HTTP to 
-HTTPS requests from IE 9 or lower. You can do HTTP to HTTPS (or HTTPS to HTTP!) without a proxy if you use a modern browser. 
-Two simple solutions might be to 1) set up a proxy pass through on the same scheme as the Client code to the LRS or 2) to host an 
-intermediary server-side LRS on the same scheme as the Client code to route Statements to the target LRS.
+Иногда для Learning Record Provider есть требования поддержки приложений или браузеров, где код xAPI Client размещен на другом протоколе (HTTP или HTTPS) отличном от LRS. Прокси-сервер необходим, только ЕСЛИ вы хотите поддерживать HTTP для xAPI HTTPS запросы от IE 9 или ниже. Вы можете сделать HTTP к HTTPS (или HTTPS к HTTP!) без прокси-сервера, если вы используете современный браузер. Есть два простых решения: 1) установить прокси, который приведет протоколы к одной схеме или 2) разместить настороне сервера LRS посредника маршрутизации Директив к LRS.
 
-Strongly consider security risks before making the decision to use implementations that use HTTP.
+Настоятельно рекомендуем рассмотреть все риски в области безопасности, прежде чем принимать решение об использовании реализаций на основе HTTP.
 
 <a name="encoding"/> 
 
 ### <a name="1.4">1.4</a> Encoding
 
-###### <a name="1.4.s1"></a>Requirements
-* <a name="1.4.s1.b1"></a>All strings MUST be encoded and interpreted as UTF-8. 
+###### <a name="1.4.s1"></a>Требования
+
+* <a name="1.4.s1.b1"></a>Все строки ДОЛЖНЫ быть в кодировке UTF-8. 
 
 <a name="content-types"/> 
 ### <a name="1.5">1.5</a> Content Types
-Requests and responses within this specification normally use an `application/json` content type. Exceptions to this are:
 
-* <a name="1.5.b1"></a>Documents can have any content type. 
-* <a name="1.5.b2"></a>Statement requests that can sometimes include Attachments use the `multipart/mixed` content type. 
+В этой спецификации запросы и ответы используют `application/json` content type. Исключениями из этого правила являются:
+
+* <a name="1.5.b1"></a>Документы могут иметь любой content type. 
+* <a name="1.5.b2"></a>Запросы Директив, которые включают в себя вложения используют `multipart/mixed` content type. 
 
 <a name="applicationjson"/> 
 #### <a name="1.5.1">1.5.1</a> Application/JSON
-Requests within this specification normally use an `application/json` content type. 
 
-###### <a name="1.5.1.s1"></a>LRS Requirements
-* <a name="1.5.1.s1.b1"></a>When receiving a PUT or POST with a document type of `application/json`, an LRS MUST accept batches 
-of Statements which contain no Attachment Objects.
-* <a name="1.5.1.s1.b2"></a>When receiving a PUT or POST with a document type of `application/json`, an LRS MUST accept batches 
-of Statements which contain only Attachment Objects with a populated fileUrl.
+Запросы в этой спецификации обычно используют `application/json` content type. 
+
+###### <a name="1.5.1.s1"></a>LRS Тебования
+* <a name="1.5.1.s1.b1"></a>При получении запроса PUT или POST с документом типа `application/json` LRS ДОЛЖНА принять  запрос и обработать те из них, которые не содержат привязки к объектам.
+* <a name="1.5.1.s1.b2"></a>При получении запроса PUT или POST с документом типа `application/json` LRS ДОЛЖНА принять и обработать те которые содержат только объекты вложения с Url файла.
 
 <a name="multipartmixed"/> 
 #### <a name="1.5.2">1.5.2</a> Multipart/Mixed
